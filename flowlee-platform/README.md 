@@ -1,0 +1,10 @@
+## Descrizione del Progetto
+Flowlee Platform è l'applicazione dedicata alla gestione e automazione dei flussi di lavoro. Questo repository contiene il codice sorgente necessario per lo sviluppo e la manutenzione della piattaforma.
+
+Setup e Installazione
+Per avviare il progetto in locale, segui questi passaggi:
+
+1. **Clona il repository**: Esegui `git clone <url-del-tuo-repo>` nel tuo terminale.
+2. **Installa le dipendenze**: All'interno della cartella del progetto, esegui:
+```bash
+   npm install

@@ -1,0 +1,104 @@
+/* Struttura generale */
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Layout della card */
+.card-layout {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Il contenitore principale dove applichi il FLEX */
+.Uno {
+  display: flex; /* Qui dividiamo la parte sinistra (testo/bottoni) e destra (immagine) */
+  gap: 40px;
+  align-items: center;
+}
+
+.Due {
+  flex: 1; /* Prende lo spazio disponibile */
+}
+
+.content-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Gestione dei bottoni */
+.5 {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Layout Form (Step 2) */
+.form-split {
+  display: flex;
+  gap: 50px;
+}
+
+.Tre {
+  flex: 0 0 200px; /* Larghezza fissa per il logo */
+}
+
+.form-container-box {
+  flex: 1;
+}
+
+/* Stile dei campi form */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Impila etichetta e input verticalmente */
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Azioni form */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+/* Utility bottoni */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-dark { background: #000; color: #fff; }
+.btn-light { background: #eee; color: #000; }
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+}
