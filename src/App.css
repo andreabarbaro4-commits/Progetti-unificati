@@ -503,18 +503,19 @@ font-weight: bold;
 
 .logo, .logo-center {
   margin-top: 0;
-  margin-bottom: auto; /* Questo spinge tutto il resto verso il basso */
+  margin-bottom: auto; 
 }
-.container-sfondo{
-  justify-content: center;
-  min-height: 100vh;
-  align-items: center;
-  display: flex;
-  width: 100%;
-  background: radial-gradient(circle at 50% 50%, #8e44AD 30%,  #FF6B6B 10% ,#ffffff 70% )
-  
-  
-  
-  
-
+.container-sfondo {
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    /* Sfondo grigio chiaro di base */
+    background-color: #f8f8f8; 
+    /* Sovrapposizione dei gradienti radiali per l'effetto soffuso */
+    background-image: 
+        radial-gradient(circle at 40% 50%, rgba(255, 107, 107, 1.2) 0%, transparent 65%),
+        radial-gradient(circle at 60% 50%, rgba(142, 68, 173, 1.2) 0%, transparent 65%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
 }

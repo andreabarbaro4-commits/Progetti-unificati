@@ -67,6 +67,7 @@ function App() {
 
       {/* Step 2 */}
       {dato === 2 && (
+        <div className = "container-sfondo">
         <div className="Step">
           <div className="logo">Flowlee</div>
           <h1>Ciao Marco!<br />Creiamo l'account.</h1>
@@ -86,20 +87,24 @@ function App() {
             Successivo
             </button>
         </div>
+        </div>
       )}
 
       {/* Step 3 */}
       {dato === 3 && (
+        <div className = "container-sfondo">
         <div className="Step">
           <div className="logo">Flowlee</div>
           <img src={avatar} alt="avatar" className="avatar" />
           <h1>Sto inviando<br />il codice di verifica.</h1>
           <button className="de" onClick={() => setDato(4)}>Successivo</button>
         </div>
+        </div>
       )}
 
       {/* Step 4 */}
       {dato === 4 && (
+        <div className = "container-sfondo">
         <div className="Step">
           <div className="logo">Flowlee</div>
           <h1>Inserisci il codice<br />che trovi sulla mail!</h1>
@@ -110,6 +115,7 @@ function App() {
           </div>
           <button className="WE">Invia di nuovo</button>
           <button className="era" onClick={() => setDato(5)}>Conferma</button>
+        </div>
         </div>
       )}
 
@@ -130,6 +136,7 @@ function App() {
 
       {/* Step 6 */}
       {dato === 6 && (
+        <div className = "container-sfondo">
         <div className="Step step-header-layout">
           <div className="top-navigation">
             <div className="arrows-container">
@@ -142,6 +149,7 @@ function App() {
               <HiOutlineUserCircle className="top-icon" />
             </div>
           </div>
+
 
           <h1>Benvenuto!<br />Raccontaci chi sei</h1>
 
@@ -167,8 +175,9 @@ function App() {
             className="procedi-btn" 
             disabled={!ruoloSelezionato}
             onClick={() => setDato(7)}>
-            PROCEDI
+            Procedi
           </button>
+        </div>
         </div>
       )}
 
@@ -177,6 +186,7 @@ function App() {
 
       {/* Step 7 */}
       {dato === 7 && (
+        <div className = "container-sfondo">
         <div className="Step step-header-layout">
           <div className="top-navigation">
             <div className="nav-left">
@@ -230,10 +240,12 @@ function App() {
             Procedi
           </button>
         </div>
+        </div>
       )}
 
       {/* Step 8 */}
       {dato === 8 && (
+        <div className = "container-sfondo">
         <div className="Step step-header-layout">
           <div className="top-navigation">
             <div className="nav-left">
@@ -294,10 +306,12 @@ function App() {
             </div>
           </div>
         </div>
+        </div>
       )}
 
       {/* Step 9 */}
       {dato === 9 && (
+        <div className = "container-sfondo">
         <div className="Step step-header-layout">
           <div className="top-navigation">
             <div className="nav-left">
@@ -357,6 +371,7 @@ function App() {
 
             </div>
           </div>
+        </div>
         </div>
       )}
 
