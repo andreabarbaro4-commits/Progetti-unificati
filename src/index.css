@@ -1,0 +1,42 @@
+/*
+ * Global stylesheet — Tailwind CSS v4 entry point.
+ *
+ * Preflight (Tailwind's opinionated base reset) is intentionally NOT imported.
+ * Flowlee ships its own universal reset (the `*` rule below), and layering
+ * Preflight on top of it would change the rendered output (button/heading/form
+ * normalisation, etc.). To guarantee pixel-identical output we import only the
+ * `theme` and `utilities` layers and keep the original reset verbatim.
+ *
+ * See: https://tailwindcss.com/docs/preflight#disabling-preflight
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* Expose the card transition as a first-class `animate-fade-in` utility. */
+@theme {
+  --animate-fade-in: fade-in 0.4s ease-out forwards;
+}
+
+/* Original application reset — applied to every element, including form
+ * controls, which is why Inter is set here rather than only on `body`. */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
