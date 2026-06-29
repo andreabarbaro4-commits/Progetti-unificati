@@ -30,6 +30,8 @@ function App() {
 
   ]
 
+  
+
   return (
     <div className="App">
       
@@ -61,6 +63,8 @@ function App() {
           <button className = "de" onClick = {() => setDato(2)}>
             successivo
           </button>
+
+        
           </div>
           </div>
       )}
@@ -86,6 +90,8 @@ function App() {
           <button className="de" onClick={() => setDato(3)}>
             Successivo
             </button>
+
+            
         </div>
         </div>
       )}
@@ -128,6 +134,8 @@ function App() {
           </div>
           <div className="hey">
             <button className="wr" onClick={() => setDato(6)}>Crea profilo</button>
+
+           
           </div>
         </div>
 

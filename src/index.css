@@ -1,169 +1,92 @@
-<<<<<<< HEAD
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: white;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-
-}
-
-h1 {
-  font-size: 100px;
-  letter-spacing: -1.68px;
-  color: black;
-  margin: 32px 0;
-  text-align: left;
-  line-height: 1.2;
-
-  
-   
-   
-  }
-@media(max-width: 1024px){
-  h1{
-    font-size: 36px;
-    margin: 20px 0;
-    width: 100%;
-    margin-left: 0px;
-
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 200px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}
-=======
-/*
- * Global stylesheet — Tailwind CSS v4 entry point.
- *
- * Preflight (Tailwind's opinionated base reset) is intentionally NOT imported.
- * Flowlee ships its own universal reset (the `*` rule below), and layering
- * Preflight on top of it would change the rendered output (button/heading/form
- * normalisation, etc.). To guarantee pixel-identical output we import only the
- * `theme` and `utilities` layers and keep the original reset verbatim.
- *
- * See: https://tailwindcss.com/docs/preflight#disabling-preflight
- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-@layer theme, base, components, utilities;
-
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/utilities.css' layer(utilities);
 
-/* Expose the card transition as a first-class `animate-fade-in` utility. */
 @theme {
+  /* Variabili personalizzate */
+  --color-text-body: #6b6375;
+  --color-text-h: #08060d;
+  --color-bg: #fff;
+  --color-accent: #aa3bff;
+  --color-code-bg: #f4f3ec;
+  --color-border: #e5e4e7;
+  
+  /* Animazioni */
   --animate-fade-in: fade-in 0.4s ease-out forwards;
 }
 
-/* Original application reset — applied to every element, including form
- * controls, which is why Inter is set here rather than only on `body`. */
 @layer base {
+  /* Reset globale pulito */
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.45;
+    color: var(--color-text-body);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Gestione tipografica */
+  h1, h2 {
+    font-weight: 500;
+    color: var(--color-text-h);
+  }
+
+  h1 {
+    font-size: 6rem; /* 96px */
+    letter-spacing: -0.05em;
+    margin: 2rem 0;
+  }
+
+  h2 {
+    font-size: 1.5rem; /* 24px */
+    margin-bottom: 0.5rem;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 2.25rem; /* 36px */
+      margin: 1.25rem 0;
+    }
+  }
+
+  code {
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 0.9375rem; /* 15px */
+    padding: 0.25rem 0.5rem;
+    background-color: var(--color-code-bg);
+    border-radius: 0.25rem;
+  }
+}
+
+/* Stili per il layout principale */
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-inline: 1px solid var(--color-border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Supporto Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-body: #9ca3af;
+    --color-text-h: #f3f4f6;
+    --color-bg: #16171d;
+    --color-border: #374151;
+    --color-code-bg: #1f2028;
   }
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
->>>>>>> 5ea9b1e782c7236c1ad35783b7053dc05cee4797

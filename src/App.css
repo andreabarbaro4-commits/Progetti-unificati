@@ -519,3 +519,46 @@ font-weight: bold;
         radial-gradient(circle at 60% 50%, rgba(142, 68, 173, 1.2) 0%, transparent 65%),
         radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
 }
+/* --- ADATTAMENTO RESPONSIVO --- */
+
+/* 1. Mobile: correzioni per evitare che elementi escano dallo schermo */
+@media (max-width: 600px) {
+  .Step {
+    padding: 20px;
+    margin: 10px;
+    min-height: auto;
+  }
+  
+  .avatar-decorativo {
+    display: none; /* Nasconde l'avatar decorativo su schermi molto piccoli */
+  }
+
+  .ruoli-container {
+    margin-left: 0; /* Centra i ruoli su mobile */
+    justify-content: center;
+  }
+}
+
+/* 2. Desktop: assicura il centraggio fluido della navigazione */
+@media (min-width: 1024px) {
+  .top-navigation {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .nav-center {
+    grid-column: 2;
+    justify-self: center;
+  }
+
+  .nav-right {
+    grid-column: 3;
+    justify-self: end;
+  }
+  
+  .nav-left {
+    grid-column: 1;
+    justify-self: start;
+  }
+}

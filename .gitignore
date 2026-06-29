@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 node_modules
 DS_store
 =======
@@ -32,4 +32,4 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
->>>>>>> 5ea9b1e782c7236c1ad35783b7053dc05cee4797
+
