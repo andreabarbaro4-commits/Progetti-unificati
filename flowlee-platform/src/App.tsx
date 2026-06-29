@@ -6,7 +6,6 @@ function App() {
  const[cielo,setCielo] = useState<number>(1);
  const[stella,setStella] = useState<'azienda|professionista'|null>(null);
 
- 
 
 
 
@@ -53,6 +52,8 @@ const handleSelectType = (type: 'azienda| professionista') => {
                 </h1>
                   
                
+
+
                   
               
              
@@ -84,9 +85,7 @@ const handleSelectType = (type: 'azienda| professionista') => {
 
                
                 
-                  
-                
-                 
+        
 
 
               
@@ -110,6 +109,8 @@ const handleSelectType = (type: 'azienda| professionista') => {
               </div>
               <span className="user-profile">Andrea ::</span>
             </header>
+            
+
 
             <div className="card-body form-split">
           
@@ -180,11 +181,20 @@ const handleSelectType = (type: 'azienda| professionista') => {
                     </button>
                   </div>
 
+
+
+                
+
+                  
+
                 </form>
               </div>
             </div>
           </section>
         )}
+
+
+        
       </main>
     </div>
   );
