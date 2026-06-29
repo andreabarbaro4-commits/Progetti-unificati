@@ -1,2 +1,35 @@
+<<<<<<< HEAD
 node_modules
 DS_store
+=======
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Caches
+.vite/
+.eslintcache
+*.tsbuildinfo
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+>>>>>>> 5ea9b1e782c7236c1ad35783b7053dc05cee4797
