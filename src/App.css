@@ -20,7 +20,6 @@ body {
 }
 
 
-  
 .Step {
   width: 100%;
   max-width: 450px;
@@ -41,6 +40,39 @@ body {
   border-radius: 0
 
 }
+.container-sfondo {
+  position: relative !important;
+  padding-top: 80px !important; /* Questo crea fisicamente lo spazio vuoto sopra il box */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Tiene il box verso l'alto, ma sotto il padding */
+}
+
+/* 2. Definisce la barra sottile e flottante */
+.top-navigation {
+  position: absolute !important;
+  top: 15px !important; 
+  left: 20px !important; /
+  width: auto !important; 
+  height: 45px !important; 
+  background-color: #ffffff !important;
+  border-radius: 12px; 
+  padding: 0 20px !important;
+  box-sizing: border-box;
+  z-index: 9999;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* L'ombra la fa sembrare 'staccata' */
+}
+
+/* 3. Assicurati che il box .Step non abbia margini che lo spingono troppo in alto */
+.Step {
+  margin-top: 30px !important; /* Spazio tra barra e box */
+}
+
+
 .Step > * {
   width: 100%;
 }
@@ -260,6 +292,7 @@ font-weight: bold;
   margin-bottom: 10px;
   
   
+  
 
 }
 .Step h1 {
@@ -295,6 +328,7 @@ font-weight: bold;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  
 
 }
 
@@ -314,6 +348,7 @@ font-weight: bold;
   justify-content: center; 
   font-weight: bold;
   font-size: 1.2rem;
+ 
  
 }
 
@@ -463,9 +498,10 @@ font-weight: bold;
 
 .avatar-decorativo{
   position: absolute;
-  bottom:20px;
+  bottom:100px;
   right: 20px;
   width: 120px;
+  
   height: auto;
   pointer-events: none;
   z-index: 10;
