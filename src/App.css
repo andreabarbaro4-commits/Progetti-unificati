@@ -177,7 +177,7 @@ h1 {
 .nav-center{
   font-weight: bold;
   font-size: 1.2rem;
-  margin-left: -150px;
+  margin-left: 10px;
   color: #4b2c73
   
 }
@@ -511,21 +511,30 @@ font-weight: bold;
   margin-top: 0;
   margin-bottom: auto; 
 }
-.container-sfondo {
-    justify-content: center;
-    min-height: 100vh;
-    align-items: center;
-    display: flex;
-    width: 100%;
-   
-    background-color: #f8f8f8; 
-    
-    background-image: 
-        radial-gradient(circle at 40% 50%, rgba(255, 107, 107, 1.2) 0%, transparent 65%),
-        radial-gradient(circle at 60% 50%, rgba(142, 68, 173, 1.2) 0%, transparent 65%),
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
-}
 
+.container-sfondo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    
+    /* Bianco solido come base */
+    background-color: #ffffff;
+    
+    /* Utilizziamo un gradiente che usa 'contain' per non uscire dai bordi */
+    background-image: 
+        radial-gradient(circle at 45% 50%, rgba(255, 107, 107, 2.0) 0%, transparent 60%),
+        radial-gradient(circle at 55% 50%, rgba(66, 63, 133, 3.5) 0%, transparent 60%);
+    
+    /* contain: il gradiente si ridimensiona per stare interamente 
+       dentro il box, lasciando i bordi liberi. 
+    */
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+}
 
 
 /* --- Modifiche - ADATTAMENTO RESPONSIV --- */
@@ -593,3 +602,20 @@ button:active {
   transform: scale(0.98);
 }
 
+/* Migliora il contenitore dei tag per evitare layout rotti */
+.ruoli-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+
+/* Assicura che il contenuto del button-container sia ben allineato */
+.button-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
