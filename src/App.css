@@ -28,6 +28,7 @@ body {
   min-height: 650px; 
   background-color: #ffffff !important;
   padding: 40px; 
+  margin-left: 0 !important;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -36,7 +37,9 @@ body {
   box-shadow: 0 4px 30px rgba(0,0,0,0.1);
   box-sizing: border-box;
   margin: 20px;
-  justify-content: center; 
+  justify-content: space-between;
+  border-radius: 0
+
 }
 .Step > * {
   width: 100%;
@@ -174,7 +177,9 @@ h1 {
 .nav-center{
   font-weight: bold;
   font-size: 1.2rem;
+  margin-left: -150px;
   color: #4b2c73
+  
 }
 .top-icon{
   font-size: 20px;
@@ -215,7 +220,7 @@ h1 {
   margin-top: 200px;
 }
 .era {
-  /* Assicurati che anche questo non abbia margini superiori eccessivi */
+  
   margin-top: 10px; 
 }
 .logo-center{
@@ -225,7 +230,7 @@ font-weight: bold;
   font-size: 20px;
 }
 .hey {
-  /* Rimosso background-color e aggiunto lo stile desiderato */
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,7 +240,7 @@ font-weight: bold;
 }
 
 .hey button {
-  /* Rimuovi lo sfondo e adatta lo stile al tuo design */
+ 
   background-color: transparent; 
   color: white;
   border: 2px solid black;
@@ -258,13 +263,13 @@ font-weight: bold;
 
 }
 .Step h1 {
-  text-align: center; /* Centra il testo */
+  text-align: center; 
   margin-bottom: 20px;
   margin-top: 0! important;
 }
 
 .procedi-btn {
-  margin-top: 160px; /* Spinge automaticamente il bottone in fondo */
+  margin-top: 160px; 
   padding: 10px;
   color: white;
   background-color: black;
@@ -300,19 +305,20 @@ font-weight: bold;
 }
 
 .nav-left {
-  justify-content: flex-start; /* Allinea a sinistra */
+  justify-content: flex-start; 
   gap: 15px;
   
 }
 
 .nav-center {
-  justify-content: center; /* CENTRA IL LOGO */
+  justify-content: center; 
   font-weight: bold;
   font-size: 1.2rem;
+ 
 }
 
 .nav-right {
-  justify-content: flex-end; /* Icone a destra */
+  justify-content: flex-end;
   gap: 10px;
 }
 
@@ -430,7 +436,7 @@ font-weight: bold;
 }
 
 
-/* Stile base per tutti i pulsanti .qa (sarà usato dallo Step 9) */
+
 .qa {
   display: block;
   width: 100%;
@@ -444,7 +450,7 @@ font-weight: bold;
   cursor: pointer;
 }
 
-/* Sovrascrittura solo per il pulsante con classe .btn-bianco (Step 8) */
+
 .qa.btn-bianco {
   background-color: #9CA3AF;
   color: white !important;
@@ -511,17 +517,20 @@ font-weight: bold;
     align-items: center;
     display: flex;
     width: 100%;
-    /* Sfondo grigio chiaro di base */
+   
     background-color: #f8f8f8; 
-    /* Sovrapposizione dei gradienti radiali per l'effetto soffuso */
+    
     background-image: 
         radial-gradient(circle at 40% 50%, rgba(255, 107, 107, 1.2) 0%, transparent 65%),
         radial-gradient(circle at 60% 50%, rgba(142, 68, 173, 1.2) 0%, transparent 65%),
         radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
 }
-/* --- ADATTAMENTO RESPONSIVO --- */
 
-/* 1. Mobile: correzioni per evitare che elementi escano dallo schermo */
+
+
+/* --- Modifiche - ADATTAMENTO RESPONSIV --- */
+
+/* 1. Mobile: correzioni per non fare uscire elementi dallo schermo */
 @media (max-width: 600px) {
   .Step {
     padding: 20px;
@@ -530,16 +539,16 @@ font-weight: bold;
   }
   
   .avatar-decorativo {
-    display: none; /* Nasconde l'avatar decorativo su schermi molto piccoli */
+    display: none; /* Nasconde l'avatar decorativo su schermi piccoli */
   }
 
   .ruoli-container {
-    margin-left: 0; /* Centra i ruoli su mobile */
+    margin-left: 0; /* Centra i ruoli su dispositivi mobile */
     justify-content: center;
   }
 }
 
-/* 2. Desktop: assicura il centraggio fluido della navigazione */
+/* 2. Desktop: assicura che la navigazione sia centrata */
 @media (min-width: 1024px) {
   .top-navigation {
     display: grid;
@@ -562,3 +571,25 @@ font-weight: bold;
     justify-self: start;
   }
 }
+
+/* Sposta il titolo  verso sinistra su mobile e dekstop */
+.step-header-layout h1:first-of-type {
+    text-align: left !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+/* Aggiunge transizioni ai bottoni su mobile e dekstop */
+button {
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+

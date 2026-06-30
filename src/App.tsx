@@ -108,13 +108,13 @@ function App() {
         </div>
       )}
 
-      {/* Step 4 */}
+      {/* Step 4 */} 
       {dato === 4 && (
         <div className = "container-sfondo">
         <div className="Step">
           <div className="logo">Flowlee</div>
           <h1>Inserisci il codice<br />che trovi sulla mail!</h1>
-          <p style={{marginBottom: '20px', color: '#666', fontSize: '14px', marginLeft: '-225px'}}>mariorossi@gmail.com</p>
+          <p style={{marginBottom: '20px', color: '#666', fontSize: '14px'}}>mariorossi@gmail.com</p>
           <div className="input-group">
             <label>Codice</label>
             <input type="text" placeholder="Inserisci codice"/>
