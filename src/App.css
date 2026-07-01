@@ -697,3 +697,11 @@ button:active {
   text-align: left !important;
   width: 100% !important;
 }
+/* Sposto l'email a sinistra allineata 4 */
+.Step p {
+  width: 100%;
+  text-align: left !important;
+  margin-bottom: 20px !important;
+  color: #666;
+  font-size: 14px;
+}
