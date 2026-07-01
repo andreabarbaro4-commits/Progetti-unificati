@@ -38,6 +38,7 @@ body {
   margin: 20px;
   justify-content: space-between;
   border-radius: 0
+  
 
 }
 .container-sfondo {
@@ -47,6 +48,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Tiene il box verso l'alto, ma sotto il padding */
+
 }
 
 /* 2. Definisce la barra sottile e flottante */
@@ -192,15 +194,7 @@ h1 {
   color: black;
 }
 
-.top-navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 10px 0;
-  margin-bottom: 20px;
-  
 
-}
 .nav-left, .nav-right{
   display: flex;
   gap: 10px;
@@ -318,19 +312,11 @@ font-weight: bold;
   font-size: 20px;
   background-color: black;
   color: white;
-  margin-top: 190px;
+  margin-top: 140px;
   padding: 5px;
-  
-}
-
-.top-navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-  
-
 }
+
 
 .nav-left, .nav-center, .nav-right {
   flex: 1; /* Ogni sezione prende lo stesso spazio */
@@ -341,8 +327,14 @@ font-weight: bold;
 .nav-left {
   justify-content: flex-start; 
   gap: 15px;
-  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-column: 1;
+  gap: 10px;
 }
+  
+
 
 .nav-center {
   justify-content: center; 
@@ -543,9 +535,15 @@ font-weight: bold;
 }
 
 
-.logo, .logo-center {
-  margin-top: 0;
-  margin-bottom: auto; 
+
+  .logo-center {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none; 
+  z-index: 1;
 }
 
 .container-sfondo {
@@ -560,8 +558,8 @@ font-weight: bold;
     
     /* Utilizziamo un gradiente che usa 'contain' per non uscire dai bordi */
     background-image: 
-        radial-gradient(circle at 45% 50%, rgba(255, 107, 107, 2.0) 0%, transparent 60%),
-        radial-gradient(circle at 55% 50%, rgba(66, 63, 133, 3.5) 0%, transparent 60%);
+        radial-gradient(circle at 45% 50%, rgba(300, 90, 107, 2.0) 0%, transparent 55%),
+        radial-gradient(circle at 55% 50%, rgba(10, 10, 120, 1) 0%, transparent 50%);
     
     /* contain: il gradiente si ridimensiona per stare interamente 
        dentro il box, lasciando i bordi liberi. 
@@ -571,6 +569,9 @@ font-weight: bold;
     background-position: center center;
     padding: 20px;
 }
+
+
+
 
 
 /* --- Modifiche - ADATTAMENTO RESPONSIV --- */
@@ -653,5 +654,46 @@ button:active {
   flex-wrap: wrap !important;
   justify-content: center !important;
   gap: 10px !important;
+  width: 100% !important;
+}
+
+
+/* Centro il logo */
+.nav-left {
+  position: absolute !important;
+  left: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.right-icons, .nav-right {
+  position: absolute !important;
+  right: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Centro il logo per mobile e desktop*/
+.logo-center {
+  margin: 0 !important;
+  position: static !important;
+  display: block !important;
+  font-weight: bold !important;
+  font-size: 1.2rem !important;
+  color: #4b2c73 !important;
+  
+
+}
+/* Sposto i titoli a sinistra per allinearli alla versione desktop */
+.Step h1 {
+  text-align: left !important;
+  width: 100% !important;
+  margin-bottom: 30px !important;
+  padding-left: 0 !important; 
+}
+
+
+.Step .logo {
+  text-align: left !important;
   width: 100% !important;
 }

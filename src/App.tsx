@@ -63,6 +63,8 @@ function App() {
           <button className = "de" onClick = {() => setDato(2)}>
             successivo
           </button>
+ 
+          
 
         
           </div>
@@ -151,7 +153,7 @@ function App() {
               <IoIosArrowDown className="top-icon" />
               <IoIosArrowUp className="top-icon" />
             </div>
-            <div className="logo-center">Flowlee</div>
+            <div className="nav-center">Flowlee</div>
             <div className="right-icons">
               <BsGrid3X3Gap className="top-icon" />
               <HiOutlineUserCircle className="top-icon" />
