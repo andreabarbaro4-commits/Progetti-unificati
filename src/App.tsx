@@ -5,6 +5,7 @@ import avatar from './assets/avatar.png';
 import avatar3 from './assets/avatar3.png';
 import profilo from './assets/profilo.png';
 import { FaSearch } from "react-icons/fa";
+import logoImage from './assets/Logo.png';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { BsGrid3X3Gap } from "react-icons/bs";
@@ -39,7 +40,8 @@ function App() {
       {dato === 1 && (
         <div className = "container-sfondo">
         <div className="Step">
-          <div className="logo">Flowlee</div>
+          <div className="logo">
+            <img src = {logoImage} alt = "Flowlee" style = {{height: '20px',width: 'auto'}} />
           <h1>Benvenuto!<br />Raccontaci chi sei.</h1>
           <div className="input-group">
             <label>Nome</label>
@@ -64,48 +66,57 @@ function App() {
             successivo
           </button>
  
-          
+          </div>
 
         
           </div>
           </div>
       )}
 
-      {/* Step 2 */}
-      {dato === 2 && (
-        <div className = "container-sfondo">
-        <div className="Step">
-          <div className="logo">Flowlee</div>
-          <h1>Ciao Marco!<br />Creiamo l'account.</h1>
-          <div className="input-group">
-            <label>Email</label>
-            <input type="email" placeholder="Email" />
-          </div>
-          <div className="input-group">
-            <label>Password</label>
-            <input type="password" placeholder="Password" />
-          </div>
-          <div className="input-group">
-            <label>Conferma password</label>
-            <input type="password" placeholder="Conferma password" />
-          </div>
-          <button className="de" onClick={() => setDato(3)}>
-            Successivo
-            </button>
+     {/* Step 2 */}
+{dato === 2 && (
+  <div className="container-sfondo">
+    <div className="Step">
+      <div className="logo">
+        <img src={logoImage} alt="Flowlee" style={{ height: '20px', width: 'auto' }} />
+      </div>
+      
+      {/* Contenitore che gestisce il layout flessibile */}
+      <div className="Step-inner-container">
+        <h1>Ciao Marco!<br />Creiamo l'account.</h1>
+        <div className="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="Email" />
+        </div>
+        <div className="input-group">
+          <label>Password</label>
+          <input type="password" placeholder="Password" />
+        </div>
+        <div className="input-group">
+          <label>Conferma password</label>
+          <input type="password" placeholder="Conferma password" />
+        </div>
+        
+        {/* Il margin-top: auto del CSS lo spingerà in fondo */}
+        <button className="de" onClick={() => setDato(3)}>
+          Successivo
+        </button>
+      </div>
+    </div>
+  </div>
 
-            
-        </div>
-        </div>
       )}
 
       {/* Step 3 */}
       {dato === 3 && (
         <div className = "container-sfondo">
         <div className="Step">
-          <div className="logo">Flowlee</div>
+          <div className="logo">
+           <img src = {logoImage} alt = "Flowlee" style = {{height: '20px',width: 'auto'}} />
           <img src={avatar} alt="avatar" className="avatar" />
           <h1>Sto inviando<br />il codice di verifica.</h1>
           <button className="de" onClick={() => setDato(4)}>Successivo</button>
+        </div>
         </div>
         </div>
       )}
@@ -114,7 +125,8 @@ function App() {
       {dato === 4 && (
         <div className = "container-sfondo">
         <div className="Step">
-          <div className="logo">Flowlee</div>
+          <div className="logo">
+             <img src = {logoImage} alt = "Flowlee" style = {{height: '20px',width: 'auto'}} />
           <h1>Inserisci il codice<br />che trovi sulla mail!</h1>
           <p style={{marginBottom: '20px', color: '#666', fontSize: '14px'}}>mariorossi@gmail.com</p>
           <div className="input-group">
@@ -125,24 +137,26 @@ function App() {
           <button className="era" onClick={() => setDato(5)}>Conferma</button>
         </div>
         </div>
+        </div>
       )}
 
-      {/* Step 5 */}
-      {dato === 5 && (
-        <div className="Step">
-          <img src={avatar3} alt="avatar3" className="avatar3" />
-          <div>
-            <h1>Piacere Flowlee! <br />Benvenuto. Creiamo il tuo profilo?</h1>
-          </div>
-          <div className="hey">
-            <button className="wr" onClick={() => setDato(6)}>Crea profilo</button>
-
-           
-          </div>
-        </div>
+     {/* Step 5 */}
+{dato === 5 && (
+  <div className="container-sfondo">
+    <div className="Step">
+      <img src={avatar3} alt="avatar3" className="avatar3" />
+      <div>
+        <h1>Piacere Flowlee! <br />Benvenuto. Creiamo il tuo profilo?</h1>
+      </div>
+      <div className="hey">
+        <button className="wr" onClick={() => setDato(6)}>Crea profilo</button>
+      </div>
+    </div>
+  </div>
+)}
 
         
-      )}
+      
 
       {/* Step 6 */}
       {dato === 6 && (
@@ -153,11 +167,13 @@ function App() {
               <IoIosArrowDown className="top-icon" />
               <IoIosArrowUp className="top-icon" />
             </div>
-            <div className="nav-center">Flowlee</div>
+            <div className="nav-center">
+               <img src = {logoImage} alt = "Flowlee" style = {{height: '20px',width: 'auto'}} />
             <div className="right-icons">
               <BsGrid3X3Gap className="top-icon" />
               <HiOutlineUserCircle className="top-icon" />
             </div>
+          </div>
           </div>
 
 
@@ -210,7 +226,7 @@ function App() {
             </div>
 
             <div className="nav-center">
-              Flowlee
+               <img src = {logoImage} alt = "Flowlee" style = {{height: '20px',width: 'auto'}} />
             </div>
          
             <div className="right-icons">
@@ -269,7 +285,7 @@ function App() {
             </div>
 
             <div className="nav-center">
-              Flowlee
+              <img src = {logoImage} alt = "Flowlee" style = {{height: '20px',width: 'auto'}} />
             </div>
 
             <div className="right-icons">
@@ -335,7 +351,7 @@ function App() {
             </div>
 
             <div className="nav-center">
-              Flowlee
+              <img src = {logoImage} alt = "Flowlee" style = {{height: '20px',width: 'auto'}} />
             </div>
 
             <div className="right-icons">
