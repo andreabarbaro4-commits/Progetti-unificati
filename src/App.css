@@ -91,6 +91,12 @@ body {
   align-items: flex-start; /* Tiene il box verso l'alto, ma sotto il padding */
 
 }
+.section-title{
+  font-family : 'Nunito',sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: normal;
+}
 
 .top-navigation {
   position: absolute !important;
