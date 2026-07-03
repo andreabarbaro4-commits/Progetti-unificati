@@ -18,20 +18,20 @@ body {
   display: flex;
   justify-content: center;
 }
-/* Allunga solo la schermata che contiene l'input email (la tua schermata 2) */
+
 .Step:has(input[type="email"]) {
-    min-height: 670px !important; /* Cambia questo valore per allungare quanto vuoi */
+    min-height: 670px !important; 
     justify-content: flex-start !important;
 }
 
-/* Assicura che il contenuto all'interno non sia schiacciato */
+
 .Step:has(input[type="email"]) .Step-inner-container {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* Sposta il bottone in fondo automaticamente */
+
 .Step:has(input[type="email"]) .de {
     margin-top: auto !important;
 }
@@ -59,7 +59,7 @@ body {
 
 }
 
-/* Assicuriamo che il contenitore interno dello Step 2 occupi tutto lo spazio */
+
 .Step-inner-container {
   display: flex;
   flex-direction: column;
@@ -67,12 +67,12 @@ body {
   width: 100%;
 }
 
-/* Forza il bottone .de dello step 2 a scendere in fondo */
+
 .Step:nth-of-type(2) .de {
   margin-top: auto !important;
-  margin-bottom: 40px; /* Spazio dal bordo inferiore */
+  margin-bottom: 40px; 
 }
-/* Applica questo a tutti i bottoni delle schermate 1, 2 e 4 */
+
 
 .Step .logo{
   margin-left: 10px;
@@ -106,22 +106,22 @@ body {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* L'ombra la fa sembrare 'staccata' */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
 }
-Assicurati che il box .Step non abbia margini che lo spingono troppo in alto */
+
 .Step {
-  margin-top: 30px !important; /* Spazio tra barra e box */
+  margin-top: 30px !important; 
 }
-/* Sovrascrive il vincolo dei 600px e imposta una nuova altezza per lo Step 3 */
+
 .Step:has(.avatar) {
-  min-height: 250px !important; /* Cambia questo valore per accorciare/allungare quanto vuoi */
+  min-height: 450px !important; 
   padding-bottom: 10px !important;
 }
 
 .Step > * {
   width: 100%;
 }
-/* Modifica questa parte nel tuo CSS */
+
 
 
 .procedi-btn{
@@ -185,12 +185,12 @@ h1 {
 .step-due {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important; /* Mantiene l'ordine */
+    justify-content: flex-start !important; 
     min-height: 600px !important;
 }
 
 .step-due .de {
-    margin-top: 250px !important; /* Ora questo deve funzionare */
+    margin-top: 250px !important; 
     width: 100% !important;
 }
 
@@ -240,17 +240,19 @@ h1 {
   margin: 10px 0;
   border: 1px solid #e0e0e0;
 }
-/* 1. Prendiamo l'altezza della seconda schermata come riferimento (supponendo sia quella che ti piace) */
-/* Se la seconda schermata ha una classe speciale, sostituisci .Step:nth-of-type(2) con quella */
 
-/* 2. Applichiamo la stessa altezza alla 1, 3 e 4 */
-.Step:nth-of-type(1),
+
+
+
 .Step:nth-of-type(3),
 .Step:nth-of-type(4) {
-  min-height: 600px !important; /* Metti qui l'altezza esatta della seconda */
+  min-height: 600px !important; 
   justify-content: flex-start !important;
 }
-
+.Step:nth-of-type(1) {
+    min-height: 670px !important;
+    justify-content: flex-start !important;
+}
 
 .search-icon{
   margin-right: 10px;
@@ -276,6 +278,8 @@ h1 {
   margin-left: 10px;
   color: #4b2c73
   
+
+  
 }
 .top-icon{
   font-size: 20px;
@@ -283,7 +287,6 @@ h1 {
   cursor: pointer;
 
 }
-
 
 
 .de, .era {
@@ -501,13 +504,7 @@ font-weight: bold;
   border-radius: 50%;
 }
 
-.step{
-  margin-top: 60px;
-  
-  background-color: white;
-  color: black
-  
-}
+
 
 .VE{
   color: #777;
@@ -535,15 +532,14 @@ font-weight: bold;
   
 }
 
-/* 1. Reset: Rimuoviamo il margine per tutti i bottoni .de in modo che non creino conflitti */
+
 .Step button.de {
     margin-top: 90px !important; 
 }
 
-/* 2. Regola specifica per lo Step 2 (La tua schermata Ciao Marco) */
-/* Supponendo che nel tuo App.js il secondo blocco sia il secondo che viene renderizzato */
+
 .Step:nth-of-type(2) button.de {
-    margin-top: 350px !important; /* <--- Aumenta questo valore per abbassarlo */
+    margin-top: 350px !important; 
 }
 
 /* 3. Regola specifica per lo Step 3 */
@@ -555,8 +551,8 @@ font-weight: bold;
 .qa {
   display: block;
   width: 100%;
-  margin: 140px auto 0; /* Ho uniformato i margini */
-  background-color: #000000; /* Nero (default per Step 9) */
+  margin: 140px auto 0; 
+  background-color: #000000; 
   color: #FFFFFF;
   padding: 10px;
   font-size: 20px;
@@ -564,7 +560,7 @@ font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
 }
-/* Abbassa il bottone della seconda schermata agendo sul margine */
+
 
 
 .qa.btn-bianco {
@@ -641,17 +637,15 @@ font-weight: bold;
     min-height: 100vh;
     width: 100%;
     
-    /* Bianco solido come base */
+    
     background-color: #ffffff;
     
-    /* Utilizziamo un gradiente che usa 'contain' per non uscire dai bordi */
+   
     background-image: 
         radial-gradient(circle at 45% 50%, rgba(300, 90, 107, 2.0) 0%, transparent 60%),
         radial-gradient(circle at 55% 50%, rgba(10, 10, 120, 1) 0%, transparent 50%);
     
-    /* contain: il gradiente si ridimensiona per stare interamente 
-       dentro il box, lasciando i bordi liberi. 
-    */
+   
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center center;
@@ -790,47 +784,14 @@ button:active {
   color: #666;
   font-size: 14px;
 }
-/* 1. Base per tutte (le prime 4) */
 
 
 
-
-.Step.step-header-layout {
-  min-height: 600px !important;
-}
-
-.Step:has(.hey) {
-  min-height: 600px !important; 
-  justify-content: flex-start !important; 
-  padding-bottom: 40px !important;
-}
-
-
-.Step:has(.hey) h1 {
-  margin-top: 20px !important;
-}
-
-.Step:has(.hey) .hey {
-  margin-top: 110px !important; 
-  
-}
-
-.Step:has(.hey) {
-  padding-top: 60px !important; /* Più spazio in alto */
-}
-
-.Step:has(.WE) {
-  min-height: 650px !important; /* <--- Questo è ciò che ti dà la lunghezza */
-  justify-content: flex-start !important;
-}
-
-/* 2. Spostiamo solo il tasto "Invia di nuovo" */
 .WE {
-  margin-top: 250px !important; /* <--- Regola questo per farlo scendere quanto vuoi */
+  margin-top: 250px !important; 
   margin-bottom: 0px !important;
 }
 
-/* 3. Manteniamo il bottone di conferma subito sotto */
 .Step:has(.WE) .era {
   margin-top: 10px !important;
 }
