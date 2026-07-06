@@ -23,7 +23,10 @@ body {
     min-height: 670px !important; 
     justify-content: flex-start !important;
 }
-
+.text-xl {
+  font-size: 30px;
+  
+}
 
 .Step:has(input[type="email"]) .Step-inner-container {
     flex-grow: 1;
@@ -35,7 +38,11 @@ body {
 .Step:has(input[type="email"]) .de {
     margin-top: auto !important;
 }
-
+.flex .tre{
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+}
 
 .Step {
   width: 100%;
@@ -576,6 +583,72 @@ font-weight: bold;
  
 }
 
+/* Step 10 */
+.step10-layout {
+  width: 920px;
+  max-width: 92vw;
+  min-height: 520px;
+  padding: 40px 55px;
+}
+
+/* contenitore principale a due colonne */
+.step10-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  height: 100%;
+}
+
+/* lato sinistro */
+.step10-left {
+  flex: 1;
+}
+
+/* titolo più “Figma-like” */
+.step10-layout .section-title {
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 15px;
+  max-width: 420px;
+}
+
+/* sottotitolo */
+.step10-subtitle {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+/* bottoni affiancati e piccoli */
+.step10-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* stile bottoni */
+.step10-buttons button {
+  width: 120px;
+  height: 36px;
+  font-size: 13px;
+  border-radius: 18px;
+  padding: 0;
+}
+
+/* lato destro immagine */
+.step10-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* immagine grande come Figma */
+.step10-image {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+}
 
 
 .avatar-decorativo{
@@ -752,6 +825,10 @@ button:active {
   left: 20px !important;
   display: flex !important;
   align-items: center !important;
+}
+
+.poi{
+  width: 400px;
 }
 
 .right-icons, .nav-right {
