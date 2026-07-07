@@ -9,7 +9,7 @@
   --color-accent: #aa3bff;
   --color-code-bg: #f4f3ec;
   --color-border: #e5e4e7;
-  
+
   /* Animazioni */
   --animate-fade-in: fade-in 0.4s ease-out forwards;
 }
@@ -31,10 +31,10 @@
   }
 
   /* Gestione tipografica */
-  h1, h2 {
+  h1,
+  h2 {
     font-weight: 500;
     color: var(--color-text-h);
-    
   }
 
   h1 {
@@ -54,7 +54,6 @@
     h1 {
       font-size: 2.25rem; /* 36px */
       margin: 1.25rem 0;
-      
     }
   }
 
@@ -90,6 +89,10 @@
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

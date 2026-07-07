@@ -1,119 +1,114 @@
-import { Button } from '../../../components/ui/Button'
-import type { OnboardingForm, OrgType } from '../types'
+import { useState } from 'react'
+import { TopNavigation } from '../components/TopNavigation'
 
-interface OrgDetailsStepProps {
-  /** The organisation type chosen in step 1. */
-  orgType: OrgType | null
-  /** Current form values. */
-  values: OnboardingForm
-  /** Patch one or more form fields. */
-  onChange: (patch: Partial<OnboardingForm>) => void
-  /** Return to step 1. */
-  onBack: () => void
+interface OrgDetails {
+  companyName: string
+  teamSize: string
+  description: string
+}
+
+const INITIAL_DETAILS: OrgDetails = {
+  companyName: '',
+  teamSize: '1-5',
+  description: '',
+}
+
+const TEAM_SIZE_PRICES: Record<string, string> = {
+  '1-5': '€29/mese',
+  '6-10': '€49/mese',
+  '11-20': '€89/mese',
+  '21-50': '€149/mese',
+  '51-100': '€449/mese',
+  '250+': 'Custom',
+}
+
+function priceForTeamSize(teamSize: string): string {
+  return TEAM_SIZE_PRICES[teamSize] ?? 'Contattaci'
 }
 
 const fieldClasses =
-  'w-full rounded-[8px] border border-solid border-[#ddd] bg-[yellow] px-[14px] py-[10px] text-[16px]'
+  'w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-purple-600'
 
-/**
- * Step 2 — collects the organisation/freelancer details. The employee-count
- * field is only shown for companies.
- */
-export function OrgDetailsStep({ orgType, values, onChange, onBack }: OrgDetailsStepProps) {
-  const isCompany = orgType === 'Azienda'
+interface OrgDetailsStepProps {
+  onBack: () => void
+  onNext: () => void
+}
+
+/** Step 11 — collects the organisation's name, team size and description. */
+export function OrgDetailsStep({ onBack, onNext }: OrgDetailsStepProps) {
+  const [details, setDetails] = useState<OrgDetails>(INITIAL_DETAILS)
+
+  const onChange = (patch: Partial<OrgDetails>) => {
+    setDetails((current) => ({ ...current, ...patch }))
+  }
 
   return (
-    <section className="animate-fade-in flex min-h-[460px] flex-col rounded-[20px] bg-white p-[40px] shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-      <header className="mb-[36px] flex items-center justify-start gap-[30px] text-[11px] font-medium text-[purple]">
-        <span>Organizzazione /Dettagli </span>
-        <div>
-          <span className="text-[13px] font-semibold tracking-[0.3px]">Flowlee</span>
-        </div>
-        <span className="tracking-[1px]">Andrea ::</span>
-      </header>
+    <div className="container-sfondo">
+      <div className="Step step-header-layout step10-layout">
+        <TopNavigation leftLabel="Organizzazione / 2" onBack={onBack} />
 
-      <div className="flex items-start gap-[40px]">
-        <div className="shrink-0 grow-0 basis-[200px]">
-          <div>
-            <svg className="company-logo" width="120" height="50">
-              <use href="/icons.svg#icons" />
-            </svg>
-            <span className="text-[10px] font-extrabold tracking-[2px]">
-              {isCompany ? 'Azienda' : 'PROFESSIONISTA'}
-            </span>
-          </div>
-        </div>
-
-        {/* Form input on the right */}
-        <div className="flex-1">
-          <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-[16px]">
-            <div className="mb-[20px] flex flex-col gap-[6px]">
-              <label
-                htmlFor="companyName"
-                className="mb-[8px] text-[12px] font-medium text-[#4b5563]"
-              >
-                {isCompany ? "Nome dell'azienda" : 'Nome e cognome'}
-              </label>
-              <input
-                type="text"
-                id="companyName"
-                className={fieldClasses}
-                value={values.companyName}
-                onChange={(e) => onChange({ companyName: e.target.value })}
-              />
+        <div
+          className="step10-content"
+          style={{ display: 'flex', gap: '40px', alignItems: 'center', justifyContent: 'center' }}
+        >
+          <div className="step10-right" style={{ flex: '1', maxWidth: '300px' }}>
+            <div className="flex aspect-square w-full flex-col items-center justify-center rounded-3xl border border-gray-200 bg-white shadow-sm">
+              <span className="text-lg font-bold text-gray-800">LOGO</span>
             </div>
-
-            {/* Team size is only relevant for companies */}
-            {isCompany && (
-              <div className="mb-[20px] flex flex-col gap-[6px]">
-                <label
-                  htmlFor="teamSize"
-                  className="mb-[8px] text-[12px] font-medium text-[#4b5563]"
-                >
-                  Numero dipendenti
+          </div>
+          <div className="step10-left" style={{ flex: '1', maxWidth: '400px' }}>
+            <div className="space-y-4">
+              <div>
+                <label className="mb-1 block text-sm font-medium text-gray-700">
+                  Nome dell'azienda
                 </label>
-                <div>
+                <input
+                  className={fieldClasses}
+                  placeholder="Company Srl"
+                  value={details.companyName}
+                  onChange={(e) => onChange({ companyName: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="mb-1 block text-sm font-medium text-gray-700">
+                  Grandezza team
+                </label>
+                <div className="flex gap-2">
                   <select
-                    id="teamSize"
                     className={fieldClasses}
-                    value={values.teamSize}
+                    value={details.teamSize}
                     onChange={(e) => onChange({ teamSize: e.target.value })}
                   >
-                    <option value="1-10">1-10 persone</option>
-                    <option value="11-30">11-30 persone</option>
-                    <option value="30-50">30-55s persone</option>
+                    <option value="1-5">1-5 persone</option>
+                    <option value="6-10">6-10 persone</option>
+                    <option value="11-20">11-20 persone</option>
                   </select>
+                  <div className="flex min-w-[100px] items-center justify-center rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-sm font-medium whitespace-nowrap text-gray-700">
+                    {priceForTeamSize(details.teamSize)}
+                  </div>
                 </div>
               </div>
-            )}
-
-            <div className="mb-[20px] flex flex-col gap-[6px]">
-              <label
-                htmlFor="description"
-                className="mb-[8px] text-[12px] font-medium text-[#4b5563]"
-              >
-                Di cosa ti occupi??
-              </label>
-              <textarea
-                id="description"
-                rows={4}
-                className={`${fieldClasses} resize-none leading-[24px]`}
-                value={values.description}
-                onChange={(e) => onChange({ description: e.target.value })}
-              />
+              <div>
+                <label className="mb-1 block text-sm font-medium text-gray-700">Descrizione</label>
+                <div className="flex items-end gap-4">
+                  <textarea
+                    className={`${fieldClasses} h-24`}
+                    placeholder="Descrivi l'azienda..."
+                    value={details.description}
+                    onChange={(e) => onChange({ description: e.target.value })}
+                  />
+                  <button
+                    className="rounded-xl bg-black px-8 py-3 text-sm font-medium whitespace-nowrap text-white"
+                    onClick={onNext}
+                  >
+                    Procedi
+                  </button>
+                </div>
+              </div>
             </div>
-
-            <div className="mt-[10px] flex items-center justify-between gap-[15px]">
-              <Button variant="light" type="button" onClick={onBack}>
-                Torna Indietro
-              </Button>
-              <Button variant="dark" type="submit">
-                Salva e Continua
-              </Button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

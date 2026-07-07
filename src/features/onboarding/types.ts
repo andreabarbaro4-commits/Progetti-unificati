@@ -1,12 +1,15 @@
-/** The kind of account a user is onboarding. */
-export type OrgType = 'Azienda' | 'professionista'
-
-/** Steps in the onboarding wizard. */
-export type OnboardingStep = 1 | 2
-
-/** Form values collected across the onboarding wizard. */
-export interface OnboardingForm {
-  companyName: string
-  teamSize: string
-  description: string
-}
+/** Steps in the onboarding flow, in the order the user moves through them. */
+export type Step =
+  | 'personal-info'
+  | 'account'
+  | 'sending-code'
+  | 'verify-code'
+  | 'welcome'
+  | 'role'
+  | 'job'
+  | 'photo-upload'
+  | 'photo-uploaded'
+  | 'org-type'
+  | 'org-details'
+  | 'company-settings'
+  | 'done'

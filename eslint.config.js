@@ -3,8 +3,6 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
-HEAD
-
 import prettier from 'eslint-config-prettier'
 
 import { defineConfig, globalIgnores } from 'eslint/config'
@@ -21,7 +19,6 @@ export default defineConfig([
 
       // Disables ESLint rules that conflict with Prettier; must be last.
       prettier,
-
     ],
     languageOptions: {
       globals: globals.browser,
