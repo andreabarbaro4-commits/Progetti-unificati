@@ -1,7 +1,3 @@
-
-node_modules
-DS_store
-=======
 # Dependencies
 node_modules/
 
@@ -32,4 +28,3 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
-

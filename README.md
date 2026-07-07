@@ -1,8 +1,9 @@
 # Flowlee Platform
 
 Flowlee is the workflow management and automation platform. This repository
-contains the front-end onboarding experience: a two-step wizard that asks
-whether the user works with a company or as a freelancer and then collects the
+contains the front-end onboarding experience: a step-by-step wizard that
+collects the user's personal details, verifies their account, and then asks
+whether they work with a company or as a freelancer before collecting the
 relevant organisation details.
 
 ## Tech stack
@@ -48,20 +49,34 @@ bun run dev      # start the Vite dev server (http://localhost:5173)
 
 ```
 src/
-├── main.tsx                       # App entry point (React root)
-├── App.tsx                        # Top-level component
-├── index.css                      # Tailwind entry + global reset
-├── assets/                        # Static assets imported by components
+├── main.tsx                          # App entry point (React root)
+├── App.tsx                           # Top-level component
+├── App.css                           # Onboarding flow styles
+├── index.css                         # Tailwind entry + global reset
+├── assets/                           # Static assets imported by components
 ├── components/
 │   └── ui/
-│       └── Button.tsx             # Shared pill button
+│       └── Button.tsx                # Shared pill button
 └── features/
     └── onboarding/
-        ├── OnboardingWizard.tsx   # Wizard shell + state
-        ├── types.ts               # Shared onboarding types
-        └── steps/
-            ├── OrgTypeStep.tsx     # Step 1: company vs. freelancer
-            └── OrgDetailsStep.tsx  # Step 2: organisation details
+        ├── OnboardingWizard.tsx       # Step navigation + shared wizard state
+        ├── types.ts                   # Shared onboarding types
+        ├── components/                # Pieces shared by more than one step
+        │   ├── FlowleeLogo.tsx
+        │   ├── TopNavigation.tsx
+        │   └── RoleTagList.tsx
+        └── steps/                      # One component per onboarding step
+            ├── PersonalInfoStep.tsx
+            ├── AccountStep.tsx
+            ├── SendingCodeStep.tsx
+            ├── VerifyCodeStep.tsx
+            ├── WelcomeStep.tsx
+            ├── RoleStep.tsx
+            ├── JobStep.tsx
+            ├── PhotoUploadStep.tsx
+            ├── OrgTypeStep.tsx
+            ├── OrgDetailsStep.tsx
+            └── CompanySettingsStep.tsx
 ```
 
 ## Styling notes

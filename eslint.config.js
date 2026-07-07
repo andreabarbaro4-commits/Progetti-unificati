@@ -19,7 +19,6 @@ export default defineConfig([
 
       // Disables ESLint rules that conflict with Prettier; must be last.
       prettier,
-
     ],
     languageOptions: {
       globals: globals.browser,
