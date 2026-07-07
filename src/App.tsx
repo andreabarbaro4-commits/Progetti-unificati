@@ -461,7 +461,7 @@ function App() {
 
       {/* Step 11 */}
       {dato === 11 && (
-        <div className="container-sfondo">
+        <div className= "container-sfondo sfondo-scuro">
           <div className="Step step-header-layout step10-layout">
             <div className="top-navigation">
               <div className="nav-left">
@@ -501,17 +501,13 @@ function App() {
                         const val = e.target.value;
                         const prezzi: Record<string, string> = {
                           "1-5": "€29/mese", "6-10": "€49/mese", "11-20": "€89/mese",
-                          "21-50": "€149/mese", "51-100": "€249/mese", "101-250": "€449/mese", "250+": "Custom"
+                          "21-50": "€149/mese", "51-100": "€449/mese", "250+": "Custom"
                         };
                         setPrezzo(prezzi[val] || "Contattaci");
                       }}>
                         <option value="1-5">1-5 persone</option>
                         <option value="6-10">6-10 persone</option>
                         <option value="11-20">11-20 persone</option>
-                        <option value="21-50">21-50 persone</option>
-                        <option value="51-100">51-100 persone</option>
-                        <option value="101-250">101-250 persone</option>
-                        <option value="250+">250+ persone</option>
                       </select>
                       <div className="px-4 py-3 border border-gray-300 rounded-xl bg-gray-50 text-sm flex items-center whitespace-nowrap font-medium text-gray-700 min-w-[100px] justify-center">
                         {prezzo}
@@ -534,70 +530,100 @@ function App() {
         </div>
       )}
 
-
-   {dato === 12 && (
-  <div className="container-sfondo">
-    <div className="Step step-header-layout step10-layout" style={{ padding: '40px', maxWidth: '900px', margin: 'auto' }}>
-      
-      {/* Titolo della sezione */}
-      <h1 className="text-xl font-bold mb-6">Impostazioni azienda</h1>
-
-      {/* Contenitore a 3 colonne */}
-      <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start' }}>
-        
-        {/* 1. Colonna Sidebar: Bottoni */}
-        <div style={{ flex: '0 0 200px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-          <button className="bg-black text-white p-3 rounded-xl text-sm text-left">Dettagli dell'azienda</button>
-          <button className="bg-white border border-gray-200 p-3 rounded-xl text-sm text-left hover:bg-gray-50">Modifica amministratori</button>
-          <button className="bg-white border border-gray-200 p-3 rounded-xl text-sm text-left hover:bg-gray-50">Contatti aziendali</button>
-          <button className="bg-white border border-gray-200 p-3 rounded-xl text-sm text-left hover:bg-gray-50">Fatturazione e pagamento</button>
-          <button className="bg-white border border-gray-200 p-3 rounded-xl text-sm text-left hover:bg-gray-50">Modello e orario di lavoro</button>
-        </div>
-
-        {/* 2. Colonna Centrale: Logo */}
-        <div style={{ flex: '0 0 200px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <div className="w-full aspect-square border border-gray-200 rounded-3xl flex flex-col items-center justify-center bg-white shadow-sm">
-            <span className="font-bold text-gray-800">LOGO</span>
-          </div>
-        </div>
-
-        {/* 3. Colonna Destra: Form */}
-        <div style={{ flex: '1', display: 'flex', flexDirection: 'column', gap: '15px' }}>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Nome dell'azienda</label>
-            <input className={fieldClasses} placeholder="Company Srl" />
-          </div>
+{dato === 12 && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          backgroundColor: '#000', // Sfondo nero pieno
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden'
+        }}>
          
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Grandezza team</label>
-            <div className="flex gap-2">
-              <select className={fieldClasses} onChange={(e) => { /* logica prezzi */ }}>
-                <option>30-50 persone</option>
-              </select>
-              <div className="px-4 py-3 border border-gray-300 rounded-xl bg-gray-50 text-sm flex items-center">€200/mese</div>
+<div style={{
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '800px',
+  height: '800px',
+  background: 'radial-gradient(circle, rgba(255, 107, 107, 1.7) 0%, rgba(66, 63, 133, 1.7) 60%, transparent 80%)',
+  filter: 'blur(120px)', // Aumentato il blur per diffondere meglio il colore
+  mixBlendMode: 'screen', 
+  pointerEvents: 'none',
+  zIndex: 0
+}} />
+          {/* Contenitore Modale */}
+          <div style={{
+            position: 'relative',
+            zIndex: 1,
+            backgroundColor: '#fff',
+            padding: '40px',
+            borderRadius: '24px',
+            width: '850px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '24px',
+            boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
+          }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 'bold', color: '#000', margin: 0 }}>Impostazioni azienda</h2>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: '220px 180px 1fr', gap: '40px' }}>
+              {/* Sidebar */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <button style={{ backgroundColor: '#000', color: '#fff', border: 'none', padding: '12px', borderRadius: '10px', textAlign: 'left', fontSize: '13px', cursor: 'pointer' }}>Dettagli dell'azienda</button>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid #e5e5e5', padding: '12px', borderRadius: '10px', textAlign: 'left', fontSize: '13px', cursor: 'pointer' }}>Modifica amministratori</button>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid #e5e5e5', padding: '12px', borderRadius: '10px', textAlign: 'left', fontSize: '13px', cursor: 'pointer' }}>Contatti aziendali</button>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid #e5e5e5', padding: '12px', borderRadius: '10px', textAlign: 'left', fontSize: '13px', cursor: 'pointer' }}>Fatturazione e pagamento</button>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid #e5e5e5', padding: '12px', borderRadius: '10px', textAlign: 'left', fontSize: '13px', cursor: 'pointer' }}>Modello e orario di lavoro</button>
+              </div>
+
+              {/* Logo box */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <span style={{ fontSize: '12px', fontWeight: '600', color: '#000' }}>Logo</span>
+                <div style={{ width: '180px', height: '180px', border: '1px solid #e5e5e5', borderRadius: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fafafa' }}>
+                  <span style={{ fontSize: '14px', fontWeight: 'bold', color: '#ccc' }}>LOGO</span>
+                </div>
+              </div>
+
+              {/* Form */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div>
+                  <label style={{ color: 'black', fontSize: '13px', marginBottom: '4px', display: 'block' }}>Nome dell'azienda</label>
+                  <input style={{ width: '100%', padding: '12px', borderRadius: '10px' }} placeholder="Company Srl" />
+                </div>
+                
+                <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-end' }}>
+                  <div style={{ flex: 1 }}>
+                    <label style={{ fontSize: '13px', marginBottom: '4px', display: 'block', color: 'black' }}>Grandezza team</label>
+                    <select style={{ width: '100%', height: '46px', padding: '0 12px', borderRadius: '10px', boxSizing: 'border-box' }}>
+                      <option>30-50 persone</option>
+                    </select>
+                  </div>
+                  <div style={{ width: '120px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #e5e5e5', borderRadius: '10px', backgroundColor: '#f9f9f9', fontSize: '13px', boxSizing: 'border-box' }}>
+                    €200/mese
+                  </div>
+                </div>
+                
+                <div>
+                  <label style={{ color: 'black', fontSize: '13px', marginBottom: '4px', display: 'block' }}>Descrizione</label>
+                  <input type="text" style={{ width: '100%', padding: '12px', borderRadius: '10px' }} placeholder="Company Srl" />
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                  <button style={{ backgroundColor: '#000', color: '#fff', padding: '10px 20px', borderRadius: '10px' }} onClick={() => setDato(13)}>Salva</button>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Descrizione</label>
-            <textarea className={`${fieldClasses} h-24`} placeholder="Descrivi l'azienda..." />
-          </div>
-
-          <div className="flex justify-end">
-            <button className = "tre"  onClick={() => setDato(12)}>
-              Salva
-            </button>
-
-            
-          </div>
         </div>
-
-      </div>
+      )}
     </div>
-  </div>
-)}
-</div>
   );
-}
+};
 
 export default App;
