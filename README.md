@@ -10,7 +10,7 @@ relevant organisation details.
 
 | Concern           | Tool                                                           |
 | ----------------- | -------------------------------------------------------------- |
-| Runtime / PM      | [Node.js](https://nodejs.org) + npm                            |
+| Runtime / PM      | [Bun](https://bun.sh)                                          |
 | Build tool        | [Vite](https://vite.dev)                                       |
 | UI library        | [React 19](https://react.dev)                                  |
 | Language          | [TypeScript](https://www.typescriptlang.org)                   |
@@ -22,23 +22,28 @@ relevant organisation details.
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org) `>= 20`
+- [Bun](https://bun.sh) `>= 1.3.0` (the pinned version lives in
+  `package.json` → `packageManager`).
 
 ## Getting started
 
 ```bash
-npm install      # install dependencies and set up Husky hooks
-npm run dev      # start the Vite dev server (http://localhost:5173)
+bun install      # install dependencies and set up Husky hooks
+bun run dev      # start the Vite dev server (http://localhost:5173)
 ```
 
 ## Available scripts
 
-| Script            | Description                                     |
-| ----------------- | ----------------------------------------------- |
-| `npm run dev`     | Start the Vite dev server with HMR.             |
-| `npm run build`   | Type-check (`tsc -b`) and build for production. |
-| `npm run preview` | Preview the production build locally.           |
-| `npm run lint`    | Lint the codebase with ESLint.                  |
+| Script                 | Description                                     |
+| ---------------------- | ----------------------------------------------- |
+| `bun run dev`          | Start the Vite dev server with HMR.             |
+| `bun run build`        | Type-check (`tsc -b`) and build for production. |
+| `bun run preview`      | Preview the production build locally.           |
+| `bun run lint`         | Lint the codebase with ESLint.                  |
+| `bun run lint:fix`     | Lint and auto-fix where possible.               |
+| `bun run format`       | Format the codebase with Prettier.              |
+| `bun run format:check` | Verify formatting without writing changes.      |
+| `bun run typecheck`    | Run the TypeScript compiler without emitting.   |
 
 ## Project structure
 
