@@ -690,7 +690,7 @@ const onBack = () => {
 
       
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

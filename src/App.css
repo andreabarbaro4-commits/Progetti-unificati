@@ -269,9 +269,17 @@ h1 {
   position: static;
   background-color: white;
   color: black;
+<<<<<<< HEAD
   font-size: 12px;
   font-weight: bold;
   margin-bottom: 8px;
+=======
+
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
+
+>>>>>>> afc5a5ad3f79afb4c996b66bf051266f1993d593
   line-height: 1;
 }
 
@@ -325,6 +333,21 @@ h1 {
   color: black;
 }
 
+<<<<<<< HEAD
+=======
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.nav-center {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  color: #4b2c73;
+}
+>>>>>>> afc5a5ad3f79afb4c996b66bf051266f1993d593
 .top-icon {
   font-size: 20px;
   color: #666;
@@ -581,6 +604,7 @@ h1 {
   bottom: 100px;
   right: 20px;
   width: 120px;
+
   height: auto;
   pointer-events: none;
   z-index: 10;
