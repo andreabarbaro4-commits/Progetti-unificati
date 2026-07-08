@@ -1,3 +1,4 @@
+/* --- RESET E BASE --- */
 * {
   margin: 0;
   padding: 0;
@@ -19,41 +20,197 @@ body {
   justify-content: center;
 }
 
+.container-sfondo.schermata-con-sfondo {
+  background: #000 !important;
+  background-image: none !important;
+}
 
-  
+.Step:has(input[type='email']) {
+  min-height: 670px !important;
+  justify-content: flex-start !important;
+}
+.text-xl {
+  font-size: 30px;
+}
+
+.Step:has(input[type='email']) .Step-inner-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.Step:has(input[type='email']) .de {
+  margin-top: auto !important;
+}
+.flex .tre {
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+}
+
 .Step {
   width: 100%;
   max-width: 450px;
-  box-shadow: 0 10 px 30px rgba(0,0,0,0.05);
-  min-height: 650px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  min-height: 600px;
   background-color: #ffffff !important;
-  padding: 40px; 
+  padding: 30px;
   margin-left: 0 !important;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   text-align: center;
-  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   margin: 20px;
   justify-content: space-between;
-  border-radius: 0
-
 }
-.Step > * {
+
+.Step-inner-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   width: 100%;
 }
 
-.procedi-btn{
+.Step:nth-of-type(2) .de {
+  margin-top: auto !important;
+  margin-bottom: 40px;
+}
+
+.Step .logo {
+  margin-left: 10px;
+}
+
+.container-sfondo {
+  position: relative !important;
+  padding-top: 80px !important; 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  
+
+}
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: normal;
+}
+
+/* --- NAVBAR CORRETTA E CENTRATA --- */
+.top-navigation {
+  position: absolute !important;
+  top: 15px !important;
+  left: -10px !important;
+  right: 35px !important;
+  height: 45px !important;
+  background-color: #ffffff !important;
+  border-radius: 12px;
+  padding: 0 20px !important;
+  box-sizing: border-box;
+  z-index: 9999;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+}
+/* Stile per allargare l'intera schermata */
+.Step.wide-mode {
+  max-width: 900px !important; /* Aumenta la larghezza della card */
+  width: 95% !important;       /* Si adatta allo schermo */
+  padding: 40px !important;
+}
+
+
+.allungata {
+  width: 100% !important;      /* Si adatta al genitore */
+  max-width: 900px !important; /* Segue la larghezza della card */
+  left: auto !important;       /* Rimuove i vincoli di posizione assoluta */
+  right: auto !important;
+  position: relative !important; /* La barra resta dentro il flusso della card */
+  margin-bottom: 20px !important;
+}
+
+
+.nav-left, .nav-center, .nav-right {
+  flex: 1;
+  display: flex !important;
+  align-items: center;
+  margin-left: --50px;
+
+}
+.er{
+  margin-top: 130px;
+}
+.zr{
+  width: 23px;
+  position: relative;
+  margin-top: -230px;
+  color: black;
+}
+.rew{
+  padding: 10px;
+  width: 400px;
+  margin-left: 340px;
+}
+
+.gg{
+  width: 400px;
+  padding: 10px;
+  margin-left: 120px;
+}
+.kk label{
+  margin-left: -15px;
+  color: black;
+}
+
+
+.nav-left { justify-content: flex-start; gap: 10px; }
+.nav-right { justify-content: flex-end; gap: 10px; }
+.nav-center { 
+  justify-content: center !important; 
+  font-weight: bold; 
+  font-size: 1.2rem; 
+  color: #4b2c73;
+  margin-left: -700px !important; /* Spinta verso sinistra */
+  position: static !important;
+
+
+}
+
+
+
+.logo-center {
+  flex: 1;
+  display: flex !important;
+  justify-content: center !important;
+  font-weight: bold;
+  color: #7a3a8a;
+  margin-bottom: 20px;
+  font-size: 20px;
+  margin-left: -50px !important; /* Spinta verso sinistra */
+}
+/* --------------------------------- */
+
+.Step { margin-top: 30px !important; }
+
+.Step:has(.avatar) {
+  min-height: 450px !important;
+  padding-bottom: 10px !important;
+}
+
+.Step > * { width: 100%; }
+
+.procedi-btn {
   margin-top: 140px;
   color: white;
-  background-color: black ;
+  background-color: black;
   font-size: 05px;
 }
-.ruoli-container{
- 
-
+.ruoli-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -61,7 +218,6 @@ body {
   margin: 10px 0;
   max-width: 300px;
   margin-left: -80px;
-
 }
 .ruolo-tag {
   background-color: transparent;
@@ -72,18 +228,17 @@ body {
   cursor: pointer;
   transition: all 0.3s;
   margin: 4px;
-
 }
 
-.ruolo-tag.active{
+.ruolo-tag.active {
   background-color: #4f46e5;
   color: white;
-  border-color: #4f46e5
+  border-color: #4f46e5;
 }
 
-.hy input{
+.hy input {
   color: white;
-  background-color: #F1F1F9;
+  background-color: #f1f1f9;
   font-size: 30px;
   margin-left: -50px;
 }
@@ -99,37 +254,37 @@ h1 {
   color: black;
   margin-bottom: 30px;
   width: 100%;
-  text-align: left; 
+  text-align: left;
 }
 
+.step-due {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  min-height: 600px !important;
+}
 
 .input-group label {
   text-align: left;
   position: static;
-
   background-color: white;
-  color: black;            
-           
+  color: black;
   font-size: 12px;
   font-weight: bold;
   margin-bottom: 8px;
-
-
-           
   line-height: 1;
 }
 
-
-.input-group input, 
+.input-group input,
 .input-group select {
   width: 100%;
   padding: 14px;
-  background-color: #F1F1F9;
+  background-color: #f1f1f9;
   color: black;
-  border: 1px solid white; 
+  border: 1px solid white;
   border-radius: 8px;
   outline: none;
-} 
+}
 
 .input-group {
   position: relative;
@@ -137,9 +292,8 @@ h1 {
   display: flex;
   margin-bottom: 20px;
   background-color: transparent;
-
 }
-.search-container{
+.search-container {
   display: flex;
   align-items: center;
   background-color: #f0f0f0;
@@ -148,49 +302,37 @@ h1 {
   margin: 10px 0;
   border: 1px solid #e0e0e0;
 }
-.search-icon{
+
+.Step:nth-of-type(3),
+.Step:nth-of-type(4) {
+  min-height: 600px !important;
+  justify-content: flex-start !important;
+}
+.Step:nth-of-type(1) {
+  min-height: 670px !important;
+  justify-content: flex-start !important;
+}
+
+.search-icon {
   margin-right: 10px;
   color: #888;
 }
 .search-input {
   background: transparent;
-  border:none;
+  border: none;
   outline: none;
   width: 100%;
   color: black;
 }
 
-.top-navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 10px 0;
-  margin-bottom: 20px;
-  
-
-}
-.nav-left, .nav-right{
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.nav-center{
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-left: -150px;
-  color: #4b2c73
-  
-}
-.top-icon{
+.top-icon {
   font-size: 20px;
   color: #666;
   cursor: pointer;
-
 }
 
-
-
-.de, .era {
+.de,
+.era {
   width: 100%;
   padding: 15px;
   background-color: #000;
@@ -199,13 +341,13 @@ h1 {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 0px;
 }
 
-.Clicca{
+.Clicca {
   width: 300px;
   background-color: white;
-  color: black
+  color: black;
 }
 
 .WE {
@@ -219,38 +361,29 @@ h1 {
   cursor: pointer;
   margin-top: 200px;
 }
+
 .era {
-  
-  margin-top: 10px; 
+  margin-top: 10px;
 }
-.logo-center{
-font-weight: bold;
-  color: #7a3a8a;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
+
 .hey {
-  
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 150px;
   background-color: black;
   color: white;
 }
 
 .hey button {
- 
-  background-color: transparent; 
+  background-color: transparent;
   color: white;
   border: 2px solid black;
-  padding: 10px 20px
+  padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
 }
-
-
 
 .avatar {
   display: flex;
@@ -258,22 +391,19 @@ font-weight: bold;
   height: 350px;
   object-fit: contains;
   margin-bottom: 10px;
-  
-  
-
 }
 .Step h1 {
-  text-align: center; 
+  text-align: center;
   margin-bottom: 20px;
-  margin-top: 0! important;
+  margin-top: 0 !important;
 }
 
 .procedi-btn {
-  margin-top: 160px; 
-  padding: 10px;
+  margin-top: 160px;
+  padding: 5px;
   color: white;
   background-color: black;
-  font-size:20px;
+  font-size: 20px;
   padding: 5px;
   border: none;
   border-radius: 8px;
@@ -281,83 +411,47 @@ font-weight: bold;
   width: 100%;
 }
 
-.tr{
-  font-size: 20px;
-  background-color: black;
-  color: white;
-  margin-top: 190px;
+.tr {
+  margin-top: 160px;
   padding: 5px;
-  
-}
-
-.top-navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  color: white;
+  background-color: black;
+  font-size: 20px;
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   width: 100%;
-
 }
 
-.nav-left, .nav-center, .nav-right {
-  flex: 1; /* Ogni sezione prende lo stesso spazio */
-  display: flex;
-  align-items: center;
-}
-
-.nav-left {
-  justify-content: flex-start; 
-  gap: 15px;
-  
-}
-
-.nav-center {
-  justify-content: center; 
-  font-weight: bold;
-  font-size: 1.2rem;
- 
-}
-
-.nav-right {
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.arrows-container{
-  display:flex !important;
+.arrows-container {
+  display: flex !important;
   flex-direction: row !important;
   align-items: center;
   justify-content: flex-start;
-  gap:8px;
+  gap: 8px;
   width: auto;
- 
-
 }
+
 .step-header-layout {
- .step-header-layout 
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px; /* Sposta tutto il blocco verso il basso */
-  gap: 20px;          /* Crea spazio tra titolo, foto e il resto */
+  padding-top: 20px;
+  gap: 20px;
 }
 
-
-  
-.wr{
- background-color: black !important;
+.wr {
+  background-color: black !important;
   color: white !important;
   border: none !important;
   padding: 15px 40px !important;
-  
-  /* Arrotondamento massimo */
-  border-radius: 50px !important; 
-  
-  /* Forza la visualizzazione corretta */
+  border-radius: 50px !important;
   display: inline-block !important;
   cursor: pointer !important;
   font-weight: bold !important;
 }
-.we{
+.we {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -367,8 +461,7 @@ font-weight: bold;
   padding: 20px;
 }
 
-
-  .profile-circle {
+.profile-circle {
   width: 120px !important;
   height: 120px !important;
   border-radius: 50% !important;
@@ -379,19 +472,14 @@ font-weight: bold;
   border: 2px dashed #ccc !important;
   margin: 10px 0 !important;
 }
-  
 
-
-.nome{
+.nome {
   margin-left: 60px;
   margin-top: 10px;
   text-align: center;
   margin-bottom: 0px;
-   display: flex;
-   gap: 0px;
-
- 
- 
+  display: flex;
+  gap: 0px;
 }
 
 .profile-img {
@@ -401,15 +489,7 @@ font-weight: bold;
   border-radius: 50%;
 }
 
-.step{
-  margin-top: 60px;
-  
-  background-color: white;
-  color: black
-  
-}
-
-.VE{
+.VE {
   color: #777;
   display: block;
   margin-bottom: 15px;
@@ -417,32 +497,36 @@ font-weight: bold;
   margin-left: -140px;
 }
 
-
-
 .step {
-  padding: 2px ;
+  padding: 2px;
   margin: 0 5px;
   border: 1px solid #999;
   border-radius: 5px;
-
   background-color: transparent;
   cursor: pointer;
   margin: 0px;
- 
   white-space: nowrap;
   flex-wrap: wrap;
-  
-  
 }
 
+.Step button.de {
+  margin-top: 90px !important;
+}
 
+.Step:nth-of-type(2) button.de {
+  margin-top: 350px !important;
+}
+
+.Step:nth-of-type(3) button.de {
+  margin-top: 100px !important;
+}
 
 .qa {
   display: block;
   width: 100%;
-  margin: 140px auto 0; /* Ho uniformato i margini */
-  background-color: #000000; /* Nero (default per Step 9) */
-  color: #FFFFFF;
+  margin: 140px auto 0;
+  background-color: #000000;
+  color: #ffffff;
   padding: 10px;
   font-size: 20px;
   border: none;
@@ -450,146 +534,136 @@ font-weight: bold;
   cursor: pointer;
 }
 
-
 .qa.btn-bianco {
-  background-color: #9CA3AF;
+  background-color: #9ca3af;
   color: white !important;
   margin-left: 4px;
- 
 }
 
+.step10-layout {
+  width: 920px;
+  max-width: 92vw;
+  min-height: 520px;
+  padding: 40px 55px;
+ 
+}
+.bv{
+  width: 54px;
+  color: white;
+  background-color: black;
+  border-radius: 14px;
+  margin-top: 86px;
+  font-size: 20px;
+  width: 120px;
+  padding: 3px;
+  margin-left: 64px;
 
+}
+.step10-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  height: 100%;
 
+}
 
-.avatar-decorativo{
+.step10-left { flex: 1; }
+.step10-right { flex: 1; display: flex; justify-content: center; }
+.step10-layout .section-title { font-size: 34px; line-height: 1.25; font-weight: 700; margin-bottom: 15px; max-width: 420px; }
+.step10-subtitle { color: #666; font-size: 15px; margin-bottom: 25px; }
+.step10-buttons { display: flex; gap: 12px; }
+.step10-buttons button { width: 120px; height: 36px; font-size: 13px; border-radius: 18px; padding: 0; }
+.step10-image { width: 300px; height: auto; object-fit: contain; }
+
+.avatar-decorativo {
   position: absolute;
-  bottom:20px;
+  bottom: 100px;
   right: 20px;
   width: 120px;
   height: auto;
   pointer-events: none;
   z-index: 10;
 }
-.rt{
-  width: 400px;
-  margin-left: -10px;
+.rt { width: 400px; margin-left: -10px; padding: 10px; margin-top: 25px; box-sizing: border-box; }
 
-  padding: 10 px;
-  margin-top: 25px;
-  
- 
+.app-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 15px 0; }
+.button-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; max-width: 600%; margin: 0 auto; }
 
-  box-sizing: border-box;
-}
+.tr { margin-top: 190px; }
+.VE { color: red; }
 
-.app-container{
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin: 15px 0;
-}
-.button-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 600%;
-  margin: 0 auto;
-}
-
-.tr{
-  margin-top: 190px;
-}
-.VE{
-  color: red;
-}
-
-
-.logo, .logo-center {
-  margin-top: 0;
-  margin-bottom: auto; 
-}
 .container-sfondo {
-    justify-content: center;
-    min-height: 100vh;
-    align-items: center;
-    display: flex;
-    width: 100%;
-   
-    background-color: #f8f8f8; 
-    
-    background-image: 
-        radial-gradient(circle at 40% 50%, rgba(255, 107, 107, 1.2) 0%, transparent 65%),
-        radial-gradient(circle at 60% 50%, rgba(142, 68, 173, 1.2) 0%, transparent 65%),
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  background-image: radial-gradient(circle at 45% 50%, rgba(300, 90, 107, 2) 0%, transparent 60%), radial-gradient(circle at 55% 50%, rgba(10, 10, 120, 1) 0%, transparent 50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 20px;
 }
 
-
-
-/* --- Modifiche - ADATTAMENTO RESPONSIV --- */
-
-/* 1. Mobile: correzioni per non fare uscire elementi dallo schermo */
 @media (max-width: 600px) {
-  .Step {
-    padding: 20px;
-    margin: 10px;
-    min-height: auto;
-  }
-  
-  .avatar-decorativo {
-    display: none; /* Nasconde l'avatar decorativo su schermi piccoli */
-  }
-
-  .ruoli-container {
-    margin-left: 0; /* Centra i ruoli su dispositivi mobile */
-    justify-content: center;
-  }
+  .Step { padding: 20px; margin: 10px; min-height: auto; }
+  .avatar-decorativo { display: none; }
+  .ruoli-container { margin-left: 0; justify-content: center; }
 }
 
-/* 2. Desktop: assicura che la navigazione sia centrata */
 @media (min-width: 1024px) {
-  .top-navigation {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-  }
-
-  .nav-center {
-    grid-column: 2;
-    justify-self: center;
-  }
-
-  .nav-right {
-    grid-column: 3;
-    justify-self: end;
-  }
-  
-  .nav-left {
-    grid-column: 1;
-    justify-self: start;
-  }
+  .top-navigation { display: flex !important; justify-content: space-between !important; }
 }
 
-/* Sposta il titolo  verso sinistra su mobile e dekstop */
-.step-header-layout h1:first-of-type {
-    text-align: left !important;
-    width: 100% !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-}
-/* Aggiunge transizioni ai bottoni su mobile e dekstop */
-button {
-  transition: transform 0.2s, background-color 0.2s;
-}
+button { transition: transform 0.2s, background-color 0.2s; }
+button:hover { transform: scale(1.02); cursor: pointer; }
+button:active { transform: scale(0.98); }
 
-button:hover {
-  transform: scale(1.02);
-  cursor: pointer;
-}
+.button-container { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 10px !important; width: 100% !important; }
 
-button:active {
-  transform: scale(0.98);
-}
+.poi { width: 400px; }
 
+.Step h1 { text-align: left !important; width: 100% !important; margin-bottom: 30px !important; padding-left: 0 !important; }
+.Step p { width: 100%; text-align: left !important; margin-bottom: 20px !important; color: #666; font-size: 14px; }
+
+.WE { margin-top: 250px !important; margin-bottom: 0px !important; }
+.Step:has(.WE) .era { margin-top: 10px !important; }
+
+.container-sfondo.schermata-con-sfondo {
+  position: relative !important;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px !important;
+  background: #000 !important;
+  overflow: hidden;
+}
+.container-sfondo.schermata-con-sfondo .Step { position: relative; z-index: 2; }
+.container-sfondo.schermata-con-sfondo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 35%, rgba(255, 120, 180, 0.7) 0%, rgba(190, 90, 255, 0.45) 28%, transparent 58%), radial-gradient(circle at 50% 75%, rgba(255, 120, 180, 0.55) 0%, rgba(140, 90, 255, 0.35) 35%, transparent 70%);
+  filter: blur(90px);
+  z-index: 0;
+}
+.container-sfondo.schermata-con-sfondo::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255, 220, 240, 0.45);
+  filter: blur(90px);
+  z-index: 0;
+}
+.container-sfondo.schermata-con-sfondo .Step { position: relative; z-index: 5; background: #ececec !important; border-radius: 24px !important; }
+.step12-card label, .step12-card .vd { font-family: 'Nunito', sans-serif; font-size: 20px; font-weight: 700; line-height: normal; color: #000; }
+.container-sfondo.schermata-con-sfondo .Step { background: rgba(255, 255, 255, 0.75) !important; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
