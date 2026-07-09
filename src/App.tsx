@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-
+import { useTranslation } from 'react-i18next';
 import avatar from './assets/avatar.png';
 import avatar3 from './assets/avatar3.png';
 import profilo from './assets/profilo.png';
@@ -10,6 +10,7 @@ import { HiOutlineUserCircle } from "react-icons/hi2";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import logoImage from './assets/Logo.png'
 import omino from './assets/omino.png'
+import './i18n'
 
 const ruoli = [
   "Project Manager",
@@ -24,6 +25,7 @@ const ruoli = [
 
 
 function App() {
+  const { t ,i18n} = useTranslation<string>();
   const [dato, setDato] = useState(1);
   const [ruoloSelezionato, setRuoloSelezionato] = useState(null);
   const poi = [
@@ -46,46 +48,62 @@ const onBack = () => {
   return (
     <div className="App">
       
-      {/* Step 1 */}
-      {dato === 1 && (
-        <div className = "container-sfondo">
-        <div className="Step">
-          <div className="logo">Flowlee</div>
-          <h1>Benvenuto!<br />Raccontaci chi sei.</h1>
-          <div className="input-group">
-            <label>Nome</label>
-            <input type="text" placeholder="Nome" />
-          </div>
-          <div className="input-group">
-            <label>Cognome</label>
-            <input type="text" placeholder="Cognome" />
-          </div>
-          <div className="input-group">
-            <label>Genere</label>
-            <select>
-              <option>Maschile</option>
-              <option>Femminile</option>
-            </select>
-          </div>
-          <div className="input-group">
-            <label>Data di nascita</label>
-            <input type="text" placeholder="01/01/1999" />
-          </div>
-          <button className = "de" onClick = {() => setDato(2)}>
-            successivo
-          </button>
+   {/* STEP 1 */}
+ {/* STEP 1 */}
+{dato === 1 && (
+  <div className="container-sfondo">
+    <div className="Step">
+      
+      {/* Bottoni lingua posizionati in alto, dentro lo Step ma senza alterare il flusso */}
+      <div className="language-container" style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
+        <button onClick={() => i18n.changeLanguage('it')}>IT</button>
+        <button onClick={() => i18n.changeLanguage('en')} style={{ marginLeft: '5px' }}>EN</button>
+      </div>
 
+      <div className="logo">{t('flowlee')}</div>
+      <h1>{t('welcome')}<br />{t('tell_us_who_you_are')}</h1>
+      
+      {/* Contenitore form con spazio fisso */}
+      <div className="form-content">
+        <div className="input-group">
+          <label>{t('name')}</label>
+          <input type="text" placeholder={t('name')} />
+        </div>
         
-          </div>
-          </div>
-      )}
+        <div className="input-group">
+          <label>{t('surname')}</label>
+          <input type="text" placeholder={t('surname')} />
+        </div>
+        
+        <div className="input-group">
+          <label>{t('gender')}</label>
+          <select>
+            <option>{t('male')}</option>
+            <option>{t('female')}</option>
+          </select>
+        </div>
+      </div>
+
+      {/* Il bottone resta in fondo */}
+      <button className="de" onClick={() => setDato(2)}>
+        {t('next')}
+      </button>
+      
+    </div>
+  </div>
+)}
 
       {/* Step 2 */}
       {dato === 2 && (
         <div className = "container-sfondo">
         <div className="Step">
+          <div className="language-container" style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
+        <button onClick={() => i18n.changeLanguage('it')}>IT</button>
+        <button onClick={() => i18n.changeLanguage('en')} style={{ marginLeft: '5px' }}>EN</button>
+      </div>
           <div className="logo">Flowlee</div>
-          <h1>Ciao Marco!<br />Creiamo l'account.</h1>
+          <h1>{t('hello_marco')}<br />{t('create_account')}</h1>
+       
           <div className="input-group">
             <label>Email</label>
             <input type="email" placeholder="Email" />
@@ -397,7 +415,7 @@ const onBack = () => {
 
 {dato === 10 && (
         <div className="container-sfondo">
-          <div className="Step step-header-layout step10-layout">
+          <div className="Step wide-mode">
             <div className="top-navigation">
               <div className="nav-left">
                 <div className="arrows-container">
@@ -441,7 +459,7 @@ const onBack = () => {
       {/* Step 11 */}
       {dato === 11 && (
         <div className= "container-sfondo sfondo-scuro">
-          <div className="Step step-header-layout step10-layout">
+          <div className="Step wide-mode">
             <div className="top-navigation">
               <div className="nav-left">
                 <div className="arrows-container" onClick={onBack} style={{ cursor: 'pointer' }}>
@@ -473,9 +491,9 @@ const onBack = () => {
                     <label className="rv">Nome dell'azienda</label> <br />
                     <input type = "text" className = "li"  placeholder = "Company srl"/>
                   </div>
-                  <div>
+                  <div style = {{color: 'black', transform: 'translateY(-13px)',}}>
                     <label className="gv">Grandezza team</label> <br />
-                     <select className = "nnnn">
+                     <select className = "nnnn" style = {{color: 'black'}}>
                       <option>1-5 persone  29/mese </option>  
                       <option>6-10 persone 49/mese</option>
                       <option>11-29 persone 60/mese</option>
@@ -485,8 +503,9 @@ const onBack = () => {
                       </div>
                     </div>
                   </div>
-                  <div>
+                  <div style = {{color: 'black'}}>
                     <label className="b">Descrizione</label> <br />
+
                     <input type = "text" className = "li2"  placeholder = "Descrizione"/>
                       <button className = "jj" onClick = {() => setDato(12)}>
                         Procedi
