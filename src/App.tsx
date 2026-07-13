@@ -43,7 +43,7 @@ const onSelectType = (type:string) : void => {
 const onBack = () => {
   setDato((prev) => Math.max(prev-1,1))
 }
-
+const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 
   return (
     <div className="App">
@@ -675,7 +675,7 @@ const onBack = () => {
 </div>
 
 
-         <button className = "bv" onClick = {() => setDato(14)}>
+         <button className = "bv2" onClick = {() => setDato(14)}>
           Procedi
          </button>
             
@@ -686,29 +686,73 @@ const onBack = () => {
           
           
 )}
-                
+       {dato === 14 && (
+  <div className="container-sfondo">
+    <div className="Step step-centrato">
+      {/* Header */}
+      <div className="top-navigation">
+        <div className="nav-left">
+          <div className="arrows-container">
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+          <div className="profilo-lavoro-container">
+            <span>Organizzazione/modello di lavoro</span>
+          </div>
+        </div>
+        <div className="nav-center">Flowlee</div>
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+      </div>
 
+      {/* Titolo e Sottotitolo */}
+      <div className="er">
+        <h1>Qual'è il modello <br /> lavorativo adottato <br /> dalla tua azienda?</h1>
+        <div className="flex-beetween">
+          <span>Iniziamo insieme, potrai modificare <br /> queste scelte in ogni momento.</span>
+        </div>
+      </div>
 
+      {/* Giorni lavorativi */}
+      <div className="ax">
+        <h3>Giorni lavorativi</h3>
+        <div className="giorni-wrapper">
+          {['L', 'M', 'M', 'G', 'V', 'S', 'D'].map((g, i) => (
+            <button key={i} className="giorno-btn">{g}</button>
+          ))}
+        </div>
+      </div>
 
+      {/* Modelli di Lavoro (Toggle) */}
+      <div className="modelli-wrapper">
+        {[
+          { t: "Autonomo", d: "Orario gestito liberamente dal dipendente nel rispetto di obiettivi, attività e disponibilità concordate." },
+          { t: "Flessibile"},
+          {t: "Fissso"}
+          
+        ].map((item, index) => (
+          <div key={index} className="toggle-row">
+            <label className="switch">
+              <input type="checkbox" />
+              <span className="slider"></span>
+            </label>
+            <div className="toggle-text">
+              <strong>{item.t}</strong>
+              <p>{item.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-
-       
-       
-            
-            
-
-           
-              
-      
-      
-
-    
-      
-      
-
-
-      
+      {/* Bottone */}
+      <button className="bv" onClick={() => setDato(15)}>Procedi</button>
     </div>
+  </div>
+)}
+</div>
+  
   )
 }
 

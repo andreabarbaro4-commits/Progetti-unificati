@@ -24,6 +24,40 @@ body {
   background: #000 !important;
   background-image: none !important;
 }
+/* Abbassa la sezione Giorni lavorativi */
+.ax {
+  margin-left: 190px;
+  margin-right: auto;
+  margin-top: -260px !important; /* Valore positivo: spinge verso il basso */
+  text-align: center;
+  width: 100%;
+  
+}
+
+
+.modelli-wrapper {
+  margin-left: 150px !important; /* Rimuovi il margin-left fisso */
+  margin-top: 40px !important; /* Spazio tra i giorni e i modelli */
+  padding: 0 20px; /* Aggiunge un po' di respiro laterale */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra gli elementi */
+}
+
+/* Assicura che le righe siano ben spaziate */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px !important; /* Spazio tra ogni modello */
+  width: 100%;
+  max-width: 400px; /* Limita la larghezza per mantenere ordine */
+}
+
+.step10-left .section-title {
+    margin-top: 50px !important; 
+    margin-bottom: 15px !important;
+}
 
 .Step:has(input[type='email']) {
   min-height: 670px !important;
@@ -70,7 +104,9 @@ body {
   margin: 20px;
   justify-content: space-between;
   height: auto;
+  padding-bottom: 20px !important;
 }
+
 
 .Step-inner-container {
   display: flex;
@@ -79,10 +115,9 @@ body {
   width: 100%;
 }
 
-.Step:nth-of-type(2) .de {
-  margin-top: auto !important;
-  margin-bottom: 40px;
-}
+
+
+
 
 .Step .logo {
   margin-left: 10px;
@@ -91,9 +126,11 @@ body {
 .container-sfondo {
   position: relative !important;
   padding-top: 20px 0  !important; 
-  min-height: auto;
+  min-height: autos;
   display: flex;
   justify-content: center;
+ 
+ 
   
   
 
@@ -140,7 +177,45 @@ body {
   margin-bottom: 20px !important;
 }
 
+/* Container della singola riga */
+.toggle-row { 
+  display: flex; 
+  align-items: flex-start; /* Allinea in alto lo switch col titolo */
+  gap: 16px; 
+  margin-bottom: 14px; 
+  color: black;
+}
+.toggle-text{
+  margin-top: 23px;
+  color: black;
+}
+/* Switch (La pillola) */
+.switch { 
+  position: relative; 
+  width: 44px; 
+  height: 24px; 
+  margin-top: 23px;
+  flex-shrink: 0; /* Impedisce allo switch di schiacciarsi */
+  color: white;
+}
 
+.slider {
+  position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: black; transition: .4s; border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute; content: ""; height: 18px; width: 18px; 
+  left: 3px; bottom: 3px; background-color: black; 
+  transition: .4s; border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #000; }
+input:checked + .slider:before { transform: translateX(20px); }
+
+/* Testo */
+.toggle-text { display: flex; flex-direction: column; }
+.toggle-text p { margin: 4px 0 0 0; font-size: 14px; color: #555; line-height: 1.4; }
 .nav-left, .nav-center, .nav-right {
   flex: 1;
   display: flex !important;
@@ -148,8 +223,84 @@ body {
   margin-left: --50px;
 
 }
+/* Colore fisso nero per lo sfondo dello slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #000 !important; /* Sempre nero */
+  transition: .4s;
+  border-radius: 24px;
+  font-size: 94px;
+}
+
+/* Il pallino bianco interno */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; width: 18px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Opzionale: Se vuoi che il pallino si sposti quando clicchi */
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
 .er{
-  margin-top: 130px;
+  margin-top: 170px;
+  margin-left: 20px;
+}
+/* Container del titolo */
+.er {
+  margin-top: 170px;
+  margin-left: -200px;
+  width: 90% !important; /* Permette alla riga di occupare quasi tutta la larghezza della card */
+  max-width: 600px;      /* Assicura che non diventi troppo largo su schermi giganti */
+}
+/* Container del sottotitolo */
+.flex-beetween {
+  color: #555;            /* Colore leggermente più scuro per leggibilità */
+  margin-left: 0 !important; /* Rimosso il margine negativo di -700px che "nascondeva" il testo */
+  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;       /* Diamo una larghezza massima per non farla troppo lunga */
+  font-size: 16px;        /* Aumentato leggermente per renderlo più leggibile */
+  line-height: 1.5;       /* Spaziatura tra le righe più ampia */
+  text-align: left;       /* Allineato a sinistra per coerenza con l'h1 */
+}
+.bv2 {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  border: none; /* Aggiunto per pulizia */
+  cursor: pointer;
+  
+  /* Larghezza ridotta per renderlo stretto */
+  width: 90px !important; 
+  
+  /* Altezza ridotta per renderlo più compatto */
+  height: 40px !important; 
+  
+  /* Dimensione font proporzionata */
+  font-size: 16px !important; 
+  
+  /* Padding bilanciato per centrare il testo */
+  padding: 5px 10px !important;
+  
+  /* Margini */
+  margin-top: 15px !important;
+  margin-left: 30px !important;
+}
+/* Stile del titolo */
+.Step h1 {
+  font-size: 32px !important; /* Aumenta la dimensione del font */
+  line-height: 1.2;           /* Migliora la leggibilità tra le righe */
+  width: 100% !important;
+  text-align: left !important;
+  margin-bottom: 20px !important;
 }
 .zr{
   width: 23px;
@@ -161,12 +312,87 @@ body {
 
 
 .bv {
-    margin-bottom: 0 !important;
+    margin-top: 400px !important;
+    margin-left: -190px !important;
+    
 }
 .rew{
   padding: 10px;
   width: 400px;
   margin-left: 340px;
+}
+.toggle-row {
+  display: flex;
+  align-items: centers;
+  gap: 15px;               /* Spazio tra lo switch e il testo */
+  margin-bottom: 20px;     /* Spazio tra una riga e l'altra */
+}
+
+/* Assicurati che lo switch sia sempre nero (come volevi) */
+.slider {
+  background-color: #000 !important;
+}
+
+.toggle-text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;           /* Rimosso il 45px che causava problemi */
+  padding-top: 5px;        /* Regola questo valore per abbassare solo il testo */
+}
+
+.toggle-text strong {
+  font-size: 0.9rem;
+  margin-bottom: 4px;      /* Spazio tra il titolo e la descrizione */
+  display: block;
+}
+/* Rimpicciolisce solo il titolo (Autonomo, ecc.) */
+.toggle-text strong {
+  font-size: 0.9rem !important; 
+  display: block;
+}
+/* Riduci lo spazio tra le righe */
+.modelli-wrapper {
+  margin-left: 456px; /* Mantieni il tuo posizionamento se necessario */
+  margin-top: -35px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Riduci drasticamente lo spazio tra un modello e l'altro */
+}
+
+/* Compatta la riga del toggle */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 5px !important; /* Riduci il margine inferiore */
+}
+
+/* Riduci il margine superiore del testo per allinearlo meglio allo switch */
+.toggle-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0px !important; /* Rimosso il 45px che creava troppo spazio */
+}
+
+/* Riduci lo spazio occupato dallo switch */
+.switch {
+  margin-top: 0px !important; /* Rimosso il 23px che spingeva verso il basso */
+}
+/* Rimpicciolisce solo la descrizione */
+.toggle-text p {
+  font-size: 0.75rem !important;
+  margin: 2px 0 0 0 !important;
+  line-height: 1.2 !important;
+  color: #666;
+}
+
+/* Mantiene l'allineamento centrato con lo switch */
+.toggle-row {
+  display: flex;
+  align-items: center; /* Questo mantiene lo switch e la scritta allineati */
+  gap: 15px;
+  margin-bottom: 25px;
 }
 /* Forza l'accorciamento forzato del riquadro bianco */
 body .container-sfondo .Step.wide-mode {
@@ -176,7 +402,32 @@ body .container-sfondo .Step.wide-mode {
     
     align-self: flex-start !important; 
 }
+/* 1. Accorcia la schermata 2 su desktop */
+/* Usiamo un selettore specifico per il dato === 2 (lo step 2) */
+/* Se hai più elementi .Step, questo targetta quello che contiene la password */
+.Step:has(input[type='password']) {
+  min-height: auto !important; /* Rimuove l'altezza minima forzata */
+  height: auto !important;     /* Si adatta al contenuto reale */
+  padding-bottom: 20px !important; /* Riduce il padding inferiore */
+}
+.modelli-wrapper{
 
+  margin-left: 456px;
+  margin-top: -25px;
+}
+
+.Step:has(input[type='password']) .de {
+  margin-top: 103px !important; /* Riduce drasticamente lo spazio sopra il bottone */
+  margin-bottom: 0px !important;
+}
+
+/* 3. Opzionale: Se vuoi che lo Step 2 sia meno "alto" in generale */
+@media (min-width: 768px) {
+  .Step:has(input[type='password']) {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
 /* Rimuovi forzature invisibili */
 .Step.wide-mode::after {
     content: none !important;
@@ -192,7 +443,10 @@ body .container-sfondo .Step.wide-mode {
  
  
 }
-
+.zr{
+  margin-top: -194px;
+  margin-left: 2px;
+}
 .kk{
   margin-top: -8px;
 }
@@ -344,7 +598,7 @@ h1 {
   justify-content: flex-start !important;
 }
 .Step:nth-of-type(1) {
-  min-height: 670px !important;
+  min-height: 520px !important;
   justify-content: flex-start !important;
 }
 
@@ -384,6 +638,13 @@ h1 {
   background-color: white;
   color: black;
 }
+.ax{
+  margin-left: -50px;
+  margin-top: -280px;
+  color: black;
+  
+}
+
 
 .WE {
   width: 100%;
@@ -420,6 +681,7 @@ h1 {
   font-weight: bold;
 }
 
+
 .avatar {
   display: flex;
   width: 400px;
@@ -433,13 +695,14 @@ h1 {
   margin-top: 0 !important;
 }
 
+
+
 .procedi-btn {
   margin-top: 160px;
-  padding: 5px;
+  padding: 10px;
   color: white;
   background-color: black;
   font-size: 20px;
-  padding: 5px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -464,7 +727,8 @@ h1 {
 .step10-left {
   width: 100% !important;
   max-width: 400px !important;
-  margin-top: 0 !important; /* Rimuove ogni possibile margine superiore */
+  margin-top: 45px !important; 
+  
 }
 
 /* 3. Pulisci le label (elimina i margini che le abbassano) */
@@ -481,7 +745,29 @@ h1 {
   margin-bottom: 5px !important;
   margin-left: -280px;
 }
+.giorni-container{
+  margin-top: -34px;
+}
+.giorni-wrapper{
+  display: flex;
+  gap: 10px;
+  margin-left: 370px;
+}
+.giorno-btn{
+  width: 40px;      /* Larghezza del quadrato */
+  height: 30px;     /* Altezza del quadrato (uguale alla larghezza per renderlo quadrato) */
+  background-color: #000; /* Nero */
+  color: #fff;      /* Testo bianco */
+  border: none;
+  border-radius: 8px; /* Arrotondamento angoli come in Figma */
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
 
+}
 .rv {
  display: block !important;
   position: relative !important;
@@ -504,8 +790,16 @@ h1 {
   width: 100% !important;
   max-width: 400px !important;
 }
-
-/* Opzionale: se c'è troppo spazio tra gli elementi, compattali così */
+/* Questa regola agisce SOLO su questa pagina */
+.step-centrato {
+  max-width: 100% !important; /* Forza la larghezza stretta */
+  margin: 0 auto !important;   /* Centra la card */
+  width: 100% !important;      /* Si adatta al contenitore */
+  float: none !important;      
+  margin-top: 120px !important;  /* CREA SPAZIO SOPRA TRA BARRA E SCHERMATA */
+  margin-bottom: 100px !important; /* CREA SPAZIO SOTTO TRA BARRA E SCHERMATA */
+  height: 24px; /* accorcia la schermata */
+}
 .step10-left .space-y-4 {
   gap: 10px !important; /* Riduci lo spazio tra i campi se è troppo ampio */
 }
@@ -551,11 +845,10 @@ h1 {
 
 .tr {
   margin-top: 160px;
-  padding: 5px;
+  padding: 10px;
   color: white;
   background-color: black;
   font-size: 20px;
-  padding: 5px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -577,6 +870,11 @@ h1 {
   align-items: center;
   padding-top: 20px;
   gap: 20px;
+}
+.flex-beetween{
+    color: black;
+    margin-left: -700px;
+
 }
 
 .wr {
@@ -647,10 +945,13 @@ h1 {
   flex-wrap: wrap;
 }
 
-.Step button.de {
-  margin-top: 90px !important;
+/* Rimuovi eventuali margini automatici che spingono in fondo */
+.Step button.de, 
+.Step:nth-of-type(2) button.de, 
+.Step:nth-of-type(3) button.de {
+    margin-top: 60px !important; /* Questo valore alza il bottone subito dopo gli input */
+    margin-bottom: 30px !important;
 }
-
 .Step:nth-of-type(2) button.de {
   margin-top: 350px !important;
 }
@@ -689,12 +990,12 @@ h1 {
   width: 54px;
   color: white;
   background-color: black;
-  border-radius: 14px;
-  margin-top: 16px;
+  border-radius: 20px;
+  margin-top: 15px !important;
   font-size: 20px;
   width: 120px;
-  padding: 3px;
-  margin-left: 54px;
+  padding: 10px;
+  margin-left: -140px !important;
 
 }
 .step10-content {
@@ -1078,4 +1379,453 @@ button:active { transform: scale(0.98); }
   .step10-right {
     margin-bottom: 40px !important;
   }
+}
+@media screen and (max-width: 768px) {
+  /* 1. Forza la top-navigation a contenere tutto senza tagliare nulla */
+  .top-navigation {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 10px !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 60px !important; /* Diamo un'altezza fissa per sicurezza */
+    background: #ffffff !important;
+  }
+
+  /* 2. Assicura che nav-left, center e right siano visibili */
+  .nav-left, .nav-center, .right-icons {
+    display: flex !important;
+    align-items: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important; /* Rimuove posizionamenti assoluti che lo nascondevano */
+    margin: 0 !important;
+  }
+
+  /* 3. Forza il logo (nav-center) a restare centrato e visibile */
+  .nav-center {
+    flex: 2 !important; /* Gli diamo più spazio per evitare che venga compresso */
+    justify-content: center !important;
+    font-size: 16px !important; /* Riduciamo leggermente il font se necessario */
+    order: 2 !important;
+  }
+
+  /* 4. Mantiene gli elementi laterali (frecce e icone) */
+  .nav-left {
+    flex: 1 !important;
+    justify-content: flex-start !important;
+    order: 1 !important;
+  }
+
+  .right-icons {
+    flex: 1 !important;
+    justify-content: flex-end !important;
+    order: 3 !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* 1. Reset contenitore barra */
+  .top-navigation {
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important; /* Mantiene la riga */
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px !important;
+    background-color: #ffffff !important;
+    height: auto !important;
+  }
+
+  /* 2. Profilo/Lavoro a sinistra */
+  .nav-left {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 5px !important;
+    margin-left: 0 !important;
+    flex: 1 !important;
+    font-size: 10px !important; /* Testo più piccolo per non occupare spazio */
+  }
+
+  /* 3. Logo al centro assoluto */
+  .nav-center {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1 !important;
+    font-weight: bold !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* 4. Icone a destra */
+  .right-icons {
+    display: flex !important;
+    justify-content: flex-end !important;
+    flex: 1 !important;
+    gap: 5px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* Forza la riga su tutta la navigazione */
+  .top-navigation, 
+  .Step .top-navigation, 
+  div.top-navigation {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 10px !important;
+    margin: 0 !important;
+  }
+
+  /* Forza gli elementi figli a non andare mai a capo */
+  .nav-left, .nav-center, .right-icons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+
+  /* Rimuove qualsiasi margine negativo ereditato che spinge il logo fuori asse */
+  .nav-center, .nav-left, .right-icons {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Riduce il font per evitare che il logo venga schiacciato */
+  .nav-center {
+    font-size: 14px !important;
+    flex: 2 !important; /* Dà priorità al logo */
+  }
+}
+@media screen and (max-width: 768px) {
+  /* Resetta il contenitore per farlo stare in una riga */
+  .top-navigation {
+    position: relative !important; /* Rimuove absolute */
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 5px !important;
+    margin-bottom: 20px !important;
+    height: auto !important;
+  }
+
+  /* Forza i figli (left, center, right) in riga */
+  .top-navigation > div {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex: 1 !important; /* Distribuzione equa dello spazio */
+  }
+
+  /* Centra perfettamente il logo */
+  .nav-center {
+    justify-content: center !important;
+  }
+  
+  /* Rimpicciolisci il logo per non rompere il layout */
+  .nav-center img {
+    height: 15px !important; 
+    width: auto !important;
+  }
+
+  /* Compatta il testo Profilo a sinistra */
+  .nav-left {
+    font-size: 9px !important;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* 1. Reset assoluto della navigazione */
+  .top-navigation {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 10px !important;
+    margin: 0 0 20px 0 !important; /* Rimuove margini negativi */
+    height: 50px !important;
+    box-shadow: none !important;
+  }
+
+  /* 2. Rimuovi i margini negativi ereditati che spostano il logo */
+  .nav-center {
+    position: static !important;
+    margin: 0 !important;
+    flex: 2 !important; /* Dà priorità al logo nello spazio centrale */
+    justify-content: center !important;
+    display: flex !important;
+  }
+
+  /* 3. Assicura che left e right non abbiano posizionamenti assoluti */
+  .nav-left, .right-icons {
+    position: static !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 !important;
+  }
+
+  /* 4. Mantiene il testo a sinistra compatto */
+  .nav-left {
+    justify-content: flex-start !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+  }
+
+  /* 5. Icone a destra */
+  .right-icons {
+    justify-content: flex-end !important;
+    gap: 5px !important;
+  }
+}
+/* --- CORREZIONE NAVIGAZIONE MOBILE (Definitiva) --- */
+
+/* Applica solo su schermi mobile (smartphone) */
+@media screen and (max-width: 768px) {
+
+  /* 1. Resetta il contenitore principale della barra */
+  .top-navigation {
+    /* Annulla i posizionamenti assoluti che causano sovrapposizioni */
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    /* Forza il Flexbox per allineare gli elementi in riga */
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important; /* Elementi ai lati, spazio in mezzo */
+    align-items: center !important;
+
+    /* Dimensioni e spaziatura */
+    width: 100% !important;
+    height: auto !important;
+    min-height: 50px !important;
+    padding: 5px 10px !important;
+    margin-bottom: 20px !important; /* Spazio sotto la barra */
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+    z-index: 1000;
+  }
+
+  /* 2. Blocco di sinistra (Frecce + Testo "Profilo/Lavoro") */
+  .nav-left {
+    display: flex !important;
+    flex-direction: row !important; /* Frecce e testo sulla stessa riga */
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 6px !important; /* Spazio tra le frecce e la scritta */
+
+    /* Reset dei margini negativi che lo spingevano sopra il logo */
+    margin: 0 !important;
+    position: static !important;
+
+    /* Regola la dimensione del font per schermi piccoli */
+    font-size: 11px !important;
+    color: #333;
+    flex: 1 !important; /* Occupa lo spazio disponibile a sinistra */
+  }
+
+  /* Contenitore delle frecce (Giù/Su) */
+  .arrows-container {
+    display: flex !important;
+    flex-direction: column !important; /* Frecce una sopra l'altra */
+    gap: 1px !important; /* Spazio minimo tra le due frecce */
+    margin: 0 !important;
+  }
+
+  /* Le singole icone delle frecce */
+  .arrows-container .top-icon {
+    font-size: 14px !important; /* Rimpicciolite per non ingombrare */
+    color: #666 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 3. Logo al centro assoluto */
+  .nav-center {
+    /* Reset assoluto per centrarlo matematicamente */
+    position: static !important;
+    margin: 0 !important;
+
+    /* Priorità centrale: occupa il doppio dello spazio rispetto ai lati */
+    flex: 2 !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    /* Stile del testo */
+    font-weight: bold !important;
+    font-size: 16px !important; /* Leggermente più grande dei lati */
+    color: #4b2c73 !important; /* Colore originale */
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+
+  /* 4. Icone a destra (Griglia + Profilo utente) */
+  .right-icons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+
+    /* Reset margini negativi */
+    margin: 0 !important;
+    position: static !important;
+
+    flex: 1 !important; /* Occupa lo spazio disponibile a destra */
+  }
+
+  /* Le singole icone a destra */
+  .right-icons .top-icon {
+    font-size: 18px !important;
+    color: #666 !important;
+  }
+} 
+/* --- CORREZIONE DEFINITIVA PER SCHERMATE 10 E 11 --- */
+
+@media screen and (max-width: 768px) {
+  /* 1. Reset completo della barra */
+  .top-navigation {
+    position: relative !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 50px !important;
+    padding: 0 10px !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+  }
+
+  /* 2. Sinistra: Frecce orizzontali + Testo */
+  .nav-left {
+    display: flex !important;
+    flex-direction: row !important; /* Forza la riga */
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 40% !important; /* Limite massimo */
+    overflow: hidden !important;
+  }
+
+  /* Le frecce ora stanno vicine in orizzontale */
+  .arrows-container {
+    display: flex !important;
+    flex-direction: row !important; /* Orizzontale */
+    gap: 2px !important;
+    margin: 0 !important;
+  }
+
+  .arrows-container .top-icon {
+    font-size: 16px !important;
+  }
+
+  /* Il testo "Profilo/Lavoro" o "Organizzazione" */
+  .profilo-lavoro-container span {
+    font-size: 10px !important;
+    white-space: nowrap !important;
+   
+  
+  }
+  
+  
+
+  /* 3. Centro: Logo protetto */
+  .nav-center {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 30% !important; /* Spazio centrale dedicato */
+    text-align: center !important;
+    font-weight: bold !important;
+    z-index: 1 !important; /* Sta "sotto" se c'è un click, ma visibile */
+  }
+
+  /* 4. Destra: Icone */
+  .right-icons {
+    display: flex !important;
+    justify-content: flex-end !important;
+    width: 30% !important;
+    gap: 8px !important;
+  }
+}
+/* --- SPOSTAMENTO VERTICALE CONTENUTO SCHERMATA 11 --- */
+
+/* Identifichiamo il contenitore del form nella schermata 11. 
+   Se la classe è diversa, sostituiscila con quella corretta. */
+.step10-layout .step10-content {
+  margin-top: 40px !important; /* Aumenta questo valore per abbassare il form */
+}
+
+/* Se preferisci spostare l'intero blocco interno alla card */
+.Step .step10-layout {
+  padding-top: 70px !important; /* Sposta il contenuto interno verso il basso */
+}
+
+/* Opzionale: se vuoi uno spazio specifico solo tra la barra di navigazione e il titolo */
+@media screen and (max-width: 768px) {
+  .step10-layout h1 {
+    margin-top: 30px !important; /* Distanzia il titolo dalla barra superiore */
+  }
+}
+/* --- SPOSTAMENTO LOGO VERSO DESTRA DALLA SCHERMATA 7 IN POI --- */
+
+@media screen and (max-width: 768px) {
+  .nav-center {
+    /* Manteniamo la centratura ma aggiungiamo uno scostamento */
+    left: 52% !important; /* Sposta il punto di ancoraggio del 2% verso destra */
+    transform: translateX(-50%) !important; 
+    
+    /* Alternativa se non vuoi usare left: */
+    /* margin-left: 15px !important; */
+  }
+}
+.top-navigation{
+  color: black;
+  margin-top: 15px;
+}
+
+.toggle-text {
+ 
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  top: 1px; 
+  
+
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: flex-start;
+  min-height: 60px; 
 }
