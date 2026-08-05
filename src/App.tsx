@@ -10,24 +10,43 @@ import { HiOutlineUserCircle } from "react-icons/hi2";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import logoImage from './assets/Logo.png'
 import omino from './assets/omino.png'
+import violetto from './assets/violetto.png'
+import Settings from './assets/Settings.png'
 import './i18n'
+import Barra from "./assets/Barra.png";
+import group from "./assets/foto.png"
+import rettangolo from "./assets/faccia.png"
 
 const ruoli = [
   "Project Manager",
   "Ux Designer",
   "UI Designer",
   "Hr Manager",
-  "Troll",
+  "UI/UX",
   "Data Analyst",
   "Dog Sitter",
+  "Social media",
+  "Fotografo"
  
+]
+const titoli = [
+  "Dettagli azienda",
+  " Modifica amministratori",
+  "Contatti aziendali",
+  "Fatturazione e pagamento",
+  "Modello e orario di lavoro"
+
+
+
 ]
 
 
 function App() {
   const { t ,i18n} = useTranslation<string>();
+  const [selezionati, setSelected] = useState({});
   const [dato, setDato] = useState(1);
   const [ruoloSelezionato, setRuoloSelezionato] = useState(null);
+  const[Stella,setStella] = useState(null);
   const poi = [
     "Proiect manager", 
     "Hr Manager", 
@@ -35,11 +54,26 @@ function App() {
 
   ]
 
-
+const modificaOrario = (chiave, operazione) => {
+  setOrari(prev => {
+    let valoreAttuale = prev[chiave];
+    if (operazione === '+') {
+      valoreAttuale = valoreAttuale < 23 ? valoreAttuale + 1 : 0;
+    } else {
+      valoreAttuale = valoreAttuale > 0 ? valoreAttuale - 1 : 23;
+    }
+    return { ...prev, [chiave]: valoreAttuale };
+  });
+};
 const onSelectType = (type:string) : void => { 
    console.log(type);
 }
-  
+   const [orari, setOrari] = useState({
+ flessibileDalle: 12,
+  flessibileAlle: 15,
+  fissaDalle: 13,
+   fissaAlle: 14,
+   })
 const onBack = () => {
   setDato((prev) => Math.max(prev-1,1))
 }
@@ -60,7 +94,18 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
         <button onClick={() => i18n.changeLanguage('en')} style={{ marginLeft: '5px' }}>EN</button>
       </div>
 
-      <div className="logo">{t('flowlee')}</div>
+      <div className="logo">
+  <img 
+    src={logoImage} 
+    alt="Flowlee" 
+    style={{ 
+      width: 'auto',      // Mantiene le proporzioni
+      height: '20px',     // Fissa l'altezza (o usa max-height per sicurezza)
+      display: 'block',
+      margin: '0 auto'    // Centra il logo
+    }} 
+  />
+</div>
       <h1>{t('welcome')}<br />{t('tell_us_who_you_are')}</h1>
       
       {/* Contenitore form con spazio fisso */}
@@ -85,7 +130,10 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
       </div>
 
       {/* Il bottone resta in fondo */}
-      <button className="de" onClick={() => setDato(2)}>
+      
+      <button className="de" onClick={() => setDato(2)}
+
+        >
         {t('next')}
       </button>
       
@@ -101,7 +149,18 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
         <button onClick={() => i18n.changeLanguage('it')}>IT</button>
         <button onClick={() => i18n.changeLanguage('en')} style={{ marginLeft: '5px' }}>EN</button>
       </div>
-          <div className="logo">Flowlee</div>
+              <div className="logo">
+  <img 
+    src={logoImage} 
+    alt="Flowlee" 
+    style={{ 
+      width: 'auto',      // Mantiene le proporzioni
+      height: '20px',     // Fissa l'altezza (o usa max-height per sicurezza)
+      display: 'block',
+      margin: '0 auto'    // Centra il logo
+    }} 
+  />
+</div>
           <h1>{t('hello_marco')}<br />{t('create_account')}</h1>
        
           <div className="input-group">
@@ -129,7 +188,18 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
       {dato === 3 && (
         <div className = "container-sfondo">
         <div className="Step">
-          <div className="logo">Flowlee</div>
+              <div className="logo">
+  <img 
+    src={logoImage} 
+    alt="Flowlee" 
+    style={{ 
+      width: 'auto',      // Mantiene le proporzioni
+      height: '20px',     // Fissa l'altezza (o usa max-height per sicurezza)
+      display: 'block',
+      margin: '0 auto'    // Centra il logo
+    }} 
+  />
+</div>
           <img src={avatar} alt="avatar" className="avatar" />
           <h1>Sto inviando<br />il codice di verifica.</h1>
           <button className="de" onClick={() => setDato(4)}>Successivo</button>
@@ -141,7 +211,18 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
       {dato === 4 && (
         <div className = "container-sfondo">
         <div className="Step">
-          <div className="logo">Flowlee</div>
+             <div className="logo">
+  <img 
+    src={logoImage} 
+    alt="Flowlee" 
+    style={{ 
+      width: 'auto',      // Mantiene le proporzioni
+      height: '20px',     // Fissa l'altezza (o usa max-height per sicurezza)
+      display: 'block',
+      margin: '0 auto'    // Centra il logo
+    }} 
+  />
+</div>
           <h1>Inserisci il codice<br />che trovi sulla mail!</h1>
           <p style={{marginBottom: '20px', color: '#666', fontSize: '14px'}}>mariorossi@gmail.com</p>
           <div className="input-group">
@@ -149,7 +230,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
             <input type="text" placeholder="Inserisci codice"/>
           </div>
           <button className="WE">Invia di nuovo</button>
-          <button className="era" onClick={() => setDato(5)}>Conferma</button>
+          <button className="de" onClick={() => setDato(5)}>Conferma</button>
         </div>
         </div>
       )}
@@ -173,14 +254,25 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 
       {/* Step 6 */}
       {dato === 6 && (
-        <div className = "container-sfondo">
+        <div className = "container-sfondo schermata-6">
         <div className="Step step-header-layout">
           <div className="top-navigation">
             <div className="arrows-container">
               <IoIosArrowDown className="top-icon" />
               <IoIosArrowUp className="top-icon" />
             </div>
-            <div className="logo-center">Flowlee</div>
+                <div className="logo">
+  <img 
+    src={logoImage} 
+    alt="Flowlee" 
+    style={{ 
+      width: 'auto',      // Mantiene le proporzioni
+      height: '20px',     // Fissa l'altezza (o usa max-height per sicurezza)
+      display: 'block',
+      margin: '0 auto'    // Centra il logo
+    }} 
+  />
+</div>
             <div className="right-icons">
               <BsGrid3X3Gap className="top-icon" />
               <HiOutlineUserCircle className="top-icon" />
@@ -223,7 +315,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 
       {/* Step 7 */}
       {dato === 7 && (
-        <div className = "container-sfondo">
+        <div className = "container-sfondo schermata-7">
         <div className="Step step-header-layout">
           <div className="top-navigation">
             <div className="nav-left">
@@ -237,7 +329,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
             </div>
 
             <div className="nav-center">
-              Flowlee
+              <img src = {logoImage}/>
             </div>
          
             <div className="right-icons">
@@ -282,7 +374,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 
       {/* Step 8 */}
       {dato === 8 && (
-        <div className = "container-sfondo">
+        <div className = "container-sfondo schermata-8">
         <div className="Step step-header-layout">
           <div className="top-navigation">
             <div className="nav-left">
@@ -296,7 +388,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
             </div>
 
             <div className="nav-center">
-              Flowlee
+              <img src = {logoImage}/>
             </div>
          
             <div className="right-icons">
@@ -348,7 +440,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 
       {/* Step 9 */}
       {dato === 9 && (
-         <div className = "container-sfondo">
+         <div className = "container-sfondo schermata-9">
         <div className="Step step-header-layout">
           <div className="top-navigation">
             <div className="nav-left">
@@ -362,7 +454,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
             </div>
 
             <div className="nav-center">
-              Flowlee
+              <img src = {logoImage}/>
             </div>
          
             <div className="right-icons">
@@ -414,8 +506,8 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 
 
 {dato === 10 && (
-        <div className="container-sfondo">
-          <div className="Step wide-mode">
+        <div className="container-sfondo step10-mobile-fix ">
+          <div className="Step wide-mode ">
             <div className="top-navigation">
               <div className="nav-left">
                 <div className="arrows-container">
@@ -459,7 +551,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
       {/* Step 11 */}
       {dato === 11 && (
         <div className= "container-sfondo sfondo-scuro">
-          <div className="Step wide-mode">
+          <div className="Step wide-mode step11-mobile-fix">
             <div className="top-navigation">
               <div className="nav-left">
                 <div className="arrows-container" onClick={onBack} style={{ cursor: 'pointer' }}>
@@ -504,9 +596,11 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
                     </div>
                   </div>
                   <div style = {{color: 'black'}}>
-                    <label className="b">Descrizione</label> <br />
 
-                    <input type = "text" className = "li2"  placeholder = "Descrizione"/>
+                    <label className = "osd">Descrizione</label>
+               
+
+                    <input type = "text" className = "li2"/>
                       <button className = "jj" onClick = {() => setDato(12)}>
                         Procedi
                       </button>
@@ -518,8 +612,127 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
        
         
       )}
+      {dato === 12 && (
+  <div className="container-sfondo schermata-12">
 
-{dato === 12 && (
+    {/* spazio vuoto sopra */}
+    <div className="spazio-top-12"></div>
+
+    {/* barra superiore separata */}
+    <div className="top-navigation">
+      <div className="nav-left">
+        <div className="arrows-container">
+          <IoIosArrowDown className="top-icon" />
+          <IoIosArrowUp className="top-icon" />
+        </div>
+
+        <div className="profilo-lavoro-container">
+          <span>Organizzazione</span>
+        </div>
+      </div>
+
+      <div className="nav-center">
+        <img 
+          src={logoImage} 
+          alt="Flowlee" 
+          style={{ height: "20px", width: "auto" }} 
+        />
+      </div>
+
+      <div className="right-icons">
+        <BsGrid3X3Gap className="top-icon" />
+        <HiOutlineUserCircle className="top-icon" />
+      </div>
+    </div>
+
+
+    {/* spazio tra barra e riquadro */}
+    <div className="spazio-barra-12"></div>
+
+
+    {/* riquadro bianco */}
+    <div className="Step wide-mode step12-box">
+
+      <div className="step10-content">
+
+        <div className="step10-left">
+          <h1 className="section-title">
+            Inserisci<br />
+            Solo alcuni<br />
+            dati di contatto
+          </h1>
+
+          <p className="step10-subtitle">
+            Qui inseriamo un secondo testo<br />
+            per ora è un placeholder
+          </p>
+        </div>
+
+        <div className="step10-right"></div>
+
+      </div>
+
+
+      <div className="dsf4" />
+
+      <label className="ce8">
+        Indirizzo
+      </label>
+
+      <input 
+        type="text" 
+        className="dj8" 
+        placeholder="Company" 
+      />
+
+
+      <label className="ce9">
+        Email
+      </label>
+
+      <input 
+        type="text" 
+        className="dj9" 
+        placeholder="Inserisci email" 
+      />
+
+
+      <label className="ce10">
+        Telefono
+      </label>
+
+      <input 
+        type="text" 
+        className="d10" 
+        placeholder="Telefono" 
+      />
+
+
+      <div className="step10-buttons">
+
+        <button 
+          className="dark" 
+          onClick={() => setDato(13)}
+        >
+          Procedi
+        </button>
+
+        <button 
+          className="light" 
+          onClick={() => onSelectType("Freelance")}
+        >
+          Salva
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+)}
+
+
+{dato === 13 && (
   <div style={{
     position: 'fixed',
     top: 0,
@@ -617,7 +830,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <button style={{ backgroundColor: '#000', color: '#fff', padding: '10px 20px', borderRadius: '10px', cursor: 'pointer' }} onClick={() => setDato(13)}>Salva</button>
+            <button style={{ backgroundColor: '#000', color: '#fff', padding: '10px 20px', borderRadius: '10px', cursor: 'pointer' }} onClick={() => setDato(14)}>Salva</button>
           </div>
         </div>
       </div>
@@ -626,9 +839,10 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 )}
 
 
-{dato === 13 && (
-   <div className = "container-sfondo">
-        <div className="Step wide-mode">
+{dato === 14 && (
+  
+   <div className = "container-sfondo step14-container">
+        <div className="Step wide-mode ">
           <div className="top-navigation">
             <div className="nav-left">
               <div className="arrows-container">
@@ -641,7 +855,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
             </div>
 
             <div className="nav-center">
-              Flowlee
+              <img src = {logoImage}/>
             </div>
          
             <div className="right-icons">
@@ -665,9 +879,9 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
           </div>
 
 
-         <div className="kk">
+         <div className="kk3">
   <label>Ruolo</label> <br />
-   <select className="rew">
+   <select className="rew2">
     <option>Seleziona un ruolo</option>
     <option value="creatore">Creatore</option>
     <option value="secondo_ordine">Di secondo ordine</option>
@@ -675,7 +889,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 </div>
 
 
-         <button className = "bv2" onClick = {() => setDato(14)}>
+         <button className = "bv2 posiziona-step-13" onClick = {() => setDato(15)}>
           Procedi
          </button>
             
@@ -686,11 +900,11 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
           
           
 )}
-       {dato === 14 && (
-  <div className="container-sfondo">
-    <div className="Step step-centrato">
+       {dato === 15 && (
+  <div className="container-sfondo step15-container">
+    <div className="Step step-centrato ">
       {/* Header */}
-      <div className="top-navigation">
+      <div className="top-navigation  ">
         <div className="nav-left">
           <div className="arrows-container">
             <IoIosArrowDown className="top-icon" />
@@ -700,7 +914,10 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
             <span>Organizzazione/modello di lavoro</span>
           </div>
         </div>
-        <div className="nav-center">Flowlee</div>
+        <div className="nav-center">
+          <img src = {logoImage}/>
+          </div>
+          
         <div className="right-icons">
           <BsGrid3X3Gap className="top-icon" />
           <HiOutlineUserCircle className="top-icon" />
@@ -730,7 +947,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
         {[
           { t: "Autonomo", d: "Orario gestito liberamente dal dipendente nel rispetto di obiettivi, attività e disponibilità concordate." },
           { t: "Flessibile"},
-          {t: "Fissso"}
+          {t: "Fisso"}
           
         ].map((item, index) => (
           <div key={index} className="toggle-row">
@@ -747,13 +964,1912 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
       </div>
 
       {/* Bottone */}
-      <button className="bv" onClick={() => setDato(15)}>Procedi</button>
+      <button className="bv2" onClick={() => setDato(16)}>Procedi</button>
     </div>
   </div>
 )}
-</div>
+{dato === 16 && (
+  <div className="container-sfondo">
+    <div className="Step step-centrato">
+      {/* Header */}
+      <div className="top-navigation">
+        <div className="nav-left">
+          <div className="arrows-container">
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+          <div className="profilo-lavoro-container">
+            <span>Organizzazione/orario</span>
+          </div>
+        </div>
+        <div className="nav-center">
+          <img src = {logoImage}/>
+          </div>
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+      </div>
+
+      {/* Titolo e Sottotitolo */}
+      <div className="er">
+        <div className="flex-beetween">
+          <h1>Come gestisci gli <br /> orari secondo il <br /> modello flessibile? </h1>
+          <span>Iniziamo insieme ,potrai modificare queste <br /> scelte in ogni momento </span>
+        </div>
+
+        <div className="llj">
+          <h1>Monte orario</h1>
+          <p>Ciascun dipendente ha l'obbligo di lavorare un numero di ore prestabilito che può distribuire nella giornata.</p>
+          
+          <div className="contenitore">
+            <button type = "uy" className="vc">Settimanale</button>
+            <button  type = "as" className="pi">Giornaliero</button>
+            
+            <div className="contatore-ore">
+              <span>6 ore</span>
+              <button>-</button>
+              <button>+</button>
+            </div>
+          </div>
+
+          <div className="range-box">
+            <div className="range-toggle">
+              <input type="checkbox" />
+              <label>Range orario</label>
+            </div>
+            <p>Il monte orario deve comunque essere distribuito in un determinato range orario.</p>
+            
+            <div className="orari-input">
+              <span>Dalle <button>07:00 - +</button></span>
+              <span>Alle <button>20:00 - +</button></span>
+            </div>
+            <p className="avviso">In questo modo stai impostando un orario fisso.</p>
+          </div>
+        </div>
+
+        <div className="df">
+          <button className="gf" onClick={() => setDato(17)}>
+            Procedi
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+{dato === 17 && (
+  <div className="container-sfondo schermata-17">
+    <div className="Step step-centrato">
+      {/* Header */}
+      <div className="top-navigation">
+        <div className="nav-left">
+          <div className="arrows-container">
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+          <div className="profilo-lavoro-container">
+            <span>Organizzazione/Pausa pranzo</span>
+          </div>
+        </div>
+        <div className="nav-center">
+          <img src={logoImage} />
+        </div>
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+      </div>
+
+      {/* Titolo e Sottotitolo */}
+      <div className="er">
+        <h1>In che modo viene <br /> gestita la <br /> pausa pranzo?</h1>
+        <div className="ry7">
+          <span>Iniziamo insieme, potrai modificare <br /> queste scelte in ogni momento</span>
+        </div>
+      </div>
+
+      {/* Modelli di Lavoro (Toggle) */}
+      <div className="modelli-wrapper4">
+        {[
+          { 
+            t: "Autonoma", 
+            d: "Ciascun dipendente può prendere la pausa pranzo quando preferisce, coordinandosi con i colleghi." 
+          },
+          { 
+            t: "Flessibile", 
+            d: "Ciascun dipendente può prendere 1h di pausa pranzo quando preferisce, all'interno di un determinato range orario." 
+          },
+          { 
+            t: "Fissa", 
+            d: "Tutti i dipendenti hanno la pausa pranzo nello stesso orario." 
+          }
+        ].map((item, index) => {
+          const isChecked = selezionati[index] || false;
+
+          return (
+            <div key={index} className="toggle-row4">
+              <label className="internaz">
+                <input 
+                  type="checkbox" 
+                  checked={isChecked} 
+                  onChange={(e) => {
+                    setSelected({
+                      ...selezionati,
+                      [index]: e.target.checked
+                    });
+                  }} 
+                />
+                <span className="slider6"></span>
+              </label>
+              <div className="toggle-text">
+                <strong>{item.t}</strong>
+                {isChecked && (
+                  <div className="details-container">
+                    <p>{item.d}</p>
+                    
+                    {/* Selettore orario per Flessibile */}
+                    {item.t === "Flessibile" && (
+                      <div className="orari-selettori" style={{ marginTop: '10px', display: 'flex', gap: '15px', alignItems: 'center', fontSize: '14px' }}>
+                        <div>
+                          <span>Dalle </span>
+                          <button onClick={() => modificaOrario('flessibileDalle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
+                          <span>{String(orari.flessibileDalle).padStart(2, '0')}:00</span>
+                          <button onClick={() => modificaOrario('flessibileDalle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
+                        </div>
+                        <div>
+                          <span>Alle </span>
+                          <button onClick={() => modificaOrario('flessibileAlle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
+                          <span>{String(orari.flessibileAlle).padStart(2, '0')}:00</span>
+                          <button onClick={() => modificaOrario('flessibileAlle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Selettore orario per Fissa (come da design Figma) */}
+                    {item.t === "Fissa" && (
+                      <div className="orari-selettori" style={{ marginTop: '10px', display: 'flex', gap: '15px', alignItems: 'center', fontSize: '14px' }}>
+                        <div>
+                          <span>Dalle </span>
+                          <button onClick={() => modificaOrario('fissaDalle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
+                          <span>{String(orari.fissaDalle).padStart(2, '0')}:00</span>
+                          <button onClick={() => modificaOrario('fissaDalle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
+                        </div>
+                        <div>
+                          <span>Alle </span>
+                          <button onClick={() => modificaOrario('fissaAlle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
+                          <span>{String(orari.fissaAlle).padStart(2, '0')}:00</span>
+                          <button onClick={() => modificaOrario('fissaAlle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Bottone */}
+      <button className="bv24" onClick={() => setDato(18)}>Procedi</button>
+    </div>
+  </div>
+
+
+)}
+
+{dato === 18 &&(
+   <div className="container-sfondo">
+    <div className="Step step-centrato2">
+      {/* Header */}
+      <div className="top-navigation">
+        <div className="nav-left">
+          <div className="arrows-container">
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+          <div className="profilo-lavoro-container">
+            <span>Organizzazione/Pausa pranzo</span>
+          </div>
+        </div>
+        <div className="nav-center">
+          <img src = {logoImage}/>
+          </div>
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+      </div>
+
+      {/* Titolo e Sottotitolo */}
+      <div className = "er2">
+        <h1> Perfetto,  ho tutte le   <br /> informazioni <br /> necessarie! </h1>
+        <div className = "ry7">
+        </div>
+        </div>
+
+      <div className = "samp">
+
+        <button type = "dfj" className = "seriea" onClick = {() => setDato(19)}>
+          Crea il mio progetto</button>
+        <button type = "fgdf" className = "serieb" onClick = {() => setDato(19)}>
+          Aggiungi persone</button>
+        </div>
+
+        <img src = {violetto} className = "we23"/>
+
+        <img src = {Settings} className = "impostazioni"/>
+
+        <div className = "Scritta2">
+        <p> Impostazioni</p>
+        </div>
+        </div>
+        </div>
+)}
+
+{dato === 19 &&(
   
-  )
+     <div className="container-sfondo">
+    <div className="Step step-centrato2">
+      {/* Header */}
+      <div className="top-navigation">
+        <div className="nav-left">
+          <div className="arrows-container">
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+          <div className="profilo-lavoro-container">
+            <span>Organizzazione/Pausa pranzo</span>
+          </div>
+        </div>
+        <div className="nav-center">
+          <img src = {logoImage}/>
+          </div>
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+      </div>
+
+      <div className = "er2">
+      <h1>Perfetto, <br /> Possiamo iniziare!</h1>
+      </div>
+
+
+     <div className = "avviso2">
+      <span><span className="cerchio-rosso"></span>Prova Flowlee con 3 progetti e un totale di 5 persone. <br /> </span>
+      <span>Dopodichè, ti suggeriremo l'iscrizione al piano Premium.</span>
+      </div>
+
+      <button className = "Bottone1" onClick = {() => setDato(20)}>
+        Crea il mio progetto
+       </button>
+       <button className = "Bottone2" onClick = {() => setDato(20)}>
+        Impostazioni
+       </button>
+
+           <img src = {violetto} className = "we23"/>
+
+      </div>
+     </div>
+)}
+{dato === 20 && (
+  <div className="container-sfondo">
+
+    <div className="Step step-centrato2">
+
+      <h1 className="titolo-principale">
+        Impostazioni azienda
+      </h1>
+
+
+      <div className="layout-impostazioni">
+
+
+        <div className="titoli">
+          {titoli.map((sr) => (
+            <button
+              key={sr}
+              type="button"
+              className={`sr ${Stella === sr ? "active" : ""}`}
+              onClick={() => setStella(sr)}
+            >
+              {sr}
+            </button>
+          ))}
+        </div>
+
+
+
+
+        <div className="colonna-destra">
+
+
+          <div className="sezione-gruppo">
+
+            <h3 className="titolo-sezione">
+              Creatore
+            </h3>
+
+            <p className="testo-descrizione">
+              Gestisce le impostazioni principali dell'azienda
+              e ha il controllo completo.
+            </p>
+
+
+            <div className="card-utente">
+
+              <div className="info-utente">
+                <div className="avatar-placeholder"></div>
+                <span>Tu</span>
+              </div>
+
+
+              <div className="azioni-utente">
+                <button className="btn-icon">✏️</button>
+                <button className="btn-icon">✕</button>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+
+
+          <div className="sezione-gruppo">
+
+
+            <h3 className="titolo-sezione">
+              Amministratori
+            </h3>
+
+
+            <p className="testo-descrizione">
+              Possono collaborare alla gestione dell'azienda
+              e modificare le impostazioni assegnate.
+            </p>
+
+
+
+            <div className="card-utente">
+              <div className="info-utente">
+                <div className="avatar-placeholder"></div>
+                <span>Tu</span>
+              </div>
+
+              <div className="azioni-utente">
+                <button className="btn-icon">✏️</button>
+                <button className="btn-icon">✕</button>
+              </div>
+            </div>
+
+
+
+            <div className="card-utente">
+              <div className="info-utente">
+                <div className="avatar-placeholder"></div>
+                <span>Emilio Zappalardo</span>
+              </div>
+
+              <div className="azioni-utente">
+                <button className="btn-icon">✏️</button>
+                <button className="btn-icon">✕</button>
+              </div>
+            </div>
+
+
+
+            <div className="card-utente">
+              <div className="info-utente">
+                <div className="avatar-placeholder"></div>
+                <span>Federica Fontana</span>
+              </div>
+
+              <div className="azioni-utente">
+                <button className="btn-icon">✏️</button>
+                <button className="btn-icon">✕</button>
+              </div>
+            </div>
+
+
+
+            <button className="btn-aggiungi-admin">
+              <span>+</span>
+              Aggiungi amministratore
+            </button>
+
+
+          </div>
+
+
+
+
+
+          <button 
+            className="ert"
+            onClick={() => setDato(21)}
+          >
+            Salva
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+)}
+{dato === 21 &&(
+<div className="container-sfondo">
+
+<div className="Step step-centrato2">
+
+<h1 className="titolo-principale">
+Impostazioni azienda
+</h1>
+
+
+<div className="layout-impostazioni">
+
+
+<div className="titoli">
+{titoli.map((sr)=>(
+<button
+key={sr}
+className={`sr ${Stella===sr?"active":""}`}
+onClick={()=>setStella(sr)}
+>
+{sr}
+</button>
+))}
+</div>
+
+
+
+<div className="colonna-destra">
+
+
+<div className="sezione-gruppo">
+
+<h3 className="titolo-sezione">
+Creatore
+</h3>
+
+<p className="testo-descrizione">
+Gestisce le impostazioni principali dell'azienda e ha il controllo completo.
+</p>
+
+
+<div className="card-utente">
+
+<div className="info-utente">
+<div className="avatar-placeholder"/>
+<span>Tu</span>
+</div>
+
+<div className="azioni-utente">
+<button className="btn-icon">✏️</button>
+<button className="btn-icon">✕</button>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div className="sezione-gruppo">
+
+<h3 className="titolo-sezione">
+Amministratori
+</h3>
+
+
+<p className="testo-descrizione">
+Possono collaborare alla gestione dell'azienda e modificare le impostazioni assegnate.
+</p>
+
+
+
+{["Tu","Emilio Zappalardo","Federica Fontana"].map((nome)=>(
+<div className="card-utente" key={nome}>
+
+<div className="info-utente">
+<div className="avatar-placeholder"/>
+<span>{nome}</span>
+</div>
+
+<div className="azioni-utente">
+<button className="btn-icon">✏️</button>
+<button className="btn-icon">✕</button>
+</div>
+
+</div>
+))}
+
+
+
+<button className="btn-aggiungi-admin">
+<span>+</span>
+Aggiungi amministratore
+</button>
+
+
+</div>
+
+
+
+<div className="blocco-rimozione">
+
+<p>
+Vuoi rimuovere Emilio Zappalardo dagli <br/>
+amministratori di company srl ?
+</p>
+
+
+<div className="sfm">
+
+{[
+"Emilio Z. non avrà piu accesso alle modifiche e progetti degli amministratori",
+"Emilio Z. continuerà a far parte del team come product designer, gestione su Team > persone"
+].map((t,i)=>(
+
+<div className="switch-riga" key={i}>
+
+<label className="fj">
+<input type="checkbox"/>
+<span className="qwr"/>
+</label>
+
+<div className="sfd">
+<strong>{t}</strong>
+</div>
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+
+
+<button
+className="ert"
+onClick={()=>setDato(22)}
+>
+Conferma
+</button>
+
+
+<button className="bit2">
+Chiudi
+</button>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+)}
+
+{dato === 22 &&(
+<div className="container-sfondo">
+
+<div className="Step step-centrato2">
+
+<h1 className="titolo-principale">
+Impostazioni azienda
+</h1>
+
+
+<div className="layout-impostazioni">
+
+
+<div className="titoli">
+{titoli.map((sr)=>(
+<button
+key={sr}
+className={`sr ${Stella===sr?"active":""}`}
+onClick={()=>setStella(sr)}
+>
+{sr}
+</button>
+))}
+</div>
+
+
+
+<div className="colonna-destra">
+
+
+<div className="sezione-gruppo">
+
+<h3 className="titolo-sezione">
+Creatore
+</h3>
+
+<p className="testo-descrizione">
+Gestisce le impostazioni principali dell'azienda e ha il controllo completo.
+</p>
+
+
+<div className="card-utente">
+
+<div className="info-utente">
+<div className="avatar-placeholder"/>
+<span>Tu</span>
+</div>
+
+<div className="azioni-utente">
+<button className="btn-icon">✏️</button>
+<button className="btn-icon">✕</button>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div className="sezione-gruppo">
+
+<h3 className="titolo-sezione">
+Amministratori
+</h3>
+
+
+<p className="testo-descrizione">
+Possono collaborare alla gestione dell'azienda e modificare le impostazioni assegnate.
+</p>
+
+
+
+{["Tu","Emilio Zappalardo","Federica Fontana"].map((nome)=>(
+<div className="card-utente" key={nome}>
+
+<div className="info-utente">
+<div className="avatar-placeholder"/>
+<span>{nome}</span>
+</div>
+
+<div className="azioni-utente">
+<button className="btn-icon">✏️</button>
+<button className="btn-icon">✕</button>
+</div>
+
+</div>
+))}
+
+
+
+<button className="btn-aggiungi-admin">
+<span>+</span>
+Aggiungi amministratore
+</button>
+
+
+</div>
+
+
+
+<div className="blocco-rimozione">
+
+
+
+<div className="sfm">
+
+   <div className="card">
+              <div className="info-utente">
+                <div className="avatar-placeholder"></div>
+                <span>Emilio Zappalardo</span>
+                
+              </div>
+              </div>
+               <div className="card">
+              <div className="info-utente">
+                <div className="avatar-placeholder"></div>
+                <span>Riccardo Saltarino</span>
+                
+              </div>
+              </div>
+
+               <div className="card">
+              <div className="info-utente">
+       
+             
+               <h1>Sostituisci con</h1>
+                <span>Ric</span>
+                
+              </div>
+              </div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+<button
+className="ert"
+onClick={()=>setDato(23)}
+>
+C
+</button>
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+
+)}
+
+{dato === 23 && (
+        <div className="container-sfondo">
+          <div className="Step step-centrato2">
+            <h1 className="titolo-principale">Impostazioni azienda</h1>
+
+            <div className="layout-impostazioni">
+              <div className="titoli">
+                {titoli.map((sr) => (
+                  <button
+                    key={sr}
+                    className={`sr ${Stella === sr ? "active" : ""}`}
+                    onClick={() => setStella(sr)}
+                  >
+                    {sr}
+                  </button>
+                ))}
+              </div>
+
+              <div className="colonna-destra">
+                <div className="sezione-gruppo">
+                  <h3 className="titolo-sezione">Creatore</h3>
+                  <p className="testo-descrizione">
+                    Gestisce le impostazioni principali dell'azienda e ha il controllo completo.
+                  </p>
+
+                  <div className="card-utente">
+                    <div className="info-utente">
+                      <div className="avatar-placeholder" />
+                      <span>Tu</span>
+                    </div>
+                    <div className="azioni-utente">
+                      <button className="btn-icon">✏️</button>
+                      <button className="btn-icon">✕</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="sezione-gruppo">
+                  <h3 className="titolo-sezione">Amministratori</h3>
+                  <p className="testo-descrizione">
+                    Possono collaborare alla gestione dell'azienda e modificare le impostazioni assegnate.
+                  </p>
+
+                  {["Tu", "Tu"].map((nome) => (
+                    <div className="card-utente" key={nome}>
+                      <div className="info-utente">
+                        <div className="avatar-placeholder" />
+                        <span>{nome}</span>
+                      </div>
+                      <div className="azioni-utente">
+                        <button className="btn-icon">✏️</button>
+                        <button className="btn-icon">✕</button>
+                      </div>
+                    </div>
+                  ))}
+
+                  <button className="btn-aggiungi-admin">
+                    <span>+</span>
+                    Aggiungi amministratore
+                  </button>
+                </div>
+
+                <div className="sfm" />
+              </div>
+            </div>
+               <button 
+                className="btn-invita" 
+                onClick={() => setDato(24)}
+                style={{ 
+                  backgroundColor: "black", 
+                  color: "white", 
+                  border: "none", 
+                  borderRadius: "20px", 
+                  padding: "10px 24px", 
+                  fontWeight: "bold", 
+                  cursor: "pointer" 
+                }}
+              >
+                Invita
+              </button>
+
+           
+            <div className="sre" style={{ marginTop: "20px", textAlign: "left" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+                <span style={{ fontSize: "24px" }}>⚠️</span>
+                <p style={{ fontWeight: "bold", margin: 0 }}>
+                  Al momento, risulti solo tu nell'organizzazione.
+                </p>
+              </div>
+              
+              <p className="testo-descrizione" style={{ marginBottom: "12px" }}>
+                Per aggiungere degli amministratori, devono comparire <br />
+                come persone all'interno della tua organizzazione <br />
+              </p>
+              <p>Invita dunque delle persone nell'organizzazione <br /> e aggiungile come amministratori!</p>
+              
+             
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* --- SCHERMATA 24 --- */}
+      {dato === 24 && (
+        <div className = "container-24" style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          backgroundColor: '#000',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+          zIndex: 9999
+        }}>
+          {/* Sfondo sfumato */}
+          <div style={{
+            position: 'absolute',
+            width: '1000px',
+            height: '1000px',
+            background: `
+              radial-gradient(circle at 40% 50%, rgba(255, 120, 130, 1.3) 0%, transparent 50%),
+              radial-gradient(circle at 60% 50%, rgba(100, 90, 200, 0.8) 0%, transparent 50%)
+            `,
+            filter: 'blur(120px)',
+            mixBlendMode: 'screen',
+            opacity: 1,
+            pointerEvents: 'none',
+            zIndex: 0
+          }} />
+
+          {/* Contenitore modale */}
+          <div style={{
+            position: 'relative',
+            zIndex: 1,
+            backgroundColor: 'rgba(255, 255, 255, 0.75)', 
+            backdropFilter: 'blur(20px)',                
+            border: '1px solid rgba(255, 255, 255, 0.3)', 
+            padding: '40px',
+            borderRadius: '24px',
+            width: '850px',
+            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.25)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '24px'
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 'bold', color: '#000', margin: 0 }}>Impostazioni azienda</h2>
+              <button onClick={() => setDato(23)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '16px' }}>✕</button>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: '220px 180px 1fr', gap: '40px' }}>
+              {/* Sidebar */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <button style={{ backgroundColor: '#000', color: '#fff', border: 'none', padding: '12px', borderRadius: '10px', textAlign: 'left', fontSize: '13px', cursor: 'pointer' }}>Dettagli dell'azienda</button>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid #e5e5e5', padding: '12px', borderRadius: '10px', textAlign: 'left', fontSize: '13px', cursor: 'pointer' }}>Modifica amministratori</button>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid #e5e5e5', padding: '12px', borderRadius: '10px', textAlign: 'left', fontSize: '13px', cursor: 'pointer' }}>Contatti aziendali</button>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid #e5e5e5', padding: '12px', borderRadius: '10px', textAlign: 'left', fontSize: '13px', cursor: 'pointer' }}>Fatturazione e pagamento</button>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid #e5e5e5', padding: '12px', borderRadius: '10px', textAlign: 'left', fontSize: '13px', cursor: 'pointer' }}>Modello e orario di lavoro</button>
+              </div>
+
+              {/* BOX CENTRALE CARD AMMINISTRATORI */}
+
+<div style={{
+  display:"flex",
+  flexDirection:"column",
+  width:"260px"
+}}>
+
+  <h3 style={{
+    fontSize:"14px",
+    margin:0
+  }}>
+    Creatore
+  </h3>
+
+
+  <p style={{
+    fontSize:"11px",
+    color:"#888"
+  }}>
+    Gestisce le impostazioni principali dell'azienda e ha il controllo completo.
+  </p>
+
+
+  <div className="card-utente">
+
+    <div className="info-utente">
+      <div className="avatar-placeholder"/>
+      <span>Tu</span>
+    </div>
+
+    <div className="azioni-utente">
+      <button className="btn-icon">✏️</button>
+      <button className="btn-icon">✕</button>
+    </div>
+
+  </div>
+
+
+
+  <h3 style={{
+    fontSize:"14px",
+    marginTop:"15px"
+  }}>
+    Amministratori
+  </h3>
+
+
+  <p style={{
+    fontSize:"11px",
+    color:"#888"
+  }}>
+    Possono collaborare alla gestione dell'azienda e modificare le impostazioni assegnate.
+  </p>
+
+
+{["Tu","Emilio Zappalardo","Federica Fontana"].map((nome)=>(
+  <div 
+    className={`card-utente ${nome === "Emilio Zappalardo" ? "card-emilio" : ""}`} 
+    key={nome}
+  >
+
+
+      <div className="info-utente">
+        <div className="avatar-placeholder"/>
+        <span>{nome}</span>
+      </div>
+
+      <div className="azioni-utente">
+        <button className="btn-icon">✏️</button>
+        <button className="btn-icon">✕</button>
+      </div>
+
+    </div>
+  ))}
+
+
+
+  <button className="btn-aggiungi-admin">
+    <span>+</span>
+    Aggiungi amministratore
+  </button>
+
+<div className = "wet">
+  {[
+    {T: "Riccardo V. sostituirà Emilio Z nella visualizzazione e modifica di e progetti nelle feature riservate agli amministratori"}
+  ].map((item,index) => (
+  <div key = {index}>
+<label className = "s13">
+  <input type = "checkbox"/>
+  <span className = "dkdf"/>
+</label>
+  <div className = "inty">
+    <strong>{item.T}</strong>
+    </div>
+   </div>
+  ))}
+  </div>
+  </div>
+
+
+ <button className = "ciao" type = "sdjnk">Chiudi</button>
+ </div>
+ 
+                
+               
+
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                  <button style={{ backgroundColor: '#000', color: '#fff', padding: '10px 20px', borderRadius: '10px', cursor: 'pointer' }} className = "sfabe" onClick={() => setDato(25)}>Sostituisci</button>
+                </div>
+              </div>
+            </div>
+            
+          
+          
+        
+      )}
+    {dato === 25 &&(
+   
+   <div className = "container-sfondo schermata-25">
+        <div className="Step wide-mode">
+          <div className="top-navigation">
+            <div className="nav-left">
+              <div className="arrows-container">
+                <IoIosArrowDown className="top-icon" />
+                <IoIosArrowUp className="top-icon" />
+              </div>
+              <div className="profilo-lavoro-container">
+                <span>Organizzazione/codice</span>
+              </div>
+            </div>
+
+            <div className="nav-center">
+              <img src = {logoImage}/>
+            </div>
+         
+            <div className="right-icons">
+              <BsGrid3X3Gap className="top-icon" />
+              <HiOutlineUserCircle className="top-icon" />
+            </div>
+          </div>
+
+
+          <div className = "titolo-codice" >
+            <h1> Inserisci il codice <br />
+                di attivazione<br />
+                che hai ricevuto*
+                </h1>
+          </div>
+
+         <div className = "syt">
+          <span>Il codice è nella mail tramite la quale<br />
+          in cui ha ricevuto questo invito</span>
+          </div>
+
+         <div className= "amen2">
+         <span>Problemi con il codice ? </span>
+          </div>
+
+
+          
+          
+          <div className = "zr">
+          <label>Company</label> <br />
+          <input className = "rew" type = "text"  placeholder = "Company srl"/>
+          </div>
+
+
+         <div className="kk">
+  <label>Codice attivazione</label> <br />
+  <input className = "rh" type = "text" placeholder = "SRL453DR"></input>
+</div>
+
+
+  <div className = "test">
+  <label>Piano attivo</label>
+  <input className = "sb5" type = "text" placeholder = "Premium 100 account"/>
+  </div>
+  
+
+
+         <button className = "bv2 posiziona-step-13" onClick = {() => setDato(26)}>
+          Procedi
+         </button>
+            
+          </div>
+
+          </div>
+         
+          
+          
+)}
+    {dato === 26 && (
+  <div className="container-sfondo step10-mobile-fix">
+
+    <img src={Barra} className="siro" />
+
+    <div className="Step wide-mode">
+
+      <div className="top-navigation">
+        <div className="nav-left">
+          <div className="arrows-container">
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+
+          <div className="profilo-lavoro-container">
+            <span>Company Srl/Persone</span>
+          </div>
+        </div>
+
+        <div className="nav-center">
+          <img 
+            src={logoImage} 
+            alt="Flowlee" 
+            style={{ height: "20px", width: "auto" }} 
+          />
+        </div>
+
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+      </div>
+
+
+      <div className="step10-content">
+        <div className="step10-left">
+
+          <h1 className="section-title">
+            Inseriamo una persona <br />
+            nell'organizazione?<br />
+          </h1>
+
+          <div className="step10-buttons">
+            <button className="dark" onClick={() => setDato(27)}>
+              Crea profilo
+            </button>
+
+            <button 
+              className="light" 
+              onClick={() => onSelectType("Freelance")}
+            >
+              Link veloce
+            </button>
+          </div>
+
+        </div>
+
+
+        <div className="step10-right">
+          <img src={violetto} alt="Flowlee" className="step10-image" />
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+)}
+
+{dato === 27 &&(
+
+        
+
+
+  <div className="container-sfondo sfondo-scuro">
+
+    <div className="Step wide-mode step27-mobile-fix">
+
+      <div className="top-navigation">
+        <div className="nav-left">
+          <div
+            className="arrows-container"
+            onClick={onBack}
+            style={{ cursor: "pointer" }}
+          >
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+
+          <div className="profilo-lavoro-container">
+            <span>Company srl / Persona</span>
+          </div>
+        </div>
+
+        <div className="nav-center">
+          <img
+            src={logoImage}
+            alt="Flowlee"
+            style={{ height: "20px", width: "auto" }}
+          />
+        </div>
+
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+      </div>
+
+      <div
+        className="step10-content"
+        style={{
+          display: "flex",
+          gap: "40px",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+
+        {/* COLONNA SINISTRA */}
+        <div
+          className="step10-right"
+          style={{ flex: "1", maxWidth: "300px" }}
+        >
+          <div className="w-full aspect-square  flex flex-col items-center justify-center bg-white shadow-sm">
+
+            <img
+              src={rettangolo}
+              className="img-box"
+              alt="Profilo"
+            />
+
+          </div>
+        </div>
+
+        {/* COLONNA DESTRA */}
+        <div
+          className="step10-left"
+          style={{ flex: "1", maxWidth: "400px" }}
+        >
+          <div className="space-y-4">
+
+            <div>
+              <label className="rv">Nome</label>
+              <br />
+
+              <input
+                type="text"
+                className="li"
+                placeholder="Inserisci nome"
+              />
+            </div>
+
+            <div
+              style={{
+                color: "black",
+                transform: "translateY(-13px)",
+              }}
+            >
+              <label className="gv">Cognome</label>
+              <br />
+
+              <input
+                className="nnnn"
+                placeholder="Frittura"
+                style={{ color: "black" }}
+              />
+
+              <div className="justify-center">
+                <div className="noi">
+                  <label className="jes">Ruoli</label>
+
+                  <div className="klo">
+                    <select>
+                      <option>Project Manager</option>
+                      <option>Sviluppatore</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ color: "black" }}>
+              <label className="batma">Overview</label>
+              <br />
+
+              <textarea
+                className="luc"
+                placeholder="Descrizione"
+              />
+
+              <button
+                className="jj"
+                onClick={() => setDato(28)}
+              >
+                Procedi
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <img
+      src={Barra}
+      className="siro"
+      alt="Barra"
+    />
+
+  </div>
+)}
+
+{dato == 28 &&(
+
+  <div className="container-sfondo sfondo-scuro">
+
+    <div className="Step wide-mode step27-mobile-fix">
+
+      <div className="top-navigation">
+
+        <div className="nav-left">
+
+          <div
+            className="arrows-container"
+            onClick={onBack}
+            style={{ cursor: "pointer" }}
+          >
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+
+          <div className="profilo-lavoro-container">
+            <span>Company srl / Persona</span>
+          </div>
+
+        </div>
+
+
+        <div className="nav-center">
+          <img
+            src={logoImage}
+            alt="Flowlee"
+            style={{ height: "20px", width: "auto" }}
+          />
+        </div>
+
+
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+
+      </div>
+
+
+
+      <div
+        className="step10-content"
+        style={{
+          display: "flex",
+          gap: "40px",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+
+
+        {/* COLONNA SINISTRA */}
+        <div
+          className="step10-right"
+          style={{
+            flex: "1",
+            maxWidth: "300px"
+          }}
+        >
+
+          <div className="w-full aspect-square flex flex-col items-center justify-center">
+
+            <div className="hiro">
+
+
+              <img
+                src={group}
+                alt="Marta"
+                className="foto-marta"
+              />
+
+
+              <h1>
+                <span>Come</span>
+                <span className="second-line">
+                  contatto Marta?
+                </span>
+              </h1>
+
+
+              <p className="subtitle">
+                <span>Selezionerai la visibilità</span>
+                <span>dei dati di contatto più avanti.</span>
+              </p>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+        {/* COLONNA DESTRA */}
+        <div
+          className="step10-left"
+          style={{
+            flex: "1",
+            maxWidth: "400px"
+          }}
+        >
+
+          <div className="space-y-4">
+
+
+            <div>
+
+              <label className="rv">
+                Intranet
+              </label>
+
+              <br />
+
+              <input
+                type="text"
+                className="li"
+                placeholder="Inserisci indirizzo"
+              />
+
+            </div>
+
+
+
+
+            <div
+              style={{
+                color: "black",
+                transform: "translateY(-13px)",
+              }}
+            >
+
+              <label className="gv">
+                Email
+              </label>
+
+              <br />
+
+
+              <input
+                className="nnnn"
+                placeholder="Frittura"
+                style={{
+                  color: "black"
+                }}
+              />
+
+
+
+              <div className="justify-center">
+
+                <div className="noi">
+
+                  <label className="jes">
+                    Whatsapp
+                  </label>
+
+
+                  <div className="klo">
+
+                    <select>
+
+                      <option>
+                        Project Manager
+                      </option>
+
+                      <option>
+                        Sviluppatore
+                      </option>
+
+                    </select>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+
+
+
+            <div style={{ color: "black" }}>
+
+              <div className="flex gap-3 items-center mt-4">
+
+
+                <button
+                  className="kilo"
+                  onClick={() => setDato(29)}
+                >
+                  Procedi
+                </button>
+
+
+                <button
+                  type="button"
+                  className="Sim"
+                >
+                  Salva
+                </button>
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+    <img
+      src={Barra}
+      className="siro"
+      alt="Barra"
+    />
+
+
+  </div>
+)}
+{dato === 29 &&(
+
+  <div className="container-sfondo step15-container step29-height">
+    <div className="Step step-centrato">
+
+      {/* Header */}
+      <div className="top-navigation">
+        <div className="nav-left">
+          <div className="arrows-container">
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+
+          <div className="profilo-lavoro-container">
+            <span>Company srl / Permessi</span>
+          </div>
+        </div>
+
+        <div className="nav-center">
+          <img src={logoImage} alt="Logo" />
+        </div>
+
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+      </div>
+
+      {/* Foto Marta */}
+      <div className="foto-wrapper step29-foto">
+        <img
+          src={group}
+          alt="Marta"
+          className="foto-marta"
+        />
+      </div>
+
+      {/* Titolo */}
+      <div className=" er step29-titolo">
+        <h1>
+          Impostiamo
+          <br />
+          un po' di permessi
+        </h1>
+
+        <div className="flex-beetween">
+          <span>
+            Seleziona i permessi di Marta
+            <br />
+            all'interno dell'ecosistema FlowLee.
+          </span>
+        </div>
+      </div>
+
+      {/* Toggle */}
+      <div className="modelli-wrapper step29-modelli">
+        {[
+          {
+            t: "Piccola frase imprenditoriale che descriva una dinamica",
+          },
+          {
+            t: "Piccola frase imprenditoriale che descriva una dinamica",
+            d: "Orario gestito liberamente dal dipendente nel rispetto di obiettivi, attività e disponibilità concordate",
+          },
+          {
+            t: "Piccola frase impersonale che descriva una dinamica",
+          },
+          {
+            t: "Piccola frase impersonale che descriva una dinamica",
+          },
+        ].map((item, index) => (
+          <div key={index} className="toggle-row">
+            <label className="switch">
+              <input type="checkbox" />
+              <span className="slider"></span>
+            </label>
+
+            <div className="toggle-text">
+              <strong>{item.t}</strong>
+              {item.d && <p>{item.d}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottone */}
+      <button
+        className=" bv2 step29-bv2"
+        onClick={() => setDato(30)}
+      >
+        Procedi
+      </button>
+
+    </div>
+
+    {/* Barra */}
+    <div className="barra-container  step29-barra">
+      <img
+        src={Barra}
+        alt="Barra"
+        className="casa"
+      />
+    </div>
+  </div>
+)}
+
+{dato == 30 &&(
+
+
+  <div className="container-sfondo step15-container step29-height">
+    <div className="Step step-centrato">
+
+      {/* Header */}
+      <div className="top-navigation">
+        <div className="nav-left">
+          <div className="arrows-container">
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+
+          <div className="profilo-lavoro-container">
+            <span>Company srl / Permessi</span>
+          </div>
+        </div>
+
+        <div className="nav-center">
+          <img src={logoImage} alt="Logo" />
+        </div>
+
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+      </div>
+
+      {/* Foto Marta */}
+      <div className="foto-wrapper step29-foto">
+        <img
+          src={group}
+          alt="Marta"
+          className="foto-marta"
+        />
+      </div>
+
+      {/* Titolo */}
+      <div className="er step29-titolo">
+        <h1>
+          Come gestisce 
+          <br />
+          l'orario Marta?
+        </h1>
+
+        <div className="flex-beetween">
+          <span>
+            Seleziona i permessi di Marta
+            <br />
+            all'interno dell'ecosistema FlowLee.
+          </span>
+        </div>
+      </div>
+
+      {/* Box Info Orario (Come da Figma) */}
+      <div className="info-orario-box">
+        <div className="info-orario-icon">
+          <div className="company-logo-placeholder">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14" stroke="#0052FF" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M14 4H18V8" stroke="#0052FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M10 14L18 6" stroke="#0052FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div className="info-orario-content">
+          <strong>Il tuo orario è gestito secondo quello di Company Srl.</strong>
+          <p>Lun-Ven, modello flessibile, minimo 6h.</p>
+          <p>Fascia oraria 07:00-21:00.</p>
+        </div>
+      </div>
+
+      {/* Lista Permessi */}
+      <div className="cifra">
+        {[
+          {
+            T: "Gestione autonoma parziale dell'orario",
+            D: "Permetti a Marta di gestire l' orario in autonomia in alcuni giorni"
+          },
+          {
+            T: "Gestione autonoma totale dell'orario",
+            D: ""
+          }
+        ].map((item, index) => (
+          <div key={index} className="riga-permesso">
+            <label className="guf">
+              <input type="checkbox"/>
+              <span className="loui"/>
+            </label>
+            <div className="tutto">
+              <strong>{item.T}</strong>
+              {item.D && <p>{item.D}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottoni giorni della settimana */}
+      <div className="aqua">
+        {["L","M","M","G","V","S","D"].map((j, k) => (
+          <button key={k} className="ryy">{j}</button>
+        ))}
+      </div>
+
+      {/* Bottone Procedi */}
+      <button className="butt" onClick={() => setDato(31)}>
+        Procedi
+      </button>
+
+    </div>
+  </div>
+)}
+
+{dato === 31 && (
+  <div className="container-sfondo step10-mobile-fix">
+    <img src={Barra} className="siro" alt="Barra" />
+
+    <div className="Step wide-mode">
+      <div className="top-navigation">
+        <div className="nav-left">
+          <div className="arrows-container">
+            <IoIosArrowDown className="top-icon" />
+            <IoIosArrowUp className="top-icon" />
+          </div>
+
+          <div className="profilo-lavoro-container">
+            <span>Company Srl / Orario</span>
+          </div>
+        </div>
+
+        <div className="nav-center">
+          <img 
+            src={logoImage} 
+            alt="Flowlee" 
+            style={{ height: "20px", width: "auto" }} 
+          />
+        </div>
+
+        <div className="right-icons">
+          <BsGrid3X3Gap className="top-icon" />
+          <HiOutlineUserCircle className="top-icon" />
+        </div>
+      </div>
+
+      <div className="step10-content">
+        <div className="step10-left">
+          <div className="user-profile-header">
+            <img src={rettangolo} alt="Marta Frittura" className="user-avatar" />
+            <div className="user-info-text">
+              <h3>Marta Frittura</h3>
+              <span className="user-role">Project Manager</span>
+            </div>
+          </div>
+
+          <div className="user-details-list">
+            <div className="detail-row">
+              <span className="detail-label">Persona</span>
+              <div className="detail-actions">
+                <span className="edit-icon">✏️</span>
+                <span className="check-icon">✓</span>
+              </div>
+            </div>
+            <div className="detail-row">
+              <span className="detail-label">Contatti</span>
+              <div className="detail-actions">
+                <span className="edit-icon">✏️</span>
+                <span className="check-icon">✓</span>
+              </div>
+            </div>
+            <div className="detail-row">
+              <span className="detail-label">Permessi</span>
+              <div className="detail-actions">
+                <span className="edit-icon">✏️</span>
+                <span className="check-icon">✓</span>
+              </div>
+            </div>
+            <div className="detail-row">
+              <span className="detail-label">Orario</span>
+              <div className="detail-actions">
+                <span className="edit-icon">✏️</span>
+                <span className="check-icon">✓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="step10-right">
+          <div className="invita-section">
+            <h1>Invita Marta su Flowlee.</h1>
+            <p>
+              La inseriremo nella tua organizzazione, una volta che avrà accettato e compilato il test cognitivo potrai aggiungerla ad un progetto.
+            </p>
+
+            <div className="input-group">
+              <input 
+                type="email" 
+                value="marta.frittura@gmail.com" 
+                readOnly 
+              />
+            </div>
+
+            <div className="step10-buttons">
+              <button className="dark" onClick={() => setDato(27)}>
+                Invita
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+
+
+ 
+  
+
+        
+      
+
+
+   
+
+   </div>
+  );
 }
 
-export default App
+export default App;
