@@ -18,23 +18,71 @@ jobs:
         with:
           node-version: '20'
 
-      - run: npm ci
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: eu-central-1
 
-      - run: npm run build
+      # Deploy infrastructure
+      - name: Install CDK dependencies
+        run: npm ci
+        working-directory: infra
+
+      - name: Deploy CDK stack
+        id: cdk-deploy
+        run: npx cdk deploy --all --require-approval never --outputs-file cdk-outputs.json
+        working-directory: infra
+
+      - name: Extract stack outputs
+        id: outputs
+        run: |
+          STACK_NAME=$(jq -r 'keys[0]' infra/cdk-outputs.json)
+          BUCKET=$(jq -r ".[\"$STACK_NAME\"].BucketName" infra/cdk-outputs.json)
+          DIST_ID=$(jq -r ".[\"$STACK_NAME\"].DistributionId" infra/cdk-outputs.json)
+          DIST_DOMAIN=$(jq -r ".[\"$STACK_NAME\"].DistributionDomainName" infra/cdk-outputs.json)
+          CERT_ARN=$(jq -r ".[\"$STACK_NAME\"].CertificateArn" infra/cdk-outputs.json)
+          FRONTEND_DOMAIN=$(jq -r ".[\"$STACK_NAME\"].FrontendDomain" infra/cdk-outputs.json)
+          echo "bucket=$BUCKET" >> "$GITHUB_OUTPUT"
+          echo "distribution_id=$DIST_ID" >> "$GITHUB_OUTPUT"
+          echo "distribution_domain=$DIST_DOMAIN" >> "$GITHUB_OUTPUT"
+          echo "certificate_arn=$CERT_ARN" >> "$GITHUB_OUTPUT"
+          echo "frontend_domain=$FRONTEND_DOMAIN" >> "$GITHUB_OUTPUT"
+
+      # Build frontend
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Build frontend
+        run: npm run build
         env:
           VITE_API_BASE_URL: https://dev.api.flowlee.com
           VITE_AUTH_AUTHORITY: https://flowlee.eu.auth0.com
           VITE_AUTH_CLIENT_ID: ${{ vars.DEV_AUTH_CLIENT_ID }}
           VITE_AUTH_AUDIENCE: https://api.flowlee.com
 
-      - uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: eu-central-1
-
-      - run: aws s3 sync dist/ s3://flowlee-dev-frontend-assets --delete
+      # Deploy frontend assets
+      - name: Sync to S3
+        run: aws s3 sync dist/ s3://${{ steps.outputs.outputs.bucket }} --delete
 
       - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ steps.outputs.outputs.distribution_id }} --paths "/*"
+
+      # Log DNS validation records for the ACM certificate
+      - name: Log ACM DNS validation records
         run: |
-          DIST_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Origins.Items[?DomainName=='flowlee-dev-frontend-assets.s3.eu-central-1.amazonaws.com']].Id" --output text)
-          aws cloudfront create-invalidation --distribution-id "$DIST_ID" --paths "/*"
+          echo "ACM Certificate DNS Validation Records:"
+          echo "Add these CNAME records to your DNS provider to validate the certificate:"
+          aws acm describe-certificate --certificate-arn ${{ steps.outputs.outputs.certificate_arn }} --region us-east-1 \
+            --query "Certificate.DomainValidationOptions[].ResourceRecord" --output table
+
+      # Log where to point DNS
+      - name: Output DNS configuration
+        run: |
+          echo "## DNS Configuration" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Point your domain to CloudFront:" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Domain | Record Type | Value |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|--------|-------------|-------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| ${{ steps.outputs.outputs.frontend_domain }} | CNAME | ${{ steps.outputs.outputs.distribution_domain }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"

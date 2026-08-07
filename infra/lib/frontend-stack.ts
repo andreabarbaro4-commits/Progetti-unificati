@@ -8,17 +8,12 @@ import { Construct } from 'constructs';
 export interface FrontendStackProps extends cdk.StackProps {
   stage: string;
   domainName: string;
-  /**
-   * ARN of an ACM certificate in us-east-1 that covers `domainName`.
-   * Must be provisioned and validated manually (DNS validation via GoDaddy)
-   * before deploying this stack.
-   */
-  certificateArn: string;
 }
 
 export class FrontendStack extends cdk.Stack {
   public readonly distribution: cloudfront.Distribution;
   public readonly bucket: s3.Bucket;
+  public readonly certificate: acm.Certificate;
 
   constructor(scope: Construct, id: string, props: FrontendStackProps) {
     super(scope, id, props);
@@ -31,20 +26,14 @@ export class FrontendStack extends cdk.Stack {
       removalPolicy: cdk.RemovalPolicy.RETAIN,
     });
 
-    // Origin Access Control (L1 construct)
-    const oac = new cloudfront.CfnOriginAccessControl(this, 'OAC', {
-      originAccessControlConfig: {
-        name: `flowlee-${props.stage}-oac`,
-        originAccessControlOriginType: 's3',
-        signingBehavior: 'always',
-        signingProtocol: 'sigv4',
-      },
+    // ACM Certificate — DNS validation
+    // Note: CloudFront requires certificates in us-east-1.
+    // With crossRegionReferences enabled on this stack, CDK handles
+    // creating the cert in us-east-1 and referencing it cross-region.
+    this.certificate = new acm.Certificate(this, 'Certificate', {
+      domainName: props.domainName,
+      validation: acm.CertificateValidation.fromDns(),
     });
-
-    // ACM Certificate — must already exist and be validated in us-east-1
-    const certificate = acm.Certificate.fromCertificateArn(
-      this, 'Cert', props.certificateArn
-    );
 
     // CloudFront Distribution
     this.distribution = new cloudfront.Distribution(this, 'Distribution', {
@@ -68,24 +57,33 @@ export class FrontendStack extends cdk.Stack {
         },
       ],
       domainNames: [props.domainName],
-      certificate,
+      certificate: this.certificate,
     });
 
     // Stack outputs
-    new cdk.CfnOutput(this, 'DistributionDomain', {
+    new cdk.CfnOutput(this, 'DistributionDomainName', {
       value: this.distribution.distributionDomainName,
-      description: 'CloudFront distribution domain name — point your GoDaddy CNAME here',
+      description: 'Point your DNS CNAME/ALIAS to this CloudFront domain',
+    });
+
+    new cdk.CfnOutput(this, 'DistributionId', {
+      value: this.distribution.distributionId,
+      description: 'CloudFront distribution ID',
     });
 
     new cdk.CfnOutput(this, 'BucketName', {
       value: this.bucket.bucketName,
-      description: 'S3 bucket name for frontend assets',
+      description: 'S3 bucket for frontend assets',
+    });
+
+    new cdk.CfnOutput(this, 'CertificateArn', {
+      value: this.certificate.certificateArn,
+      description: 'ACM certificate ARN — check AWS console for DNS validation records',
     });
 
     new cdk.CfnOutput(this, 'FrontendDomain', {
       value: props.domainName,
-      description: 'Frontend domain for Auth0 redirect URI registration',
-      exportName: `flowlee-${props.stage}-frontend-domain`,
+      description: 'Configured frontend domain',
     });
   }
 }

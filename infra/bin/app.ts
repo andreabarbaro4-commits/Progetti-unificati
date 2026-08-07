@@ -4,23 +4,15 @@ import * as cdk from 'aws-cdk-lib';
 import { FrontendStack } from '../lib/frontend-stack';
 
 const app = new cdk.App();
-const stage = app.node.tryGetContext('stage') || 'flowlee-dev';
-
-const certificateArn = app.node.tryGetContext('certificateArn');
-if (!certificateArn) {
-  throw new Error(
-    'Missing required context: certificateArn. ' +
-    'Provision an ACM certificate in us-east-1, validate it via GoDaddy DNS, ' +
-    'then pass -c certificateArn=arn:aws:acm:us-east-1:...'
-  );
-}
+const stage = app.node.tryGetContext('stage') || 'dev';
+const domainName = app.node.tryGetContext('domainName') || `${stage}.flowlee.com`;
 
 new FrontendStack(app, `FlowleeFrontend-${stage}`, {
   stage,
-  domainName: app.node.tryGetContext('domainName') || `${stage.replace('flowlee-', '')}.flowlee.com`,
-  certificateArn,
+  domainName,
+  crossRegionReferences: true,
   env: {
     account: process.env.CDK_DEFAULT_ACCOUNT,
-    region: process.env.CDK_DEFAULT_REGION || 'eu-west-1',
+    region: 'eu-central-1',
   },
 });
