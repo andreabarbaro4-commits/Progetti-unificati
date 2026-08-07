@@ -15,4 +15,7 @@ new FrontendStack(app, `FlowleeFrontend-${stage}`, {
     account: process.env.CDK_DEFAULT_ACCOUNT,
     region: 'eu-central-1',
   },
+  synthesizer: new cdk.DefaultStackSynthesizer({
+    qualifier: 'flowlee',
+  }),
 });
