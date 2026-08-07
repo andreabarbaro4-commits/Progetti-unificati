@@ -1,13 +1,13 @@
-name: Deploy Dev
+name: Deploy Preprod
 
 on:
   push:
-    branches: [main]
+    branches: [preprod]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment: flowlee-dev
+    environment: flowlee-preprod
     steps:
       - uses: actions/checkout@v4
 
@@ -19,9 +19,9 @@ jobs:
 
       - run: npm run build
         env:
-          VITE_API_BASE_URL: https://dev.api.flowlee.com
+          VITE_API_BASE_URL: https://preprod.api.flowlee.com
           VITE_AUTH_AUTHORITY: https://flowlee.eu.auth0.com
-          VITE_AUTH_CLIENT_ID: ${{ vars.DEV_AUTH_CLIENT_ID }}
+          VITE_AUTH_CLIENT_ID: ${{ vars.PREPROD_AUTH_CLIENT_ID }}
           VITE_AUTH_AUDIENCE: https://api.flowlee.com
 
       - uses: aws-actions/configure-aws-credentials@v4
