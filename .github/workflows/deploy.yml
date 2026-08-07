@@ -72,6 +72,13 @@ jobs:
         run: npm ci
         working-directory: infra
 
+      - name: Clean up orphaned bucket from failed deploy
+        run: |
+          if aws s3api head-bucket --bucket flowlee-dev-frontend-assets 2>/dev/null; then
+            echo "Orphaned bucket found, deleting..."
+            aws s3 rb s3://flowlee-dev-frontend-assets --force
+          fi
+
       - name: Deploy CDK stack
         run: |
           npx cdk deploy --require-approval never \
