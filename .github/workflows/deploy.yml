@@ -32,6 +32,9 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: eu-central-1
 
-      - run: aws s3 sync dist/ s3://${{ vars.S3_BUCKET }} --delete
+      - run: aws s3 sync dist/ s3://flowlee-dev-frontend-assets --delete
 
-      - run: aws cloudfront create-invalidation --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --paths "/*"
+      - name: Invalidate CloudFront cache
+        run: |
+          DIST_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Origins.Items[?DomainName=='flowlee-dev-frontend-assets.s3.eu-central-1.amazonaws.com']].Id" --output text)
+          aws cloudfront create-invalidation --distribution-id "$DIST_ID" --paths "/*"
