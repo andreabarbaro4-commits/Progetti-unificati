@@ -8,7 +8,7 @@ import { Construct } from 'constructs';
 export interface FrontendStackProps extends cdk.StackProps {
   stage: string;
   domainName: string;
-  certificate: acm.ICertificate;
+  certificateArn: string;
 }
 
 export class FrontendStack extends cdk.Stack {
@@ -18,13 +18,18 @@ export class FrontendStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: FrontendStackProps) {
     super(scope, id, props);
 
-    // S3 Bucket — block all public access, SSE-S3 encryption
+    // S3 Bucket
     this.bucket = new s3.Bucket(this, 'AssetsBucket', {
       bucketName: `flowlee-${props.stage}-frontend-assets`,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
       removalPolicy: cdk.RemovalPolicy.RETAIN,
     });
+
+    // Reference the ACM certificate (created and validated by the pipeline)
+    const certificate = acm.Certificate.fromCertificateArn(
+      this, 'Certificate', props.certificateArn,
+    );
 
     // CloudFront Distribution
     this.distribution = new cloudfront.Distribution(this, 'Distribution', {
@@ -48,7 +53,7 @@ export class FrontendStack extends cdk.Stack {
         },
       ],
       domainNames: [props.domainName],
-      certificate: props.certificate,
+      certificate,
     });
 
     // Stack outputs
