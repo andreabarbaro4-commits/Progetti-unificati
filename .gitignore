@@ -10,8 +10,10 @@ logs/
 
 # Environment variables
 .env
-.env.*
+.env.local
+.env.*.local
 !.env.example
+!.env.development
 
 # Caches
 .vite/

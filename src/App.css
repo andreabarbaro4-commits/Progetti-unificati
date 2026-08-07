@@ -381,14 +381,6 @@ input:checked+.slider:before {
   margin-bottom: 20px !important;
 }
 
-  {
-  width: 23px;
-  position: relative;
-  margin-top: -190px;
-  color: black;
-  padding: 15px;
-}
-
 
 .bv {
   margin-top: 400px !important;
@@ -463,12 +455,6 @@ input:checked+.slider:before {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 0px !important;
-  
-}
-
-
-  {
   margin-top: 0px !important;
   
 }
@@ -2921,8 +2907,6 @@ input:checked+.slider6:before {
   margin-top: -240px;
   margin-left: 500px;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
 
 
 .er2 h1 {

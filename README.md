@@ -1,96 +1,61 @@
-# Flowlee Platform
+# Flowlee Frontend
 
-Flowlee is the workflow management and automation platform. This repository
-contains the front-end onboarding experience: a step-by-step wizard that
-collects the user's personal details, verifies their account, and then asks
-whether they work with a company or as a freelancer before collecting the
-relevant organisation details.
-
-## Tech stack
-
-| Concern           | Tool                                                           |
-| ----------------- | -------------------------------------------------------------- |
-| Runtime / PM      | [Bun](https://bun.sh)                                          |
-| Build tool        | [Vite](https://vite.dev)                                       |
-| UI library        | [React 19](https://react.dev)                                  |
-| Language          | [TypeScript](https://www.typescriptlang.org)                   |
-| Styling           | [Tailwind CSS v4](https://tailwindcss.com)                     |
-| Linting           | [ESLint](https://eslint.org) (flat config)                     |
-| Formatting        | [Prettier](https://prettier.io)                                |
-| Git hooks         | [Husky](https://typicode.github.io/husky)                      |
-| Commit convention | [commitlint](https://commitlint.js.org) (Conventional Commits) |
+React single-page application built with Vite and TypeScript for the Flowlee platform. Features onboarding flows, OIDC authentication via Auth0, and a modular feature-based architecture.
 
 ## Prerequisites
 
-- [Bun](https://bun.sh) `>= 1.3.0` (the pinned version lives in
-  `package.json` → `packageManager`).
+- **Node.js** 20 or later
+- **npm** (included with Node.js)
 
-## Getting started
+## Local Setup
 
 ```bash
-bun install      # install dependencies and set up Husky hooks
-bun run dev      # start the Vite dev server (http://localhost:5173)
+# 1. Clone the repository
+git clone git@github.com:flowlee/frontend.git
+cd frontend
+
+# 2. Install dependencies
+npm install
+
+# 3. Configure environment variables
+cp .env.example .env
+# Edit .env and fill in your values (see Environment Variables below)
+
+# 4. Start the development server
+npm run dev
+
+# 5. Open in browser
+# http://localhost:5173
 ```
 
-## Available scripts
+## Available Scripts
 
-| Script                 | Description                                     |
-| ---------------------- | ----------------------------------------------- |
-| `bun run dev`          | Start the Vite dev server with HMR.             |
-| `bun run build`        | Type-check (`tsc -b`) and build for production. |
-| `bun run preview`      | Preview the production build locally.           |
-| `bun run lint`         | Lint the codebase with ESLint.                  |
-| `bun run lint:fix`     | Lint and auto-fix where possible.               |
-| `bun run format`       | Format the codebase with Prettier.              |
-| `bun run format:check` | Verify formatting without writing changes.      |
-| `bun run typecheck`    | Run the TypeScript compiler without emitting.   |
+| Script | Command | Description |
+|--------|---------|-------------|
+| Dev server | `npm run dev` | Start Vite dev server with HMR at `http://localhost:5173` |
+| Build | `npm run build` | Type-check and build production bundle to `dist/` |
+| Preview | `npm run preview` | Serve the production build locally for testing |
 
-## Project structure
+## Environment Variables
 
-```
-src/
-├── main.tsx                          # App entry point (React root)
-├── App.tsx                           # Top-level component
-├── App.css                           # Onboarding flow styles
-├── index.css                         # Tailwind entry + global reset
-├── assets/                           # Static assets imported by components
-├── components/
-│   └── ui/
-│       └── Button.tsx                # Shared pill button
-└── features/
-    └── onboarding/
-        ├── OnboardingWizard.tsx       # Step navigation + shared wizard state
-        ├── types.ts                   # Shared onboarding types
-        ├── components/                # Pieces shared by more than one step
-        │   ├── FlowleeLogo.tsx
-        │   ├── TopNavigation.tsx
-        │   └── RoleTagList.tsx
-        └── steps/                      # One component per onboarding step
-            ├── PersonalInfoStep.tsx
-            ├── AccountStep.tsx
-            ├── SendingCodeStep.tsx
-            ├── VerifyCodeStep.tsx
-            ├── WelcomeStep.tsx
-            ├── RoleStep.tsx
-            ├── JobStep.tsx
-            ├── PhotoUploadStep.tsx
-            ├── OrgTypeStep.tsx
-            ├── OrgDetailsStep.tsx
-            └── CompanySettingsStep.tsx
-```
+All variables are prefixed with `VITE_` and exposed to the client at build time.
 
-## Styling notes
+| Variable | Purpose | Example |
+|----------|---------|---------|
+| `VITE_API_BASE_URL` | Backend API base URL | `https://api.flowlee.com` |
+| `VITE_AUTH_AUTHORITY` | Auth0 tenant URL | `https://flowlee.us.auth0.com` |
+| `VITE_AUTH_CLIENT_ID` | Auth0 application client ID | `aBcDeFgHiJkLmNoPqRsTuVwXyZ` |
+| `VITE_AUTH_AUDIENCE` | Auth0 API audience identifier | `https://api.flowlee.com` |
 
-The UI is built with Tailwind CSS v4 utilities. Tailwind's **Preflight** base
-reset is intentionally **not** loaded — the app ships its own universal reset in
-`src/index.css`. See the comment at the top of that file for the rationale.
+See `.env.example` for a ready-to-copy template.
 
-## Git workflow
+## Deployment
 
-Commits must follow the [Conventional Commits](https://www.conventionalcommits.org)
-specification; this is enforced by commitlint via a Husky `commit-msg` hook. The
-`pre-commit` hook runs ESLint. Example:
+The application builds to static assets in `dist/` and is deployed to **AWS S3 + CloudFront** via a GitHub Actions pipeline. The pipeline deploys across four stages:
 
-```
-feat: add employee-count field to the onboarding form
-```
+1. **flowlee-dev** — auto-deploys on merge to `main`
+2. **flowlee-test** — manual approval required
+3. **flowlee-preprod** — manual approval required
+4. **flowlee-prod** — manual approval required
+
+Each stage uses its own set of environment variables and AWS resources. See `docs/deployment.md` for full details on infrastructure, approval gates, and rollback procedures.

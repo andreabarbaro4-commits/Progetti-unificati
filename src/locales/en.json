@@ -51,5 +51,16 @@
   "creator": "Creator",
   "role": "Role",
   "select_role": "Select a role",
-  "second_order": "Second order"
+  "second_order": "Second order",
+  "validation.required": "This field is required",
+  "validation.email_invalid": "Please enter a valid email address",
+  "validation.field_too_short": "This field is too short",
+  "validation.field_too_long": "This field is too long",
+  "validation.invalid_type": "Invalid value",
+  "validation.invalid_format": "Invalid format",
+  "validation.passwords_must_match": "Passwords must match",
+  "auth.session_expired": "Your session has expired. Redirecting to login...",
+  "error.something_went_wrong": "Something went wrong",
+  "error.try_again_description": "An unexpected error occurred. Please try reloading the page.",
+  "error.reload_page": "Reload page"
 }

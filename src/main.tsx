@@ -1,18 +1,25 @@
-
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import './lib/i18n'
 import App from './App.tsx'
-import './i18n' // <--- AGGIUNGI QUESTA RIGA QUI
+import { isMockMode } from './mock'
 
-const rootElement = document.getElementById('root')
+async function bootstrap() {
+  if (isMockMode()) {
+    await import('./mock/setup');
+  }
 
-if (!rootElement) {
-  throw new Error('Root element "#root" was not found in the document.')
+  const rootElement = document.getElementById('root')
+  if (!rootElement) {
+    throw new Error('Root element "#root" was not found in the document.')
+  }
+
+  createRoot(rootElement).render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  )
 }
 
-createRoot(rootElement).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+bootstrap();

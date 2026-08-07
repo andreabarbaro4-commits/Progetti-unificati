@@ -63,3 +63,5 @@ export function OnboardingWizard() {
       return null
   }
 }
+
+export default OnboardingWizard;

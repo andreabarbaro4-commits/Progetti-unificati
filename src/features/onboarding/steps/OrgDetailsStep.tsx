@@ -1,17 +1,9 @@
-import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 import { TopNavigation } from '../components/TopNavigation'
-
-interface OrgDetails {
-  companyName: string
-  teamSize: string
-  description: string
-}
-
-const INITIAL_DETAILS: OrgDetails = {
-  companyName: '',
-  teamSize: '1-5',
-  description: '',
-}
+import { FormField } from '../../../components/ui/FormField'
+import { createFormConfig } from '../../../lib/form-utils'
+import { OrgDetailsSchema, type OrgDetailsData } from '../schemas'
 
 const TEAM_SIZE_PRICES: Record<string, string> = {
   '1-5': '€29/mese',
@@ -36,16 +28,24 @@ interface OrgDetailsStepProps {
 
 /** Step 11 — collects the organisation's name, team size and description. */
 export function OrgDetailsStep({ onBack, onNext }: OrgDetailsStepProps) {
-  const [details, setDetails] = useState<OrgDetails>(INITIAL_DETAILS)
+  const { t } = useTranslation()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<OrgDetailsData>(
+    createFormConfig(OrgDetailsSchema, {
+      defaultValues: { companyName: '', teamSize: '1-5', description: '' },
+    }),
+  )
 
-  const onChange = (patch: Partial<OrgDetails>) => {
-    setDetails((current) => ({ ...current, ...patch }))
-  }
+  const teamSize = watch('teamSize')
 
   return (
     <div className="container-sfondo">
       <div className="Step step-header-layout step10-layout">
-        <TopNavigation leftLabel="Organizzazione / 2" onBack={onBack} />
+        <TopNavigation leftLabel={`${t('organization')} / 2`} onBack={onBack} />
 
         <div
           className="step10-content"
@@ -53,59 +53,68 @@ export function OrgDetailsStep({ onBack, onNext }: OrgDetailsStepProps) {
         >
           <div className="step10-right" style={{ flex: '1', maxWidth: '300px' }}>
             <div className="flex aspect-square w-full flex-col items-center justify-center rounded-3xl border border-gray-200 bg-white shadow-sm">
-              <span className="text-lg font-bold text-gray-800">LOGO</span>
+              <span className="text-lg font-bold text-gray-800">{t('logo_placeholder')}</span>
             </div>
           </div>
           <div className="step10-left" style={{ flex: '1', maxWidth: '400px' }}>
-            <div className="space-y-4">
-              <div>
-                <label className="mb-1 block text-sm font-medium text-gray-700">
-                  Nome dell'azienda
-                </label>
-                <input
-                  className={fieldClasses}
-                  placeholder="Company Srl"
-                  value={details.companyName}
-                  onChange={(e) => onChange({ companyName: e.target.value })}
-                />
-              </div>
-              <div>
-                <label className="mb-1 block text-sm font-medium text-gray-700">
-                  Grandezza team
-                </label>
-                <div className="flex gap-2">
-                  <select
+            <form onSubmit={handleSubmit(() => onNext())}>
+              <div className="space-y-4">
+                <FormField
+                  name="companyName"
+                  label="company_name"
+                  error={errors.companyName?.message}
+                >
+                  <input
+                    id="companyName"
                     className={fieldClasses}
-                    value={details.teamSize}
-                    onChange={(e) => onChange({ teamSize: e.target.value })}
-                  >
-                    <option value="1-5">1-5 persone</option>
-                    <option value="6-10">6-10 persone</option>
-                    <option value="11-20">11-20 persone</option>
-                  </select>
-                  <div className="flex min-w-[100px] items-center justify-center rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-sm font-medium whitespace-nowrap text-gray-700">
-                    {priceForTeamSize(details.teamSize)}
-                  </div>
-                </div>
-              </div>
-              <div>
-                <label className="mb-1 block text-sm font-medium text-gray-700">Descrizione</label>
-                <div className="flex items-end gap-4">
-                  <textarea
-                    className={`${fieldClasses} h-24`}
-                    placeholder="Descrivi l'azienda..."
-                    value={details.description}
-                    onChange={(e) => onChange({ description: e.target.value })}
+                    placeholder="Company Srl"
+                    aria-invalid={!!errors.companyName}
+                    aria-describedby={errors.companyName ? 'companyName-error' : undefined}
+                    {...register('companyName')}
                   />
-                  <button
-                    className="rounded-xl bg-black px-8 py-3 text-sm font-medium whitespace-nowrap text-white"
-                    onClick={onNext}
-                  >
-                    Procedi
-                  </button>
-                </div>
+                </FormField>
+                <FormField name="teamSize" label="team_size" error={errors.teamSize?.message}>
+                  <div className="flex gap-2">
+                    <select
+                      id="teamSize"
+                      className={fieldClasses}
+                      aria-invalid={!!errors.teamSize}
+                      aria-describedby={errors.teamSize ? 'teamSize-error' : undefined}
+                      {...register('teamSize')}
+                    >
+                      <option value="1-5">1-5 persone</option>
+                      <option value="6-10">6-10 persone</option>
+                      <option value="11-20">11-20 persone</option>
+                    </select>
+                    <div className="flex min-w-[100px] items-center justify-center rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-sm font-medium whitespace-nowrap text-gray-700">
+                      {priceForTeamSize(teamSize)}
+                    </div>
+                  </div>
+                </FormField>
+                <FormField
+                  name="description"
+                  label="description"
+                  error={errors.description?.message}
+                >
+                  <div className="flex items-end gap-4">
+                    <textarea
+                      id="description"
+                      className={`${fieldClasses} h-24`}
+                      placeholder={t('description')}
+                      aria-invalid={!!errors.description}
+                      aria-describedby={errors.description ? 'description-error' : undefined}
+                      {...register('description')}
+                    />
+                    <button
+                      type="submit"
+                      className="rounded-xl bg-black px-8 py-3 text-sm font-medium whitespace-nowrap text-white"
+                    >
+                      {t('proceed')}
+                    </button>
+                  </div>
+                </FormField>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

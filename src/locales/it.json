@@ -51,5 +51,16 @@
   "creator": "Creatore",
   "role": "Ruolo",
   "select_role": "Seleziona un ruolo",
-  "second_order": "Di secondo ordine"
+  "second_order": "Di secondo ordine",
+  "validation.required": "Questo campo è obbligatorio",
+  "validation.email_invalid": "Inserisci un indirizzo email valido",
+  "validation.field_too_short": "Questo campo è troppo corto",
+  "validation.field_too_long": "Questo campo è troppo lungo",
+  "validation.invalid_type": "Valore non valido",
+  "validation.invalid_format": "Formato non valido",
+  "validation.passwords_must_match": "Le password devono coincidere",
+  "auth.session_expired": "La tua sessione è scaduta. Reindirizzamento al login...",
+  "error.something_went_wrong": "Qualcosa è andato storto",
+  "error.try_again_description": "Si è verificato un errore imprevisto. Prova a ricaricare la pagina.",
+  "error.reload_page": "Ricarica pagina"
 }

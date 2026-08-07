@@ -1,4 +1,9 @@
+import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 import { FlowleeLogo } from '../components/FlowleeLogo'
+import { FormField } from '../../../components/ui/FormField'
+import { createFormConfig } from '../../../lib/form-utils'
+import { AccountSchema, type AccountData } from '../schemas'
 
 interface AccountStepProps {
   onNext: () => void
@@ -6,6 +11,13 @@ interface AccountStepProps {
 
 /** Step 2 — collects the email/password for the new account. */
 export function AccountStep({ onNext }: AccountStepProps) {
+  const { t } = useTranslation()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<AccountData>(createFormConfig(AccountSchema))
+
   return (
     <div className="container-sfondo">
       <div className="Step">
@@ -16,27 +28,51 @@ export function AccountStep({ onNext }: AccountStepProps) {
         {/* Contenitore che gestisce il layout flessibile */}
         <div className="Step-inner-container">
           <h1 className="section-title">
-            Ciao Marco!
+            {t('hello_marco')}
             <br />
-            Creiamo l'account.
+            {t('create_account')}
           </h1>
-          <div className="input-group">
-            <label>Email</label>
-            <input type="email" placeholder="Email" />
-          </div>
-          <div className="input-group">
-            <label>Password</label>
-            <input type="password" placeholder="Password" />
-          </div>
-          <div className="input-group">
-            <label>Conferma password</label>
-            <input type="password" placeholder="Conferma password" />
-          </div>
+          <form onSubmit={handleSubmit(() => onNext())}>
+            <FormField name="email" label="email" error={errors.email?.message}>
+              <input
+                id="email"
+                type="email"
+                placeholder={t('email')}
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? 'email-error' : undefined}
+                {...register('email')}
+              />
+            </FormField>
+            <FormField name="password" label="password" error={errors.password?.message}>
+              <input
+                id="password"
+                type="password"
+                placeholder={t('password')}
+                aria-invalid={!!errors.password}
+                aria-describedby={errors.password ? 'password-error' : undefined}
+                {...register('password')}
+              />
+            </FormField>
+            <FormField
+              name="confirmPassword"
+              label="confirm_password"
+              error={errors.confirmPassword?.message}
+            >
+              <input
+                id="confirmPassword"
+                type="password"
+                placeholder={t('confirm_password')}
+                aria-invalid={!!errors.confirmPassword}
+                aria-describedby={errors.confirmPassword ? 'confirmPassword-error' : undefined}
+                {...register('confirmPassword')}
+              />
+            </FormField>
 
-          {/* Il margin-top: auto del CSS lo spingerà in fondo */}
-          <button className="de" onClick={onNext}>
-            Successivo
-          </button>
+            {/* Il margin-top: auto del CSS lo spingerà in fondo */}
+            <button className="de" type="submit">
+              {t('next')}
+            </button>
+          </form>
         </div>
       </div>
     </div>

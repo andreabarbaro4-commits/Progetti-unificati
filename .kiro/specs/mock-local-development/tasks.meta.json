@@ -1,0 +1,309 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create `src/mock/index.ts` with `isMockMode()` helper": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006647969
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006655984
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006696644
+      }
+    ],
+    "1.2 Update `src/env.ts` to skip validation in mock mode": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648013
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006700786
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006766092
+      }
+    ],
+    "2.1 Create `src/mock/fixtures/user.ts` with mock user data": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648051
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006701624
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006766951
+      }
+    ],
+    "2.2 Create `src/mock/mock-auth-provider.tsx`": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648110
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006775067
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006834383
+      }
+    ],
+    "3.1 Update `src/App.tsx` to conditionally render MockAuthProvider": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648143
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006857360
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006913210
+      }
+    ],
+    "4. Checkpoint - Verify auth mock works": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648176
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006917491
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006975289
+      }
+    ],
+    "5.1 Create `src/mock/mock-api-client.ts`": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648215
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006978911
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007179367
+      }
+    ],
+    "6.1 Create `src/mock/fixtures/dashboard.ts`": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648244
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006979837
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007180194
+      }
+    ],
+    "6.2 Create `src/mock/fixtures/onboarding.ts`": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648277
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006980708
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007181159
+      }
+    ],
+    "6.3 Create `src/mock/setup.ts` orchestration module": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648317
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007185376
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007235643
+      }
+    ],
+    "6.4 Add dynamic import of mock setup in the app bootstrap": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648350
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007241999
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007307448
+      }
+    ],
+    "7.1 Create `src/mock/MockIndicator.tsx`": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648384
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007186386
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007236469
+      }
+    ],
+    "7.2 Render MockIndicator in App.tsx conditionally": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648418
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007243070
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007308213
+      }
+    ],
+    "8.1 Add `VITE_MOCK` entry to `.env.example`": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648453
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007244161
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007309074
+      }
+    ],
+    "9. Final checkpoint - Verify full mock mode and production build": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006648508
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007313983
+      },
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007492964
+      }
+    ],
+    "1. Create mock mode detection and update env.ts": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006766114
+      }
+    ],
+    "2. Create mock auth provider": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006834424
+      }
+    ],
+    "3. Wire mock auth into App.tsx": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786006913250
+      }
+    ],
+    "5. Create mock API client with handler registry": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007179424
+      }
+    ],
+    "6. Create fixture files and wire mock API setup": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007307489
+      }
+    ],
+    "7. Add mock mode visual indicator": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007308239
+      }
+    ],
+    "8. Update .env.example documentation": [
+      {
+        "executionId": "1a7bb344-8fd6-4e43-becb-6505f4c6ae06",
+        "chatSessionId": "sess_86bfdac8-7abb-48c0-ac46-d170cb830d17",
+        "timestamp": 1786007309107
+      }
+    ]
+  }
+}

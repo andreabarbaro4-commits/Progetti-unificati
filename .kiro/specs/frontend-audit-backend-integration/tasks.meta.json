@@ -1,0 +1,564 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Remove quality tooling files and packages": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843066
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950851141
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950911857
+      }
+    ],
+    "1.2 Simplify TypeScript configuration": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843117
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950918300
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950964974
+      }
+    ],
+    "1.3 Consolidate to npm and verify build": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843173
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950968933
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951268339
+      }
+    ],
+    "1.4 Create no-quality-tooling steering document": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843228
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950969617
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951269153
+      }
+    ],
+    "2. Checkpoint — Verify Phase 1": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843264
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952494066
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952562061
+      }
+    ],
+    "3.1 Refactor App.tsx into feature-based modules": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843298
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951276855
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951367462
+      }
+    ],
+    "3.2 Install React Router and create route configuration": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843331
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951371339
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951483149
+      }
+    ],
+    "3.3 Create auth guard component (placeholder)": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843373
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951486756
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951550679
+      }
+    ],
+    "3.4 Create 404 Not Found page": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843411
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951372149
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951483271
+      }
+    ],
+    "3.5 Wire routing into App shell": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843439
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951487465
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951551381
+      }
+    ],
+    "4. Checkpoint — Verify Phase 2": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843472
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952566274
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952611891
+      }
+    ],
+    "5.1 Create typed API client": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843505
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951557466
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951643039
+      }
+    ],
+    "5.2 Configure TanStack Query": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843561
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951558216
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951643813
+      }
+    ],
+    "5.3 Set up Zustand stores": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843590
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951558990
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951644649
+      }
+    ],
+    "6. Checkpoint — Verify Phase 3": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843634
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952615698
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952726925
+      }
+    ],
+    "7.1 Install OIDC library and create auth provider": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843671
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951648841
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951739850
+      }
+    ],
+    "7.2 Create callback handler and token lifecycle": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843706
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951743441
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951808870
+      }
+    ],
+    "7.3 Wire auth guard to real OIDC state": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843740
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951744051
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951809727
+      }
+    ],
+    "7.4 Connect API client to auth module": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843772
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951813202
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951871389
+      }
+    ],
+    "8. Checkpoint — Verify Phase 4": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843813
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952730290
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952790684
+      }
+    ],
+    "9.1 Create environment validation module": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843849
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951875442
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952150349
+      }
+    ],
+    "9.2 Create .env.example file": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843881
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951876214
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952148765
+      }
+    ],
+    "9.3 Write README.md": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843913
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951876975
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952152049
+      }
+    ],
+    "9.4 Write docs/architecture.md": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843950
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951877757
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952151107
+      }
+    ],
+    "9.5 Write docs/deployment.md": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950843998
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951878548
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952149508
+      }
+    ],
+    "10. Checkpoint — Verify Phase 5": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950844031
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952793948
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952856749
+      }
+    ],
+    "11.1 Initialize CDK project": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950844065
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952156348
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952249456
+      }
+    ],
+    "11.2 Implement FrontendStack CDK construct": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950844097
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952253216
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952375484
+      }
+    ],
+    "11.3 Create CDK app entry point": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950844124
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952378890
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952486779
+      }
+    ],
+    "11.4 Create GitHub Actions deployment workflow": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950844157
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952253907
+      }
+    ],
+    "12. Final Checkpoint": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785950844189
+      },
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952861885
+      }
+    ],
+    "1. Phase 1 — Cleanup and Policy Enforcement": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951269197
+      }
+    ],
+    "3. Phase 2 — Project Structure and Routing": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951551414
+      }
+    ],
+    "5. Phase 3 — State Management and API Client": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951644693
+      }
+    ],
+    "7. Phase 4 — Authentication Integration": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785951871425
+      }
+    ],
+    "9. Phase 5 — Environment Configuration and Documentation": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952152083
+      }
+    ],
+    "11. Phase 6 — Infrastructure and CI/CD": [
+      {
+        "executionId": "aec2daab-33b9-4bd6-b1eb-5aaeb3275ce2",
+        "chatSessionId": "sess_70d3d5fe-d31b-4992-ad1d-d7ac4b7c8886",
+        "timestamp": 1785952486814
+      }
+    ]
+  }
+}

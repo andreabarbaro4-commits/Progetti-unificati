@@ -1,0 +1,510 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Install runtime dependencies (`@hookform/resolvers`, `zod`, `react-hook-form`)": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002799635
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002810004
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003016292
+      }
+    ],
+    "1.2 Install dev dependency for property-based testing (`fast-check`)": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002799705
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002810764
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003017137
+      }
+    ],
+    "2.1 Extend `src/lib/i18n.ts` with `getInitialLocale` and `persistLocale`": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002799797
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003025223
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003087434
+      }
+    ],
+    "3.1 Create `src/components/ui/LocaleSwitcher.tsx`": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002799866
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003099029
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003194293
+      }
+    ],
+    "3.2 Create `src/lib/useFormatters.ts` hook": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002799932
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003099067
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003195068
+      }
+    ],
+    "4. Checkpoint - Verify i18n foundation": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002799982
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003212427
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003254314
+      }
+    ],
+    "5.1 Enhance logout in `src/features/auth/auth-provider.tsx`": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800040
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003273239
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003357166
+      }
+    ],
+    "5.2 Implement session expiry handling with single-redirect guard": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800091
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003363051
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003487640
+      }
+    ],
+    "5.3 Create `src/features/auth/SessionExpiredNotification.tsx`": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800156
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003364046
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003488390
+      }
+    ],
+    "5.4 Enhance auth callback to restore return path from OIDC state": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800207
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003365383
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003489495
+      }
+    ],
+    "6.1 Create `src/components/ErrorBoundary.tsx`": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800265
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003274048
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003357983
+      }
+    ],
+    "6.2 Wire ErrorBoundary into `src/App.tsx`": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800316
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003366424
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003492332
+      }
+    ],
+    "7. Checkpoint - Verify auth and error boundary": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800371
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003497052
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003534242
+      }
+    ],
+    "8.1 Create `src/lib/form-utils.ts`": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800423
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003367555
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003492314
+      }
+    ],
+    "8.2 Create `src/components/ui/FormField.tsx`": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800477
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003538979
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003717392
+      }
+    ],
+    "8.3 Add validation translation keys to locale files": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800533
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003539900
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003716587
+      }
+    ],
+    "9.1 Create zod schemas for onboarding steps": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800584
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003721672
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003945112
+      }
+    ],
+    "9.2 Refactor onboarding step components to use react-hook-form": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800638
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003949661
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004112704
+      }
+    ],
+    "10. Checkpoint - Verify form validation": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800672
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004120748
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004164301
+      }
+    ],
+    "11.1 Add `FrontendDomain` output to CDK stack": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800705
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003951521
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004113525
+      }
+    ],
+    "11.2 Create CORS coordination checklist in deployment docs": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800747
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003952054
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004115066
+      }
+    ],
+    "11.3 Create Zitadel redirect URI registration documentation": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800780
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003953274
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004115473
+      }
+    ],
+    "12.1 Wire LocaleSwitcher into application layout": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800845
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004168200
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004251766
+      }
+    ],
+    "12.2 Wire SessionExpiredNotification into App.tsx provider tree": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800882
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004169320
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004252472
+      }
+    ],
+    "12.3 Add session expiry and error boundary translation keys": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800922
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004170340
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004253243
+      }
+    ],
+    "13. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786002800965
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004258447
+      },
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004298054
+      }
+    ],
+    "1. Install dependencies and set up testing infrastructure": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003017180
+      }
+    ],
+    "2. Enhance i18n module with persistence and locale validation": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003087501
+      }
+    ],
+    "3. Create LocaleSwitcher component and useFormatters hook": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003195117
+      }
+    ],
+    "5. Implement auth session lifecycle enhancements": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003489526
+      }
+    ],
+    "6. Implement Global Error Boundary": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003492361
+      }
+    ],
+    "8. Implement form validation layer": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786003717422
+      }
+    ],
+    "9. Migrate onboarding forms to react-hook-form + zod": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004112749
+      }
+    ],
+    "11. CDK stack enhancement and deployment documentation": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004115514
+      }
+    ],
+    "12. Final integration and wiring": [
+      {
+        "executionId": "910d7d0c-77a9-411d-98ca-eb92eeb0e926",
+        "chatSessionId": "sess_d2969933-4abc-4706-af56-1295a386f4ee",
+        "timestamp": 1786004253284
+      }
+    ]
+  }
+}

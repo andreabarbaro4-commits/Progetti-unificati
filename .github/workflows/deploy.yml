@@ -1,0 +1,138 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      - run: npm run build
+        env:
+          VITE_API_BASE_URL: https://dev.api.flowlee.com
+          VITE_AUTH_AUTHORITY: https://flowlee.eu.auth0.com
+          VITE_AUTH_CLIENT_ID: ${{ vars.DEV_AUTH_CLIENT_ID }}
+          VITE_AUTH_AUDIENCE: https://api.flowlee.com
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist-dev
+          path: dist/
+
+  deploy-dev:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: flowlee-dev
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist-dev
+          path: dist/
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - run: aws s3 sync dist/ s3://${{ vars.S3_BUCKET }} --delete
+
+      - run: aws cloudfront create-invalidation --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --paths "/*"
+
+  deploy-test:
+    needs: deploy-dev
+    runs-on: ubuntu-latest
+    environment:
+      name: flowlee-test
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      - run: npm run build
+        env:
+          VITE_API_BASE_URL: https://test.api.flowlee.com
+          VITE_AUTH_AUTHORITY: https://flowlee.eu.auth0.com
+          VITE_AUTH_CLIENT_ID: ${{ vars.TEST_AUTH_CLIENT_ID }}
+          VITE_AUTH_AUDIENCE: https://api.flowlee.com
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - run: aws s3 sync dist/ s3://${{ vars.S3_BUCKET }} --delete
+
+      - run: aws cloudfront create-invalidation --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --paths "/*"
+
+  deploy-preprod:
+    needs: deploy-test
+    runs-on: ubuntu-latest
+    environment:
+      name: flowlee-preprod
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      - run: npm run build
+        env:
+          VITE_API_BASE_URL: https://preprod.api.flowlee.com
+          VITE_AUTH_AUTHORITY: https://flowlee.eu.auth0.com
+          VITE_AUTH_CLIENT_ID: ${{ vars.PREPROD_AUTH_CLIENT_ID }}
+          VITE_AUTH_AUDIENCE: https://api.flowlee.com
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - run: aws s3 sync dist/ s3://${{ vars.S3_BUCKET }} --delete
+
+      - run: aws cloudfront create-invalidation --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --paths "/*"
+
+  deploy-prod:
+    needs: deploy-preprod
+    runs-on: ubuntu-latest
+    environment:
+      name: flowlee-prod
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      - run: npm run build
+        env:
+          VITE_API_BASE_URL: https://api.flowlee.com
+          VITE_AUTH_AUTHORITY: https://flowlee.eu.auth0.com
+          VITE_AUTH_CLIENT_ID: ${{ vars.PROD_AUTH_CLIENT_ID }}
+          VITE_AUTH_AUDIENCE: https://api.flowlee.com
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - run: aws s3 sync dist/ s3://${{ vars.S3_BUCKET }} --delete
+
+      - run: aws cloudfront create-invalidation --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --paths "/*"

@@ -1,9 +1,0 @@
-# Dependencies and lockfile
-node_modules/
-bun.lock
-
-# Build output
-dist/
-
-# Husky internals
-.husky/_/
