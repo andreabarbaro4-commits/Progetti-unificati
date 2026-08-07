@@ -27,7 +27,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: ${{ vars.AWS_REGION }}
+          aws-region: eu-central-1
 
       - run: aws s3 sync dist/ s3://${{ vars.S3_BUCKET }} --delete
 
