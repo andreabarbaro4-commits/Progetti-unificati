@@ -36,17 +36,17 @@ jobs:
       - name: Extract stack outputs
         id: outputs
         run: |
-          STACK_NAME=$(jq -r 'keys[0]' infra/cdk-outputs.json)
+          STACK_NAME="FlowleeFrontend-dev"
           BUCKET=$(jq -r ".[\"$STACK_NAME\"].BucketName" infra/cdk-outputs.json)
           DIST_ID=$(jq -r ".[\"$STACK_NAME\"].DistributionId" infra/cdk-outputs.json)
           DIST_DOMAIN=$(jq -r ".[\"$STACK_NAME\"].DistributionDomainName" infra/cdk-outputs.json)
-          CERT_ARN=$(jq -r ".[\"$STACK_NAME\"].CertificateArn" infra/cdk-outputs.json)
           FRONTEND_DOMAIN=$(jq -r ".[\"$STACK_NAME\"].FrontendDomain" infra/cdk-outputs.json)
+          CERT_ARN=$(jq -r ".[\"FlowleeFrontend-dev-cert\"].CertificateArn" infra/cdk-outputs.json)
           echo "bucket=$BUCKET" >> "$GITHUB_OUTPUT"
           echo "distribution_id=$DIST_ID" >> "$GITHUB_OUTPUT"
           echo "distribution_domain=$DIST_DOMAIN" >> "$GITHUB_OUTPUT"
-          echo "certificate_arn=$CERT_ARN" >> "$GITHUB_OUTPUT"
           echo "frontend_domain=$FRONTEND_DOMAIN" >> "$GITHUB_OUTPUT"
+          echo "certificate_arn=$CERT_ARN" >> "$GITHUB_OUTPUT"
 
       # Build frontend
       - name: Install frontend dependencies
@@ -67,7 +67,7 @@ jobs:
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{ steps.outputs.outputs.distribution_id }} --paths "/*"
 
-      # Log DNS validation records for the ACM certificate
+      # Log DNS validation records (visible in step logs only, not summary)
       - name: Log ACM DNS validation records
         run: |
           echo "ACM Certificate DNS Validation Records:"

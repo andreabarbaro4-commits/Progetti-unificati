@@ -8,12 +8,12 @@ import { Construct } from 'constructs';
 export interface FrontendStackProps extends cdk.StackProps {
   stage: string;
   domainName: string;
+  certificate: acm.ICertificate;
 }
 
 export class FrontendStack extends cdk.Stack {
   public readonly distribution: cloudfront.Distribution;
   public readonly bucket: s3.Bucket;
-  public readonly certificate: acm.Certificate;
 
   constructor(scope: Construct, id: string, props: FrontendStackProps) {
     super(scope, id, props);
@@ -24,15 +24,6 @@ export class FrontendStack extends cdk.Stack {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
       removalPolicy: cdk.RemovalPolicy.RETAIN,
-    });
-
-    // ACM Certificate — DNS validation
-    // Note: CloudFront requires certificates in us-east-1.
-    // With crossRegionReferences enabled on this stack, CDK handles
-    // creating the cert in us-east-1 and referencing it cross-region.
-    this.certificate = new acm.Certificate(this, 'Certificate', {
-      domainName: props.domainName,
-      validation: acm.CertificateValidation.fromDns(),
     });
 
     // CloudFront Distribution
@@ -57,7 +48,7 @@ export class FrontendStack extends cdk.Stack {
         },
       ],
       domainNames: [props.domainName],
-      certificate: this.certificate,
+      certificate: props.certificate,
     });
 
     // Stack outputs
@@ -74,11 +65,6 @@ export class FrontendStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'BucketName', {
       value: this.bucket.bucketName,
       description: 'S3 bucket for frontend assets',
-    });
-
-    new cdk.CfnOutput(this, 'CertificateArn', {
-      value: this.certificate.certificateArn,
-      description: 'ACM certificate ARN — check AWS console for DNS validation records',
     });
 
     new cdk.CfnOutput(this, 'FrontendDomain', {
