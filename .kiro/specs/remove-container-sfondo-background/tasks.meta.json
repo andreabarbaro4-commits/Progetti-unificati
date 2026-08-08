@@ -1,0 +1,132 @@
+{
+  "pbtResults": {
+    "1. Write bug condition exploration test": {
+      "status": "passed",
+      "failingExample": "Counterexample: [{\"declarations\":\"  display: flex;\\n  justify-content: center;\\n  align-items: center;\\n  min-height: 100vh;\\n  width: 100%;\\n  background-color: #ffffff;\\n  padding: 20px;\\n\",\"lineNumber\":1340,\"ruleIndex\":1}]\n\nBug condition detected in .container-sfondo rule #2 (line 1340): background-color is \"#ffffff\" — expected transparent or no background-color. This opaque background blocks AnimatedBackground from showing through.",
+      "lastRunTimestamp": 1786192924633
+    },
+    "2. Write preservation property tests (BEFORE implementing fix)": {
+      "status": "passed",
+      "lastRunTimestamp": 1786193070137
+    },
+    "3.2 Verify bug condition exploration test now passes": {
+      "status": "passed",
+      "lastRunTimestamp": 1786193186196
+    },
+    "3.3 Verify preservation tests still pass": {
+      "status": "passed",
+      "lastRunTimestamp": 1786193212505
+    }
+  },
+  "executionHistory": {
+    "1. Write bug condition exploration test": [
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786192644645
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786192650562
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786192935170
+      }
+    ],
+    "2. Write preservation property tests (BEFORE implementing fix)": [
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786192644697
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786192941695
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786193083728
+      }
+    ],
+    "3.1 Remove `background-color: #ffffff` from `.container-sfondo` in `src/App.css`": [
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786192644736
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786193089669
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786193162403
+      }
+    ],
+    "3.2 Verify bug condition exploration test now passes": [
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786192644781
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786193168023
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786193193537
+      }
+    ],
+    "3.3 Verify preservation tests still pass": [
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786192644808
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786193196642
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786193220678
+      }
+    ],
+    "4. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786192644841
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786193224283
+      },
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786193243606
+      }
+    ],
+    "3. Fix for container-sfondo white background blocking AnimatedBackground": [
+      {
+        "executionId": "9e6867c6-73a3-4a22-80f7-556539a6f23f",
+        "chatSessionId": "sess_fc21bf45-f993-46b7-a9d9-36e387e59cb1",
+        "timestamp": 1786193220724
+      }
+    ]
+  }
+}
