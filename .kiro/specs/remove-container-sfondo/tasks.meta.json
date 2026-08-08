@@ -1,0 +1,140 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Remove wrapper from PersonalInfoStep, AccountStep, SendingCodeStep, VerifyCodeStep, and WelcomeStep": [
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786195792535
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786195799191
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196146573
+      }
+    ],
+    "1.2 Remove wrapper from RoleStep, JobStep, PhotoUploadStep, OrgTypeStep, and OrgDetailsStep": [
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786195792579
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786195799953
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196147542
+      }
+    ],
+    "2.1 Delete all `.container-sfondo` rule blocks from App.css": [
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786195792611
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786195800864
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196148355
+      }
+    ],
+    "2.2 Add direct `.Step.wide-mode` selector": [
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786195792655
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196155262
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196192554
+      }
+    ],
+    "3. Checkpoint - Verify CSS and component changes": [
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786195792692
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196203217
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196270576
+      }
+    ],
+    "4.1 Delete container-sfondo test files": [
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786195792729
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196203982
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196271282
+      }
+    ],
+    "5. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786195792774
+      },
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196280814
+      }
+    ],
+    "1. Remove container-sfondo wrapper from step components": [
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196147575
+      }
+    ],
+    "2. Clean up CSS rules in App.css": [
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196192598
+      }
+    ],
+    "4. Delete obsolete test files and verify": [
+      {
+        "executionId": "72699305-5be3-4c58-ae6c-e8a55a4b9ea1",
+        "chatSessionId": "sess_58211045-a474-4ce8-bc6b-abddb56e216b",
+        "timestamp": 1786196271334
+      }
+    ]
+  }
+}
