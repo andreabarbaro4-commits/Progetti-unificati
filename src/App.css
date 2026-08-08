@@ -20,10 +20,7 @@ body {
   justify-content: center;
 }
 
-.container-sfondo.schermata-con-sfondo {
-  background: #000 !important;
-  background-image: none !important;
-}
+
 
 
 .ax {
@@ -1347,10 +1344,6 @@ h1 {
   min-height: 100vh;
   width: 100%;
   background-color: #ffffff;
-  background-image: radial-gradient(circle at 45% 50%, rgba(300, 90, 107, 2) 0%, transparent 60%), radial-gradient(circle at 55% 50%, rgba(10, 10, 120, 1) 0%, transparent 50%);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
   padding: 20px;
 }
 
@@ -1435,7 +1428,6 @@ button:active {
   justify-content: center;
   align-items: center;
   padding: 20px !important;
-  background: #000 !important;
   overflow: hidden;
 }
 
@@ -1444,28 +1436,9 @@ button:active {
   z-index: 2;
 }
 
-.container-sfondo.schermata-con-sfondo::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 35%, rgba(255, 120, 180, 0.7) 0%, rgba(190, 90, 255, 0.45) 28%, transparent 58%), radial-gradient(circle at 50% 75%, rgba(255, 120, 180, 0.55) 0%, rgba(140, 90, 255, 0.35) 35%, transparent 70%);
-  filter: blur(90px);
-  z-index: 0;
-}
 
-.container-sfondo.schermata-con-sfondo::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: rgba(255, 220, 240, 0.45);
-  filter: blur(90px);
-  z-index: 0;
-}
+
+
 
 .container-sfondo.schermata-con-sfondo .Step {
   position: relative;

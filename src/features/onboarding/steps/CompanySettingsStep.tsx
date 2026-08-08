@@ -32,22 +32,7 @@ export function CompanySettingsStep({ onSave }: CompanySettingsStepProps) {
         overflow: 'hidden',
       }}
     >
-      <div
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '800px',
-          height: '800px',
-          background:
-            'radial-gradient(circle, rgba(255, 107, 107, 1.7) 0%, rgba(66, 63, 133, 1.7) 60%, transparent 80%)',
-          filter: 'blur(120px)',
-          mixBlendMode: 'screen',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      />
+
       {/* Contenitore Modale */}
       <div
         style={{

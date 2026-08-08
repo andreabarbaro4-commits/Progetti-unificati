@@ -1,0 +1,164 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create `src/components/AnimatedBackground/AnimatedBackground.css` with keyframe animations and reduced-motion media query": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190900182
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190906727
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190997244
+      }
+    ],
+    "1.2 Create `src/components/AnimatedBackground/AnimatedBackground.tsx` component": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190900229
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190907411
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190998071
+      }
+    ],
+    "2.1 Add `<AnimatedBackground />` to `App.tsx` inside `ErrorBoundary`, before `SessionExpiredNotification` and other children": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190900270
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191002148
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191101577
+      }
+    ],
+    "3.1 Remove the inline radial-gradient overlay `div` from `CompanySettingsStep.tsx`": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190900326
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191002977
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191102337
+      }
+    ],
+    "3.2 Remove old gradient rules from `App.css`": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190900370
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191003744
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191103170
+      }
+    ],
+    "4. Checkpoint - Verify integration": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190900402
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191116128
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191150644
+      }
+    ],
+    "6. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190900437
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191233570
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191266125
+      }
+    ],
+    "1. Create AnimatedBackground component and CSS": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786190998105
+      }
+    ],
+    "2. Integrate component into app shell": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191101625
+      }
+    ],
+    "3. Remove old background styles": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191103209
+      }
+    ],
+    "5.1 Write unit tests for AnimatedBackground component": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191164943
+      },
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191230609
+      }
+    ],
+    "5. Write unit tests": [
+      {
+        "executionId": "5f410b3f-9945-4b76-9440-30e387e894c9",
+        "chatSessionId": "sess_c27f3e69-33b7-42d9-b81a-3f7c55acc1b5",
+        "timestamp": 1786191230637
+      }
+    ]
+  }
+}

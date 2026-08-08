@@ -4,6 +4,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './lib/query-client';
 import { AuthProvider } from './features/auth/auth-provider';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { AnimatedBackground } from './components/AnimatedBackground/AnimatedBackground';
 import { LocaleSwitcher } from './components/ui/LocaleSwitcher';
 import { SessionExpiredNotification } from './features/auth/SessionExpiredNotification';
 import { routes } from './routes';
@@ -49,6 +50,7 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>
             <ErrorBoundary>
+              <AnimatedBackground />
               {LazyMockIndicator && <LazyMockIndicator />}
               <SessionExpiredNotification />
               <LocaleSwitcher className="fixed top-4 right-4 z-50" />
