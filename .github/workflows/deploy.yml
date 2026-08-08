@@ -92,6 +92,37 @@ jobs:
           echo "distribution_domain=$DIST_DOMAIN" >> "$GITHUB_OUTPUT"
           echo "frontend_domain=$FRONTEND_DOMAIN" >> "$GITHUB_OUTPUT"
 
+      - name: Ensure bucket policy allows CloudFront OAC
+        run: |
+          ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+          BUCKET="${{ steps.outputs.outputs.bucket }}"
+          DIST_ID="${{ steps.outputs.outputs.distribution_id }}"
+          
+          cat > /tmp/bucket-policy.json << EOF
+          {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Sid": "AllowCloudFrontServicePrincipalReadOnly",
+                "Effect": "Allow",
+                "Principal": {
+                  "Service": "cloudfront.amazonaws.com"
+                },
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::${BUCKET}/*",
+                "Condition": {
+                  "StringEquals": {
+                    "AWS:SourceArn": "arn:aws:cloudfront::${ACCOUNT_ID}:distribution/${DIST_ID}"
+                  }
+                }
+              }
+            ]
+          }
+          EOF
+          
+          aws s3api put-bucket-policy --bucket "$BUCKET" --policy file:///tmp/bucket-policy.json
+          echo "Bucket policy applied for CloudFront distribution $DIST_ID"
+
       # --- Build frontend ---
       - name: Install frontend dependencies
         run: npm ci
