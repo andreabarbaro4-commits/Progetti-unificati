@@ -83,13 +83,13 @@
 
 /* Stili per il layout principale */
 #root {
-  width: 1126px;
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  border-inline: 1px solid var(--color-border);
   min-height: 100svh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Supporto Dark Mode */
