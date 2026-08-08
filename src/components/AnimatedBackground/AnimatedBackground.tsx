@@ -5,7 +5,7 @@ interface AnimatedBackgroundProps {
   visible?: boolean;
 }
 
-export function AnimatedBackground({ visible = true }: AnimatedBackgroundProps): JSX.Element {
+export function AnimatedBackground({ visible = true }: AnimatedBackgroundProps) {
   return (
     <div
       aria-hidden="true"

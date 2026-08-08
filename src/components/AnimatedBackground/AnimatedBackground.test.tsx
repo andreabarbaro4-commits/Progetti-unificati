@@ -6,7 +6,7 @@ describe('AnimatedBackground', () => {
   it('renders with aria-hidden="true" on container', () => {
     const { container } = render(<AnimatedBackground />);
     const root = container.firstElementChild as HTMLElement;
-    expect(root).toHaveAttribute('aria-hidden', 'true');
+    expect(root.getAttribute('aria-hidden')).toBe('true');
   });
 
   it('renders exactly 8 blob child divs', () => {
@@ -35,7 +35,7 @@ describe('AnimatedBackground', () => {
     const { container } = render(<AnimatedBackground visible={false} />);
     const root = container.firstElementChild as HTMLElement;
     expect(root.style.visibility).toBe('hidden');
-    expect(root).toBeInTheDocument();
+    expect(root).not.toBeNull();
   });
 
   it('default render (no prop) shows blobs visible', () => {
