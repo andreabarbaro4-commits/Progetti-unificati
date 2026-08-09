@@ -7,6 +7,7 @@ import { WelcomeStep } from '../steps/WelcomeStep'
 import { RoleStep } from '../steps/RoleStep'
 import { JobStep } from '../steps/JobStep'
 import { PhotoUploadStep } from '../steps/PhotoUploadStep'
+import { StepIndicator } from './StepIndicator'
 import './RegistrationCarousel.css'
 
 const CAROUSEL_CONFIG = {
@@ -22,28 +23,45 @@ interface RegistrationCarouselProps {
   onComplete: () => void
 }
 
-/** Returns the effective card width + gap for translateX calculations. */
+/** Returns the effective card width + gap and viewport width for translateX calculations. */
 function useResponsiveCardWidth(config: typeof CAROUSEL_CONFIG) {
   const MOBILE_BREAKPOINT = 600
   const MOBILE_GAP = 12
 
   const getCardWidth = () => {
-    if (typeof window === 'undefined') return config.cardWidth + config.cardGap
+    if (typeof window === 'undefined') return config.cardWidth
     if (window.innerWidth <= MOBILE_BREAKPOINT) {
-      return window.innerWidth * 0.95 + MOBILE_GAP
+      return window.innerWidth * 0.95
     }
-    return config.cardWidth + config.cardGap
+    return config.cardWidth
   }
 
-  const [cardWidthWithGap, setCardWidthWithGap] = useState(getCardWidth)
+  const getGap = () => {
+    if (typeof window === 'undefined') return config.cardGap
+    if (window.innerWidth <= MOBILE_BREAKPOINT) return MOBILE_GAP
+    return config.cardGap
+  }
+
+  const getViewportWidth = () => {
+    if (typeof window === 'undefined') return config.cardWidth
+    return window.innerWidth
+  }
+
+  const [cardWidth, setCardWidth] = useState(getCardWidth)
+  const [gap, setGap] = useState(getGap)
+  const [viewportWidth, setViewportWidth] = useState(getViewportWidth)
 
   useEffect(() => {
-    const handleResize = () => setCardWidthWithGap(getCardWidth())
+    const handleResize = () => {
+      setCardWidth(getCardWidth())
+      setGap(getGap())
+      setViewportWidth(getViewportWidth())
+    }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  return cardWidthWithGap
+  return { cardWidth, gap, viewportWidth }
 }
 
 /**
@@ -59,7 +77,7 @@ export function RegistrationCarousel({ onComplete }: RegistrationCarouselProps) 
   const [hasPhoto, setHasPhoto] = useState(false)
 
   // Responsive card width calculation
-  const cardWidthWithGap = useResponsiveCardWidth(CAROUSEL_CONFIG)
+  const { cardWidth, gap, viewportWidth } = useResponsiveCardWidth(CAROUSEL_CONFIG)
 
   const advance = useCallback(() => {
     // Guard: prevent double-advance during CSS transition
@@ -80,7 +98,8 @@ export function RegistrationCarousel({ onComplete }: RegistrationCarouselProps) 
     }, CAROUSEL_CONFIG.transitionDuration)
   }, [activeIndex, onComplete])
 
-  const translateX = -(activeIndex * cardWidthWithGap)
+  // Center the active card within the viewport
+  const translateX = (viewportWidth / 2) - (cardWidth / 2) - (activeIndex * (cardWidth + gap))
 
   /**
    * Computes the CSS class for a card based on its position relative to activeIndex.
@@ -157,8 +176,8 @@ export function RegistrationCarousel({ onComplete }: RegistrationCarouselProps) 
         </div>
       </div>
 
-      {/* StepIndicator will be rendered here (created in task 1.3) */}
-      {/* <StepIndicator total={TOTAL_STEPS} current={activeIndex} /> */}
+      {/* StepIndicator */}
+      <StepIndicator total={TOTAL_STEPS} current={activeIndex} />
     </div>
   )
 }

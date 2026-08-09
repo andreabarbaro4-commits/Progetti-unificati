@@ -2,10 +2,8 @@
 
 .carousel-viewport {
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
+  position: relative;
 }
 
 .carousel-track {
@@ -129,4 +127,27 @@
   .step-indicator {
     padding: 12px 0;
   }
+}
+
+/* --- Step Indicator styles --- */
+
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.step-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  transition: background-color 300ms ease, transform 300ms ease;
+}
+
+.step-indicator-dot.active {
+  background-color: #4f46e5;
+  transform: scale(1.4);
 }
