@@ -1,0 +1,179 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create `RegistrationCarousel.tsx` component with viewport, track, and activeIndex state": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278279749
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278286813
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278497402
+      }
+    ],
+    "1.2 Create `RegistrationCarousel.css` with carousel layout and animation styles": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278279809
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278287618
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278498102
+      }
+    ],
+    "1.3 Create `StepIndicator.tsx` component": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278279840
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278288390
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278498917
+      }
+    ],
+    "2.1 Refactor `OnboardingWizard.tsx` to delegate registration steps to RegistrationCarousel": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278279880
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278505525
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278605390
+      }
+    ],
+    "2.2 Adapt step components (1–9) to work inside carousel cards": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278279921
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278507339
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278606167
+      }
+    ],
+    "3. Checkpoint": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278279947
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278613267
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278616057
+      }
+    ],
+    "4.1 Implement adjacent card shadow visibility logic": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278279981
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278616801
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278726940
+      }
+    ],
+    "4.2 Implement responsive behavior for mobile viewports": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278280007
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278617618
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278727594
+      }
+    ],
+    "6. Final checkpoint": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278280038
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278741710
+      },
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278744601
+      }
+    ],
+    "1. Create carousel infrastructure": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278498951
+      }
+    ],
+    "2. Refactor OnboardingWizard to use the carousel": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278606207
+      }
+    ],
+    "4. Adjacent card shadows and visual polish": [
+      {
+        "executionId": "f974e4ea-a550-4498-86a7-c472e975cbb7",
+        "chatSessionId": "sess_f349e452-ac8d-4e01-8f9b-c3aba64b3b6a",
+        "timestamp": 1786278727619
+      }
+    ]
+  }
+}

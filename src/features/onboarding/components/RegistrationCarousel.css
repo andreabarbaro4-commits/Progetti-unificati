@@ -1,0 +1,132 @@
+/* RegistrationCarousel styles — populated in task 1.2 */
+
+.carousel-viewport {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  transition: transform 400ms ease;
+}
+
+.carousel-card {
+  flex-shrink: 0;
+  width: 450px;
+  height: 640px;
+  overflow-y: auto;
+}
+
+/* --- Task 2.2: Step adaptation inside carousel cards --- */
+
+/* Make .Step fill the entire carousel-card height */
+.carousel-card .Step {
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  margin-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* The .logo section (contains FlowleeLogo) stays at top */
+.carousel-card .Step .logo {
+  flex-shrink: 0;
+}
+
+/* Inner containers grow to fill available space */
+.carousel-card .Step .Step-inner-container,
+.carousel-card .Step form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Push submit buttons to the bottom of the card */
+.carousel-card .Step .de,
+.carousel-card .Step .era,
+.carousel-card .Step .procedi-btn,
+.carousel-card .Step .tr,
+.carousel-card .Step .wr,
+.carousel-card .Step .qa {
+  margin-top: auto;
+}
+
+/* step-header-layout steps (RoleStep, JobStep, PhotoUploadStep) */
+.carousel-card .step-header-layout {
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  margin-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* WelcomeStep: .hey button container pushed to bottom */
+.carousel-card .Step .hey {
+  margin-top: auto;
+}
+
+/* PhotoUploadStep: .we section grows, .rt pushed to bottom */
+.carousel-card .Step .we {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-card .Step .rt {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* --- Task 4.1: Adjacent card shadow visibility --- */
+
+.carousel-card.adjacent-left,
+.carousel-card.adjacent-right {
+  opacity: 0.4;
+  transform: scale(0.92);
+  pointer-events: none;
+}
+
+.carousel-card.hidden-card {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- Task 4.2: Responsive behavior for mobile viewports --- */
+
+@media (max-width: 600px) {
+  .carousel-track {
+    gap: 12px;
+  }
+
+  .carousel-card {
+    width: 95vw;
+    height: auto;
+    min-height: 580px;
+    max-height: 90vh;
+  }
+
+  /* Hide adjacent card shadows on mobile — prioritize active card */
+  .carousel-card.adjacent-left,
+  .carousel-card.adjacent-right {
+    opacity: 0;
+    transform: none;
+  }
+
+  /* Ensure StepIndicator remains accessible on mobile */
+  .step-indicator {
+    padding: 12px 0;
+  }
+}

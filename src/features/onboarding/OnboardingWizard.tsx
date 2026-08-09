@@ -1,67 +1,33 @@
 import { useState } from 'react'
-import type { Step } from './types'
-import { PersonalInfoStep } from './steps/PersonalInfoStep'
-import { AccountStep } from './steps/AccountStep'
-import { SendingCodeStep } from './steps/SendingCodeStep'
-import { VerifyCodeStep } from './steps/VerifyCodeStep'
-import { WelcomeStep } from './steps/WelcomeStep'
-import { RoleStep } from './steps/RoleStep'
-import { JobStep } from './steps/JobStep'
-import { PhotoUploadStep } from './steps/PhotoUploadStep'
+import { RegistrationCarousel } from './components/RegistrationCarousel'
 import { OrgTypeStep } from './steps/OrgTypeStep'
 import { OrgDetailsStep } from './steps/OrgDetailsStep'
 import { CompanySettingsStep } from './steps/CompanySettingsStep'
 
-/** Top-level onboarding flow. Owns step navigation and the state shared across steps. */
-export function OnboardingWizard() {
-  const [step, setStep] = useState<Step>('personal-info')
-  const [selectedRole, setSelectedRole] = useState<string | null>(null)
+type Phase = 'registration' | 'org-type' | 'org-details' | 'company-settings' | 'done'
 
-  switch (step) {
-    case 'personal-info':
-      return <PersonalInfoStep onNext={() => setStep('account')} />
-    case 'account':
-      return <AccountStep onNext={() => setStep('sending-code')} />
-    case 'sending-code':
-      return <SendingCodeStep onNext={() => setStep('verify-code')} />
-    case 'verify-code':
-      return <VerifyCodeStep onNext={() => setStep('welcome')} />
-    case 'welcome':
-      return <WelcomeStep onNext={() => setStep('role')} />
-    case 'role':
-      return (
-        <RoleStep
-          selectedRole={selectedRole}
-          onSelectRole={setSelectedRole}
-          onNext={() => setStep('job')}
-        />
-      )
-    case 'job':
-      return (
-        <JobStep
-          selectedRole={selectedRole}
-          onSelectRole={setSelectedRole}
-          onNext={() => setStep('photo-upload')}
-        />
-      )
-    case 'photo-upload':
-      return <PhotoUploadStep hasPhoto={false} onNext={() => setStep('photo-uploaded')} />
-    case 'photo-uploaded':
-      return <PhotoUploadStep hasPhoto onNext={() => setStep('org-type')} />
+/** Top-level onboarding flow. Delegates registration steps 1–9 to the carousel,
+ *  then renders the organizational steps as full-page components. */
+export function OnboardingWizard() {
+  const [phase, setPhase] = useState<Phase>('registration')
+
+  switch (phase) {
+    case 'registration':
+      return <RegistrationCarousel onComplete={() => setPhase('org-type')} />
     case 'org-type':
-      return <OrgTypeStep onNext={() => setStep('org-details')} />
+      return <OrgTypeStep onNext={() => setPhase('org-details')} />
     case 'org-details':
       return (
         <OrgDetailsStep
-          onBack={() => setStep('org-type')}
-          onNext={() => setStep('company-settings')}
+          onBack={() => setPhase('org-type')}
+          onNext={() => setPhase('company-settings')}
         />
       )
     case 'company-settings':
-      return <CompanySettingsStep onSave={() => setStep('done')} />
+      return <CompanySettingsStep onSave={() => setPhase('done')} />
     case 'done':
       return null
   }
 }
 
-export default OnboardingWizard;
+export default OnboardingWizard
