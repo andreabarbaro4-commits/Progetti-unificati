@@ -18,6 +18,9 @@
   width: 450px;
   height: 640px;
   overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Task 2.2: Step adaptation inside carousel cards --- */
@@ -92,8 +95,14 @@
 .carousel-card.adjacent-left,
 .carousel-card.adjacent-right {
   opacity: 0.4;
-  transform: scale(0.92);
   pointer-events: none;
+  overflow: hidden;
+}
+
+/* Hide all content inside ghost cards — show only the empty card shell */
+.carousel-card.adjacent-left > *,
+.carousel-card.adjacent-right > * {
+  visibility: hidden;
 }
 
 .carousel-card.hidden-card {
@@ -120,34 +129,7 @@
   .carousel-card.adjacent-left,
   .carousel-card.adjacent-right {
     opacity: 0;
-    transform: none;
-  }
-
-  /* Ensure StepIndicator remains accessible on mobile */
-  .step-indicator {
-    padding: 12px 0;
   }
 }
 
-/* --- Step Indicator styles --- */
 
-.step-indicator {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 24px;
-}
-
-.step-indicator-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #d1d5db;
-  transition: background-color 300ms ease, transform 300ms ease;
-}
-
-.step-indicator-dot.active {
-  background-color: #4f46e5;
-  transform: scale(1.4);
-}

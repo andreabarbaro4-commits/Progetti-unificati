@@ -7,7 +7,6 @@ import { WelcomeStep } from '../steps/WelcomeStep'
 import { RoleStep } from '../steps/RoleStep'
 import { JobStep } from '../steps/JobStep'
 import { PhotoUploadStep } from '../steps/PhotoUploadStep'
-import { StepIndicator } from './StepIndicator'
 import './RegistrationCarousel.css'
 
 const CAROUSEL_CONFIG = {
@@ -175,9 +174,6 @@ export function RegistrationCarousel({ onComplete }: RegistrationCarouselProps) 
           <PhotoUploadStep hasPhoto={hasPhoto} onNext={advance} />
         </div>
       </div>
-
-      {/* StepIndicator */}
-      <StepIndicator total={TOTAL_STEPS} current={activeIndex} />
     </div>
   )
 }
