@@ -94,7 +94,6 @@
 
 .carousel-card.adjacent-left,
 .carousel-card.adjacent-right {
-  opacity: 0.4;
   pointer-events: none;
   overflow: hidden;
 }
@@ -103,6 +102,17 @@
 .carousel-card.adjacent-left > *,
 .carousel-card.adjacent-right > * {
   visibility: hidden;
+}
+
+/* Fade away based on distance from the active card */
+.carousel-card.adjacent-right {
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+  mask-image: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+}
+
+.carousel-card.adjacent-left {
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
 }
 
 .carousel-card.hidden-card {
@@ -128,7 +138,7 @@
   /* Hide adjacent card shadows on mobile — prioritize active card */
   .carousel-card.adjacent-left,
   .carousel-card.adjacent-right {
-    opacity: 0;
+    display: none;
   }
 }
 
