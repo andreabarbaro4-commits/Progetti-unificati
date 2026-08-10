@@ -623,6 +623,7 @@ registerMockHandler('PUT', /^\/api\/users\/[^/]+$/, (body, path) => {
   const updated: UserProfile = {
     ...existing,
     ...updates,
+    photo: updates.photo === null ? undefined : (updates.photo ?? existing.photo),
     userId, // ensure userId is never overwritten
     updatedAt: new Date().toISOString(),
   };

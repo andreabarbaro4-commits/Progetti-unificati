@@ -10,6 +10,7 @@ const mockAuthValue: AuthContextValue = {
   user: mockUser,
   getAccessToken: () => 'mock-access-token',
   login: () => {},
+  signup: () => {},
   logout: async () => {},
   silentRefresh: async () => true,
   establishSession: () => {},
