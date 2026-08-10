@@ -3,11 +3,11 @@ import { initReactI18next } from 'react-i18next';
 import itTranslation from '../locales/it.json';
 import enTranslation from '../locales/en.json';
 
-export const STORAGE_KEY = 'flowlee-lang';
+const STORAGE_KEY = 'flowlee-lang';
 export const SUPPORTED_LOCALES = ['en', 'it'] as const;
 export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
 
-export function getInitialLocale(): SupportedLocale {
+function getInitialLocale(): SupportedLocale {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored && SUPPORTED_LOCALES.includes(stored as SupportedLocale)) {

@@ -3,7 +3,6 @@
 
 /* Da qui in poi ci sono le tue classi esistenti */
 .er h1 {
-  font-family: 'Nunito Sans', sans-serif;
   font-weight: 800;
   font-size: 40px;
   line-height: 1.2;
@@ -12,15 +11,11 @@
   margin: 0;
 }
 
-.er {
-  font-family: 'Nunito Sans', sans-serif;
-}
-
 @theme {
   /* Variabili personalizzate */
   --color-text-body: #6b6375;
   --color-text-h: #08060d;
-  --color-bg: #fff;
+  --color-bg: #f0f0f0;
   --color-accent: #aa3bff;
   --color-code-bg: #f4f3ec;
   --color-border: #e5e4e7;
@@ -30,15 +25,20 @@
 }
 
 @layer base {
-  /* Reset globale pulito */
+  /* Reset globale pulito — box-sizing only; margin/padding resets are handled
+     by Tailwind's preflight. A blanket padding:0 override would break utility
+     classes like px-5 applied via descendant selectors. */
   * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  }
+
+  /* Force all form elements to inherit the body font (Open Runde) */
+  button, input, select, textarea {
+    font-family: inherit;
   }
 
   body {
-    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Open Runde', system-ui, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.45;
     color: var(--color-text-body);
     background-color: var(--color-bg);
@@ -92,16 +92,7 @@
   align-items: center;
 }
 
-/* Supporto Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-text-body: #9ca3af;
-    --color-text-h: #f3f4f6;
-    --color-bg: #16171d;
-    --color-border: #374151;
-    --color-code-bg: #1f2028;
-  }
-}
+
 
 @keyframes fade-in {
   from {

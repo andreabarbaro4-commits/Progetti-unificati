@@ -1,0 +1,152 @@
+/* VerticalCarousel — vertical card transforms with peek/mask transitions */
+
+.vertical-carousel-viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.vertical-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.vertical-carousel-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--card-y, 0px));
+  will-change: transform;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: calc(100vw - 5rem);
+  max-width: 93.75rem;
+  min-width: 18rem;
+  min-height: 37.4rem;
+  height: 65vh;
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 3.5rem;
+  overflow: hidden;
+  /* Makes children stretch to fill the card height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Pseudo-element mask overlays --- */
+
+.vertical-carousel-card::before,
+.vertical-carousel-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  border-radius: inherit;
+}
+
+.vertical-carousel-card::before {
+  background: linear-gradient(to top, transparent, rgba(255, 255, 255, 1));
+}
+
+.vertical-carousel-card::after {
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 1));
+}
+
+/* --- Mask utility classes --- */
+
+.vertical-carousel-card.mask-top::before {
+  opacity: 1;
+}
+
+.vertical-carousel-card.mask-bottom::after {
+  opacity: 1;
+}
+
+/* --- Content visibility utility classes --- */
+
+.vertical-carousel-card.content-hidden > * {
+  opacity: 0;
+}
+
+.vertical-carousel-card.transitioning > * {
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Content opacity is driven by JS during transitions.
+   CSS sets the resting state only. */
+.vertical-carousel-card > * {
+  opacity: 1;
+  flex: 1;
+  min-height: 0;
+}
+
+/* --- Peek card (below active) --- */
+
+.vertical-carousel-card.peek-card {
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 0.3;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-carousel-card.peek-card > * {
+  opacity: 0;
+}
+
+/* --- Peek-above card (above active) --- */
+
+.vertical-carousel-card.peek-above-card {
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 0.6;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.05);
+}
+
+.vertical-carousel-card.peek-above-card > * {
+  opacity: 0;
+}
+
+/* --- Above cards --- */
+
+.vertical-carousel-card.above-card {
+  pointer-events: none;
+}
+
+.vertical-carousel-card.above-card > * {
+  opacity: 0;
+}
+
+/* --- Hidden cards --- */
+
+.vertical-carousel-card.hidden-card {
+  pointer-events: none;
+  visibility: hidden;
+  will-change: auto;
+}
+
+.vertical-carousel-card.hidden-card > * {
+  opacity: 0;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 767px) {
+  .vertical-carousel-card {
+    width: calc(100vw - 2rem);
+    min-width: 18rem;
+    padding: 1.5rem 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .vertical-carousel-card.peek-card {
+    display: none;
+  }
+
+  .vertical-carousel-nav-bar {
+    width: calc(100vw - 2rem) !important;
+  }
+}

@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { UseFormProps } from 'react-hook-form';
 import { z, type ZodSchema, ZodIssueCode } from 'zod';
+import { isMockMode } from '../mock';
 
 // Custom error map that produces i18n translation keys
 export const zodErrorMap: z.ZodErrorMap = (issue, ctx) => {
@@ -23,11 +24,24 @@ export const zodErrorMap: z.ZodErrorMap = (issue, ctx) => {
 // Set globally
 z.setErrorMap(zodErrorMap);
 
-// Helper to create form config with zod resolver and standard options
+/**
+ * Creates form config with zod resolver and standard options.
+ * In mock mode (VITE_MOCK=true), validation is completely bypassed
+ * so all forms are progressible without filling mandatory fields.
+ */
 export function createFormConfig<T extends ZodSchema>(
   schema: T,
   options?: Partial<UseFormProps>,
 ): UseFormProps {
+  // In mock mode, skip the resolver entirely — forms submit without validation
+  if (isMockMode()) {
+    return {
+      mode: 'onBlur',
+      reValidateMode: 'onChange',
+      ...options,
+    };
+  }
+
   return {
     resolver: zodResolver(schema),
     mode: 'onBlur',

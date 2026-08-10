@@ -1,28 +1,44 @@
 import type { ButtonHTMLAttributes } from 'react'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '../../lib/utils'
 
-export type ButtonVariant = 'dark' | 'light'
+const buttonVariants = cva(
+  // Base classes (always applied)
+  'inline-flex items-center justify-center rounded-full font-semibold transition-all cursor-pointer border-none min-h-11 md:min-h-0',
+  {
+    variants: {
+      variant: {
+        primary: 'bg-black text-white hover:bg-gray-800',
+        secondary: 'bg-transparent border border-gray-200 text-black hover:bg-gray-50',
+        ghost: 'bg-transparent text-gray-600 hover:bg-gray-100',
+      },
+      size: {
+        default: 'px-7 py-2.5 text-sm',
+        sm: 'px-4 py-1.5 text-xs',
+        lg: 'px-9 py-3 text-base',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'default',
+    },
+  }
+)
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: ButtonVariant
-}
-
-const baseClasses =
-  'cursor-pointer rounded-full border-none px-[28px] py-[11px] text-[13px] font-semibold text-white [transition:all_0.2s_ease]'
-
-const variantClasses: Record<ButtonVariant, string> = {
-  dark: 'mr-[30px] bg-black hover:bg-[#232129]',
-  light: 'border border-solid border-[#e5e7eb] bg-black hover:bg-[#f9fafb]',
-}
+export interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {}
 
 /**
- * Pill-shaped button used throughout the onboarding flow.
+ * Pill-shaped button with cva-driven variants.
  *
- * Both variants render on a black background by design; they differ only in
- * border and hover treatment. The `dark` variant keeps a trailing margin so it
- * sits away from the right edge when laid out in a flex row.
+ * Consumer can override any class via `className` — tailwind-merge ensures
+ * consumer classes win on conflict.
  */
-export function Button({ variant, className, ...props }: ButtonProps) {
-  const classes = [baseClasses, variantClasses[variant], className].filter(Boolean).join(' ')
-
-  return <button className={classes} {...props} />
+export function Button({ variant, size, className, ...props }: ButtonProps) {
+  return (
+    <button className={cn(buttonVariants({ variant, size }), className)} {...props} />
+  )
 }
+
+export { buttonVariants }

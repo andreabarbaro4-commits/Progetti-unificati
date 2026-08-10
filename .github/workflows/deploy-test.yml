@@ -19,6 +19,7 @@ jobs:
 
       - run: npm run build
         env:
+          VITE_APP_ENV: test
           VITE_API_BASE_URL: https://test.api.flowlee.com
           VITE_AUTH_AUTHORITY: https://flowlee.eu.auth0.com
           VITE_AUTH_CLIENT_ID: ${{ vars.TEST_AUTH_CLIENT_ID }}

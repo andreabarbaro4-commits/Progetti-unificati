@@ -1,4 +1,4 @@
-import type { OidcUser } from '../../features/auth/auth-provider';
+import type { OidcUser } from '../../features/auth/AuthProvider';
 
 export const mockUser: OidcUser = {
   sub: 'mock-user-001',

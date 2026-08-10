@@ -15,11 +15,11 @@
 
 .carousel-card {
   flex-shrink: 0;
-  width: 450px;
-  height: 640px;
+  width: 448px;
+  height: 700px;
   overflow-y: auto;
   background-color: #ffffff;
-  border-radius: 20px;
+  border-radius: 24px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -143,3 +143,101 @@
 }
 
 
+
+/* ==========================================================================
+   Expand/Collapse animation for WelcomeStep
+   Two-layer approach: background animates, content stays perfectly still.
+   ========================================================================== */
+
+/* --- Background layer: the white card that grows to fill the screen --- */
+
+.expand-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  width: 448px;
+  height: 700px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transform-origin: center center;
+  will-change: transform, border-radius;
+}
+
+.expand-bg.expanding {
+  animation: bg-expand 500ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.expand-bg.expanded {
+  transform: translate(-50%, -50%) scale(var(--scale-x), var(--scale-y));
+  border-radius: 0;
+}
+
+.expand-bg.collapsing {
+  animation: bg-collapse 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes bg-expand {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+    border-radius: 24px;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(var(--scale-x), var(--scale-y));
+    border-radius: 0;
+  }
+}
+
+@keyframes bg-collapse {
+  from {
+    transform: translate(-50%, -50%) scale(var(--scale-x), var(--scale-y));
+    border-radius: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    border-radius: 24px;
+  }
+}
+
+/* --- Content layer: fixed in place, never moves, never animates --- */
+
+.expand-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  width: 448px;
+  height: 700px;
+  pointer-events: auto;
+}
+
+/* TopNavigation entrance animation — expands from center */
+.top-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  opacity: 0;
+  transform: scaleX(0.3) scaleY(0.6);
+  transform-origin: center top;
+  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1),
+              transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.top-nav-wrapper.visible {
+  opacity: 1;
+  transform: scaleX(1) scaleY(1);
+}
+
+/* --- Mobile responsive expand/collapse overrides --- */
+
+@media (max-width: 600px) {
+  .expand-bg,
+  .expand-content {
+    width: 95vw;
+    height: 700px;
+  }
+}

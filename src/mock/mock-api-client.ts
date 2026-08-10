@@ -18,7 +18,7 @@ interface HandlerRegistryEntry {
 
 const handlerRegistry: HandlerRegistryEntry[] = [];
 
-/** Stored original methods so we can restore them in disableMockApi(). */
+/** Stored original methods for potential future restoration. */
 let originalMethods: {
   get: typeof apiClient.get;
   post: typeof apiClient.post;
@@ -156,16 +156,3 @@ export function enableMockApi(): void {
   };
 }
 
-/**
- * Restores original apiClient methods, disabling mock interception.
- */
-export function disableMockApi(): void {
-  if (originalMethods) {
-    apiClient.get = originalMethods.get;
-    apiClient.post = originalMethods.post;
-    apiClient.put = originalMethods.put;
-    apiClient.patch = originalMethods.patch;
-    apiClient.delete = originalMethods.delete;
-    originalMethods = null;
-  }
-}

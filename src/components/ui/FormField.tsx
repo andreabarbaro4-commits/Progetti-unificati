@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
+import { cn } from '../../lib/utils';
 
 interface FormFieldProps {
   name: string;
@@ -10,40 +11,47 @@ interface FormFieldProps {
 
 /**
  * Consistent form field wrapper that renders a translated label,
- * the input element (children), and an optional translated error message.
+ * the input element (children), and a fixed-height error slot (no layout shift).
  *
  * Accessibility:
  * - Label linked to input via `htmlFor={name}`
  * - Error message has `id="${name}-error"` for `aria-describedby` on inputs
- * - Wrapper carries `data-invalid` attribute for styling hooks
  */
 export function FormField({ name, label, error, children }: FormFieldProps) {
   const { t } = useTranslation();
 
   return (
     <div
-      className="flex flex-col gap-1"
-      data-invalid={!!error || undefined}
+      className={cn(
+        'relative flex flex-col mb-1 bg-transparent',
+        '[&_input]:w-full [&_input]:px-4 [&_input]:py-3 [&_input]:rounded-lg [&_input]:border-none [&_input]:bg-[#f1f1f9] [&_input]:text-base [&_input]:outline-none',
+        '[&_select]:w-full [&_select]:px-4 [&_select]:py-3 [&_select]:rounded-lg [&_select]:border-none [&_select]:bg-[#f1f1f9] [&_select]:text-base [&_select]:outline-none [&_select]:appearance-none',
+        '[&_textarea]:w-full [&_textarea]:px-4 [&_textarea]:py-3 [&_textarea]:rounded-lg [&_textarea]:border-none [&_textarea]:bg-[#f1f1f9] [&_textarea]:text-base [&_textarea]:outline-none',
+      )}
       aria-invalid={!!error}
     >
       <label
+        className="text-left bg-transparent text-black mb-1 leading-none"
         htmlFor={name}
-        className="text-sm font-medium text-gray-700"
+        style={{ fontSize: '20px', fontWeight: 400, color: '#000' }}
       >
         {t(label)}
       </label>
 
       {children}
 
-      {error && (
-        <span
-          id={`${name}-error`}
-          role="alert"
-          className="text-xs text-red-600"
-        >
-          {t(error)}
-        </span>
-      )}
+      {/* Fixed-height error slot — prevents layout shift */}
+      <div className="h-4 mt-0.5">
+        {error && (
+          <span
+            className="text-[11px] text-red-600 leading-none"
+            id={`${name}-error`}
+            role="alert"
+          >
+            {t(error)}
+          </span>
+        )}
+      </div>
     </div>
   );
 }

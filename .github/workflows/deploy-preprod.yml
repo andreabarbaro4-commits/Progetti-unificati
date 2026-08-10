@@ -19,6 +19,7 @@ jobs:
 
       - run: npm run build
         env:
+          VITE_APP_ENV: preprod
           VITE_API_BASE_URL: https://preprod.api.flowlee.com
           VITE_AUTH_AUTHORITY: https://flowlee.eu.auth0.com
           VITE_AUTH_CLIENT_ID: ${{ vars.PREPROD_AUTH_CLIENT_ID }}

@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { TopNavigation } from '../components/TopNavigation'
+import { Button } from '../../../components/ui/Button'
 import { FormField } from '../../../components/ui/FormField'
 import { createFormConfig } from '../../../lib/form-utils'
 import { OrgDetailsSchema, type OrgDetailsData } from '../schemas'
@@ -19,7 +19,7 @@ function priceForTeamSize(teamSize: string): string {
 }
 
 const fieldClasses =
-  'w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-purple-600'
+  'w-full rounded-full border border-gray-200 bg-white px-5 py-3 text-base outline-none focus:border-gray-400'
 
 interface OrgDetailsStepProps {
   onBack: () => void
@@ -43,79 +43,80 @@ export function OrgDetailsStep({ onBack, onNext }: OrgDetailsStepProps) {
   const teamSize = watch('teamSize')
 
   return (
-    <div className="Step step-header-layout step10-layout">
-      <TopNavigation leftLabel={`${t('organization')} / 2`} onBack={onBack} />
-
-      <div
-        className="step10-content"
-        style={{ display: 'flex', gap: '40px', alignItems: 'center', justifyContent: 'center' }}
-      >
-        <div className="step10-right" style={{ flex: '1', maxWidth: '300px' }}>
-          <div className="flex aspect-square w-full flex-col items-center justify-center rounded-3xl border border-gray-200 bg-white shadow-sm">
-            <span className="text-lg font-bold text-gray-800">{t('logo_placeholder')}</span>
+    <form
+      className="relative flex h-full flex-col"
+      onSubmit={handleSubmit(() => onNext())}
+    >
+      {/* Two-column content: fills all available height */}
+      <div className="flex flex-1 min-h-0 flex-col gap-6 md:flex-row md:items-stretch md:justify-between">
+        {/* Left: Logo — square box sized by available height */}
+        <div className="hidden md:flex md:flex-col md:gap-2 md:min-h-0">
+          <span className="text-lg font-bold text-black">Logo</span>
+          <div className="flex-1 min-h-0">
+            <div className="h-full aspect-square flex flex-col items-center justify-center rounded-2xl border border-black/20">
+              <span className="text-lg font-bold text-gray-800">{t('logo_placeholder')}</span>
+            </div>
           </div>
         </div>
-        <div className="step10-left" style={{ flex: '1', maxWidth: '400px' }}>
-          <form onSubmit={handleSubmit(() => onNext())}>
-            <div className="space-y-4">
-              <FormField
-                name="companyName"
-                label="company_name"
-                error={errors.companyName?.message}
+
+        {/* Right: Form fields — vertically centered */}
+        <div className="md:w-[42%] flex flex-col justify-center space-y-5">
+          <FormField
+            name="companyName"
+            label="company_name"
+            error={errors.companyName?.message}
+          >
+            <input
+              className={fieldClasses}
+              aria-describedby={errors.companyName ? 'companyName-error' : undefined}
+              aria-invalid={!!errors.companyName}
+              id="companyName"
+              placeholder="Company Srl"
+              {...register('companyName')}
+            />
+          </FormField>
+
+          <FormField name="teamSize" label="team_size" error={errors.teamSize?.message}>
+            <div className="flex items-center rounded-full border border-gray-200 bg-white overflow-hidden">
+              <select
+                className="flex-1 bg-transparent px-5 py-3 text-base outline-none border-none appearance-none"
+                aria-describedby={errors.teamSize ? 'teamSize-error' : undefined}
+                aria-invalid={!!errors.teamSize}
+                id="teamSize"
+                {...register('teamSize')}
               >
-                <input
-                  id="companyName"
-                  className={fieldClasses}
-                  placeholder="Company Srl"
-                  aria-invalid={!!errors.companyName}
-                  aria-describedby={errors.companyName ? 'companyName-error' : undefined}
-                  {...register('companyName')}
-                />
-              </FormField>
-              <FormField name="teamSize" label="team_size" error={errors.teamSize?.message}>
-                <div className="flex gap-2">
-                  <select
-                    id="teamSize"
-                    className={fieldClasses}
-                    aria-invalid={!!errors.teamSize}
-                    aria-describedby={errors.teamSize ? 'teamSize-error' : undefined}
-                    {...register('teamSize')}
-                  >
-                    <option value="1-5">1-5 persone</option>
-                    <option value="6-10">6-10 persone</option>
-                    <option value="11-20">11-20 persone</option>
-                  </select>
-                  <div className="flex min-w-[100px] items-center justify-center rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-sm font-medium whitespace-nowrap text-gray-700">
-                    {priceForTeamSize(teamSize)}
-                  </div>
-                </div>
-              </FormField>
-              <FormField
-                name="description"
-                label="description"
-                error={errors.description?.message}
-              >
-                <div className="flex items-end gap-4">
-                  <textarea
-                    id="description"
-                    className={`${fieldClasses} h-24`}
-                    placeholder={t('description')}
-                    aria-invalid={!!errors.description}
-                    aria-describedby={errors.description ? 'description-error' : undefined}
-                    {...register('description')}
-                  />
-                  <button
-                    type="submit"
-                    className="rounded-xl bg-black px-8 py-3 text-sm font-medium whitespace-nowrap text-white"
-                  >
-                    {t('proceed')}
-                  </button>
-                </div>
-              </FormField>
+                <option value="1-5">1-5 persone</option>
+                <option value="6-10">6-10 persone</option>
+                <option value="11-20">11-20 persone</option>
+              </select>
+              <span className="flex items-center gap-1 px-5 py-3 text-base font-bold text-black whitespace-nowrap">
+                {priceForTeamSize(teamSize)}
+                <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </span>
             </div>
-          </form>
+          </FormField>
+
+          <FormField
+            name="description"
+            label="description"
+            error={errors.description?.message}
+          >
+            <textarea
+              className="w-full rounded-3xl border border-gray-200 bg-white px-5 py-4 text-base outline-none focus:border-gray-400 min-h-[100px] resize-none"
+              aria-describedby={errors.description ? 'description-error' : undefined}
+              aria-invalid={!!errors.description}
+              id="description"
+              placeholder={t('description')}
+              {...register('description')}
+            />
+          </FormField>
         </div>
       </div>
-    </div>
+
+      {/* Procedi button — absolute bottom-right so it doesn't eat content height */}
+      <Button className="absolute bottom-0 right-0 rounded-3xl px-8 py-3 text-lg" type="submit" variant="primary">
+        {t('proceed')}
+      </Button>
+    </form>
   )
 }

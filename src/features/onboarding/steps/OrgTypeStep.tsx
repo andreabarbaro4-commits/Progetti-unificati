@@ -1,38 +1,48 @@
-import omino from '../../../assets/omino.png'
-import { Button } from '../../../components/ui/Button'
-import { TopNavigation } from '../components/TopNavigation'
+import avatar3d from '../../../assets/avatar-3d.png'
 
 interface OrgTypeStepProps {
   onNext: () => void
 }
 
-/** Step 10 — asks whether the user works with a company or as a freelancer. */
 export function OrgTypeStep({ onNext }: OrgTypeStepProps) {
   return (
-    <div className="Step step-header-layout step10-layout">
-      <TopNavigation leftLabel="Organizzazione" />
+    <div className="flex flex-1 w-full min-h-0">
+      {/* Left side: heading at top, buttons at bottom */}
+      <div className="flex flex-col justify-between flex-1 min-w-0 min-h-0 pr-4">
+        <h1
+          className="font-semibold leading-[1.1] text-black"
+          style={{ fontSize: 'clamp(2rem, 4.5vw, 4.5rem)' }}
+        >
+          Iniziamo dalle basi.
+          <br />
+          Lavori con un&apos;azienda
+          <br />o sei un freelance?
+        </h1>
+        <div className="flex gap-3">
+          <button
+            type="button"
+            onClick={onNext}
+            className="bg-black text-white border border-transparent rounded-[1.5rem] px-10 py-4 text-xl font-medium cursor-pointer hover:bg-gray-800 transition-colors"
+          >
+            Company
+          </button>
+          <button
+            type="button"
+            onClick={onNext}
+            className="border border-black text-black rounded-[1.5rem] px-10 py-4 text-xl font-medium cursor-pointer bg-transparent hover:bg-gray-50 transition-colors"
+          >
+            Freelance
+          </button>
+        </div>
+      </div>
 
-      <div className="step10-content">
-        <div className="step10-left">
-          <h1 className="section-title">
-            Iniziamo dalle basi.
-            <br />
-            Lavori con un'azienda
-            <br />o sei un freelance?
-          </h1>
-          <p className="step10-subtitle">Abbiamo soluzioni diverse per te.</p>
-          <div className="step10-buttons">
-            <Button variant="dark" onClick={onNext}>
-              Company
-            </Button>
-            <Button variant="light" onClick={onNext}>
-              Freelance
-            </Button>
-          </div>
-        </div>
-        <div className="step10-right">
-          <img src={omino} alt="Flowlee" className="step10-image" />
-        </div>
+      {/* Right side: avatar with vh-based height so it actually fills space */}
+      <div className="hidden md:flex items-center justify-center w-[40%] flex-shrink-0">
+        <img
+          src={avatar3d}
+          alt="Flowlee avatar"
+          style={{ height: '22rem', width: 'auto', objectFit: 'contain' }}
+        />
       </div>
     </div>
   )

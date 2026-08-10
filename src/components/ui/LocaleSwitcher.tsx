@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LOCALES, persistLocale } from '../../lib/i18n';
 import type { SupportedLocale } from '../../lib/i18n';
+import { cn } from '../../lib/utils';
 
 interface LocaleSwitcherProps {
   className?: string;
@@ -28,19 +29,19 @@ export function LocaleSwitcher({ className }: LocaleSwitcherProps) {
   }
 
   return (
-    <div className={['inline-flex rounded-full border border-gray-200', className].filter(Boolean).join(' ')}>
+    <div className={cn('inline-flex rounded-full border border-gray-200', className)}>
       {SUPPORTED_LOCALES.map((locale) => (
         <button
           key={locale}
-          type="button"
-          onClick={() => handleSelect(locale)}
-          aria-pressed={locale === currentLocale}
-          className={[
-            'cursor-pointer rounded-full border-none px-3 py-1 text-xs font-semibold transition-colors',
+          className={cn(
+            'cursor-pointer rounded-full border-none px-3 py-1 text-xs font-semibold transition-colors min-h-11 min-w-11 md:min-h-0 md:min-w-0',
             locale === currentLocale
               ? 'bg-black text-white'
               : 'bg-transparent text-gray-600 hover:bg-gray-100',
-          ].join(' ')}
+          )}
+          aria-pressed={locale === currentLocale}
+          type="button"
+          onClick={() => handleSelect(locale)}
         >
           {LOCALE_LABELS[locale]}
         </button>

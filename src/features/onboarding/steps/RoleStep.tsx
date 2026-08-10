@@ -1,29 +1,50 @@
-import { TopNavigation } from '../components/TopNavigation'
+import { useTranslation } from 'react-i18next'
 import { RoleTagList } from '../components/RoleTagList'
+import { StepIndicator } from '../components/StepIndicator'
+import { isMockMode } from '../../../mock'
 
 interface RoleStepProps {
   selectedRole: string | null
-  onSelectRole: (role: string) => void
   onNext: () => void
+  onSelectRole: (role: string) => void
 }
 
 /** Step 6 — asks the user what their role is. */
-export function RoleStep({ selectedRole, onSelectRole, onNext }: RoleStepProps) {
+export function RoleStep({ selectedRole, onNext, onSelectRole }: RoleStepProps) {
+  const { t } = useTranslation()
+
   return (
-    <div className="Step step-header-layout">
-      <TopNavigation />
+    <div className="flex flex-col items-center w-full h-full px-6 pt-8 pb-4 overflow-hidden">
+      {/* Title */}
+      <div
+        className="w-full text-left mb-4"
+        style={{
+          fontWeight: 700,
+          fontSize: '32px',
+          lineHeight: '1.2',
+          color: '#000000',
+        }}
+      >
+        {t('what_is_your_job')}
+      </div>
 
-      <h1 className="section-title">
-        Benvenuto!
-        <br />
-        Raccontaci chi sei
-      </h1>
+      {/* Role tags */}
+      <div className="w-full flex-1 min-h-0 overflow-y-auto">
+        <RoleTagList selectedRole={selectedRole} onSelectRole={onSelectRole} />
+      </div>
 
-      <RoleTagList selectedRole={selectedRole} onSelectRole={onSelectRole} />
-
-      <button className="procedi-btn" disabled={!selectedRole} onClick={onNext}>
-        Procedi
-      </button>
+      {/* Footer: button + indicator pinned to bottom with guaranteed spacing */}
+      <div className="mt-auto flex-shrink-0 w-full">
+        <button
+          className="w-full h-[48px] bg-black text-white rounded-[16px] text-[20px] cursor-pointer border-none hover:bg-gray-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          disabled={!isMockMode() && !selectedRole}
+          type="button"
+          onClick={onNext}
+        >
+          {t('proceed').toUpperCase()}
+        </button>
+        <StepIndicator hasNext={true} />
+      </div>
     </div>
   )
 }

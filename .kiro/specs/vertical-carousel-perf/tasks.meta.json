@@ -1,0 +1,159 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Add transform-based positioning, layer promotion, pseudo-element overlays, and utility classes to VerticalCarousel.css": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342214785
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342222538
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342287243
+      }
+    ],
+    "2.1 Update VerticalCarousel.tsx render to use CSS custom property `--card-y` instead of inline `top`": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342214848
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342290891
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342379716
+      }
+    ],
+    "2.2 Update transition useEffect to animate `--card-y` instead of `style.top`": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342214875
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342382775
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342487636
+      }
+    ],
+    "3.1 Remove `animateMask` callback and `animFrameRef`, use CSS class-based mask transitions": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342214906
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342491518
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342630515
+      }
+    ],
+    "4.1 Use `.content-hidden` and `.transitioning` classes instead of direct `content.style.opacity` manipulation": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342214940
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342492468
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342631656
+      }
+    ],
+    "5.1 Remove dead code and verify all transitions work correctly": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342214967
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342639666
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342747246
+      }
+    ],
+    "6. Final checkpoint": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342215000
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342750525
+      },
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342806272
+      }
+    ],
+    "1. Add CSS infrastructure": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342287268
+      }
+    ],
+    "2. Switch from `top` to `transform: translateY`": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342487675
+      }
+    ],
+    "3. Replace JS mask animation with CSS classes": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342630563
+      }
+    ],
+    "4. Replace JS content opacity with CSS transitions": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342631727
+      }
+    ],
+    "5. Cleanup and verification": [
+      {
+        "executionId": "bc51d69b-e34d-421f-b67b-16b3f489268c",
+        "chatSessionId": "sess_2dda23b7-826b-4da8-a7e5-01d37434c9ef",
+        "timestamp": 1786342747283
+      }
+    ]
+  }
+}

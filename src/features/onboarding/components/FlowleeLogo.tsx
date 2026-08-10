@@ -1,5 +1,5 @@
-import logoImage from '../../../assets/Logo.png'
+import logoSvg from '../../../assets/flowlee-logo.svg'
 
 export function FlowleeLogo() {
-  return <img src={logoImage} alt="Flowlee" style={{ height: '20px', width: 'auto' }} />
+  return <img className="h-5 w-auto" alt="Flowlee" src={logoSvg} />
 }

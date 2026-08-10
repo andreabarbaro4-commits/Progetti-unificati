@@ -1,0 +1,445 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create `useCompanyWizardStore` in `src/features/onboarding/useCompanyWizardStore.ts`": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305817679
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305825639
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305934839
+      }
+    ],
+    "1.2 Create `verticalCarouselConfig.ts` in `src/features/onboarding/components/`": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305817735
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305826879
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305935710
+      }
+    ],
+    "2.1 Create `BackgroundDecorations.tsx` in `src/features/onboarding/components/`": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305817779
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305827455
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305936500
+      }
+    ],
+    "3.1 Create `TopNavigationBar.tsx` in `src/features/onboarding/components/`": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305817843
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305943198
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306161150
+      }
+    ],
+    "3.2 Implement navigation arrow disable logic": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305817880
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306167813
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306320822
+      }
+    ],
+    "3.3 Implement step label updates": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305817921
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306168483
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306321378
+      }
+    ],
+    "3.4 Implement responsive behavior for TopNavigationBar": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305817961
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306169169
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306322342
+      }
+    ],
+    "4.1 Create `VerticalCarousel.tsx` and `VerticalCarousel.css` in `src/features/onboarding/components/`": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818004
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305944073
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306162033
+      }
+    ],
+    "4.2 Implement card state logic (active, peek, above, hidden)": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818046
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306169985
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306323002
+      }
+    ],
+    "4.3 Implement vertical transition animations": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818087
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306327468
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306549272
+      }
+    ],
+    "4.4 Implement JS mask animations (requestAnimationFrame)": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818121
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306328119
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306550012
+      }
+    ],
+    "4.5 Implement card container styling (`VerticalCarouselCard`)": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818169
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306170802
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306323910
+      }
+    ],
+    "4.6 Implement responsive behavior for carousel": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818212
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306328917
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306550771
+      }
+    ],
+    "5. Checkpoint - Ensure carousel mechanics work in isolation": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818260
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306561027
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306607497
+      }
+    ],
+    "6.1 Refactor `OrgTypeStep` to remove `TopNavigation` and `Card variant=\"wide\"` wrapper": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818314
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306611429
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306691200
+      }
+    ],
+    "6.2 Refactor `OrgDetailsStep` to remove `TopNavigation` and `Card variant=\"wide\"` wrapper": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818352
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306612219
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306691951
+      }
+    ],
+    "6.3 Refactor `CompanySettingsStep` to remove full-page container styling": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818393
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306613144
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306692855
+      }
+    ],
+    "7.1 Create `VerticalCarouselWizard.tsx` in `src/features/onboarding/components/`": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818429
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306696441
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306763677
+      }
+    ],
+    "7.2 Wire step components into VerticalCarousel as children": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818467
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306766961
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306948871
+      }
+    ],
+    "7.3 Update `OnboardingWizard.tsx` to render `VerticalCarouselWizard`": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818504
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306953664
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786307014973
+      }
+    ],
+    "8.1 Apply precise Figma positioning values": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818551
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306767687
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306949660
+      }
+    ],
+    "9. Checkpoint - Full wizard integration": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818592
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786307028299
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786307056882
+      }
+    ],
+    "11. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305818635
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786307069067
+      },
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786307106758
+      }
+    ],
+    "1. Create Zustand store and configuration constants": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305935758
+      }
+    ],
+    "2. Implement BackgroundDecorations component": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786305936547
+      }
+    ],
+    "3. Implement TopNavigationBar component": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306322385
+      }
+    ],
+    "4. Implement VerticalCarousel engine": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306550823
+      }
+    ],
+    "6. Refactor step components to remove embedded TopNavigation and container styling": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306692900
+      }
+    ],
+    "8. Implement visual positioning matching Figma specification": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786306949697
+      }
+    ],
+    "7. Create VerticalCarouselWizard orchestrator and wire into OnboardingWizard": [
+      {
+        "executionId": "39bc4e46-0798-4aa1-9778-afdbc2aef96c",
+        "chatSessionId": "sess_57a467a3-24d3-4fec-a67e-f085609c4f71",
+        "timestamp": 1786307015014
+      }
+    ]
+  }
+}

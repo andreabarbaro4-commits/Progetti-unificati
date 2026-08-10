@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+import { cn } from '../../../lib/utils'
+import { Button } from '../../../components/ui/Button'
 import { FormField } from '../../../components/ui/FormField'
 import { createFormConfig } from '../../../lib/form-utils'
 import { CompanySettingsSchema, type CompanySettingsData } from '../schemas'
@@ -18,226 +20,106 @@ export function CompanySettingsStep({ onSave }: CompanySettingsStepProps) {
   } = useForm<CompanySettingsData>(createFormConfig(CompanySettingsSchema))
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        backgroundColor: '#000',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        overflow: 'hidden',
-      }}
-    >
+    <div className="flex flex-col gap-6 w-full">
+      <h2 className="text-xl font-bold text-black m-0">
+        {t('company_settings')}
+      </h2>
 
-      {/* Contenitore Modale */}
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          backgroundColor: '#fff',
-          padding: '40px',
-          borderRadius: '24px',
-          width: '850px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '24px',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-        }}
-      >
-        <h2 style={{ fontSize: '20px', fontWeight: 'bold', color: '#000', margin: 0 }}>
-          {t('company_settings')}
-        </h2>
+      <div className="flex flex-col gap-6 md:grid md:grid-cols-[220px_180px_1fr] md:gap-10">
+        {/* Sidebar */}
+        <div className="flex flex-col gap-2">
+          {(['sidebar_details', 'sidebar_admins', 'sidebar_contacts', 'sidebar_billing', 'sidebar_work_model'] as const).map((key, index) => (
+            <button
+              key={key}
+              className={cn(
+                'p-3 rounded-[10px] text-left text-sm cursor-pointer',
+                index === 0
+                  ? 'bg-black text-white border-none'
+                  : 'bg-transparent text-inherit border border-gray-200'
+              )}
+              type="button"
+            >
+              {t(key)}
+            </button>
+          ))}
+        </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '220px 180px 1fr', gap: '40px' }}>
-          {/* Sidebar */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <button
-              type="button"
-              style={{
-                backgroundColor: '#000',
-                color: '#fff',
-                border: 'none',
-                padding: '12px',
-                borderRadius: '10px',
-                textAlign: 'left',
-                fontSize: '13px',
-                cursor: 'pointer',
-              }}
-            >
-              {t('sidebar_details')}
-            </button>
-            <button
-              type="button"
-              style={{
-                backgroundColor: 'transparent',
-                border: '1px solid #e5e5e5',
-                padding: '12px',
-                borderRadius: '10px',
-                textAlign: 'left',
-                fontSize: '13px',
-                cursor: 'pointer',
-              }}
-            >
-              {t('sidebar_admins')}
-            </button>
-            <button
-              type="button"
-              style={{
-                backgroundColor: 'transparent',
-                border: '1px solid #e5e5e5',
-                padding: '12px',
-                borderRadius: '10px',
-                textAlign: 'left',
-                fontSize: '13px',
-                cursor: 'pointer',
-              }}
-            >
-              {t('sidebar_contacts')}
-            </button>
-            <button
-              type="button"
-              style={{
-                backgroundColor: 'transparent',
-                border: '1px solid #e5e5e5',
-                padding: '12px',
-                borderRadius: '10px',
-                textAlign: 'left',
-                fontSize: '13px',
-                cursor: 'pointer',
-              }}
-            >
-              {t('sidebar_billing')}
-            </button>
-            <button
-              type="button"
-              style={{
-                backgroundColor: 'transparent',
-                border: '1px solid #e5e5e5',
-                padding: '12px',
-                borderRadius: '10px',
-                textAlign: 'left',
-                fontSize: '13px',
-                cursor: 'pointer',
-              }}
-            >
-              {t('sidebar_work_model')}
-            </button>
-          </div>
-
-          {/* Logo box */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <span style={{ fontSize: '12px', fontWeight: '600', color: '#000' }}>
+        {/* Logo box */}
+        <div className="flex flex-col gap-2">
+          <span className="text-xs font-semibold text-black">
+            {t('logo_placeholder')}
+          </span>
+          <div className="w-[180px] h-[180px] border border-gray-200 rounded-3xl flex items-center justify-center bg-neutral-50">
+            <span className="text-sm font-bold text-gray-300">
               {t('logo_placeholder')}
             </span>
-            <div
-              style={{
-                width: '180px',
-                height: '180px',
-                border: '1px solid #e5e5e5',
-                borderRadius: '24px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: '#fafafa',
-              }}
-            >
-              <span style={{ fontSize: '14px', fontWeight: 'bold', color: '#ccc' }}>
-                {t('logo_placeholder')}
-              </span>
-            </div>
           </div>
-
-          {/* Form */}
-          <form
-            onSubmit={handleSubmit(() => onSave())}
-            style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
-          >
-            <FormField
-              name="companyName"
-              label="company_name"
-              error={errors.companyName?.message}
-            >
-              <input
-                id="companyName"
-                style={{ width: '100%', padding: '12px', borderRadius: '10px' }}
-                placeholder="Company Srl"
-                aria-invalid={!!errors.companyName}
-                aria-describedby={errors.companyName ? 'companyName-error' : undefined}
-                {...register('companyName')}
-              />
-            </FormField>
-
-            <FormField name="teamSize" label="team_size" error={errors.teamSize?.message}>
-              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-end' }}>
-                <select
-                  id="teamSize"
-                  style={{
-                    width: '100%',
-                    height: '46px',
-                    padding: '0 12px',
-                    borderRadius: '10px',
-                    boxSizing: 'border-box',
-                  }}
-                  aria-invalid={!!errors.teamSize}
-                  aria-describedby={errors.teamSize ? 'teamSize-error' : undefined}
-                  {...register('teamSize')}
-                >
-                  <option value="30-50">30-50 persone</option>
-                </select>
-                <div
-                  style={{
-                    width: '120px',
-                    height: '46px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px solid #e5e5e5',
-                    borderRadius: '10px',
-                    backgroundColor: '#f9f9f9',
-                    fontSize: '13px',
-                    boxSizing: 'border-box',
-                  }}
-                >
-                  €200/mese
-                </div>
-              </div>
-            </FormField>
-
-            <FormField
-              name="description"
-              label="description"
-              error={errors.description?.message}
-            >
-              <input
-                id="description"
-                type="text"
-                style={{ width: '100%', padding: '12px', borderRadius: '10px' }}
-                placeholder="Company Srl"
-                aria-invalid={!!errors.description}
-                aria-describedby={errors.description ? 'description-error' : undefined}
-                {...register('description')}
-              />
-            </FormField>
-
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <button
-                type="submit"
-                style={{
-                  backgroundColor: '#000',
-                  color: '#fff',
-                  padding: '10px 20px',
-                  borderRadius: '10px',
-                }}
-              >
-                {t('save')}
-              </button>
-            </div>
-          </form>
         </div>
+
+        {/* Form */}
+        <form
+          onSubmit={handleSubmit(() => onSave())}
+          className="flex flex-col gap-4"
+        >
+          <FormField
+            name="companyName"
+            label="company_name"
+            error={errors.companyName?.message}
+          >
+            <input
+              className="w-full p-3 rounded-[10px]"
+              aria-describedby={errors.companyName ? 'companyName-error' : undefined}
+              aria-invalid={!!errors.companyName}
+              id="companyName"
+              placeholder="Company Srl"
+              {...register('companyName')}
+            />
+          </FormField>
+
+          <FormField name="teamSize" label="team_size" error={errors.teamSize?.message}>
+            <div className="flex gap-2.5 items-end">
+              <select
+                className="w-full h-12 px-3 rounded-[10px] box-border"
+                aria-describedby={errors.teamSize ? 'teamSize-error' : undefined}
+                aria-invalid={!!errors.teamSize}
+                id="teamSize"
+                {...register('teamSize')}
+              >
+                <option value="30-50">30-50 persone</option>
+              </select>
+              <div className="w-[120px] h-12 flex items-center justify-center border border-gray-200 rounded-[10px] bg-neutral-50 text-sm box-border">
+                €200/mese
+              </div>
+            </div>
+          </FormField>
+
+          <FormField
+            name="description"
+            label="description"
+            error={errors.description?.message}
+          >
+            <input
+              className="w-full p-3 rounded-[10px]"
+              aria-describedby={errors.description ? 'description-error' : undefined}
+              aria-invalid={!!errors.description}
+              id="description"
+              placeholder="Company Srl"
+              type="text"
+              {...register('description')}
+            />
+          </FormField>
+
+          <div className="flex justify-end">
+            <Button
+              className="rounded-[10px] px-5 py-2.5"
+              size="sm"
+              type="submit"
+              variant="primary"
+            >
+              {t('save')}
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   )
