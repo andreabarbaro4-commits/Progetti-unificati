@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { FlowleeLogo } from '../components/FlowleeLogo'
+import { FlowleeLogo } from '../../../components/AppShell/FlowleeLogo'
 import { StepIndicator } from '../components/StepIndicator'
 import { createFormConfig } from '../../../lib/form-utils'
 import { AccountSchema, type AccountData } from '../schemas'

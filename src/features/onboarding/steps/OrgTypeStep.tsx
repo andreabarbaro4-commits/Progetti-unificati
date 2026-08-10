@@ -2,9 +2,10 @@ import avatar3d from '../../../assets/avatar-3d.png'
 
 interface OrgTypeStepProps {
   onNext: () => void
+  onFreelance: () => void
 }
 
-export function OrgTypeStep({ onNext }: OrgTypeStepProps) {
+export function OrgTypeStep({ onNext, onFreelance }: OrgTypeStepProps) {
   return (
     <div className="flex flex-1 w-full min-h-0">
       {/* Left side: heading at top, buttons at bottom */}
@@ -28,7 +29,7 @@ export function OrgTypeStep({ onNext }: OrgTypeStepProps) {
           </button>
           <button
             type="button"
-            onClick={onNext}
+            onClick={onFreelance}
             className="border border-black text-black rounded-[1.5rem] px-10 py-4 text-xl font-medium cursor-pointer bg-transparent hover:bg-gray-50 transition-colors"
           >
             Freelance

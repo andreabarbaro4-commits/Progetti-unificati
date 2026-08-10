@@ -32,7 +32,7 @@ export const VERTICAL_CAROUSEL_CONFIG = {
 export const WIZARD_STEPS = [
   { id: 'org-type', label: 'Organizzazione' },
   { id: 'org-details', label: 'Dettagli' },
-  { id: 'company-settings', label: 'Impostazioni' },
+  { id: 'contact-info', label: 'Contatti' },
 ] as const
 
 export type WizardStepId = (typeof WIZARD_STEPS)[number]['id']

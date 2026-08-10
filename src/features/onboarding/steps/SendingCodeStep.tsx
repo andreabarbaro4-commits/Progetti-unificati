@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import avatar from '../../../assets/avatar.png'
-import { FlowleeLogo } from '../components/FlowleeLogo'
+import { FlowleeLogo } from '../../../components/AppShell/FlowleeLogo'
 import { StepIndicator } from '../components/StepIndicator'
 
 interface SendingCodeStepProps {

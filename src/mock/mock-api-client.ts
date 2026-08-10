@@ -4,7 +4,7 @@ import { apiClient } from '../lib/api-client';
 // Types
 // ---------------------------------------------------------------------------
 
-type MockHandler = (body?: unknown) => unknown;
+type MockHandler = (body?: unknown, path?: string) => unknown;
 
 interface HandlerRegistryEntry {
   method: string;
@@ -101,7 +101,7 @@ export function enableMockApi(): void {
       throw new Error(`No mock handler registered for GET ${path}`);
     }
     await sleep(randomDelay());
-    return entry.handler() as TResponse;
+    return entry.handler(undefined, path) as TResponse;
   };
 
   // Patch POST
@@ -114,7 +114,7 @@ export function enableMockApi(): void {
       throw new Error(`No mock handler registered for POST ${path}`);
     }
     await sleep(randomDelay());
-    return entry.handler(body) as TResponse;
+    return entry.handler(body, path) as TResponse;
   };
 
   // Patch PUT
@@ -127,7 +127,7 @@ export function enableMockApi(): void {
       throw new Error(`No mock handler registered for PUT ${path}`);
     }
     await sleep(randomDelay());
-    return entry.handler(body) as TResponse;
+    return entry.handler(body, path) as TResponse;
   };
 
   // Patch PATCH
@@ -140,7 +140,7 @@ export function enableMockApi(): void {
       throw new Error(`No mock handler registered for PATCH ${path}`);
     }
     await sleep(randomDelay());
-    return entry.handler(body) as TResponse;
+    return entry.handler(body, path) as TResponse;
   };
 
   // Patch DELETE
@@ -152,7 +152,7 @@ export function enableMockApi(): void {
       throw new Error(`No mock handler registered for DELETE ${path}`);
     }
     await sleep(randomDelay());
-    return entry.handler() as TResponse;
+    return entry.handler(undefined, path) as TResponse;
   };
 }
 

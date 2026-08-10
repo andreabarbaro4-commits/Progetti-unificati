@@ -9,6 +9,7 @@ import { LocaleSwitcher } from './components/ui/LocaleSwitcher';
 import { SessionExpiredNotification } from './features/auth/SessionExpiredNotification';
 import { routes } from './routes';
 import { AuthGuard } from './features/auth/AuthGuard';
+import { AppShell } from './components/AppShell/AppShell';
 import { isMockMode } from './mock';
 import { centeredPageLayout } from './lib/styles';
 import './App.css';
@@ -26,13 +27,19 @@ function AppRoutes() {
   return (
     <Suspense fallback={<div className={centeredPageLayout}>Loading…</div>}>
       <Routes>
-        {routes.map(({ path, component: Component, isPublic }) => (
+        {routes.map(({ path, component: Component, isPublic, isAuthenticatedLayout }) => (
           <Route
             key={path}
             path={path}
             element={
               <AuthGuard isPublic={isPublic}>
-                <Component />
+                {isAuthenticatedLayout ? (
+                  <AppShell>
+                    <Component />
+                  </AppShell>
+                ) : (
+                  <Component />
+                )}
               </AuthGuard>
             }
           />

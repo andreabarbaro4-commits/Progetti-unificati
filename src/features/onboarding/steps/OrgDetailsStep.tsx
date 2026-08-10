@@ -48,23 +48,25 @@ export function OrgDetailsStep({ onBack, onNext }: OrgDetailsStepProps) {
       onSubmit={handleSubmit(() => onNext())}
     >
       {/* Two-column content: fills all available height */}
-      <div className="flex flex-1 min-h-0 flex-col gap-6 md:flex-row md:items-stretch md:justify-between">
-        {/* Left: Logo — square box sized by available height */}
-        <div className="hidden md:flex md:flex-col md:gap-2 md:min-h-0">
+      <div className="flex flex-1 min-h-0 flex-col gap-6 md:flex-row md:items-stretch md:gap-[5%]">
+        {/* Left: Logo — square box, width = available height via calc */}
+        <div
+          className="hidden md:flex md:flex-col md:gap-2 md:flex-shrink-0"
+          style={{ width: 'calc(65vh - 8.5rem)' }}
+        >
           <span className="text-lg font-bold text-black">Logo</span>
-          <div className="flex-1 min-h-0">
-            <div className="h-full aspect-square flex flex-col items-center justify-center rounded-2xl border border-black/20">
-              <span className="text-lg font-bold text-gray-800">{t('logo_placeholder')}</span>
-            </div>
+          <div className="flex-1 min-h-0 w-full rounded-2xl border border-black/20 flex items-center justify-center">
+            <span className="text-lg font-bold text-gray-800">{t('logo_placeholder')}</span>
           </div>
         </div>
 
-        {/* Right: Form fields — vertically centered */}
-        <div className="md:w-[42%] flex flex-col justify-center space-y-5">
+        {/* Right: Form fields — takes remaining width */}
+        <div className="flex-1 min-w-0 flex flex-col justify-center space-y-5">
           <FormField
             name="companyName"
             label="company_name"
             error={errors.companyName?.message}
+            unstyled
           >
             <input
               className={fieldClasses}
@@ -76,7 +78,7 @@ export function OrgDetailsStep({ onBack, onNext }: OrgDetailsStepProps) {
             />
           </FormField>
 
-          <FormField name="teamSize" label="team_size" error={errors.teamSize?.message}>
+          <FormField name="teamSize" label="team_size" error={errors.teamSize?.message} unstyled>
             <div className="flex items-center rounded-full border border-gray-200 bg-white overflow-hidden">
               <select
                 className="flex-1 bg-transparent px-5 py-3 text-base outline-none border-none appearance-none"
@@ -100,6 +102,7 @@ export function OrgDetailsStep({ onBack, onNext }: OrgDetailsStepProps) {
             name="description"
             label="description"
             error={errors.description?.message}
+            unstyled
           >
             <textarea
               className="w-full rounded-3xl border border-gray-200 bg-white px-5 py-4 text-base outline-none focus:border-gray-400 min-h-[100px] resize-none"

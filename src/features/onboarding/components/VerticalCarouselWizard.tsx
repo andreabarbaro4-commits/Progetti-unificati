@@ -1,16 +1,18 @@
 import { useCallback } from 'react'
-import { TopNavigationBar } from './TopNavigationBar'
+import { TopNavigationBar } from '../../../components/AppShell/TopNavigationBar'
 import { AnimatedBackground } from '../../../components/AnimatedBackground/AnimatedBackground'
 import { VerticalCarousel } from './VerticalCarousel'
 import { WIZARD_STEPS, VERTICAL_CAROUSEL_CONFIG } from './verticalCarouselConfig'
 import { useCompanyWizardStore } from '../useCompanyWizardStore'
 import { OrgTypeStep } from '../steps/OrgTypeStep'
 import { OrgDetailsStep } from '../steps/OrgDetailsStep'
-import { CompanySettingsStep } from '../steps/CompanySettingsStep'
+import { ContactInfoStep } from '../steps/ContactInfoStep'
 
 export interface VerticalCarouselWizardProps {
   /** Called when the wizard completes (last step submitted successfully) */
   onComplete: () => void
+  /** Called when the user selects "Freelance" — skips the wizard entirely */
+  onFreelanceSkip: () => void
 }
 
 const TOTAL_STEPS = WIZARD_STEPS.length
@@ -20,7 +22,7 @@ const STEP_LABELS = WIZARD_STEPS.map((s) => s.label)
  * Top-level orchestrator that composes the navigation bar, background decorations,
  * and vertical carousel for the company creation wizard flow.
  */
-export function VerticalCarouselWizard({ onComplete }: VerticalCarouselWizardProps) {
+export function VerticalCarouselWizard({ onComplete, onFreelanceSkip }: VerticalCarouselWizardProps) {
   const activeStep = useCompanyWizardStore((s) => s.activeStep)
   const isTransitioning = useCompanyWizardStore((s) => s.isTransitioning)
   const setActiveStep = useCompanyWizardStore((s) => s.setActiveStep)
@@ -70,9 +72,9 @@ export function VerticalCarouselWizard({ onComplete }: VerticalCarouselWizardPro
         onAdvance={handleAdvance}
         onBack={handleBack}
       >
-        <OrgTypeStep onNext={handleAdvance} />
+        <OrgTypeStep onNext={handleAdvance} onFreelance={onFreelanceSkip} />
         <OrgDetailsStep onBack={handleBack} onNext={handleAdvance} />
-        <CompanySettingsStep onSave={onComplete} />
+        <ContactInfoStep onBack={handleBack} onNext={onComplete} />
       </VerticalCarousel>
     </div>
   )

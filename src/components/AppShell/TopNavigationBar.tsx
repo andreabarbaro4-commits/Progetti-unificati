@@ -1,9 +1,9 @@
-import { cn } from '../../../lib/utils'
+import { cn } from '../../lib/utils'
 import { FlowleeLogo } from './FlowleeLogo'
-import { VERTICAL_CAROUSEL_CONFIG, calculateCardDimensions } from './verticalCarouselConfig'
-import arrowUpSvg from '../../../assets/arrow-up.svg'
-import arrowDownSvg from '../../../assets/arrow-down.svg'
-import chevronDownSvg from '../../../assets/chevron-down.svg'
+import { VERTICAL_CAROUSEL_CONFIG, calculateCardDimensions } from '../../features/onboarding/components/verticalCarouselConfig'
+import arrowUpSvg from '../../assets/arrow-up.svg'
+import arrowDownSvg from '../../assets/arrow-down.svg'
+import chevronDownSvg from '../../assets/chevron-down.svg'
 
 export interface TopNavigationBarProps {
   /** 0-based index of the currently active step (omit for simple mode) */
@@ -18,6 +18,12 @@ export interface TopNavigationBarProps {
   onForward?: () => void
   /** Whether a transition is in progress (disables navigation) */
   isTransitioning?: boolean
+  /**
+   * Positioning variant:
+   * - 'absolute': original behavior — absolute positioned with viewport-proportional top offset (for onboarding carousel)
+   * - 'inline': renders in normal document flow with margin (for AppShell)
+   */
+  variant?: 'absolute' | 'inline'
 }
 
 /**
@@ -38,6 +44,7 @@ export function TopNavigationBar({
   onBack,
   onForward,
   isTransitioning = false,
+  variant = 'absolute',
 }: TopNavigationBarProps) {
   const isStepMode = !!stepLabels && stepLabels.length > 0
 
@@ -51,22 +58,37 @@ export function TopNavigationBar({
     ? `${stepLabels[activeStep]} / Accesso diretto`
     : undefined
 
-  // Calculate scaled nav offset
+  // Calculate scaled nav offset (only used in absolute mode)
   const viewportWidth = typeof window !== 'undefined' ? window.innerWidth : VERTICAL_CAROUSEL_CONFIG.referenceViewport
   const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : VERTICAL_CAROUSEL_CONFIG.referenceViewportHeight
   const dimensions = calculateCardDimensions(viewportWidth, viewportHeight)
   const navPaddingTop = dimensions.navTopOffset
 
+  const isInline = variant === 'inline'
+
   return (
     <div
-      className="vertical-carousel-nav-bar absolute left-1/2 -translate-x-1/2 z-50 flex items-center pl-3 pr-1.5 md:pl-4 md:pr-2 bg-white rounded-[1.5rem] shadow-[0px_4px_40px_0px_rgba(0,0,0,0.1)]"
-      style={{
-        top: `${navPaddingTop / 16}rem`,
-        height: '3rem',
-        width: `calc(100vw - 5rem)`,
-        maxWidth: '93.75rem',
-        minWidth: '18rem',
-      }}
+      className={cn(
+        'vertical-carousel-nav-bar flex items-center pl-3 pr-1.5 md:pl-4 md:pr-2 bg-white rounded-[1.5rem] shadow-[0px_4px_40px_0px_rgba(0,0,0,0.1)]',
+        !isInline && 'absolute left-1/2 -translate-x-1/2 z-50',
+        isInline && 'relative mx-auto z-50',
+      )}
+      style={isInline
+        ? {
+            height: '3rem',
+            width: '100%',
+            maxWidth: '93.75rem',
+            minWidth: '18rem',
+            margin: '0.625rem auto',
+          }
+        : {
+            top: `${navPaddingTop / 16}rem`,
+            height: '3rem',
+            width: `calc(100vw - 5rem)`,
+            maxWidth: '93.75rem',
+            minWidth: '18rem',
+          }
+      }
     >
       {/* Left section: navigation arrows + optional step label */}
       <div className="flex items-center gap-2">

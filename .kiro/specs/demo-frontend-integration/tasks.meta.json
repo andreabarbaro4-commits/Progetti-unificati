@@ -1,0 +1,2363 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Add `react-grid-layout` (`^2.2.3`), `recharts` (`^3.9.2`), `react-markdown` (`^10.1.0`), and `remark-gfm` (`^4.0.1`) to `package.json` and install": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165005
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359181232
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359735100
+      }
+    ],
+    "1.2 Define shared TypeScript interfaces for the new domain entities (`Project`, `Task`, `Milestone`, `TeamMember`, `Document`, `Alert`, `Economics`, `Client`, `ChatSession`, `ChatMessage`, `TimelineBlock`, `GalleryImage`, `AuthUserProfile`, `ClusterSource`, `GroupingMode`) in a shared fixtures types module": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165094
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359185603
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359967230
+      }
+    ],
+    "2.1 Create fixture modules `clients.ts`, `teamMembers.ts`, `projects.ts`, `milestones.ts`, `tasks.ts` under `src/mock/fixtures/` (≥3 records each, cross-referencing real ids), superseding the placeholder `dashboard.ts` shapes": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165144
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359971975
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786360499440
+      }
+    ],
+    "2.2 Create fixture modules `documents.ts`, `alerts.ts`, `economics.ts`, `chatSessions.ts`, `chatMessages.ts`, `timelineBlocks.ts`, `galleryImages.ts`, `authUsers.ts`, and the default `widgetLayouts.ts` layout constant": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165200
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359973115
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786360499700
+      }
+    ],
+    "2.3 Register mock handlers in `src/mock/setup.ts` for every method+path combination these screens will call (projects, clients, team-members, milestones, tasks, documents, alerts, economics, chat-sessions, chat-messages, timeline-blocks, gallery-images, admin/users read-only, admin/email-trigger), updating the existing `GET /projects`/`/tasks`/`/team` handlers to point at the new fixtures": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165245
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786360504426
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361054840
+      }
+    ],
+    "3. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165287
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361110065
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361278070
+      }
+    ],
+    "4.1 Implement `Modal` primitive at `src/components/ui/Modal.tsx` (focus trap, Escape, backdrop click, focus-return, `cva`-driven visuals, `className` override support)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165328
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361302175
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361725736
+      }
+    ],
+    "4.2 Implement `Avatar` at `src/components/ui/Avatar.tsx` with a deterministic gradient-initials fallback derived from the member's name/id": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165378
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361303634
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362279834
+      }
+    ],
+    "4.4 Implement `AvatarStack` at `src/components/ui/AvatarStack.tsx` (owner-distinguishing indicator, capped visible avatars, overflow-count indicator)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165420
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362285324
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362700782
+      }
+    ],
+    "4.6 Implement `StatusChip`/`PriorityChip` as `cva` variants at `src/components/ui/StatusChip.tsx` (`variant=\"unassigned\"|\"in_progress\"|\"completed\"|\"blocked\"` and `variant=\"high\"|\"medium\"|\"low\"`)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165465
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361305053
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361724621
+      }
+    ],
+    "5.1 Implement `resolveRouteMeta()` in `src/lib/route-meta.ts` (static route table + dynamic prefix matching)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165502
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361306161
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361723210
+      }
+    ],
+    "5.3 Implement `greetingFor(hour, firstName?)` in `src/lib/greeting.ts`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165566
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361306906
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361726814
+      }
+    ],
+    "5.5 Implement `validateStringLength(value, { required, minLength, maxLength })` in `src/lib/validation.ts`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165611
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362286368
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362401274
+      }
+    ],
+    "6.1 Implement `selectTopN(items, criterion, cap)` in `src/lib/topN.ts`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165660
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362287410
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362403393
+      }
+    ],
+    "6.3 Implement `filterExact(collection, predicate)` in `src/lib/filter.ts`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165707
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362288525
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362400176
+      }
+    ],
+    "6.5 Implement `formatCountBadge(count)` in `src/lib/badge.ts` (exact count 1–99, \"99+\" above, no badge at 0)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165752
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362289476
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362402702
+      }
+    ],
+    "6.7 Implement `validateFileAcceptance(file, rules, collectionState)` in `src/lib/fileValidation.ts` (generic size/type/capacity rule validator with reason-identifying rejection and state preservation)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165817
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362707055
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362808558
+      }
+    ],
+    "6.9 Implement `columnsForWidth(width)` in `src/lib/columns.ts`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165861
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362708157
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362806038
+      }
+    ],
+    "6.11 Implement `truncateWithFallback(text, maxLength, placeholder)` in `src/lib/truncate.ts`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165915
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362709239
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362807057
+      }
+    ],
+    "6.13 Implement a single-panel-visible tab helper (`isTabActive(selectedIndex, tabIndex)`) in `src/lib/tabs.ts`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359165962
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362710211
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362809550
+      }
+    ],
+    "7. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166002
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362818011
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362934974
+      }
+    ],
+    "8.1 Port `clusterGeometry.ts` (ring radius, angle spacing, circle-packing) into `src/components/MemberGraph/`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166053
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362939501
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786363249035
+      }
+    ],
+    "8.3 Port `groupingLogic.ts` (`groupByProject`/`groupByUnit`/`groupByClient` + cross-links) into `src/components/MemberGraph/`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166122
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362940592
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786363834852
+      }
+    ],
+    "8.5 Port `gestureClassifier.ts` (drag-vs-tap distance threshold) into `src/components/MemberGraph/`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166171
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362941695
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786363337553
+      }
+    ],
+    "8.7 Port `useClusterPhysics.ts`, `useClusterMomentum.ts`, `useRingRotation.ts`, and `usePhysicsLoop.ts` (cluster drag/flick momentum, ring rotation/flick momentum, shared RAF loop) into `src/components/MemberGraph/`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166230
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362943173
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786363979351
+      }
+    ],
+    "8.9 Implement `MemberBubble.tsx` (photo or gradient-initials fallback via `Avatar`, overload ring, selected/AI-suggested opacity-and-saturation states)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166301
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786363984339
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786364428925
+      }
+    ],
+    "8.12 Implement `ClusterCenter.tsx` (labeled center node, alert glow/highlight)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166359
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786363985347
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786364290791
+      }
+    ],
+    "8.14 Implement `DetailPanel.tsx` (single open member-detail/cluster-tooltip popover, dismiss control, click-outside dismiss, replace-on-new-activation)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166410
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786363986462
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786364289715
+      }
+    ],
+    "8.16 Implement the public `MemberGraph.tsx` composing bubbles, clusters, physics hooks, and `DetailPanel` behind a `clusters: ClusterSource[]` prop": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166487
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786364436651
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786364983615
+      }
+    ],
+    "9.1 Implement `milestoneState.ts` `classify(milestone, today)` in `src/components/MilestoneRoadmap/`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166536
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786364988699
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365066203
+      }
+    ],
+    "9.3 Implement `MilestoneCard.tsx` and `MilestoneRoadmap.tsx` (horizontal scroll with connecting track line, select/deselect, add-milestone affordance disabled at 20)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166589
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786364996310
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365278504
+      }
+    ],
+    "9.5 Implement shared milestone-selection task-filter logic (select-to-filter, re-select-to-revert) reused by the Project Wizard's step 2 and Project Detail's Milestones & Tasks tab": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166635
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786364989641
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365279593
+      }
+    ],
+    "10. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166688
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365283878
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365357363
+      }
+    ],
+    "11.1 Add all new authenticated routes to `src/routes.tsx` with `isAuthenticatedLayout: true` (`/dashboard` swap, `/projects`, `/projects/new`, `/projects/new/analysis`, `/projects/new/team`, `/projects/:id`, `/team`, `/agent`, `/admin`), leaving every onboarding route's path/order/behavior untouched": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166738
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365371635
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365485356
+      }
+    ],
+    "11.2 Implement `AppShell.tsx` wrapping matching routes with `TopNavbar`, route content, `BottomNavbar`, `AiMascotFab`, and `GreetingBubble`, wired into `App.tsx`'s route rendering without touching `AnimatedBackground`/`LocaleSwitcher`'s existing placement": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166785
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366309504
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366446639
+      }
+    ],
+    "11.3 Implement `TopNavbar.tsx` using `resolveRouteMeta` for back-button/brand-mark/title resolution": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166837
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365489769
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366303188
+      }
+    ],
+    "11.4 Implement `ProfilePanel.tsx` (open on activation, name/role/admin-link/logout, dismiss on outside activation, logout invokes the existing auth logout flow)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166890
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365491164
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365833576
+      }
+    ],
+    "11.5 Implement `BottomNavbar.tsx` (≤5 entries incl. Dashboard/Projects/Team, cutout highlight + `aria-current` on match, `aria-label` per entry, hidden on `/agent` and on unauthenticated routes)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166937
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365492605
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366304293
+      }
+    ],
+    "11.7 Implement `AiMascotFab.tsx` (renders on every authenticated route except `/agent`, navigates to AI_Chat_Page on activation)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359166987
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365493714
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365831035
+      }
+    ],
+    "11.8 Implement `GreetingBubble.tsx` using `greetingFor` (renders once per sign-in session, 9s auto-dismiss, manual dismiss within 200ms, hidden on `/agent`)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167035
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365494844
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365832466
+      }
+    ],
+    "12. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167086
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366450626
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366570311
+      }
+    ],
+    "13.1 Implement `Dashboard.tsx` replacing the placeholder export, rendering the greeting header via `greetingFor`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167128
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366579417
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366737351
+      }
+    ],
+    "13.2 Implement the day/week `SegmentedToggle` (two mutually-exclusive options, defaults to day view on `/dashboard` mount, preserves the anchored date across switches, indicates the active option)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167183
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366581972
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366791795
+      }
+    ],
+    "13.3 Implement `timelineLayout.ts` (`timeToPosition()`, `assignLanes()`, `snapAndClamp()`)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167235
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366580540
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366738482
+      }
+    ],
+    "13.7 Implement `NowIndicator.tsx` and its day-match visibility logic": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167277
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366582802
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366739285
+      }
+    ],
+    "13.9 Implement `TimelineBlockCard.tsx` (`cva` variants by block type) and `TimelineDayView.tsx` (proportional positioning, side-by-side overlap via lanes, empty-state message)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167326
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366797204
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786367008853
+      }
+    ],
+    "13.10 Implement `useDragTimelineBlock.ts` (optimistic drag update, mock `PUT` persistence, revert-and-error on failure)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167370
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786367012737
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786367176389
+      }
+    ],
+    "13.11 Implement `TimelineWeekView.tsx` (5 day columns on a shared axis, current-day distinct treatment, drop handling with revert outside valid bounds)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167420
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786367181024
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368216034
+      }
+    ],
+    "14.1 Implement `useWidgetBoardLayout.ts` (zustand + `localStorage` persistence, default-layout fallback, add/move/resize/remove reducer using `react-grid-layout` collision detection)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167473
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368224924
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368518198
+      }
+    ],
+    "14.3 Implement `WidgetBoard.tsx` (`react-grid-layout` grid wiring, edit/add-widget controls, empty-cell placeholder, revert on invalid drop/resize)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167535
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368524029
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370062493
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370100641
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370249472
+      }
+    ],
+    "14.5 Implement `widgetCatalog.ts` registry and the add-widget picker popover": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167586
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368233113
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368514530
+      }
+    ],
+    "14.6 Implement `StatsWidget.tsx` (active-project count, rounded average completion percentage)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167635
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368225994
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368517055
+      }
+    ],
+    "14.8 Implement `AlertsWidget.tsx`, `DocumentsWidget.tsx`, `ActionItemsWidget.tsx`, and `MilestonesWeekWidget.tsx` using `selectTopN` (caps of 5/5/5/10 respectively)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167686
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368525323
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370062564
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370102786
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370250761
+      }
+    ],
+    "14.9 Implement `PhotoGalleryWidget.tsx` (upload/reorder/delete, 10-image cap, JPEG/PNG/GIF/WebP, 20MB limit, via `validateFileAcceptance`)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167763
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368227106
+      },
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368516088
+      }
+    ],
+    "15. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167804
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370062619
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370255667
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370299834
+      }
+    ],
+    "16.1 Implement `ProjectCard.tsx` (cover-image fallback, progress bar, `AvatarStack` with owner distinction, alert-count badge via `formatCountBadge`, click/tap/keyboard navigation excluding edit/delete controls)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167861
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370062665
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370306674
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370525693
+      }
+    ],
+    "16.2 Implement `ClientFilter.tsx` (\"Internal\" first, then alphabetical case-insensitive)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167911
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370062714
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370307912
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370531540
+      }
+    ],
+    "16.4 Implement `CreateCard.tsx` (always-last \"+\" card navigating to the Project_Wizard's first step)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359167966
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370062782
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370309747
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370531766
+      }
+    ],
+    "16.5 Implement `ProjectsList.tsx` (responsive grid via `columnsForWidth`, client filtering via `filterExact`, empty-state message while retaining the creation card)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168017
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370062848
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370311495
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370531722
+      }
+    ],
+    "17.1 Implement `ProjectCreateDialog.tsx` and `ProjectEditDialog.tsx` (`Modal` + `FormField`/`CustomSelect` + `zod` validation via `validateStringLength` rules, mock-mode validation bypass)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168062
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370062898
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370537058
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370709351
+      }
+    ],
+    "17.2 Implement `ProjectDeleteDialog.tsx` and `AddClientDialog.tsx` (Internal-client delete/reassign protection)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168111
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370062949
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370538751
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370710470
+      }
+    ],
+    "18. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168154
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063011
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370715353
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370751092
+      }
+    ],
+    "19.1 Implement `useWizardStore.ts` (zustand + `sessionStorage` persistence of form/analysis/chat/selection/used-mock-document state)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168203
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063075
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370756608
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371005078
+      }
+    ],
+    "19.3 Implement the `WizardLayout` viewport-breakpoint logic (1024px split-panel vs. form-only, chat panel does not mount below 1024px)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168258
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063155
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370758496
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371009152
+      }
+    ],
+    "19.5 Implement `ProjectFormStep.tsx` (name/brief/owner/deadline/budget/type/thumbnail fields, field-level validation messages, mock-mode bypass)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168303
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063206
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370760251
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371006166
+      }
+    ],
+    "19.6 Implement `WizardChatPanel.tsx` (1–2000 char messages, simulated reply within 3s, blocks empty/whitespace-only sends)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168352
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063265
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370761885
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371003706
+      }
+    ],
+    "19.7 Implement `MockDocumentDraggable.tsx` (drag-to-fill demo data, confirmation chat message, revert on drop outside the panel, hidden after first use in the session)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168402
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063318
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370764148
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371007482
+      }
+    ],
+    "20.1 Implement the mock `generateAnalysis()` call and `AnalysisStep.tsx` loading/error/retry states (≤30s loading, injectable failure, redirect to step 1 without valid step-1 data)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168444
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063371
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371015425
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371318322
+      }
+    ],
+    "20.2 Wire `MilestoneRoadmap` into `AnalysisStep` with add/rename/reorder/delete affordances and the zero-milestone empty state": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168495
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063431
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371017378
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371319359
+      }
+    ],
+    "20.3 Implement `TaskListEditor.tsx` (name/priority chip/drag handle/delete per task; drag reorder within a milestone group and reassignment across groups; milestone-delete cascades to its tasks)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168546
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063491
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371019711
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371321341
+      }
+    ],
+    "20.6 Implement priority-chip cycling (`high → medium → low → high`) on activation": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168618
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063545
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371020947
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371322559
+      }
+    ],
+    "20.8 Implement `RiskList.tsx` (distinguishable high/medium/low severity treatment) and `OpenQuestionsList.tsx`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168669
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063606
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371022519
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371323807
+      }
+    ],
+    "21.1 Implement `TeamSelectionStep.tsx` view toggle (Member_Graph default, list view) wiring `MemberGraph` with a synthetic AI-suggestion `ClusterSource`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168725
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063667
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371330099
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371534804
+      }
+    ],
+    "21.2 Implement the shared member-selection-state reducer used by Member_Graph clicks, the add-member popup, and list-view checkboxes": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168761
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063731
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371331775
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371536444
+      }
+    ],
+    "21.4 Implement `AddMemberPopup.tsx` (search filter by name/skill tag via `filterExact`, case-insensitive)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168825
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063792
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371333233
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371537511
+      }
+    ],
+    "21.5 Implement the list view (selection checkbox, skill tags, workload indicator, AI-suggestion indicator)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168900
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063847
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371334789
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371541906
+      }
+    ],
+    "21.6 Implement confirm-selection gating and project creation (blocks confirm at zero selected members; on success creates the project with wizard-generated milestones/tasks and navigates to Project_Detail)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168952
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063907
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371337148
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371541955
+      }
+    ],
+    "22. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359168996
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370063978
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371551602
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371585278
+      }
+    ],
+    "23.1 Implement the `ProjectDetail.tsx` tab strip (5 fixed tabs + conditional Economics tab, Overview active by default, single-visible-panel via the shared tab helper)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169044
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064040
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371591535
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371873657
+      }
+    ],
+    "23.3 Implement the Alerts tab's label count badge via `formatCountBadge`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169095
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064099
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371592794
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371874472
+      }
+    ],
+    "23.4 Implement `OverviewTab.tsx` (`AvatarStack` capped at 5, description via `truncateWithFallback`, most-recently-updated document thumbnail, progress indicator, budget summary when `economics` is present)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169144
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064149
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371595270
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371876065
+      }
+    ],
+    "24.1 Implement `MilestonesTasksTab.tsx` wiring the shared `MilestoneRoadmap` (with `milestoneState.classify`) and the shared milestone-selection task filter": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169186
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064238
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371597288
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371877302
+      }
+    ],
+    "24.2 Implement `TaskRow.tsx` (name, `StatusChip`, `PriorityChip`, per-assignee avatars, unassigned indicator)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169244
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064290
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371598893
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371878513
+      }
+    ],
+    "24.3 Implement `TaskStatusMenu.tsx` (4-status menu, selection sets status and closes)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169296
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064346
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371887930
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786372099038
+      }
+    ],
+    "24.5 Implement `AssignDialog.tsx` (suggested-member argmin of in-progress/blocked task count; confirming sets the assignee and transitions `unassigned` → `in_progress`)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169345
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064403
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371888906
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786372100724
+      }
+    ],
+    "24.8 Implement the tab's local `MilestoneCreateDialog`/`EditDialog`/`DeleteDialog` and `TaskCreateDialog`/`EditDialog`/`DeleteDialog`": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169388
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064456
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371889896
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786372102093
+      }
+    ],
+    "25.1 Implement `TeamTab.tsx` (`MemberGraph` scoped to `project.members`, reusing the overload-ring and alert-glow indicators, member-detail display on activation)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169447
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064521
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371890870
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786372103706
+      }
+    ],
+    "26.1 Implement `DocumentsTab.tsx` grid (filter by milestone/task/filename via `filterExact`, thumbnail vs. generic file-type icon)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169497
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064598
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371891869
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786372105216
+      }
+    ],
+    "26.2 Implement `AddDocumentDialog.tsx` (file selection, optional 255-char name override, milestone/task links, 50MB limit via `validateFileAcceptance`, cancel adds nothing)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169551
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064655
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372207449
+      }
+    ],
+    "26.3 Implement `EditLinksDialog.tsx` (change/remove milestone/task associations only, cancel is a full no-op)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169595
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064720
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372211414
+      }
+    ],
+    "27.1 Implement `AlertsTab.tsx` (stable ordering, per-type icon, non-empty description, empty-state message, scrollable container)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169647
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064781
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372212893
+      }
+    ],
+    "28.1 Implement `EconomicsTab.tsx` budget summary card and cost-by-category donut chart (`recharts`) in the left column": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169703
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064832
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372214575
+      }
+    ],
+    "28.2 Implement the right-column sub-tab switcher (budget variance default, invoices, cost items, hours) via the shared single-panel-visible tab helper": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169753
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064901
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372216617
+      }
+    ],
+    "28.3 Implement per-sub-tab empty states and the error/retry state for a failed data load": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169813
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370064966
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372218143
+      }
+    ],
+    "29. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169884
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065022
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372219092
+      }
+    ],
+    "30.1 Implement `ChatSessionSidebar.tsx` (most-recently-active-first ordering, fixed panel ≥768px / overlay drawer <768px, hover/swipe-left delete control)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169928
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065073
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372221141
+      }
+    ],
+    "30.3 Implement `AiChatPage.tsx` session load/select/delete/new-unsaved-session logic": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359169988
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065123
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372222592
+      }
+    ],
+    "31.1 Implement `ChatBubble.tsx` `cva` role variants (`role=\"user\"|\"assistant\"`, right/left alignment, distinct background/border per role)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170071
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065180
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372224465
+      }
+    ],
+    "31.3 Implement `MessageBubble.tsx` (`react-markdown` + `remark-gfm` for assistant messages with Tailwind-classed element overrides, plain text for user messages, append within 100ms, simulated reply after 500–1500ms)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170128
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065240
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372226865
+      }
+    ],
+    "32.1 Implement `useFileAttachments.ts` and `AttachmentPreview.tsx` (cap 3 files, 5MB each, via `validateFileAcceptance`, remove frees a slot)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170178
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065331
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372228591
+      }
+    ],
+    "32.2 Implement `useVoiceRecording.ts` and `RecordingIndicator.tsx` (capability detection, elapsed-time indicator, mic-denied error, 60s auto-stop, manual stop ≥1s finalizes, cancel discards)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170227
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065373
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372230836
+      }
+    ],
+    "32.4 Implement `MessageInput.tsx` wiring attachments and voice recording into `AiChatPage`'s send action": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170285
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065433
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372232324
+      }
+    ],
+    "33. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170345
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065495
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372233089
+      }
+    ],
+    "34.1 Implement `GroupingSelector.tsx` (3 mutually exclusive modes, defaults to project)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170395
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065547
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372234307
+      }
+    ],
+    "34.2 Implement `TeamPage.tsx` (fetches members/projects/clients, computes clusters via `groupingLogic`, passes them to the shared `MemberGraph`, re-renders on grouping change)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170444
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065600
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372236199
+      }
+    ],
+    "35. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170502
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065654
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372236998
+      }
+    ],
+    "36.1 Implement `resolveAdminGuardDecision()` and `AdminGuard.tsx` (unresolved → block, non-admin → redirect, admin → render)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170546
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065698
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372238653
+      }
+    ],
+    "36.3 Implement `AdminPanel.tsx` tab shell (Users, Projects, Team Members, Timeline Blocks, Agent Chat, Email Trigger)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170596
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065765
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372239956
+      }
+    ],
+    "37.1 Implement `UsersTab.tsx` (read-only list of `authUsers.ts` profiles, no create/edit/delete controls)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170662
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065832
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372241216
+      }
+    ],
+    "37.2 Implement `ProjectsTab.tsx` and `TeamMembersTab.tsx` (create/edit forms with required-field validation, delete confirmation prompt)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170713
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065912
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372241893
+      }
+    ],
+    "37.3 Implement `TimelineBlocksTab.tsx` (create/edit/delete with the same validation/confirmation rules)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170761
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370065971
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372242717
+      }
+    ],
+    "37.4 Implement the shared deletion-blocked-by-Email-Trigger-reference predicate and wire it into the delete handlers of the Projects, Team Members, and Timeline Blocks tabs": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170804
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370066030
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372243834
+      }
+    ],
+    "38.1 Implement `AgentChatTab.tsx` (add/edit mock chat messages up to 2000 chars via `validateStringLength`, seeding the AI_Chat_Page's initial conversation)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170860
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370066075
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372244877
+      }
+    ],
+    "38.2 Implement `EmailTriggerTab.tsx` save logic (target project/task/team member + 1–10 recipients, overwrites any prior configuration, missing-selection field error)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170912
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370066133
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372245923
+      }
+    ],
+    "38.4 Implement the recipient-list add validator (≤10 entries, valid email format, no case-insensitive duplicates)": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359170966
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370066189
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372247000
+      }
+    ],
+    "39. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359171013
+      },
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370066272
+      },
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372247791
+      }
+    ],
+    "1. Set up dependencies and shared domain types": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786359967313
+      }
+    ],
+    "2. Build mock fixture data and handlers": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786361054924
+      }
+    ],
+    "5. Build shared pure utilities — routing, greeting, validation": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362401348
+      }
+    ],
+    "4. Build shared UI primitives": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362700855
+      }
+    ],
+    "6. Build shared pure utilities — selection, formatting, and file/tab helpers": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786362809598
+      }
+    ],
+    "8. Build shared `MemberGraph` component": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786364983676
+      }
+    ],
+    "9. Build shared `MilestoneRoadmap` component": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786365279645
+      }
+    ],
+    "11. Build the App Shell": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786366446701
+      }
+    ],
+    "13. Build the Dashboard greeting header and timeline": [
+      {
+        "executionId": "6c5451a9-1b31-4452-a643-748716ecda8e",
+        "chatSessionId": "sess_8042599a-f67a-470f-bfa1-d2bd7bc98b79",
+        "timestamp": 1786368216110
+      }
+    ],
+    "14. Build the Dashboard widget board and widgets": [
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370250856
+      }
+    ],
+    "17. Build the Projects List management dialogs": [
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786370710546
+      }
+    ],
+    "19. Build the Project Wizard store and step 1": [
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371009225
+      }
+    ],
+    "20. Build the Project Wizard step 2": [
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371323861
+      }
+    ],
+    "23. Build Project Detail tab structure and the Overview tab": [
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786371876141
+      }
+    ],
+    "24. Build Project Detail's Milestones & Tasks tab": [
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786372102194
+      }
+    ],
+    "25. Build Project Detail's Team tab": [
+      {
+        "executionId": "70ab5a45-c108-4187-a027-a3a44f023f61",
+        "chatSessionId": "sess_7c99e431-a2d4-4685-b16f-0a842c55ea75",
+        "timestamp": 1786372103765
+      }
+    ],
+    "26. Build Project Detail's Documents tab": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372211491
+      }
+    ],
+    "27. Build Project Detail's Alerts tab": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372212950
+      }
+    ],
+    "28. Build Project Detail's Economics tab": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372218229
+      }
+    ],
+    "30. Build the AI Chat session sidebar and page composition": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372222650
+      }
+    ],
+    "31. Build AI Chat message rendering": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372226916
+      }
+    ],
+    "32. Build AI Chat input, attachments, and voice recording": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372232405
+      }
+    ],
+    "34. Build the Team Page": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372236273
+      }
+    ],
+    "36. Build the Admin route guard and panel shell": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372240006
+      }
+    ],
+    "37. Build the Users/Projects/Team Members/Timeline Blocks admin tabs": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372243894
+      }
+    ],
+    "38. Build the Agent Chat and Email Trigger admin tabs": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372247085
+      }
+    ],
+    "16. Build the Projects List grid": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372264092
+      }
+    ],
+    "21. Build the Project Wizard step 3": [
+      {
+        "executionId": "7d1c26e3-9476-4d39-a90d-baefbd6faf85",
+        "chatSessionId": "sess_1329957d-f5c2-4959-837a-7525cc120e96",
+        "timestamp": 1786372264264
+      }
+    ]
+  }
+}

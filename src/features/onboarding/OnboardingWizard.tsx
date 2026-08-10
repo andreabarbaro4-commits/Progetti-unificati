@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { RegistrationCarousel } from './components/RegistrationCarousel'
 import { VerticalCarouselWizard } from './components/VerticalCarouselWizard'
-import { TopNavigationBar } from './components/TopNavigationBar'
+import { TopNavigationBar } from '../../components/AppShell/TopNavigationBar'
 import { useOnboardingStore } from './useOnboardingStore'
 import './OnboardingWizard.css'
 
@@ -12,6 +13,7 @@ const CROSSFADE_DURATION = 500
  *  Phase is persisted in sessionStorage so a refresh doesn't reset progress. */
 export function OnboardingWizard() {
   const { phase, setPhase } = useOnboardingStore()
+  const navigate = useNavigate()
   const [showNav, setShowNav] = useState(false)
   const [navVisible, setNavVisible] = useState(false)
 
@@ -74,7 +76,16 @@ export function OnboardingWizard() {
           </div>
           {/* Incoming: vertical carousel wizard fades/slides in */}
           <div className={`onboarding-layer onboarding-layer--in${crossfadeVisible ? ' entering' : ''}`}>
-            <VerticalCarouselWizard onComplete={() => setPhase('done')} />
+            <VerticalCarouselWizard
+              onComplete={() => {
+                setPhase('done')
+                navigate('/dashboard')
+              }}
+              onFreelanceSkip={() => {
+                setPhase('done')
+                navigate('/dashboard')
+              }}
+            />
           </div>
         </div>
       </>
@@ -98,8 +109,18 @@ export function OnboardingWizard() {
       )
     case 'org-type':
     case 'org-details':
-    case 'company-settings':
-      return <VerticalCarouselWizard onComplete={() => setPhase('done')} />
+      return (
+        <VerticalCarouselWizard
+          onComplete={() => {
+            setPhase('done')
+            navigate('/dashboard')
+          }}
+          onFreelanceSkip={() => {
+            setPhase('done')
+            navigate('/dashboard')
+          }}
+        />
+      )
     case 'done':
       return null
   }

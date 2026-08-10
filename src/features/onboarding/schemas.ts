@@ -33,6 +33,15 @@ export const OrgDetailsSchema = z.object({
 
 export type OrgDetailsData = z.infer<typeof OrgDetailsSchema>;
 
+// --- ContactInfoStep schema ---
+export const ContactInfoSchema = z.object({
+  address: z.string().optional(),
+  email: z.string().optional(),
+  phone: z.string().optional(),
+});
+
+export type ContactInfoData = z.infer<typeof ContactInfoSchema>;
+
 // --- CompanySettingsStep schema ---
 export const CompanySettingsSchema = z.object({
   companyName: z.string().min(1),

@@ -4,10 +4,11 @@ import { persist } from 'zustand/middleware';
 export interface CompanyWizardFormData {
   orgType: 'company' | 'freelance' | null;
   orgDetails: { companyName: string; teamSize: string; description: string } | null;
+  contactInfo: { address: string; email: string; phone: string } | null;
 }
 
 export interface CompanyWizardStore {
-  /** 0-based active step index (0=org-type, 1=org-details, 2=company-settings) */
+  /** 0-based active step index (0=org-type, 1=org-details, 2=contact-info, 3=company-settings) */
   activeStep: number;
   /** Whether a transition animation is in progress */
   isTransitioning: boolean;
@@ -17,6 +18,7 @@ export interface CompanyWizardStore {
   setTransitioning: (v: boolean) => void;
   setOrgType: (type: 'company' | 'freelance') => void;
   setOrgDetails: (data: { companyName: string; teamSize: string; description: string }) => void;
+  setContactInfo: (data: { address: string; email: string; phone: string }) => void;
   reset: () => void;
 }
 
@@ -28,6 +30,7 @@ const defaultState = {
   formData: {
     orgType: null as CompanyWizardFormData['orgType'],
     orgDetails: null as CompanyWizardFormData['orgDetails'],
+    contactInfo: null as CompanyWizardFormData['contactInfo'],
   },
 };
 
@@ -44,6 +47,10 @@ export const useCompanyWizardStore = create<CompanyWizardStore>()(
       setOrgDetails: (data) =>
         set((state) => ({
           formData: { ...state.formData, orgDetails: data },
+        })),
+      setContactInfo: (data) =>
+        set((state) => ({
+          formData: { ...state.formData, contactInfo: data },
         })),
       reset: () => set({ ...defaultState }),
     }),
@@ -76,7 +83,7 @@ export const useCompanyWizardStore = create<CompanyWizardStore>()(
           }
         },
       },
-      partialize: (state) => ({
+      partialize: (state): Pick<CompanyWizardStore, 'activeStep' | 'formData'> => ({
         activeStep: state.activeStep,
         formData: state.formData,
       }),

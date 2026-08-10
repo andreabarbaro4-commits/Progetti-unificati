@@ -5,7 +5,7 @@ export type OnboardingPhase =
   | 'registration'
   | 'org-type'
   | 'org-details'
-  | 'company-settings'
+  | 'contact-info'
   | 'done';
 
 interface OnboardingStore {

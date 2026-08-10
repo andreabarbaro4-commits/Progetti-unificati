@@ -1,6 +1,6 @@
 import { useForm, Controller } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { FlowleeLogo } from '../components/FlowleeLogo'
+import { FlowleeLogo } from '../../../components/AppShell/FlowleeLogo'
 import { StepIndicator } from '../components/StepIndicator'
 import { CustomSelect } from '../../../components/ui/CustomSelect'
 import { createFormConfig } from '../../../lib/form-utils'

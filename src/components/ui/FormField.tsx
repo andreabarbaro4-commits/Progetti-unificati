@@ -7,6 +7,8 @@ interface FormFieldProps {
   label: string;       // i18n key
   error?: string;      // i18n key for error message
   children: ReactNode; // input element
+  /** When true, skips the default input styling (bg, border, radius) so the children control their own appearance */
+  unstyled?: boolean;
 }
 
 /**
@@ -17,23 +19,27 @@ interface FormFieldProps {
  * - Label linked to input via `htmlFor={name}`
  * - Error message has `id="${name}-error"` for `aria-describedby` on inputs
  */
-export function FormField({ name, label, error, children }: FormFieldProps) {
+export function FormField({ name, label, error, children, unstyled = false }: FormFieldProps) {
   const { t } = useTranslation();
 
-  return (
-    <div
-      className={cn(
+  const styledClasses = unstyled
+    ? 'relative flex flex-col mb-1 bg-transparent'
+    : cn(
         'relative flex flex-col mb-1 bg-transparent',
         '[&_input]:w-full [&_input]:px-4 [&_input]:py-3 [&_input]:rounded-lg [&_input]:border-none [&_input]:bg-[#f1f1f9] [&_input]:text-base [&_input]:outline-none',
         '[&_select]:w-full [&_select]:px-4 [&_select]:py-3 [&_select]:rounded-lg [&_select]:border-none [&_select]:bg-[#f1f1f9] [&_select]:text-base [&_select]:outline-none [&_select]:appearance-none',
         '[&_textarea]:w-full [&_textarea]:px-4 [&_textarea]:py-3 [&_textarea]:rounded-lg [&_textarea]:border-none [&_textarea]:bg-[#f1f1f9] [&_textarea]:text-base [&_textarea]:outline-none',
-      )}
+      );
+
+  return (
+    <div
+      className={styledClasses}
       aria-invalid={!!error}
     >
       <label
-        className="text-left bg-transparent text-black mb-1 leading-none"
+        className="text-left bg-transparent text-black mb-1 leading-none font-bold"
         htmlFor={name}
-        style={{ fontSize: '20px', fontWeight: 400, color: '#000' }}
+        style={{ fontSize: '20px', color: '#000' }}
       >
         {t(label)}
       </label>
