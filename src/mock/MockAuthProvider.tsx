@@ -12,6 +12,7 @@ const mockAuthValue: AuthContextValue = {
   login: () => {},
   logout: async () => {},
   silentRefresh: async () => true,
+  establishSession: () => {},
 };
 
 interface MockAuthProviderProps {

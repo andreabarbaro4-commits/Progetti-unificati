@@ -24,6 +24,14 @@ export const AccountSchema = z
 
 export type AccountData = z.infer<typeof AccountSchema>;
 
+// --- LoginCard schema ---
+export const LoginSchema = z.object({
+  email: z.string().min(1, 'validation.required').email('validation.email_invalid'),
+  password: z.string().min(1, 'validation.required'),
+});
+
+export type LoginData = z.infer<typeof LoginSchema>;
+
 // --- OrgDetailsStep schema ---
 export const OrgDetailsSchema = z.object({
   companyName: z.string().min(1),
@@ -50,3 +58,11 @@ export const CompanySettingsSchema = z.object({
 });
 
 export type CompanySettingsData = z.infer<typeof CompanySettingsSchema>;
+
+// --- PhotoUploadStep file validation schema ---
+export const PhotoFileSchema = z.object({
+  type: z.enum(['image/jpeg', 'image/png', 'image/webp', 'image/gif']),
+  size: z.number().max(10_485_760, 'validation.file_too_large'),
+});
+
+export type PhotoFileData = z.infer<typeof PhotoFileSchema>;

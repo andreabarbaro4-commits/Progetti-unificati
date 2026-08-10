@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { RoleTagList } from '../components/RoleTagList'
 import { StepIndicator } from '../components/StepIndicator'
+import { useRegistrationStore } from '../useRegistrationStore'
 import { isMockMode } from '../../../mock'
 
 interface RoleStepProps {
@@ -12,6 +14,21 @@ interface RoleStepProps {
 /** Step 6 — asks the user what their role is. */
 export function RoleStep({ selectedRole, onNext, onSelectRole }: RoleStepProps) {
   const { t } = useTranslation()
+  const jobTitle = useRegistrationStore((s) => s.jobTitle)
+  const setField = useRegistrationStore((s) => s.setField)
+
+  // Initialize from store on mount (supports back-navigation)
+  useEffect(() => {
+    if (!selectedRole && jobTitle) {
+      onSelectRole(jobTitle)
+    }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+  const handleNext = () => {
+    // Persist selected role to registration store before advancing
+    setField('jobTitle', selectedRole ?? '')
+    onNext()
+  }
 
   return (
     <div className="flex flex-col items-center w-full h-full px-6 pt-8 pb-4 overflow-hidden">
@@ -39,7 +56,7 @@ export function RoleStep({ selectedRole, onNext, onSelectRole }: RoleStepProps) 
           className="w-full h-[48px] bg-black text-white rounded-[16px] text-[20px] cursor-pointer border-none hover:bg-gray-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           disabled={!isMockMode() && !selectedRole}
           type="button"
-          onClick={onNext}
+          onClick={handleNext}
         >
           {t('proceed').toUpperCase()}
         </button>

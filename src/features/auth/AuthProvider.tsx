@@ -57,8 +57,10 @@ export interface AuthContextValue {
   user: OidcUser | null;
   getAccessToken(): string | null;
   login(returnTo?: string): void;
+  signup(returnTo?: string): void;
   logout(): Promise<void>;
   silentRefresh(): Promise<boolean>;
+  establishSession(user: OidcUser, accessToken: string): void;
 }
 
 // ─── In-memory storage adapter ───────────────────────────────────────────────
@@ -255,6 +257,22 @@ export function AuthProvider({ children }: AuthProviderProps) {
     [mgr],
   );
 
+  const signup = useCallback(
+    (returnTo?: string) => {
+      if (!mgr) return;
+      const audience = import.meta.env.VITE_AUTH_AUDIENCE || '';
+      const state = returnTo ?? '/onboarding';
+      mgr.signinRedirect({
+        state,
+        extraQueryParams: {
+          ...(audience ? { audience } : {}),
+          screen_hint: 'signup',
+        },
+      });
+    },
+    [mgr],
+  );
+
   const logout = useCallback(async () => {
     if (!mgr) return;
 
@@ -292,6 +310,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }, [mgr]);
 
+  const establishSession = useCallback((newUser: OidcUser, newAccessToken: string): void => {
+    setUser(newUser);
+    setAccessToken(newAccessToken);
+  }, []);
+
   const contextValue: AuthContextValue = {
     isAuthenticated: user !== null,
     isLoading,
@@ -299,8 +322,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
     user,
     getAccessToken,
     login,
+    signup,
     logout,
     silentRefresh,
+    establishSession,
   };
 
   return (

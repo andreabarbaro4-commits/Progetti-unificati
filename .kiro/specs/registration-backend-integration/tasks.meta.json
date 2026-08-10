@@ -1,0 +1,436 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create `src/features/onboarding/api/registration-api.ts` with typed API functions": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748488
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401756571
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401859596
+      }
+    ],
+    "2.1 Create `src/features/onboarding/useRegistrationStore.ts`": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748546
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401757428
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401860315
+      }
+    ],
+    "3.1 Add `signup(returnTo?: string)` to `AuthContextValue` interface in `src/features/auth/AuthProvider.tsx`": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748596
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401863929
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401946047
+      }
+    ],
+    "4.1 Modify `src/features/auth/AuthCallback.tsx` to check profile existence after OIDC callback": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748631
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401951024
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402066567
+      }
+    ],
+    "5. Checkpoint - Verify auth flow compiles": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748670
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402546795
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402584814
+      }
+    ],
+    "6.1 Refactor `src/features/onboarding/components/RegistrationCarousel.tsx`": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748706
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401951860
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402067535
+      }
+    ],
+    "6.2 Update `src/features/onboarding/OnboardingWizard.tsx` to handle pre-auth vs post-auth flow": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748737
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402074725
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402164265
+      }
+    ],
+    "7.1 Update `src/features/onboarding/steps/PersonalInfoStep.tsx`": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748770
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402075572
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402165092
+      }
+    ],
+    "8.1 Update `src/features/onboarding/steps/RoleStep.tsx`": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748804
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402076482
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402165983
+      }
+    ],
+    "9.1 Add client-side photo validation to `src/features/onboarding/steps/PhotoUploadStep.tsx`": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748862
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401864830
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401946925
+      }
+    ],
+    "10. Checkpoint - Verify wizard UI compiles and steps render": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748895
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402588286
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402618399
+      }
+    ],
+    "11.1 Create `src/features/onboarding/hooks/useProfileCreation.ts`": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748931
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402172685
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402332140
+      }
+    ],
+    "12.1 Connect PhotoUploadStep submit action to `useProfileCreation` hook": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748964
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402340930
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402448722
+      }
+    ],
+    "13.1 Create `src/features/onboarding/hooks/useProfileCheck.ts`": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401748996
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402173560
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402332971
+      }
+    ],
+    "13.2 Integrate `useProfileCheck` into `OnboardingWizard`": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401749040
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402341396
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402449630
+      }
+    ],
+    "14. Checkpoint - Verify full registration flow compiles": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401749071
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402621590
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402647881
+      }
+    ],
+    "15.1 Register mock handlers in `src/mock/setup.ts`": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401749105
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402174392
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402333788
+      }
+    ],
+    "16.1 Create error display component for the registration wizard": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401749146
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402342072
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402450445
+      }
+    ],
+    "16.2 Integrate error component into PhotoUploadStep and OnboardingWizard": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401749178
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402457072
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402538918
+      }
+    ],
+    "17. Final checkpoint - Full flow verification": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401749212
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402650880
+      },
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402687676
+      }
+    ],
+    "1. Registration API module and types": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401859639
+      }
+    ],
+    "2. Registration Zustand store": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401860357
+      }
+    ],
+    "3. AuthProvider signup method": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401946107
+      }
+    ],
+    "9. PhotoUploadStep file validation": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786401946976
+      }
+    ],
+    "4. AuthCallback enhancement": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402066608
+      }
+    ],
+    "6. Wizard step reduction": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402164312
+      }
+    ],
+    "7. Wire PersonalInfoStep to registration store": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402165141
+      }
+    ],
+    "8. Wire RoleStep to registration store": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402166024
+      }
+    ],
+    "11. Profile creation orchestration hook": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402332209
+      }
+    ],
+    "15. Mock handlers for local development": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402333830
+      }
+    ],
+    "12. Wire PhotoUploadStep submission": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402448789
+      }
+    ],
+    "13. Profile existence guard": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402449672
+      }
+    ],
+    "16. Error handling UI": [
+      {
+        "executionId": "88384c86-1b07-47f8-97b1-91ecfc3d822b",
+        "chatSessionId": "sess_87320f66-c659-4c71-bec7-c896cf418cbc",
+        "timestamp": 1786402538961
+      }
+    ]
+  }
+}

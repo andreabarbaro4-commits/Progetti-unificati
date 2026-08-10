@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserManager, WebStorageStateStore } from 'oidc-client-ts';
 import { centeredPageLayout } from '../../lib/styles';
+import { useAuth } from './AuthProvider';
+import { getUserProfile } from '../onboarding/api/registration-api';
+import type { ApiError } from '../../lib/api-client';
 
 /**
  * In-memory storage matching the auth-provider implementation.
@@ -68,17 +71,76 @@ function createCallbackUserManager(): UserManager | null {
 }
 
 /**
+ * Type guard to check if an error is a structured ApiError from apiClient.
+ */
+function isApiError(err: unknown): err is ApiError {
+  return (
+    typeof err === 'object' &&
+    err !== null &&
+    'status' in err &&
+    'message' in err &&
+    'url' in err &&
+    'method' in err
+  );
+}
+
+/**
  * OIDC callback handler (Auth0).
  *
  * On mount:
  * 1. Calls `signinRedirectCallback()` to exchange the authorization code for tokens
- * 2. On success: redirects to the originally requested URL (from OIDC state) or /dashboard
- * 3. On error: redirects to /
+ * 2. Establishes the session in the AuthProvider context
+ * 3. Checks if the user has an existing profile via GET /api/users/{userId}
+ *    - On 200: navigates to the state return path or /dashboard
+ *    - On 404: navigates to /onboarding (new user flow)
+ *    - On other errors: shows an error state with retry
+ * 4. On OIDC error: shows error and redirects to /
  */
 function AuthCallback() {
   const navigate = useNavigate();
+  const { establishSession } = useAuth();
   const [error, setError] = useState<string | null>(null);
+  const [isRetryable, setIsRetryable] = useState(false);
   const processedRef = useRef(false);
+  // Store the callback result for retry scenarios
+  const callbackResultRef = useRef<{
+    userId: string;
+    email: string;
+    name: string;
+    accessToken: string;
+    returnTo: string;
+  } | null>(null);
+
+  const checkProfileAndNavigate = async (params: {
+    userId: string;
+    email: string;
+    name: string;
+    accessToken: string;
+    returnTo: string;
+  }) => {
+    const { userId, email, name, accessToken, returnTo } = params;
+
+    // Establish session in auth context so apiClient has the token
+    establishSession({ sub: userId, email, name }, accessToken);
+
+    try {
+      // Profile exists — navigate to return path or dashboard
+      await getUserProfile(userId);
+      navigate(returnTo, { replace: true });
+    } catch (err: unknown) {
+      if (isApiError(err) && err.status === 404) {
+        // New user — no profile yet, navigate to onboarding
+        navigate('/onboarding', { replace: true });
+      } else {
+        // Other error (network, 500, etc.) — show error with retry
+        const message = isApiError(err)
+          ? err.message
+          : 'Failed to check profile. Please try again.';
+        setError(message);
+        setIsRetryable(true);
+      }
+    }
+  };
 
   useEffect(() => {
     // Prevent double-processing in React StrictMode
@@ -95,9 +157,13 @@ function AuthCallback() {
 
     mgr
       .signinRedirectCallback()
-      .then((user) => {
-        // The state parameter contains the originally requested URL.
-        // Validate it is a relative path (starts with '/' but not '//') to prevent open redirects.
+      .then(async (user) => {
+        const userId = user?.profile?.sub ?? '';
+        const email = (user?.profile?.email as string) ?? '';
+        const name = (user?.profile?.name as string) ?? '';
+        const accessToken = user?.access_token ?? '';
+
+        // Validate the state parameter for the return path
         const state = user?.state as string | undefined;
         const isValidReturnPath =
           typeof state === 'string' &&
@@ -105,7 +171,12 @@ function AuthCallback() {
           state.startsWith('/') &&
           !state.startsWith('//');
         const returnTo = isValidReturnPath ? state : '/dashboard';
-        navigate(returnTo, { replace: true });
+
+        // Store for retry
+        const params = { userId, email, name, accessToken, returnTo };
+        callbackResultRef.current = params;
+
+        await checkProfileAndNavigate(params);
       })
       .catch((err) => {
         console.error('[AuthCallback] Signin callback failed:', err);
@@ -115,15 +186,34 @@ function AuthCallback() {
           navigate('/', { replace: true });
         }, 2000);
       });
-  }, [navigate]);
+  }, [navigate, establishSession]);
+
+  const handleRetry = () => {
+    setError(null);
+    setIsRetryable(false);
+    if (callbackResultRef.current) {
+      checkProfileAndNavigate(callbackResultRef.current);
+    }
+  };
 
   if (error) {
     return (
       <div className={centeredPageLayout}>
         <div className="text-center">
-          <p className="text-red-600 mb-2">Authentication error</p>
+          <p className="text-red-600 mb-2">
+            {isRetryable ? 'Something went wrong' : 'Authentication error'}
+          </p>
           <p className="text-gray-500 text-sm">{error}</p>
-          <p className="text-gray-400 text-xs mt-2">Redirecting...</p>
+          {isRetryable ? (
+            <button
+              onClick={handleRetry}
+              className="mt-4 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              Try again
+            </button>
+          ) : (
+            <p className="text-gray-400 text-xs mt-2">Redirecting...</p>
+          )}
         </div>
       </div>
     );

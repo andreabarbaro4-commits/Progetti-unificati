@@ -13,6 +13,7 @@ import { mockChatMessages } from './fixtures/chatMessages';
 import { mockTimelineBlocks } from './fixtures/timelineBlocks';
 import { mockGalleryImages } from './fixtures/galleryImages';
 import { mockAuthUsers } from './fixtures/authUsers';
+import { mockLoginCredentials } from './fixtures/loginCredentials';
 import type {
   Client,
   TeamMember,
@@ -25,6 +26,7 @@ import type {
   TimelineBlock,
   GalleryImage,
 } from './fixtures/types';
+import type { LoginRequest, LoginSuccessResponse } from '../features/auth/api';
 
 // ---------------------------------------------------------------------------
 // Local helpers
@@ -501,6 +503,160 @@ registerMockHandler('PUT', '/admin/email-trigger', (body) => {
   emailTriggerConfig = body as EmailTriggerConfig;
   return emailTriggerConfig;
 });
+
+// ---------------------------------------------------------------------------
+// Auth — login (Req 7)
+// ---------------------------------------------------------------------------
+
+registerMockHandler('POST', '/auth/login', (body) => {
+  const { email, password } = body as LoginRequest;
+  const match = mockLoginCredentials.find(
+    (c) => c.email === email && c.password === password,
+  );
+  if (!match) {
+    throw new Error('Invalid email or password');
+  }
+  return {
+    accessToken: `mock-access-token-${match.profile.id}`,
+    user: match.profile,
+  } satisfies LoginSuccessResponse;
+});
+
+// ---------------------------------------------------------------------------
+// Registration — UserProfile & Photo Upload (Requirements 5.1, 6.2, 6.3, 6.4)
+// ---------------------------------------------------------------------------
+
+import type {
+  UserProfile,
+  CreateUserProfileRequest,
+  PresignRequest,
+  PresignResponse,
+  UpdateUserProfileRequest,
+} from '../features/onboarding/api/registration-api';
+
+/** In-memory store of created user profiles, keyed by userId. */
+const userProfiles = new Map<string, UserProfile>();
+
+/** Mock S3 upload URL prefix used by the presign handler. */
+const MOCK_S3_UPLOAD_PREFIX = 'https://mock-s3.local/upload';
+
+// GET /api/users/:userId → 404 if not stored, 200 with profile if stored
+registerMockHandler('GET', /^\/api\/users\/[^/]+$/, (_body, path) => {
+  const userId = extractLastSegment(path ?? '');
+  const profile = userProfiles.get(userId);
+  if (!profile) {
+    // Throw ApiError-shaped object so consumers can check status === 404
+    const error: { status: number; message: string; url: string; method: string } = {
+      status: 404,
+      message: 'User not found',
+      url: path ?? '',
+      method: 'GET',
+    };
+    throw error;
+  }
+  return profile;
+});
+
+// POST /api/users → create profile, store in memory, return 201-like response
+registerMockHandler('POST', '/api/users', (body) => {
+  const input = body as CreateUserProfileRequest;
+  const now = new Date().toISOString();
+  const profile: UserProfile = {
+    userId: input.userId,
+    email: input.email,
+    name: input.name,
+    surname: input.surname,
+    gender: input.gender,
+    birthDate: input.birthDate,
+    jobTitle: input.jobTitle,
+    createdAt: now,
+    updatedAt: now,
+  };
+  userProfiles.set(profile.userId, profile);
+  return profile;
+});
+
+// POST /api/users/:userId/photo/presign → return mock PresignResponse
+registerMockHandler(
+  'POST',
+  /^\/api\/users\/[^/]+\/photo\/presign$/,
+  (body, path) => {
+    const userId = path?.match(/^\/api\/users\/([^/]+)\/photo\/presign$/)?.[1] ?? '';
+    const input = body as PresignRequest;
+    const photoId = generateId('photo');
+
+    // Derive extension from contentType
+    const extMap: Record<string, string> = {
+      'image/jpeg': 'jpg',
+      'image/png': 'png',
+      'image/webp': 'webp',
+      'image/gif': 'gif',
+    };
+    const ext = extMap[input.contentType] ?? 'jpg';
+
+    const response: PresignResponse = {
+      photoId,
+      key: `users/${userId}/photos/${photoId}.${ext}`,
+      uploadUrl: `${MOCK_S3_UPLOAD_PREFIX}/${userId}/${photoId}.${ext}`,
+      contentType: input.contentType,
+      sizeBytes: input.sizeBytes,
+      expiresIn: 3600,
+    };
+    return response;
+  },
+);
+
+// PUT /api/users/:userId → update stored profile, return 200 with updated profile
+registerMockHandler('PUT', /^\/api\/users\/[^/]+$/, (body, path) => {
+  const userId = extractLastSegment(path ?? '');
+  const existing = userProfiles.get(userId);
+  if (!existing) {
+    const error: { status: number; message: string; url: string; method: string } = {
+      status: 404,
+      message: 'User not found',
+      url: path ?? '',
+      method: 'PUT',
+    };
+    throw error;
+  }
+  const updates = body as UpdateUserProfileRequest;
+  const updated: UserProfile = {
+    ...existing,
+    ...updates,
+    userId, // ensure userId is never overwritten
+    updatedAt: new Date().toISOString(),
+  };
+  userProfiles.set(userId, updated);
+  return updated;
+});
+
+// ---------------------------------------------------------------------------
+// Registration — Mock S3 Upload (via global fetch stub)
+// ---------------------------------------------------------------------------
+
+/**
+ * Patch global fetch to intercept PUT requests to the mock S3 URL.
+ * The `uploadToS3` function uses raw fetch (not apiClient), so we need this.
+ */
+const originalFetch = globalThis.fetch;
+globalThis.fetch = async function mockedFetch(
+  input: RequestInfo | URL,
+  init?: RequestInit,
+): Promise<Response> {
+  const url = typeof input === 'string' ? input : input instanceof URL ? input.href : (input as Request).url;
+
+  if (
+    init?.method?.toUpperCase() === 'PUT' &&
+    url.startsWith(MOCK_S3_UPLOAD_PREFIX)
+  ) {
+    // Simulate a successful S3 upload
+    await new Promise((resolve) => setTimeout(resolve, 80));
+    return new Response(null, { status: 200, statusText: 'OK' });
+  }
+
+  // Fall through to original fetch for all other requests
+  return originalFetch(input, init);
+};
 
 // ---------------------------------------------------------------------------
 // Onboarding (unchanged)

@@ -5,6 +5,7 @@ import { StepIndicator } from '../components/StepIndicator'
 import { CustomSelect } from '../../../components/ui/CustomSelect'
 import { createFormConfig } from '../../../lib/form-utils'
 import { PersonalInfoSchema, type PersonalInfoData } from '../schemas'
+import { useRegistrationStore } from '../useRegistrationStore'
 
 interface PersonalInfoStepProps {
   onNext: () => void
@@ -14,12 +15,21 @@ interface PersonalInfoStepProps {
 /** Step 1 — collects the user's basic personal details. */
 export function PersonalInfoStep({ onNext, onNameChange }: PersonalInfoStepProps) {
   const { t } = useTranslation()
+  const { name, surname, gender, birthDate, setField } = useRegistrationStore()
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<PersonalInfoData>(createFormConfig(PersonalInfoSchema))
+  } = useForm<PersonalInfoData>({
+    ...createFormConfig(PersonalInfoSchema),
+    defaultValues: {
+      name,
+      surname,
+      gender: gender || undefined,
+      birthDate,
+    },
+  })
 
   return (
     <div className="flex flex-col items-center w-full h-full px-6 pt-8 pb-4 overflow-hidden">
@@ -36,7 +46,14 @@ export function PersonalInfoStep({ onNext, onNameChange }: PersonalInfoStepProps
       </div>
 
       {/* Form */}
-      <form className="w-full flex flex-col flex-1 min-h-0" onSubmit={handleSubmit((data) => { onNameChange(data.name); onNext() })}>
+      <form className="w-full flex flex-col flex-1 min-h-0" onSubmit={handleSubmit((data) => {
+        setField('name', data.name)
+        setField('surname', data.surname)
+        setField('gender', data.gender)
+        setField('birthDate', data.birthDate)
+        onNameChange(data.name)
+        onNext()
+      })}>
         {/* Nome */}
         <FieldGroup
           error={errors.name?.message}

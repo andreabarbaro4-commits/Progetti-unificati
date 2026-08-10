@@ -1,0 +1,364 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Add `LoginSchema` to `src/features/onboarding/schemas.ts`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453195
+      },
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389461356
+      },
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389668395
+      }
+    ],
+    "1.4 Create `src/features/auth/api.ts`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453255
+      },
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389462094
+      },
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389669136
+      }
+    ],
+    "2.1 Add `auth.*` keys to `src/locales/en.json` and `src/locales/it.json`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453300
+      },
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389463285
+      },
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389670228
+      }
+    ],
+    "3.1 Create `src/mock/fixtures/loginCredentials.ts`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453336
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390244502
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390481959
+      }
+    ],
+    "3.2 Register `POST /auth/login` handler in `src/mock/setup.ts`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453375
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390506333
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390571520
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786396710119
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786396736284
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786396770242
+      }
+    ],
+    "4.1 Add `establishSession` to `AuthContextValue` and `AuthProvider` in `src/features/auth/AuthProvider.tsx`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453418
+      },
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389464333
+      },
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389671311
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390107374
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390123408
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390238392
+      }
+    ],
+    "4.2 Add matching no-op `establishSession` to `src/mock/MockAuthProvider.tsx`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453458
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390250592
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390364133
+      }
+    ],
+    "5. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453501
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786396710157
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786396906446
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786397092123
+      }
+    ],
+    "6.1 Create `src/features/onboarding/steps/AuthChoiceStep.tsx`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453533
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390251633
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390483078
+      }
+    ],
+    "7.1 Create `src/features/onboarding/steps/LoginCard.tsx`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453574
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390252701
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390483835
+      }
+    ],
+    "8. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453602
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786396710219
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786397402559
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786397599746
+      }
+    ],
+    "9.1 Add `authView` state and bump step-count constants in `src/features/onboarding/components/RegistrationCarousel.tsx`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453642
+      },
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389465069
+      },
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389672211
+      }
+    ],
+    "9.2 Shift `advance()`'s index-dependent special cases in `RegistrationCarousel.tsx`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453683
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390253402
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390364884
+      }
+    ],
+    "9.3 Bump `getCardClassName` call-site indices and add the new index-0 card in `RegistrationCarousel.tsx`": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453725
+      },
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390507208
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786396710257
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786397185406
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786397381744
+      }
+    ],
+    "10. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389453766
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786396710298
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786397617019
+      },
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786397827606
+      }
+    ],
+    "1. Define login data model and API contract": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389669174
+      }
+    ],
+    "2. Add i18n keys for Auth_Choice_Step and Login_Card": [
+      {
+        "executionId": "4c8c852e-1912-4b48-8cf4-b36860cdb2d8",
+        "chatSessionId": "sess_e97c51a2-f8f9-4d3b-9639-20faeff97f6e",
+        "timestamp": 1786389670302
+      }
+    ],
+    "4. Add establishSession to auth context": [
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390364168
+      }
+    ],
+    "6. Implement AuthChoiceStep component": [
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390483128
+      }
+    ],
+    "7. Implement LoginCard component": [
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390483886
+      }
+    ],
+    "3. Add Mock_Login_Handler and Mock_Credentials": [
+      {
+        "executionId": "02b1ef7c-c489-4b55-88d6-0845bd572390",
+        "chatSessionId": "sess_ebaa777a-75dd-42e2-b164-7c8944028b93",
+        "timestamp": 1786390571571
+      }
+    ],
+    "9. Integrate Auth_Choice_Step and Login_Card into RegistrationCarousel": [
+      {
+        "executionId": "e619aebe-a86a-4051-8397-12638f487990",
+        "chatSessionId": "sess_4521cf37-1be0-47ea-9131-7c69f497ff5f",
+        "timestamp": 1786397381782
+      }
+    ]
+  }
+}

@@ -1,9 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { PersonalInfoStep } from '../steps/PersonalInfoStep'
-import { AccountStep } from '../steps/AccountStep'
-import { SendingCodeStep } from '../steps/SendingCodeStep'
-import { VerifyCodeStep } from '../steps/VerifyCodeStep'
 import { WelcomeStep } from '../steps/WelcomeStep'
 import { RoleStep } from '../steps/RoleStep'
 import { PhotoUploadStep } from '../steps/PhotoUploadStep'
@@ -18,10 +15,10 @@ const CAROUSEL_CONFIG = {
   transitionDuration: 400,
   expandDuration: 500,
   collapseDuration: 400,
-  welcomeStepIndex: 4,
+  welcomeStepIndex: 0,
 }
 
-const TOTAL_STEPS = 7
+const TOTAL_STEPS = 4
 
 interface RegistrationCarouselProps {
   onComplete: () => void
@@ -70,13 +67,13 @@ function useResponsiveCardWidth(config: typeof CAROUSEL_CONFIG) {
 }
 
 /**
- * Horizontal carousel that renders all 7 registration steps on a single page.
+ * Horizontal carousel that renders the 4 post-auth registration steps.
  * Slides left on step completion using CSS transforms.
- * WelcomeStep (index 4) has a special expand-to-fullscreen animation.
+ * WelcomeStep (index 0) has a special expand-to-fullscreen animation.
  */
 export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [expandState, setExpandState] = useState<ExpandState>('idle')
+  const [expandState, setExpandState] = useState<ExpandState>('expanding')
   const transitioning = useRef(false)
   const expandTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const collapseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -90,6 +87,13 @@ export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCaro
   // Responsive card width calculation
   const { cardWidth, gap, viewportWidth } = useResponsiveCardWidth(CAROUSEL_CONFIG)
 
+  // WelcomeStep starts expanded on mount
+  useEffect(() => {
+    expandTimerRef.current = setTimeout(() => {
+      setExpandState('expanded')
+    }, CAROUSEL_CONFIG.expandDuration)
+  }, [])
+
   const advance = useCallback(() => {
     // Guard: prevent double-advance during any transition
     if (transitioning.current) return
@@ -100,28 +104,15 @@ export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCaro
       return
     }
 
-    // Arriving at WelcomeStep: trigger expand instead of normal advance
-    if (activeIndex === 3) {
-      transitioning.current = true
-      setActiveIndex(4)
-      setExpandState('expanding')
-
-      expandTimerRef.current = setTimeout(() => {
-        setExpandState('expanded')
-        transitioning.current = false
-      }, CAROUSEL_CONFIG.expandDuration)
-      return
-    }
-
-    // Leaving WelcomeStep: collapse first, then normal advance
-    if (activeIndex === 4 && expandState === 'expanded') {
+    // Leaving WelcomeStep (index 0): collapse first, then normal advance
+    if (activeIndex === CAROUSEL_CONFIG.welcomeStepIndex && expandState === 'expanded') {
       setExpandState('collapsing')
       transitioning.current = true
 
       collapseTimerRef.current = setTimeout(() => {
         // Collapse done — reset expand state and perform normal advance
         setExpandState('idle')
-        setActiveIndex(5)
+        setActiveIndex(1)
 
         // After normal transition completes, show TopNavigation
         postCollapseTimerRef.current = setTimeout(() => {
@@ -189,35 +180,20 @@ export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCaro
             transform: `translateX(${translateX}px)`,
           }}
         >
-          {/* Step 1: PersonalInfoStep */}
-          <div className={getCardClassName(0)}>
-            <PersonalInfoStep onNext={advance} onNameChange={setFirstName} />
-          </div>
-
-          {/* Step 2: AccountStep */}
-          <div className={getCardClassName(1)}>
-            <AccountStep firstName={firstName} onNext={advance} />
-          </div>
-
-          {/* Step 3: SendingCodeStep */}
-          <div className={getCardClassName(2)}>
-            <SendingCodeStep onNext={advance} />
-          </div>
-
-          {/* Step 4: VerifyCodeStep */}
-          <div className={getCardClassName(3)}>
-            <VerifyCodeStep onNext={advance} />
-          </div>
-
-          {/* Step 5: WelcomeStep — hidden placeholder when rendered via portal */}
+          {/* Step 0: WelcomeStep — hidden placeholder when rendered via portal */}
           <div className={
-            isWelcomeExpanding ? 'carousel-card hidden-card' : getCardClassName(4)
+            isWelcomeExpanding ? 'carousel-card hidden-card' : getCardClassName(0)
           }>
             {!isWelcomeExpanding && <WelcomeStep onNext={advance} />}
           </div>
 
-          {/* Step 6: RoleStep */}
-          <div className={getCardClassName(5)}>
+          {/* Step 1: PersonalInfoStep */}
+          <div className={getCardClassName(1)}>
+            <PersonalInfoStep onNext={advance} onNameChange={setFirstName} />
+          </div>
+
+          {/* Step 2: RoleStep */}
+          <div className={getCardClassName(2)}>
             <RoleStep
               selectedRole={selectedRole}
               onSelectRole={setSelectedRole}
@@ -225,8 +201,8 @@ export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCaro
             />
           </div>
 
-          {/* Step 7: PhotoUploadStep */}
-          <div className={getCardClassName(6)}>
+          {/* Step 3: PhotoUploadStep */}
+          <div className={getCardClassName(3)}>
             <PhotoUploadStep hasPhoto={hasPhoto} onNext={() => { setHasPhoto(true); advance() }} />
           </div>
         </div>
