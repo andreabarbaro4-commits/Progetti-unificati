@@ -49,13 +49,17 @@ const ProjectFormSchema = z.object({
       },
       { message: 'validation.deadline_past' },
     ),
-  budget: z
-    .string()
-    .transform((val) => (val === '' ? null : parseFloat(val)))
-    .refine(
-      (val) => val === null || (!isNaN(val) && val >= 0 && val <= 999_999_999.99),
-      { message: 'validation.budget_invalid' },
-    ),
+  // Kept as a string end-to-end (no `.transform()`) so the schema's input and
+  // output types match — `WizardFormData.budget` is also a string, parsed to
+  // a number only where consumed (see TeamSelectionStep.tsx).
+  budget: z.string().refine(
+    (val) => {
+      if (val === '') return true
+      const num = parseFloat(val)
+      return !isNaN(num) && num >= 0 && num <= 999_999_999.99
+    },
+    { message: 'validation.budget_invalid' },
+  ),
   type: z.string().min(1, 'validation.required'),
 })
 
@@ -106,7 +110,7 @@ export default function ProjectFormStep() {
         brief: '',
         owner: '',
         deadline: '',
-        budget: '' as unknown as string,
+        budget: '',
         type: '',
       },
     }),
@@ -154,9 +158,9 @@ export default function ProjectFormStep() {
       brief: data.brief,
       owner: data.owner,
       deadline: data.deadline,
-      budget: typeof data.budget === 'number' ? data.budget : null,
+      budget: data.budget,
       type: data.type,
-      thumbnail,
+      thumbnail: thumbnail ?? undefined,
     })
     navigate('/projects/new/analysis')
   }
@@ -173,11 +177,9 @@ export default function ProjectFormStep() {
         brief: (formDataObj.get('brief') as string) || '',
         owner: (formDataObj.get('owner') as string) || '',
         deadline: (formDataObj.get('deadline') as string) || '',
-        budget: formDataObj.get('budget')
-          ? parseFloat(formDataObj.get('budget') as string)
-          : null,
+        budget: (formDataObj.get('budget') as string) || '',
         type: (formDataObj.get('type') as string) || '',
-        thumbnail,
+        thumbnail: thumbnail ?? undefined,
       })
       navigate('/projects/new/analysis')
       return

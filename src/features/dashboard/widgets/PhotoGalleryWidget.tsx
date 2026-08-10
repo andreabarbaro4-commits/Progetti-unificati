@@ -100,7 +100,7 @@ export default function PhotoGalleryWidget() {
       { currentCount: images.length },
     );
 
-    if (!result.accepted) {
+    if (result.accepted === false) {
       setError(reasonToMessage(result.reason));
       return;
     }

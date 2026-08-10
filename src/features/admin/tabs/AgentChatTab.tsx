@@ -3,7 +3,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { apiClient } from '../../../lib/api-client'
 import { validateStringLength } from '../../../lib/validation'
 import { Button } from '../../../components/ui/Button'
-import type { ChatMessage, ChatSession } from '../../../mock/fixtures/types'
+import type { ChatMessage, ChatSession, MessageRole } from '../../../mock/fixtures/types'
 
 /**
  * AgentChatTab — add/edit mock chat messages up to 2000 chars (Req 36.5).
@@ -16,7 +16,7 @@ export default function AgentChatTab() {
   const [selectedSessionId, setSelectedSessionId] = useState<string | null>(null)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [showCreate, setShowCreate] = useState(false)
-  const [formData, setFormData] = useState({ text: '', role: 'assistant' as string })
+  const [formData, setFormData] = useState({ text: '', role: 'assistant' as MessageRole })
   const [error, setError] = useState<string | null>(null)
 
   const { data: sessions = [] } = useQuery<ChatSession[]>({
@@ -64,7 +64,7 @@ export default function AgentChatTab() {
   function handleSave() {
     const validation = validateStringLength(formData.text, { required: true, minLength: 1, maxLength: 2000 })
     if (!validation.valid) {
-      setError(validation.error ?? 'Message must be 1–2000 characters.')
+      setError('Message must be 1–2000 characters.')
       return
     }
     setError(null)
@@ -112,7 +112,7 @@ export default function AgentChatTab() {
             <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
               <h3 className="mb-3 text-sm font-semibold">{editingId ? 'Edit Message' : 'New Message'}</h3>
               <div className="flex flex-col gap-3">
-                <select className="rounded-lg border border-gray-200 px-3 py-2 text-sm" value={formData.role} onChange={(e) => setFormData((f) => ({ ...f, role: e.target.value }))}>
+                <select className="rounded-lg border border-gray-200 px-3 py-2 text-sm" value={formData.role} onChange={(e) => setFormData((f) => ({ ...f, role: e.target.value as MessageRole }))}>
                   <option value="user">User</option>
                   <option value="assistant">Assistant</option>
                 </select>

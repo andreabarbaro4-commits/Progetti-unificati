@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { apiClient } from '../../../lib/api-client'
 import { Button } from '../../../components/ui/Button'
-import type { Project } from '../../../mock/fixtures/types'
+import type { Project, ProjectStatus } from '../../../mock/fixtures/types'
 
 /**
  * ProjectsTab — CRUD for projects (Req 36.2, 36.8, 36.9).
@@ -13,7 +13,7 @@ export default function ProjectsTab() {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [showCreate, setShowCreate] = useState(false)
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null)
-  const [formData, setFormData] = useState({ name: '', brief: '', deadline: '', status: 'planning' as string })
+  const [formData, setFormData] = useState({ name: '', brief: '', deadline: '', status: 'planning' as ProjectStatus })
   const [error, setError] = useState<string | null>(null)
 
   const { data: projects = [] } = useQuery<Project[]>({
@@ -79,7 +79,7 @@ export default function ProjectsTab() {
             <input className="rounded-lg border border-gray-200 px-3 py-2 text-sm" placeholder="Name *" value={formData.name} onChange={(e) => setFormData((f) => ({ ...f, name: e.target.value }))} />
             <input className="rounded-lg border border-gray-200 px-3 py-2 text-sm" placeholder="Brief" value={formData.brief} onChange={(e) => setFormData((f) => ({ ...f, brief: e.target.value }))} />
             <input className="rounded-lg border border-gray-200 px-3 py-2 text-sm" type="date" value={formData.deadline} onChange={(e) => setFormData((f) => ({ ...f, deadline: e.target.value }))} />
-            <select className="rounded-lg border border-gray-200 px-3 py-2 text-sm" value={formData.status} onChange={(e) => setFormData((f) => ({ ...f, status: e.target.value }))}>
+            <select className="rounded-lg border border-gray-200 px-3 py-2 text-sm" value={formData.status} onChange={(e) => setFormData((f) => ({ ...f, status: e.target.value as ProjectStatus }))}>
               <option value="planning">Planning</option>
               <option value="in_progress">In Progress</option>
               <option value="at_risk">At Risk</option>

@@ -108,7 +108,7 @@ export function ContactInfoStep({ onBack, onNext }: ContactInfoStepProps) {
         <Button
           className="rounded-3xl px-8 py-3 text-lg"
           type="button"
-          variant="outline"
+          variant="secondary"
           onClick={onNext}
         >
           {t('skip')}

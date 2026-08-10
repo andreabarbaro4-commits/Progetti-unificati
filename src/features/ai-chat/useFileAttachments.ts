@@ -6,12 +6,25 @@ export interface Attachment {
   previewUrl: string
 }
 
+const MAX_ATTACHMENTS = 3
+
 const FILE_RULES = {
   maxSizeBytes: 5 * 1024 * 1024, // 5MB per file
-  allowedMimeTypes: undefined, // All types allowed for chat
+  maxCollectionSize: MAX_ATTACHMENTS,
+  // allowedTypes intentionally omitted — all types allowed for chat
 }
 
-const MAX_ATTACHMENTS = 3
+/** Maps a rejection reason to a human-readable message (Req 30.1–30.5). */
+function reasonToMessage(reason: Exclude<FileAcceptanceResult, { accepted: true }>['reason']): string {
+  switch (reason) {
+    case 'tooLarge':
+      return 'File exceeds the 5MB size limit.'
+    case 'unsupportedType':
+      return 'Unsupported file type.'
+    case 'collectionFull':
+      return `You can attach up to ${MAX_ATTACHMENTS} files.`
+  }
+}
 
 /**
  * useFileAttachments — manages file attachments for chat messages (Req 30.1–30.5).
@@ -28,11 +41,10 @@ export function useFileAttachments() {
 
     const result: FileAcceptanceResult = validateFileAcceptance(file, FILE_RULES, {
       currentCount: attachments.length,
-      maxCount: MAX_ATTACHMENTS,
     })
 
-    if (!result.accepted) {
-      setError(result.reason ?? 'File rejected.')
+    if (result.accepted === false) {
+      setError(reasonToMessage(result.reason))
       return false
     }
 

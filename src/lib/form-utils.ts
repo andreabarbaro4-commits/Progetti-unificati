@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { UseFormProps } from 'react-hook-form';
+import type { FieldValues, UseFormProps } from 'react-hook-form';
 import { z, type ZodSchema, ZodIssueCode } from 'zod';
 import { isMockMode } from '../mock';
 
@@ -28,11 +28,16 @@ z.setErrorMap(zodErrorMap);
  * Creates form config with zod resolver and standard options.
  * In mock mode (VITE_MOCK=true), validation is completely bypassed
  * so all forms are progressible without filling mandatory fields.
+ *
+ * Generic over the schema's inferred type `T`, so the returned
+ * `UseFormProps<T>` lines up with `useForm<T>(...)` at every call site
+ * instead of widening to the default `FieldValues` bag (which is what
+ * happened when this returned an untyped `UseFormProps`).
  */
-export function createFormConfig<T extends ZodSchema>(
-  schema: T,
-  options?: Partial<UseFormProps>,
-): UseFormProps {
+export function createFormConfig<T extends FieldValues>(
+  schema: ZodSchema<T>,
+  options?: Partial<UseFormProps<T>>,
+): UseFormProps<T> {
   // In mock mode, skip the resolver entirely — forms submit without validation
   if (isMockMode()) {
     return {

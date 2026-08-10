@@ -61,7 +61,7 @@ export function AddClientDialog({ open, onClose }: AddClientDialogProps) {
       maxLength: 100,
     });
 
-    if (!validation.valid) {
+    if (validation.valid === false) {
       switch (validation.reason) {
         case 'required':
           setError('Client name is required.');

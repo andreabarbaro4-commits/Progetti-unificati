@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { apiClient } from '../../../lib/api-client'
 import { Button } from '../../../components/ui/Button'
-import type { TimelineBlock } from '../../../mock/fixtures/types'
+import type { BlockType, TimelineBlock } from '../../../mock/fixtures/types'
 
 /**
  * TimelineBlocksTab — CRUD for timeline blocks (Req 36.4, 36.8, 36.9).
@@ -12,7 +12,7 @@ export default function TimelineBlocksTab() {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [showCreate, setShowCreate] = useState(false)
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null)
-  const [formData, setFormData] = useState({ title: '', type: 'task' as string, date: '', time: '09:00', duration: '60' })
+  const [formData, setFormData] = useState({ title: '', type: 'task' as BlockType, date: '', time: '09:00', duration: '60' })
   const [error, setError] = useState<string | null>(null)
 
   const { data: blocks = [] } = useQuery<TimelineBlock[]>({
@@ -76,7 +76,7 @@ export default function TimelineBlocksTab() {
           <h3 className="mb-3 text-sm font-semibold">{editingId ? 'Edit Block' : 'New Block'}</h3>
           <div className="grid gap-3 sm:grid-cols-2">
             <input className="rounded-lg border border-gray-200 px-3 py-2 text-sm" placeholder="Title *" value={formData.title} onChange={(e) => setFormData((f) => ({ ...f, title: e.target.value }))} />
-            <select className="rounded-lg border border-gray-200 px-3 py-2 text-sm" value={formData.type} onChange={(e) => setFormData((f) => ({ ...f, type: e.target.value }))}>
+            <select className="rounded-lg border border-gray-200 px-3 py-2 text-sm" value={formData.type} onChange={(e) => setFormData((f) => ({ ...f, type: e.target.value as BlockType }))}>
               <option value="meeting">Meeting</option>
               <option value="task">Task</option>
               <option value="deadline">Deadline</option>

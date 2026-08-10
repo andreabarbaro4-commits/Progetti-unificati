@@ -34,8 +34,10 @@ const defaultState = {
   },
 };
 
+type PersistedCompanyWizardState = Pick<CompanyWizardStore, 'activeStep' | 'formData'>;
+
 export const useCompanyWizardStore = create<CompanyWizardStore>()(
-  persist(
+  persist<CompanyWizardStore, [], [], PersistedCompanyWizardState>(
     (set) => ({
       ...defaultState,
       setActiveStep: (step) => set({ activeStep: step }),
