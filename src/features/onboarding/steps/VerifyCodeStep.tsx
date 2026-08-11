@@ -130,7 +130,7 @@ export function VerifyCodeStep({ onNext, email }: VerifyCodeStepProps) {
           <div aria-live="polite" className="h-5 mt-1" id="code-error">
             {hasFieldError && (
               <span className="text-[12px] text-red-600 leading-none">
-                {t(errors.code.message ?? '')}
+                {t(errors.code?.message ?? '')}
               </span>
             )}
             {hasVerifyError && !hasFieldError && (
