@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useShallow } from 'zustand/react/shallow'
 import { RegistrationCarousel } from './components/RegistrationCarousel'
 import { VerticalCarouselWizard } from './components/VerticalCarouselWizard'
 import { TopNavigationBar } from '../../components/AppShell/TopNavigationBar'
@@ -15,7 +16,7 @@ const CROSSFADE_DURATION = 500
  *  then renders the organizational steps via the VerticalCarouselWizard.
  *  Phase is persisted in sessionStorage so a refresh doesn't reset progress. */
 export function OnboardingWizard() {
-  const { phase, setPhase, signupEmail } = useOnboardingStore()
+  const { phase, setPhase, signupEmail } = useOnboardingStore(useShallow((s) => ({ phase: s.phase, setPhase: s.setPhase, signupEmail: s.signupEmail })))
   const { isAuthenticated, isLoading, login, loginWithHint } = useAuth()
   const navigate = useNavigate()
   const [showNav, setShowNav] = useState(false)

@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useShallow } from 'zustand/react/shallow'
 import { StepIndicator } from '../components/StepIndicator'
 import { RegistrationError, type RegistrationErrorVariant } from '../components/RegistrationError'
 import { PhotoFileSchema } from '../schemas'
@@ -54,14 +55,14 @@ export function PhotoUploadStep({ hasPhoto: initialHasPhoto, onNext }: PhotoUplo
   const [hasValidFile, setHasValidFile] = useState(false)
 
   const setPhoto = useRegistrationStore((s) => s.setPhoto)
-  const registrationData = useRegistrationStore((s) => ({
+  const registrationData = useRegistrationStore(useShallow((s) => ({
     name: s.name,
     surname: s.surname,
     gender: s.gender,
     birthDate: s.birthDate,
     jobTitle: s.jobTitle,
     selectedPhotoFile: s.selectedPhotoFile,
-  }))
+  })))
 
   const { user, login } = useAuth()
   const { submitRegistration, isSubmitting, error, reset, currentStep } = useProfileCreation()

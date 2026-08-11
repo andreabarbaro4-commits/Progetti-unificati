@@ -1,5 +1,6 @@
 import { useForm, Controller } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+import { useShallow } from 'zustand/react/shallow'
 import { FlowleeLogo } from '../../../components/AppShell/FlowleeLogo'
 import { StepIndicator } from '../components/StepIndicator'
 import { CustomSelect } from '../../../components/ui/CustomSelect'
@@ -15,7 +16,7 @@ interface PersonalInfoStepProps {
 /** Step 1 — collects the user's basic personal details. */
 export function PersonalInfoStep({ onNext, onNameChange }: PersonalInfoStepProps) {
   const { t } = useTranslation()
-  const { name, surname, gender, birthDate, setField } = useRegistrationStore()
+  const { name, surname, gender, birthDate, setField } = useRegistrationStore(useShallow((s) => ({ name: s.name, surname: s.surname, gender: s.gender, birthDate: s.birthDate, setField: s.setField })))
   const {
     register,
     handleSubmit,
