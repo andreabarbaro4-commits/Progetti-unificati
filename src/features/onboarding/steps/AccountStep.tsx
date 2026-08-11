@@ -1,9 +1,14 @@
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { FlowleeLogo } from '../../../components/AppShell/FlowleeLogo'
 import { StepIndicator } from '../components/StepIndicator'
 import { createFormConfig } from '../../../lib/form-utils'
 import { AccountSchema, type AccountData } from '../schemas'
+import { signupWithAuth0, type Auth0SignupError } from '../../auth/auth0-signup'
+import { mapAuth0Error } from '../../auth/auth0-error-map'
+import { useOnboardingStore } from '../useOnboardingStore'
+import { isMockMode } from '../../../mock'
 
 interface AccountStepProps {
   onNext: () => void
@@ -13,11 +18,38 @@ interface AccountStepProps {
 /** Step 2 — collects the email/password for the new account. */
 export function AccountStep({ onNext, firstName }: AccountStepProps) {
   const { t } = useTranslation()
+  const setSignupEmail = useOnboardingStore((s) => s.setSignupEmail)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [signupError, setSignupError] = useState<string | null>(null)
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<AccountData>(createFormConfig(AccountSchema))
+
+  const onSubmit = async (data: AccountData) => {
+    setSignupError(null)
+
+    if (isMockMode()) {
+      setSignupEmail(data.email)
+      onNext()
+      return
+    }
+
+    setIsSubmitting(true)
+    try {
+      await signupWithAuth0({ email: data.email, password: data.password })
+      setSignupEmail(data.email)
+      onNext()
+    } catch (err: unknown) {
+      const authError = err as Auth0SignupError
+      const errorKey = mapAuth0Error(authError.code, authError.description)
+      setSignupError(errorKey)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="flex flex-col items-center w-full h-full px-6 pt-8 pb-4 overflow-hidden">
@@ -34,7 +66,7 @@ export function AccountStep({ onNext, firstName }: AccountStepProps) {
       </div>
 
       {/* Form */}
-      <form className="w-full flex flex-col flex-1 min-h-0" onSubmit={handleSubmit(() => onNext())}>
+      <form className="w-full flex flex-col flex-1 min-h-0" onSubmit={handleSubmit(onSubmit)}>
         {/* Email */}
         <FieldGroup error={errors.email?.message} htmlFor="email" label={t('email')}>
           <input
@@ -79,11 +111,19 @@ export function AccountStep({ onNext, firstName }: AccountStepProps) {
 
         {/* Footer: button + indicator pinned to bottom with guaranteed spacing */}
         <div className="mt-auto flex-shrink-0">
+          {/* Inline signup error above submit button */}
+          {signupError && (
+            <div className="mb-2 text-[13px] text-red-600 text-center" role="alert">
+              {t(signupError)}
+            </div>
+          )}
+
           <button
-            className="w-full h-[48px] bg-black text-white rounded-[16px] text-[20px] cursor-pointer border-none hover:bg-gray-800 transition-colors"
+            className="w-full h-[48px] bg-black text-white rounded-[16px] text-[20px] cursor-pointer border-none hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isSubmitting}
             type="submit"
           >
-            {t('next').toUpperCase()}
+            {isSubmitting ? t('loading') : t('next').toUpperCase()}
           </button>
           <StepIndicator hasNext={true} />
         </div>

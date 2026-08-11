@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { AccountStep } from '../steps/AccountStep'
 import { PersonalInfoStep } from '../steps/PersonalInfoStep'
 import { WelcomeStep } from '../steps/WelcomeStep'
 import { RoleStep } from '../steps/RoleStep'
@@ -15,14 +16,12 @@ const CAROUSEL_CONFIG = {
   transitionDuration: 400,
   expandDuration: 500,
   collapseDuration: 400,
-  welcomeStepIndex: 0,
 }
-
-const TOTAL_STEPS = 4
 
 interface RegistrationCarouselProps {
   onComplete: () => void
   onShowNav?: () => void
+  includeAccountStep?: boolean
 }
 
 /** Returns the effective card width + gap and viewport width for translateX calculations. */
@@ -67,13 +66,20 @@ function useResponsiveCardWidth(config: typeof CAROUSEL_CONFIG) {
 }
 
 /**
- * Horizontal carousel that renders the 4 post-auth registration steps.
+ * Horizontal carousel that renders registration steps.
  * Slides left on step completion using CSS transforms.
- * WelcomeStep (index 0) has a special expand-to-fullscreen animation.
+ * WelcomeStep has a special expand-to-fullscreen animation.
+ * When `includeAccountStep` is true, AccountStep is inserted before WelcomeStep.
  */
-export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCarouselProps) {
+export function RegistrationCarousel({ onComplete, onShowNav, includeAccountStep = false }: RegistrationCarouselProps) {
+  // Dynamically compute step count and welcome index based on prop
+  const totalSteps = includeAccountStep ? 5 : 4
+  const welcomeStepIndex = includeAccountStep ? 1 : 0
+
+  // When AccountStep is included, start at index 0 without expand animation
+  // WelcomeStep expand starts only when we reach the welcome step
   const [activeIndex, setActiveIndex] = useState(0)
-  const [expandState, setExpandState] = useState<ExpandState>('expanding')
+  const [expandState, setExpandState] = useState<ExpandState>(includeAccountStep ? 'idle' : 'expanding')
   const transitioning = useRef(false)
   const expandTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const collapseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -87,11 +93,13 @@ export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCaro
   // Responsive card width calculation
   const { cardWidth, gap, viewportWidth } = useResponsiveCardWidth(CAROUSEL_CONFIG)
 
-  // WelcomeStep starts expanded on mount
+  // WelcomeStep expand on mount (only when it's the first visible step)
   useEffect(() => {
-    expandTimerRef.current = setTimeout(() => {
-      setExpandState('expanded')
-    }, CAROUSEL_CONFIG.expandDuration)
+    if (!includeAccountStep) {
+      expandTimerRef.current = setTimeout(() => {
+        setExpandState('expanded')
+      }, CAROUSEL_CONFIG.expandDuration)
+    }
   }, [])
 
   const advance = useCallback(() => {
@@ -99,20 +107,34 @@ export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCaro
     if (transitioning.current) return
     if (expandState === 'expanding' || expandState === 'collapsing') return
 
-    if (activeIndex >= TOTAL_STEPS - 1) {
+    if (activeIndex >= totalSteps - 1) {
       onComplete()
       return
     }
 
-    // Leaving WelcomeStep (index 0): collapse first, then normal advance
-    if (activeIndex === CAROUSEL_CONFIG.welcomeStepIndex && expandState === 'expanded') {
+    // When advancing TO the WelcomeStep (from AccountStep), trigger expand
+    if (includeAccountStep && activeIndex === welcomeStepIndex - 1 && expandState === 'idle') {
+      transitioning.current = true
+      setActiveIndex(welcomeStepIndex)
+      setTimeout(() => {
+        transitioning.current = false
+        setExpandState('expanding')
+        expandTimerRef.current = setTimeout(() => {
+          setExpandState('expanded')
+        }, CAROUSEL_CONFIG.expandDuration)
+      }, CAROUSEL_CONFIG.transitionDuration)
+      return
+    }
+
+    // Leaving WelcomeStep: collapse first, then normal advance
+    if (activeIndex === welcomeStepIndex && expandState === 'expanded') {
       setExpandState('collapsing')
       transitioning.current = true
 
       collapseTimerRef.current = setTimeout(() => {
         // Collapse done — reset expand state and perform normal advance
         setExpandState('idle')
-        setActiveIndex(1)
+        setActiveIndex(welcomeStepIndex + 1)
 
         // After normal transition completes, show TopNavigation
         postCollapseTimerRef.current = setTimeout(() => {
@@ -129,7 +151,7 @@ export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCaro
     setTimeout(() => {
       transitioning.current = false
     }, CAROUSEL_CONFIG.transitionDuration)
-  }, [activeIndex, expandState, onComplete, onShowNav])
+  }, [activeIndex, expandState, onComplete, onShowNav, totalSteps, welcomeStepIndex, includeAccountStep])
 
   // Cleanup timers on unmount
   useEffect(() => {
@@ -151,6 +173,11 @@ export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCaro
     if (index === activeIndex + 1) return 'carousel-card adjacent-right'
     return 'carousel-card hidden-card'
   }
+
+  // Compute step indices relative to whether AccountStep is included
+  const personalInfoIndex = welcomeStepIndex + 1
+  const roleIndex = welcomeStepIndex + 2
+  const photoIndex = welcomeStepIndex + 3
 
   return (
     <>
@@ -180,20 +207,27 @@ export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCaro
             transform: `translateX(${translateX}px)`,
           }}
         >
-          {/* Step 0: WelcomeStep — hidden placeholder when rendered via portal */}
+          {/* AccountStep (index 0) — only when includeAccountStep is true */}
+          {includeAccountStep && (
+            <div className={getCardClassName(0)}>
+              <AccountStep onNext={advance} firstName={firstName} />
+            </div>
+          )}
+
+          {/* WelcomeStep — hidden placeholder when rendered via portal */}
           <div className={
-            isWelcomeExpanding ? 'carousel-card hidden-card' : getCardClassName(0)
+            isWelcomeExpanding ? 'carousel-card hidden-card' : getCardClassName(welcomeStepIndex)
           }>
             {!isWelcomeExpanding && <WelcomeStep onNext={advance} />}
           </div>
 
-          {/* Step 1: PersonalInfoStep */}
-          <div className={getCardClassName(1)}>
+          {/* PersonalInfoStep */}
+          <div className={getCardClassName(personalInfoIndex)}>
             <PersonalInfoStep onNext={advance} onNameChange={setFirstName} />
           </div>
 
-          {/* Step 2: RoleStep */}
-          <div className={getCardClassName(2)}>
+          {/* RoleStep */}
+          <div className={getCardClassName(roleIndex)}>
             <RoleStep
               selectedRole={selectedRole}
               onSelectRole={setSelectedRole}
@@ -201,8 +235,8 @@ export function RegistrationCarousel({ onComplete, onShowNav }: RegistrationCaro
             />
           </div>
 
-          {/* Step 3: PhotoUploadStep */}
-          <div className={getCardClassName(3)}>
+          {/* PhotoUploadStep */}
+          <div className={getCardClassName(photoIndex)}>
             <PhotoUploadStep hasPhoto={hasPhoto} onNext={() => { setHasPhoto(true); advance() }} />
           </div>
         </div>

@@ -57,6 +57,7 @@ export interface AuthContextValue {
   user: OidcUser | null;
   getAccessToken(): string | null;
   login(returnTo?: string): void;
+  loginWithHint(email: string, returnTo?: string): void;
   signup(returnTo?: string): void;
   logout(): Promise<void>;
   silentRefresh(): Promise<boolean>;
@@ -257,6 +258,22 @@ export function AuthProvider({ children }: AuthProviderProps) {
     [mgr],
   );
 
+  const loginWithHint = useCallback(
+    (email: string, returnTo?: string) => {
+      if (!mgr) return;
+      const audience = import.meta.env.VITE_AUTH_AUDIENCE || '';
+      const state = returnTo ?? window.location.pathname;
+      mgr.signinRedirect({
+        state,
+        extraQueryParams: {
+          ...(audience ? { audience } : {}),
+          login_hint: email,
+        },
+      });
+    },
+    [mgr],
+  );
+
   const signup = useCallback(
     (returnTo?: string) => {
       if (!mgr) return;
@@ -322,6 +339,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     user,
     getAccessToken,
     login,
+    loginWithHint,
     signup,
     logout,
     silentRefresh,

@@ -15,11 +15,12 @@ const CROSSFADE_DURATION = 500
  *  then renders the organizational steps via the VerticalCarouselWizard.
  *  Phase is persisted in sessionStorage so a refresh doesn't reset progress. */
 export function OnboardingWizard() {
-  const { phase, setPhase } = useOnboardingStore()
-  const { isAuthenticated, isLoading, signup, login } = useAuth()
+  const { phase, setPhase, signupEmail } = useOnboardingStore()
+  const { isAuthenticated, isLoading, login, loginWithHint } = useAuth()
   const navigate = useNavigate()
   const [showNav, setShowNav] = useState(false)
   const [navVisible, setNavVisible] = useState(false)
+  const [showSignupCarousel, setShowSignupCarousel] = useState(false)
 
   // Profile check — must be called unconditionally (hook rules).
   // The `enabled` flag inside the hook handles conditional fetching.
@@ -112,12 +113,36 @@ export function OnboardingWizard() {
       // Not authenticated: show pre-auth landing with signup/login buttons
       if (!isAuthenticated) {
         if (isLoading) return null
+
+        // User chose signup — show embedded registration carousel with AccountStep
+        if (showSignupCarousel) {
+          return (
+            <>
+              {showNav && (
+                <div className={`top-nav-wrapper${navVisible ? ' visible' : ''}`}>
+                  <TopNavigationBar />
+                </div>
+              )}
+              <RegistrationCarousel
+                includeAccountStep={true}
+                onComplete={() => {
+                  const email = useOnboardingStore.getState().signupEmail
+                  if (email) {
+                    loginWithHint(email, '/onboarding')
+                  }
+                }}
+                onShowNav={() => setShowNav(true)}
+              />
+            </>
+          )
+        }
+
         return (
           <div className="carousel-viewport">
             <div className="flex items-center justify-center w-full h-full">
               <div className="carousel-card" style={{ width: 448, height: 700 }}>
                 <AuthChoiceStep
-                  onSignUp={() => signup('/onboarding')}
+                  onSignUp={() => setShowSignupCarousel(true)}
                   onLogin={() => login('/onboarding')}
                 />
               </div>
