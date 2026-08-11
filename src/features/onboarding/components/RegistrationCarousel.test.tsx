@@ -9,12 +9,6 @@ vi.mock('../steps/AccountStep', () => ({
   ),
 }));
 
-vi.mock('../steps/SendingCodeStep', () => ({
-  SendingCodeStep: (props: Record<string, unknown>) => (
-    <div data-testid="sending-code-step" data-props={JSON.stringify(props)} />
-  ),
-}));
-
 vi.mock('../steps/VerifyCodeStep', () => ({
   VerifyCodeStep: (props: Record<string, unknown>) => (
     <div data-testid="verify-code-step" data-props={JSON.stringify(props)} />
@@ -93,13 +87,13 @@ describe('RegistrationCarousel — includeAccountStep prop', () => {
     expect(screen.queryByTestId('account-step')).not.toBeInTheDocument();
   });
 
-  it('renders 7 carousel cards when includeAccountStep is true', () => {
+  it('renders 6 carousel cards when includeAccountStep is true', () => {
     const { container } = render(
       <RegistrationCarousel onComplete={onCompleteMock} includeAccountStep={true} />,
     );
 
     const cards = container.querySelectorAll('.carousel-card');
-    expect(cards).toHaveLength(7);
+    expect(cards).toHaveLength(6);
   });
 
   it('renders 4 carousel cards when includeAccountStep is false', () => {

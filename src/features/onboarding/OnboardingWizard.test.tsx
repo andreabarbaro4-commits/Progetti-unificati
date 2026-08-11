@@ -107,16 +107,6 @@ vi.mock('react-dom', async (importOriginal) => {
 })
 
 // Mock non-essential steps as simple placeholders
-vi.mock('./steps/SendingCodeStep', () => ({
-  SendingCodeStep: ({ onNext }: { onNext: () => void; email: string }) => (
-    <div data-testid="sending-code-step">
-      <button data-testid="sending-code-next" onClick={onNext} type="button">
-        SendingCode Next
-      </button>
-    </div>
-  ),
-}))
-
 vi.mock('./steps/VerifyCodeStep', () => ({
   VerifyCodeStep: ({ onNext }: { onNext: () => void; email: string }) => (
     <div data-testid="verify-code-step">
@@ -268,18 +258,7 @@ describe('OnboardingWizard — integration', () => {
       password: 'SecureP@ss1',
     })
 
-    // Step 3: AccountStep advances — carousel transitions to SendingCodeStep
-    await act(async () => {
-      await vi.advanceTimersByTimeAsync(500) // transition to SendingCodeStep
-    })
-
-    // SendingCodeStep should be visible
-    expect(screen.getByTestId('sending-code-step')).toBeInTheDocument()
-
-    // Advance through SendingCodeStep
-    await act(async () => {
-      fireEvent.click(screen.getByTestId('sending-code-next'))
-    })
+    // Step 3: AccountStep advances — carousel transitions to VerifyCodeStep
     await act(async () => {
       await vi.advanceTimersByTimeAsync(500) // transition to VerifyCodeStep
     })

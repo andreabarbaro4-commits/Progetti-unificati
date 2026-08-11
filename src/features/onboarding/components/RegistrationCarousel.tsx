@@ -1,7 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { AccountStep } from '../steps/AccountStep'
-import { SendingCodeStep } from '../steps/SendingCodeStep'
 import { VerifyCodeStep } from '../steps/VerifyCodeStep'
 import { PersonalInfoStep } from '../steps/PersonalInfoStep'
 import { WelcomeStep } from '../steps/WelcomeStep'
@@ -77,8 +76,8 @@ function useResponsiveCardWidth(config: typeof CAROUSEL_CONFIG) {
  */
 export function RegistrationCarousel({ onComplete, onShowNav, onFirstNameChange, includeAccountStep = false }: RegistrationCarouselProps) {
   // Dynamically compute step count and welcome index based on prop
-  const totalSteps = includeAccountStep ? 7 : 4
-  const welcomeStepIndex = includeAccountStep ? 3 : 0
+  const totalSteps = includeAccountStep ? 6 : 4
+  const welcomeStepIndex = includeAccountStep ? 2 : 0
 
   // Read signupEmail from onboarding store for verification steps
   const signupEmail = useOnboardingStore((s) => s.signupEmail)
@@ -221,16 +220,9 @@ export function RegistrationCarousel({ onComplete, onShowNav, onFirstNameChange,
             </div>
           )}
 
-          {/* SendingCodeStep (index 1) — only when includeAccountStep is true */}
+          {/* VerifyCodeStep (index 1) — only when includeAccountStep is true */}
           {includeAccountStep && (
             <div className={getCardClassName(1)}>
-              <SendingCodeStep onNext={advance} email={signupEmail ?? ''} />
-            </div>
-          )}
-
-          {/* VerifyCodeStep (index 2) — only when includeAccountStep is true */}
-          {includeAccountStep && (
-            <div className={getCardClassName(2)}>
               <VerifyCodeStep onNext={advance} email={signupEmail ?? ''} />
             </div>
           )}

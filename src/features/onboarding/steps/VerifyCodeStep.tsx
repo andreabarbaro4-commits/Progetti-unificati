@@ -45,6 +45,11 @@ export function VerifyCodeStep({ onNext, email }: VerifyCodeStepProps) {
     return () => clearInterval(interval)
   }, [cooldown])
 
+  // Send verification code on mount (fire and forget)
+  useEffect(() => {
+    sendVerificationCode({ email })
+  }, [email])
+
   const handleResend = () => {
     sendVerificationCode({ email })
     setCooldown(30)
