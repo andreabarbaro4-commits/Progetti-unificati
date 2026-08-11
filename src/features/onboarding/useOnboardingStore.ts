@@ -13,10 +13,12 @@ interface OnboardingStore {
   activeStep: number;
   selectedRole: string | null;
   signupEmail: string | null;
+  emailVerified: boolean;
   setPhase: (phase: OnboardingPhase) => void;
   setActiveStep: (step: number) => void;
   setSelectedRole: (role: string | null) => void;
   setSignupEmail: (email: string | null) => void;
+  setEmailVerified: (v: boolean) => void;
   reset: () => void;
 }
 
@@ -27,11 +29,13 @@ export const useOnboardingStore = create<OnboardingStore>()(
       activeStep: 0,
       selectedRole: null,
       signupEmail: null,
+      emailVerified: false,
       setPhase: (phase) => set({ phase }),
       setActiveStep: (step) => set({ activeStep: step }),
       setSelectedRole: (role) => set({ selectedRole: role }),
       setSignupEmail: (email) => set({ signupEmail: email }),
-      reset: () => set({ phase: 'registration', activeStep: 0, selectedRole: null, signupEmail: null }),
+      setEmailVerified: (v) => set({ emailVerified: v }),
+      reset: () => set({ phase: 'registration', activeStep: 0, selectedRole: null, signupEmail: null, emailVerified: false }),
     }),
     {
       name: 'flowlee-onboarding',

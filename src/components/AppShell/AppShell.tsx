@@ -4,6 +4,7 @@ import { TopNavigationBar } from './TopNavigationBar'
 import { BottomNavbar } from './BottomNavbar'
 import { AiMascotFab } from './AiMascotFab'
 import { GreetingBubble } from './GreetingBubble'
+import { useAuth } from '../../features/auth/AuthProvider'
 
 export interface AppShellProps {
   children: ReactNode
@@ -20,7 +21,9 @@ export interface AppShellProps {
  */
 export function AppShell({ children }: AppShellProps) {
   const location = useLocation()
+  const { user } = useAuth()
   const hasBottomChrome = location.pathname !== '/agent'
+  const firstName = user?.name?.trim().split(/\s+/)[0]
 
   return (
     <div style={{
@@ -34,7 +37,7 @@ export function AppShell({ children }: AppShellProps) {
       {/* Sticky zone for the floating pill navbar */}
       <div style={{ position: 'sticky', top: 0, zIndex: 10 }}>
         <div className="mx-auto w-full max-w-[clamp(0px,87.5vw,1680px)]">
-          <TopNavigationBar variant="inline" />
+          <TopNavigationBar variant="inline" firstName={firstName} />
         </div>
       </div>
 

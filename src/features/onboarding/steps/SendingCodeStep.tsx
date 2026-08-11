@@ -1,15 +1,41 @@
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import avatar from '../../../assets/avatar.png'
 import { FlowleeLogo } from '../../../components/AppShell/FlowleeLogo'
+import { sendVerificationCode } from '../../auth/verification-code'
 import { StepIndicator } from '../components/StepIndicator'
 
 interface SendingCodeStepProps {
   onNext: () => void
+  email: string
 }
 
-/** Step 3 — informs the user that a verification code is on its way. Auto-advances after 3s. */
-export function SendingCodeStep({ onNext }: SendingCodeStepProps) {
+/** Step — sends verification code and auto-advances after min display time. */
+export function SendingCodeStep({ onNext, email }: SendingCodeStepProps) {
   const { t } = useTranslation()
+  const [isSending, setIsSending] = useState(true)
+
+  useEffect(() => {
+    let cancelled = false
+
+    const send = async () => {
+      await Promise.all([
+        sendVerificationCode({ email }),
+        new Promise((resolve) => setTimeout(resolve, 1500)),
+      ])
+
+      if (!cancelled) {
+        setIsSending(false)
+        onNext()
+      }
+    }
+
+    send()
+
+    return () => {
+      cancelled = true
+    }
+  }, [email, onNext])
 
   return (
     <div className="flex flex-col items-center w-full h-full px-6 pt-8 pb-4 overflow-hidden">
@@ -27,7 +53,7 @@ export function SendingCodeStep({ onNext }: SendingCodeStepProps) {
 
       {/* Text */}
       <div
-        className="w-full text-center mb-6"
+        className="w-full text-center mb-2"
         style={{
           fontWeight: 700,
           fontSize: '32px',
@@ -38,15 +64,20 @@ export function SendingCodeStep({ onNext }: SendingCodeStepProps) {
         {t('sending_code')}
       </div>
 
-      {/* Footer: button + indicator pinned to bottom with guaranteed spacing */}
+      {/* Email display */}
+      <div className="w-full text-center text-gray-600 text-base mb-4">
+        {email}
+      </div>
+
+      {/* Loading indicator */}
+      {isSending && (
+        <div className="flex justify-center mb-4">
+          <div className="w-6 h-6 border-2 border-gray-300 border-t-black rounded-full animate-spin" />
+        </div>
+      )}
+
+      {/* Footer: step indicator pinned to bottom */}
       <div className="mt-auto flex-shrink-0 w-full">
-        <button
-          className="w-full h-[48px] bg-black text-white rounded-[16px] text-[20px] cursor-pointer border-none hover:bg-gray-800 transition-colors"
-          type="button"
-          onClick={onNext}
-        >
-          {t('next').toUpperCase()}
-        </button>
         <StepIndicator hasNext={true} />
       </div>
     </div>

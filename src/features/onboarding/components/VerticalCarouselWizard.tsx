@@ -13,6 +13,8 @@ export interface VerticalCarouselWizardProps {
   onComplete: () => void
   /** Called when the user selects "Freelance" — skips the wizard entirely */
   onFreelanceSkip: () => void
+  /** User's first name to display in the navigation bar */
+  firstName?: string
 }
 
 const TOTAL_STEPS = WIZARD_STEPS.length
@@ -22,7 +24,7 @@ const STEP_LABELS = WIZARD_STEPS.map((s) => s.label)
  * Top-level orchestrator that composes the navigation bar, background decorations,
  * and vertical carousel for the company creation wizard flow.
  */
-export function VerticalCarouselWizard({ onComplete, onFreelanceSkip }: VerticalCarouselWizardProps) {
+export function VerticalCarouselWizard({ onComplete, onFreelanceSkip, firstName }: VerticalCarouselWizardProps) {
   const activeStep = useCompanyWizardStore((s) => s.activeStep)
   const isTransitioning = useCompanyWizardStore((s) => s.isTransitioning)
   const setActiveStep = useCompanyWizardStore((s) => s.setActiveStep)
@@ -65,6 +67,7 @@ export function VerticalCarouselWizard({ onComplete, onFreelanceSkip }: Vertical
         onBack={handleBack}
         onForward={handleAdvance}
         isTransitioning={isTransitioning}
+        firstName={firstName}
       />
 
       <VerticalCarousel

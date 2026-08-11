@@ -107,6 +107,26 @@ vi.mock('react-dom', async (importOriginal) => {
 })
 
 // Mock non-essential steps as simple placeholders
+vi.mock('./steps/SendingCodeStep', () => ({
+  SendingCodeStep: ({ onNext }: { onNext: () => void; email: string }) => (
+    <div data-testid="sending-code-step">
+      <button data-testid="sending-code-next" onClick={onNext} type="button">
+        SendingCode Next
+      </button>
+    </div>
+  ),
+}))
+
+vi.mock('./steps/VerifyCodeStep', () => ({
+  VerifyCodeStep: ({ onNext }: { onNext: () => void; email: string }) => (
+    <div data-testid="verify-code-step">
+      <button data-testid="verify-code-next" onClick={onNext} type="button">
+        VerifyCode Next
+      </button>
+    </div>
+  ),
+}))
+
 vi.mock('./steps/WelcomeStep', () => ({
   WelcomeStep: ({ onNext }: { onNext: () => void }) => (
     <div data-testid="welcome-step">
@@ -248,9 +268,29 @@ describe('OnboardingWizard — integration', () => {
       password: 'SecureP@ss1',
     })
 
-    // Step 3: AccountStep advances — carousel transitions to WelcomeStep
-    // The carousel has a transitionDuration timeout (400ms) when advancing to WelcomeStep
-    // then an expandDuration (500ms) for the WelcomeStep expand animation
+    // Step 3: AccountStep advances — carousel transitions to SendingCodeStep
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(500) // transition to SendingCodeStep
+    })
+
+    // SendingCodeStep should be visible
+    expect(screen.getByTestId('sending-code-step')).toBeInTheDocument()
+
+    // Advance through SendingCodeStep
+    await act(async () => {
+      fireEvent.click(screen.getByTestId('sending-code-next'))
+    })
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(500) // transition to VerifyCodeStep
+    })
+
+    // VerifyCodeStep should be visible
+    expect(screen.getByTestId('verify-code-step')).toBeInTheDocument()
+
+    // Advance through VerifyCodeStep
+    await act(async () => {
+      fireEvent.click(screen.getByTestId('verify-code-next'))
+    })
     await act(async () => {
       await vi.advanceTimersByTimeAsync(500) // transition to WelcomeStep
     })

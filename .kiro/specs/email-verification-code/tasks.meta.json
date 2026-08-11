@@ -1,0 +1,200 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create `src/features/auth/verification-code.ts` with typed interfaces and functions": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429945612
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429953261
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430036662
+      }
+    ],
+    "2.1 Add `emailVerified` field and `setEmailVerified` action to `useOnboardingStore`": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429945661
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429954032
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430037646
+      }
+    ],
+    "3.1 Wire `SendingCodeStep` with real send logic and auto-advance": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429945705
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430044906
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430110430
+      }
+    ],
+    "4.1 Wire `VerifyCodeStep` with form validation, verify logic, and error handling": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429945754
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430127088
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430257607
+      }
+    ],
+    "4.2 Implement resend with cooldown in VerifyCodeStep": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429945788
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430264966
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430333024
+      }
+    ],
+    "5. Checkpoint - Ensure all component tests pass": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429945827
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430337617
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430454924
+      }
+    ],
+    "6.1 Insert SendingCodeStep and VerifyCodeStep into the carousel": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429945872
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430338698
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430454095
+      }
+    ],
+    "7.1 Add verification error translation keys to i18n resource files": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429945910
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429954840
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430035594
+      }
+    ],
+    "8. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786429945937
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430458609
+      },
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430592494
+      }
+    ],
+    "7. Add i18n translation keys": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430035628
+      }
+    ],
+    "1. Create Verification Code API service": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430036698
+      }
+    ],
+    "2. Extend Onboarding Store": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430037695
+      }
+    ],
+    "3. Update SendingCodeStep component": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430110488
+      }
+    ],
+    "4. Update VerifyCodeStep component": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430333094
+      }
+    ],
+    "6. Update RegistrationCarousel integration": [
+      {
+        "executionId": "9194adb7-03a4-42bc-b988-75a90567782b",
+        "chatSessionId": "sess_e4f88c78-5c8b-4278-a7da-8ae15f112ec8",
+        "timestamp": 1786430454152
+      }
+    ]
+  }
+}

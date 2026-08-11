@@ -1,10 +1,13 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { AccountStep } from '../steps/AccountStep'
+import { SendingCodeStep } from '../steps/SendingCodeStep'
+import { VerifyCodeStep } from '../steps/VerifyCodeStep'
 import { PersonalInfoStep } from '../steps/PersonalInfoStep'
 import { WelcomeStep } from '../steps/WelcomeStep'
 import { RoleStep } from '../steps/RoleStep'
 import { PhotoUploadStep } from '../steps/PhotoUploadStep'
+import { useOnboardingStore } from '../useOnboardingStore'
 import './RegistrationCarousel.css'
 
 type ExpandState = 'idle' | 'expanding' | 'expanded' | 'collapsing'
@@ -21,6 +24,7 @@ const CAROUSEL_CONFIG = {
 interface RegistrationCarouselProps {
   onComplete: () => void
   onShowNav?: () => void
+  onFirstNameChange?: (name: string) => void
   includeAccountStep?: boolean
 }
 
@@ -71,10 +75,13 @@ function useResponsiveCardWidth(config: typeof CAROUSEL_CONFIG) {
  * WelcomeStep has a special expand-to-fullscreen animation.
  * When `includeAccountStep` is true, AccountStep is inserted before WelcomeStep.
  */
-export function RegistrationCarousel({ onComplete, onShowNav, includeAccountStep = false }: RegistrationCarouselProps) {
+export function RegistrationCarousel({ onComplete, onShowNav, onFirstNameChange, includeAccountStep = false }: RegistrationCarouselProps) {
   // Dynamically compute step count and welcome index based on prop
-  const totalSteps = includeAccountStep ? 5 : 4
-  const welcomeStepIndex = includeAccountStep ? 1 : 0
+  const totalSteps = includeAccountStep ? 7 : 4
+  const welcomeStepIndex = includeAccountStep ? 3 : 0
+
+  // Read signupEmail from onboarding store for verification steps
+  const signupEmail = useOnboardingStore((s) => s.signupEmail)
 
   // When AccountStep is included, start at index 0 without expand animation
   // WelcomeStep expand starts only when we reach the welcome step
@@ -214,6 +221,20 @@ export function RegistrationCarousel({ onComplete, onShowNav, includeAccountStep
             </div>
           )}
 
+          {/* SendingCodeStep (index 1) — only when includeAccountStep is true */}
+          {includeAccountStep && (
+            <div className={getCardClassName(1)}>
+              <SendingCodeStep onNext={advance} email={signupEmail ?? ''} />
+            </div>
+          )}
+
+          {/* VerifyCodeStep (index 2) — only when includeAccountStep is true */}
+          {includeAccountStep && (
+            <div className={getCardClassName(2)}>
+              <VerifyCodeStep onNext={advance} email={signupEmail ?? ''} />
+            </div>
+          )}
+
           {/* WelcomeStep — hidden placeholder when rendered via portal */}
           <div className={
             isWelcomeExpanding ? 'carousel-card hidden-card' : getCardClassName(welcomeStepIndex)
@@ -223,7 +244,7 @@ export function RegistrationCarousel({ onComplete, onShowNav, includeAccountStep
 
           {/* PersonalInfoStep */}
           <div className={getCardClassName(personalInfoIndex)}>
-            <PersonalInfoStep onNext={advance} onNameChange={setFirstName} />
+            <PersonalInfoStep onNext={advance} onNameChange={(name) => { setFirstName(name); onFirstNameChange?.(name) }} />
           </div>
 
           {/* RoleStep */}

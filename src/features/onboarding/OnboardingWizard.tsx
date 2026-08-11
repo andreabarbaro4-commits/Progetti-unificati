@@ -22,6 +22,7 @@ export function OnboardingWizard() {
   const [showNav, setShowNav] = useState(false)
   const [navVisible, setNavVisible] = useState(false)
   const [showSignupCarousel, setShowSignupCarousel] = useState(false)
+  const [firstName, setFirstName] = useState('')
 
   // Profile check — must be called unconditionally (hook rules).
   // The `enabled` flag inside the hook handles conditional fetching.
@@ -80,7 +81,7 @@ export function OnboardingWizard() {
       <>
         {showNav && (
           <div className={`top-nav-wrapper${navVisible ? ' visible' : ''}`}>
-            <TopNavigationBar />
+            <TopNavigationBar firstName={firstName} />
           </div>
         )}
         <div className="onboarding-crossfade-container">
@@ -89,6 +90,7 @@ export function OnboardingWizard() {
             <RegistrationCarousel
               onComplete={() => {}}
               onShowNav={() => {}}
+              onFirstNameChange={setFirstName}
             />
           </div>
           {/* Incoming: vertical carousel wizard fades/slides in */}
@@ -102,6 +104,7 @@ export function OnboardingWizard() {
                 setPhase('done')
                 navigate('/dashboard')
               }}
+              firstName={firstName}
             />
           </div>
         </div>
@@ -121,7 +124,7 @@ export function OnboardingWizard() {
             <>
               {showNav && (
                 <div className={`top-nav-wrapper${navVisible ? ' visible' : ''}`}>
-                  <TopNavigationBar />
+                  <TopNavigationBar firstName={firstName} />
                 </div>
               )}
               <RegistrationCarousel
@@ -133,6 +136,7 @@ export function OnboardingWizard() {
                   }
                 }}
                 onShowNav={() => setShowNav(true)}
+                onFirstNameChange={setFirstName}
               />
             </>
           )
@@ -175,12 +179,13 @@ export function OnboardingWizard() {
         <>
           {showNav && (
             <div className={`top-nav-wrapper${navVisible ? ' visible' : ''}`}>
-              <TopNavigationBar />
+              <TopNavigationBar firstName={firstName} />
             </div>
           )}
           <RegistrationCarousel
             onComplete={handleRegistrationComplete}
             onShowNav={() => setShowNav(true)}
+            onFirstNameChange={setFirstName}
           />
         </>
       )
@@ -196,6 +201,7 @@ export function OnboardingWizard() {
             setPhase('done')
             navigate('/dashboard')
           }}
+          firstName={firstName}
         />
       )
     case 'done':
