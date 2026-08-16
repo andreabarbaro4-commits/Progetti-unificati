@@ -1052,8 +1052,8 @@ h1 {
 
 .flex-beetween {
   color: black;
-  margin-left: -700px;
-  margin-top: 50px !important;
+  margin-left: 40px !important;
+  margin-top: -20px !important;
 
 }
 
@@ -12976,60 +12976,60 @@ input:checked + .jiu:before{transform: translateX(24px);}
 }
 .container-sfondo.step29-height {
   position: relative;
-  /* Aumenta l'altezza minima o fissa del blocco per far estendere lo sfondo */
+  
   min-height: calc(120vh + 100px); 
   box-sizing: border-box;
 }
 
-/* Posizionamento della barra nello sfondo allungato */
+
 .siro {
   position: absolute;
-  bottom: 40px; /* Distanza dal bordo inferiore dello sfondo esteso */
+  bottom: 40px; 
   left: 50%;
   transform: translateX(-250%);
 }
 .info-orario-box {
-  margin-top: 54px; /* Aumenta o diminuisci questo valore in base a quanto vuoi abbassarlo */
+  margin-top: 54px; 
 }
 .siro {
   position: absolute;
-  bottom: 70px; /* Aumenta questo valore (es. da 20px a 60px o più) per sollevare la barra verso l'alto */
+  bottom: 70px; 
   left: 10%;
   transform: translateX(-50%);
 }
-/* Alza la foto di Marta */
+
 .foto-wrapper.step29-foto {
-  margin-top: -65px; /* Modifica i pixel per alzarla quanto ti serve */
+  margin-top: -65px; 
 }
 
-/* Alza il titolo e il sottotitolo */
+
 .er.step29-titolo {
-  margin-top: -10px; /* Modifica i pixel per alzarli verso l'alto */
-  text-align: left;    /* Assicura l'allineamento a sinistra se necessario */
+  margin-top: -10px; 
+  text-align: left;    
 }
 .cifra {
-  margin-top: 55px; /* Aumenta questo valore per abbassare gli interruttori e le descrizioni quanto desideri */
+  margin-top: 55px; 
 }
 .butt {
-  margin-top: -115px; /* Aumenta o diminuisci i pixel per sollevare il bottone quanto desideri */
+  margin-top: -115px; 
 }
 .container-sfondo.step10-mobile-fix .siro {
   display: block;
   margin-left: 150px !important;
   margin-right: auto;
-  margin-top: 70px !important; /* Aumenta questo valore (es. 40px, 60px) per spingerla fisicamente più in basso */
+  margin-top: 70px !important; 
 }
 .container-sfondo.step10-mobile-fix .top-navigation {
-  max-width: 83%; /* Riduci questa percentuale (es. 80% o 75%) per stringere la barra */
+  max-width: 83%; 
   margin-left: 80px !important;
   margin-right: auto;
   box-sizing: border-box;
 }
-/* Assicuriamoci che il contenitore prenda tutta l'altezza della finestra */
+
 .container-sfondo.step10-mobile-fix {
   position: relative !important;
-  min-height: 100vh !important; /* O un valore fisso alto, es. 800px */
-  padding-bottom: 60px !important; /* Spazio extra per evitare che la barra copra il contenuto */
+  min-height: 100vh !important; 
+  padding-bottom: 60px !important; 
   box-sizing: border-box;
 }
 
@@ -13040,35 +13040,35 @@ input:checked + .jiu:before{transform: translateX(24px);}
 
 .container-sfondo.step10-mobile-fix .siro {
   position: absolute !important;
-  /* Mettiamo top a un valore alto per farla uscire dal riquadro e finire sotto */
+  
   top: 95% !important; 
   left: 50% !important;
   transform: translateX(-50%) !important;
   margin: 0 !important;
 }
-/* Allunga lo sfondo bianco/del box sotto la barra */
+
 .container-sfondo.step10-mobile-fix .Step.wide-mode {
-  padding-bottom: 60px; /* Aumenta questo valore per dare più sfondo in basso */
-  margin-bottom: 40px;  /* Aumenta questo se vuoi staccare anche il blocco dal fondo dello schermo */
+  padding-bottom: 60px; 
+  margin-bottom: 40px;  
 }
 .container-sfondo.step10-mobile-fix .siro {
-  margin-top: -20px !important; /* Aumenta i pixel in negativo (es. -30px o -40px) per alzarla di più */
+  margin-top: -20px !important; 
 }
 .container-sfondo.step15-container.step29-height .Step {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-top:70px !important; /* Aumenta questo valore (es. 150px o 180px) per spingere verso il basso tutto il blocco, compreso .info-orario-box e il suo contenuto */
+  padding-top:70px !important; 
 }
 .container-sfondo.step15-container.step29-height .Step .info-orario-box {
-  margin-top: 70px !important; /* Spinge specificamente il box dell'orario e tutto ciò che viene dopo verso il basso */
+  margin-top: 70px !important; 
 }
 
 
-/* Alza solo l'immagine all'interno del riquadro specifico */
+
 .container-sfondo.step15-container.step29-height .Step .foto-wrapper {
-  margin-top: -80px; /* Aumenta questo valore in negativo (es. -50px, -70px) per alzare l'immagine quanto desideri */
-  margin-bottom: 10px; /* Regola lo spazio tra l'immagine alzata e il titolo sottostante */
+  margin-top: -80px; 
+  margin-bottom: 10px; 
 }
 .step10-buttons {
   display: block !important;
@@ -13079,7 +13079,7 @@ input:checked + .jiu:before{transform: translateX(24px);}
   display: inline-block !important;
   float: none !important;
   margin-left: 0 !important;
-  transform: translateX(-80px); /* Sposta fisicamente il pulsante a sinistra di 20px */
+  transform: translateX(-80px); 
 }
 
 .step10-buttons {
@@ -13127,7 +13127,7 @@ input:checked + .jiu:before{transform: translateX(24px);}
 
 }
 
-/* Wrapper generale per centrare perfettamente la modale nello schermo */
+
 .modale-centrata-wrapper {
   display: flex;
   flex-direction: column;
@@ -13141,12 +13141,12 @@ input:checked + .jiu:before{transform: translateX(24px);}
   margin: auto !important;
   box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.12);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.75) !important; /* Sfondo bianco semi-trasparente */
-  backdrop-filter: blur(12px); /* Effetto vetro sfocato di Figma */
+  background: rgba(255, 255, 255, 0.75) !important; 
+  backdrop-filter: blur(12px); 
   overflow: hidden;
 }
 
-/* Spaziatura del titolo */
+
 .modale-titolo-wrapper {
   padding: 0 40px;
   margin-top: 24px;
@@ -13159,7 +13159,7 @@ input:checked + .jiu:before{transform: translateX(24px);}
   margin: 0;
 }
 
-/* Layout interno flessibile */
+
 .modale-corpo {
   display: flex;
   gap: 40px;
@@ -13168,7 +13168,7 @@ input:checked + .jiu:before{transform: translateX(24px);}
   padding: 30px 40px;
 }
 
-/* Colonna sinistra profilo */
+
 .modale-col-sinistra {
   flex: 1;
   max-width: 260px;
@@ -13196,14 +13196,14 @@ input:checked + .jiu:before{transform: translateX(24px);}
   margin: 0;
 }
 
-/* Linea divisoria */
+
 .modale-divisore {
   width: 1px;
   background: #EBEBEB;
   height: 140px;
 }
 
-/* Colonna destra testi */
+
 .modale-col-destra {
   flex: 1.5;
   max-width: 420px;
@@ -13250,7 +13250,7 @@ input:checked + .jiu:before{transform: translateX(24px);}
   line-height: 1.5;
 }
 
-/* Footer bottoni */
+
 .modale-bottoni-footer {
   display: flex;
   justify-content: flex-end;
@@ -13258,12 +13258,12 @@ input:checked + .jiu:before{transform: translateX(24px);}
   margin-top: 16px;
 }
 
-/* Posizionamento barra inferiore */
+
 .siro {
   position: absolute;
   bottom: 10px;
 }
-/* Modifica per alzare la foto (avatar) all'interno della colonna sinistra */
+
 .modale-col-sinistra {
   flex: 1;
   max-width: 260px;
@@ -13271,25 +13271,25 @@ input:checked + .jiu:before{transform: translateX(24px);}
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Sposta il contenuto verso l'alto */
-  margin-top: -90px; /* Regola questo valore negativo se vuoi alzarla ulteriormente */
+  justify-content: flex-start; 
+  margin-top: -90px; 
 }
 
-/* Oppure, se vuoi agire direttamente sull'immagine dell'avatar: */
+
 .modale-avatar {
   width: 72px;
   height: 72px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 12px;
-  /* position: relative; */
-  /* top: -15px; Scommenta e modifica questo valore per spostare solo la foto in alto */
+  
+  
 }
-/* Sposta il titolo "Eliminare Marta Frrittura?" verso sinistra */
+
 .modale-titolo-wrapper {
   padding: 0 40px;
   margin-top: 24px;
-  text-align: left; /* Allinea il testo a sinistra */
+  text-align: left; 
 }
 
 .modale-titolo-testo {
@@ -13297,8 +13297,8 @@ input:checked + .jiu:before{transform: translateX(24px);}
   font-weight: 700;
   color: #1E1E1E;
   margin: 0;
-  /* Se vuoi spostarlo ancora più a sinistra rispetto al padding del contenitore, usa margin-left negativo: */
-  /* margin-left: -10px; */
+  
+  
 }
 .modale-bottoni-footer {
   display: flex !important;
@@ -13352,7 +13352,7 @@ input:checked + .jiu:before{transform: translateX(24px);}
 .Step.wide-mode.step27-mobile-fix .top-navigation {
   display: none !important;
 }
-/* Riabilita e posiziona correttamente la barra superiore per lo step 27 */
+
 .Step.wide-mode.step27-mobile-fix .top-navigation {
   display: flex !important;
   visibility: visible !important;
@@ -13360,31 +13360,31 @@ input:checked + .jiu:before{transform: translateX(24px);}
 }
 .container-sfondo.step15-container.step29-height {
   position: relative !important;
-  padding-bottom: 80px !important; /* Aumenta questo valore se vuoi alzarla ancora di più */
+  padding-bottom: 80px !important; 
 }
 
 .container-sfondo.step15-container.step29-height .siro {
   position: absolute !important;
-  bottom: 100px !important; /* Regola questa distanza dal fondo dello schermo */
+  bottom: 100px !important; 
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
-/* Sposta a destra "Project Manager" solo in questa schermata */
+
 .Step.wide-mode.step27-mobile-fix .modale-ruolo {
   margin-left: 150px !important;
 }
 
-/* Sposta a sinistra i due pulsanti solo in questa schermata */
+
 .Step.wide-mode.step27-mobile-fix .modale-bottoni-footer {
   display: flex !important;
   justify-content: flex-start !important;
 }
 
-/* Aggiunge un piccolo spazio tra i due pulsanti allineati a sinistra */
+
 .Step.wide-mode.step27-mobile-fix .modale-bottoni-footer .cifralo {
   margin-right: 15px !important;
 }
-/* Sposta i pulsanti verso destra solo in questa schermata */
+
 .Step.wide-mode.step27-mobile-fix .modale-bottoni-footer {
   display: flex !important;
   justify-content: flex-end !important;
@@ -13410,10 +13410,10 @@ input:checked + .jiu:before{transform: translateX(24px);}
   transform: translateY(-70px) !important;
   margin-left: -344px !important;
 }
-/* Riduce la larghezza (lunghezza orizzontale) della top-navigation e la centra */
+
 .Step.step11-mobile-fix .top-navigation {
-  max-width: 900px; /* Modifica questo valore a seconda di quanto la vuoi corta (es. 400px, 500px) */
-  width: 90%;       /* Si adatta fluidamente agli schermi più piccoli */
+  max-width: 900px; 
+  width: 90%;       
   margin-left: 100px !important;
   margin-right: auto;
   box-sizing: border-box;
@@ -13423,14 +13423,14 @@ input:checked + .jiu:before{transform: translateX(24px);}
    ========================================== */
 .container-sfondo.step15-container.step29-height .Step.step-centrato .top-navigation {
   position: absolute !important;
-  top: -170px !important; /* Cambia questo valore: metti 0px o -10px o -20px per alzarla quanto vuoi */
+  top: -170px !important; 
   left: 20px !important;
   right: 20px !important;
   width: auto !important;
   margin: 0 !important;
 }
 
-/* Assicuriamoci che il contenitore principale faccia da riferimento */
+
 .container-sfondo.step15-container.step29-height .Step.step-centrato {
   position: relative !important;
 
@@ -13439,20 +13439,20 @@ input:checked + .jiu:before{transform: translateX(24px);}
    STACCA IL RIQUADRO DALLA BARRA - SCHERMATA 29
    ========================================== */
 .container-sfondo.step15-container.step29-height .Step.step-centrato {
-  margin-top: 180px !important; /* Aumenta questo valore (es. 70px o 90px) per staccarlo di più */
+  margin-top: 180px !important; 
 }
 /* ==========================================
    ALZA IL BOX ORARIO - SCHERMATA
    ========================================== */
 .container-sfondo.step15-container.step29-height .Step.step-centrato .info-orario-box {
-  margin-top: -105px !important; /* Metti un valore negativo o più basso (es. -10px o 0px) per alzarlo */
+  margin-top: -105px !important; 
 
 }
 /* ==========================================
    SPOSTAMENTO FORZATO VERSO DESTRA (VIA PADDING)
    ========================================== */
 .container-sfondo.step15-container.step29-height .Step.step-centrato {
-  padding-left: 10px !important; /* Aumenta o diminuisci questi pixel (es. 20px, 60px) per spostarlo quanto vuoi */
+  padding-left: 10px !important; 
   box-sizing: border-box !important;
 }
 /* ==========================================
@@ -13460,14 +13460,14 @@ input:checked + .jiu:before{transform: translateX(24px);}
    ========================================== */
 .container-sfondo.step15-container.step29-height .Step.step-centrato .butt {
   position: relative !important;
-  left: 12px !important; /* Aumenta i pixel in negativo (es. -30px, -40px) se vuoi spostarlo ancora di più a sinistra */
+  left: 12px !important; 
 }
 /* ==========================================
    ABBASSA LA BARRA IN BASSO
    ========================================== */
 .container-sfondo.step15-container.step29-height .siro {
   position: relative !important;
-  margin-top: 40px !important; /* Aumenta questo valore (es. 30px, 40px) se vuoi abbassarla ancora di più */
+  margin-top: 40px !important; 
   margin-left: 40px !important;
 }
 .step27-mobile-fix .top-navigation {
@@ -13476,7 +13476,7 @@ input:checked + .jiu:before{transform: translateX(24px);}
 }
 
 .step27-mobile-fix .top-navigation {
-  width: 900px; /* Oppure un valore fisso es. 600px o max-width: 800px */
+  width: 900px; 
   max-width: 900px;
   margin: 0 auto;
   padding: 4px 16px;
@@ -13486,38 +13486,38 @@ input:checked + .jiu:before{transform: translateX(24px);}
 .step27-mobile-fix .step10-left .space-y-4 > div:first-child .rv,
 .step27-mobile-fix .step10-left .space-y-4 > div:first-child .li {
   position: relative;
-  top: 12px !important; /* Modifica questo valore per abbassare o alzare solo Intranet */
+  top: 12px !important; 
 }
 .step27-mobile-fix .step10-left .space-y-4 > div:first-child .rv {
   position: relative;
-  top: 45px !important; /* Sposta solo la label di Intranet */
+  top: 45px !important; 
 }
 
 .step27-mobile-fix .step10-left .space-y-4 > div:first-child .li {
   position: relative;
-  top: 15px ; /* Sposta solo l'input di Intranet */
+  top: 15px ; 
 }
-/* Seleziona il contenitore principale del testo e dell'immagine all'interno della colonna sinistra */
+
 .step27-mobile-fix .step10-right .hiro {
   position: relative;
-  top: 30px; /* Regola questo valore per abbassare l'intero blocco (immagine + h1 + p) */
+  top: 30px; 
 }
 
-/* Alternativa specifica solo per l'immagine, se necessario un posizionamento diverso */
+
 .step27-mobile-fix .step10-right .hiro .foto-marta {
-  /* position: relative; */
-  /* top: 20px; */
+  
+  
 }
 
-/* Alternativa specifica solo per il testo, se necessario */
+
 .step27-mobile-fix .step10-right .hiro h1,
 .step27-mobile-fix .step10-right .hiro .subtitle {
-  /* position: relative; */
-  /* top: 40px; */
+  
+  
 }
 .step27-mobile-fix .step10-right .hiro .subtitle {
   position: relative;
-  top: -25px; /* Modifica questo valore per alzarlo ulteriormente o abbassarlo */
+  top: -25px; 
 }
 .step29-height .top-navigation {
   width: 100% !important;
@@ -13525,12 +13525,12 @@ input:checked + .jiu:before{transform: translateX(24px);}
   box-sizing: border-box;
 }
 .step29-height .Step {
-  max-width: 1000px !important; /* Riduci questo valore (es. 500px o 400px) per stringere tutto il riquadro */
+  max-width: 1000px !important; 
   width: 100% !important;
   margin: 0 auto;
 }
 .step29-height .top-navigation {
-  width: 90vw !important; /* Adatta la larghezza percentuale o usa un valore fisso es. 1000px */
+  width: 90vw !important; 
   max-width: 1200px !important;
   margin: 0 auto;
   box-sizing: border-box;
@@ -13538,17 +13538,17 @@ input:checked + .jiu:before{transform: translateX(24px);}
 
 
 
-/* Alternativa: se hai bisogno di spaziature diverse tra l'immagine e il titolo, puoi usare margini specifici */
+
 .step29-height .Step .foto-wrapper.step29-foto {
-  margin-bottom: 10px; /* Aumenta lo spazio sotto l'immagine */
+  margin-bottom: 10px; 
 }
 
 .step29-height .Step .er.step29-titolo {
-  margin-top: 20px; /* Sposta il titolo verso il basso rispetto all'immagine */
+  margin-top: 20px; 
 }
 .step29-height .Step .foto-wrapper.step29-foto {
   position: relative;
-  top: 50px; /* Regola questo valore per abbassare l'immagine quanto desideri */
+  top: 50px; 
 }
 .step29-height .top-navigation {
   width: 100vw !important;
@@ -13578,28 +13578,28 @@ input:checked + .jiu:before{transform: translateX(24px);}
   display: inline-block;
   transform: translateX(0px) !important;
 }
-/* Alza e sposta a sinistra solo la foto di Marta */
+
 .container-sfondo.step15-container.step29-height .step29-foto .foto-marta {
   position: relative;
-  top: -60px;   /* Valore per alzarla (aumentalo o diminuiscilo) */
-  left: -20px;  /* Valore per spostarla a sinistra */
+  top: -60px;   
+  left: -20px;  
 }
 
-/* Alza e sposta a sinistra solo il titolo */
+
 .container-sfondo.step15-container.step29-height .step29-titolo {
   position: relative;
-  top: -50px;   /* Valore per alzarlo */
-  left: -20px;  /* Valore per spostarlo a sinistra */
+  top: -50px;   
+  left: -20px;  
   text-align: left;
 }
-/* Sposta leggermente i giorni a destra */
+
 .container-sfondo.step15-container.step29-height .aqua {
   position: relative;
-  left: 40px !important; /* Aumenta o diminuisci questo valore (es. 10px o 20px) per regolarne lo spostamento */
+  left: 40px !important; 
 }
-/* Utilizzando il contenitore principale della schermata per circoscrivere la modifica */
+
 .step29-height .step29-bv2 {
-    margin-left: -155px !important; /* Sostituisci 20px con la distanza desiderata */
+    margin-left: -155px !important; 
 }
 .step29-height .info-orario-box {
   padding: 6px 12px !important;
@@ -13614,7 +13614,7 @@ input:checked + .jiu:before{transform: translateX(24px);}
 }
 .step29-height .info-orario-box {
   position: absolute !important;
-  top: 170px !important; /* Aumenta o diminuisci questo valore finché non scende nella posizione desiderata */
+  top: 170px !important; 
   left: 73% !important;
   transform: translateX(-50%) !important;
   width: calc(60% - 32px) !important;
@@ -13628,7 +13628,7 @@ input:checked + .jiu:before{transform: translateX(24px);}
   margin-top: -200px;
   margin-left: 550px;
 }
-/* ===== STEP 10 - layout specifico schermata invito ===== */
+
 
 .step10-content {
 align-items: center;
@@ -13644,13 +13644,13 @@ justify-content: center;
 margin-top: 25px;
 }
 
-/* Contenitore specifico del logo nella schermata */
+
 .step10-left .JDF {
 margin-top: 45px;
 align-self: center;
 }
 
-/* Colonna destra: logo sopra violetto */
+
 .step10-right {
 display: flex;
 flex-direction: column;
@@ -13659,7 +13659,7 @@ align-items: center;
 padding-top: 45px;
 }
 
-/* Immagine violetto */
+
 .step10-right .step10-image {
 display: block;
 margin-top: 10px;
@@ -13691,7 +13691,7 @@ transform: translateY(25px);
 
   transform: translate(4px, -160px);
 }
-/* LOGO SOPRA E APPoggiato a VIOLETTO */
+
 .step10-invite-logo {
   position: relative;
   z-index: 2;
@@ -13707,7 +13707,7 @@ transform: translateY(25px);
 .step10-content .step10-right {
   transform: translateY(-20px);
 }
-/* Solo schermata step 27 */
+
 .step27-photo {
 display: none;
 }
@@ -13767,21 +13767,21 @@ display: none;
   height: 50px;
   margin-top: -85px;
 }
-/* Colora i bordi degli input testuali e arrotonda i bordi come da Figma */
+
 .container-sfondo.step10-mobile-fix.step10-organizzazione .jgsd {
-  border: 1px solid #d1d5db; /* Sostituisci con il colore esatto del bordo degli input se necessario */
+  border: 1px solid #d1d5db; 
   border-radius: 8px;
   padding: 10px 14px;
   outline: none;
 }
 
 .container-sfondo.step10-mobile-fix.step10-organizzazione .jgsd:focus {
-  border-color: #0070f3; /* Colore del bordo al focus */
+  border-color: #0070f3; 
 }
-/* Sposta a sinistra solo il testo delle etichette senza rompere il layout o la larghezza degli input */
+
 .container-sfondo.step10-mobile-fix.step10-organizzazione .ioyes {
   position: relative !important;
-  left: -90px !important; /* Regola questo valore in pixel (es. -15px, -30px) finché non sono posizionate dove vuoi */
+  left: -90px !important; 
   text-align: left !important;
 }
 .iuj{
@@ -13877,12 +13877,12 @@ display: none;
   font-weight: 400;
   font-size: 13px;
   color: #666666;
-  margin-left: -30px; /* Sposta il secondo titolo verso sinistra (regola il valore a piacimento) */
+  margin-left: -30px; 
 }
 .mik {
   display: flex;
   flex-direction: column;
-  gap: 4px; /* Ridotto ulteriormente per avvicinare verticalmente i vari blocchi di interruttori */
+  gap: 4px; 
 }
 
 .mimmo {
@@ -13908,15 +13908,15 @@ display: none;
   font-size: 13px;
   color: #666666;
   margin-top: -4px;
-  margin-left: -90px; /* Sposta il secondo titolo ("Piccola frase...") ancora più a sinistra */
+  margin-left: -90px; 
 }
-/* Sfondo grigio chiaro (Fake Light Grey) per lo switch/checkbox non attivo */
+
 .fjh {
-  background-color:  #C7C6E2!important; /* Valore esadecimale standard per Fake Light Grey */
+  background-color:  #C7C6E2!important; 
   border: 1px solid #D5D5DC !important;
 }
 
-/* Sfondo quando l'interruttore è attivo (opzionale) */
+
 input[type="checkbox"]:checked + .fjh {
   background-color: #C7C6E2 !important;
 }
@@ -13927,9 +13927,9 @@ input[type="checkbox"]:checked + .fjh {
   font-size: 13px;
   color: #666666;
   margin-top: -4px;
-  margin-left: -190px !important; /* Sposta il secondo titolo ("Piccola frase...") ancora più a sinistra */
+  margin-left: -190px !important; 
 }
-/* Descrizione: usiamo un trucco con un margine negativo a sinistra e un padding, oppure translate */
+
 .mimmo strong:nth-child(2),
 .mimmo .descrizione-item {
   display: inline-block !important;
@@ -13937,7 +13937,7 @@ input[type="checkbox"]:checked + .fjh {
   font-size: 13px !important;
   color: #666666 !important;
   margin-top: 4px !important;
-  /* Usiamo transform per essere sicuri al 100% che si sposti a prescindere dal layout CSS esistente */
+  
   transform: translateX(110px) !important; 
 }
 .mik{
@@ -13956,7 +13956,8 @@ input[type="checkbox"]:checked + .fjh {
   position: relative;
   left: 30px !important;
 }
-.container-sfondo:has(.info-orario-box) .aqua .ryy {
+.container-sfondo:has(.info-orario-box) .aqua 
+ {
   position: relative !important;
   left: -15px !important;
 }
@@ -13968,36 +13969,36 @@ input[type="checkbox"]:checked + .fjh {
    SOLO SCHERMATA 39
    ================================ */
 
-/* Titolo + sottotitolo */
+
 .step39-titolo {
   transform: translateY(30px);
   margin-left: 40px !important;
 }
 
-/* Interruttore + testo del permesso */
+
 .step39-permessi {
   position: relative !important;
   top: -80px !important;
 }
 
-/* Giorni */
+
 .step39-giorni {
   position: relative !important;
   top: 0px !important;
 }
 
-/* Pulsante */
+
 .step39-butt {
   transform: translateY(40px);
 }
-/* Solo sottotitolo della schermata 39 */
+
 .step39-titolo .flex-beetween {
   position: relative !important;
   top: 10px !important;
 }
 .container-sfondo:has(.info-orario-box) .step39-butt {
   position: relative !important;
-  top: -40px !important;
+  top: -60px !important;
   width: 270px !important;
   min-width: 110px !important;
   margin-left: 70px !important;
@@ -14008,19 +14009,19 @@ input[type="checkbox"]:checked + .fjh {
 }
 .container-sfondo:has(.info-orario-box) .step39-titolo {
   position: relative !important;
-  top: -20px !important;
+  top: -60px !important;
 }
 .container-sfondo:has(.info-orario-box) .aqua {
   position: relative !important;
   top: -10px !important;
   left: -20px !important;
 }
-/* SOLO SCHERMATA 39 */
+
 .container-sfondo.schermata-39 .guf .loui {
   background: #F3F4F6 !important;
   background-color: #C7C6E2!important;
 }
-/* SOLO schermata Impostazioni azienda */
+
 .step-centrato2 .ert {
   transform: translateX(-100px) !important;
 }
@@ -14038,13 +14039,13 @@ button:nth-child(2) {
   position: static !important;
   transform: none !important;
 }
-/* SOLO schermata invito: sposta Crea profilo e Rifiuta verso destra */
+
 .container-sfondo.step10-mobile-fix.step10-organizzazione
 .step10-buttons .hh {
   position: relative !important;
   left: -30px !important;
 }
-/* SOLO "Rifiuta" - schermata invito */
+
 .container-sfondo.step10-mobile-fix.step10-organizzazione
 .step10-buttons button.light.hh {
   position: relative !important;
@@ -14052,13 +14053,13 @@ button:nth-child(2) {
   left: 0 !important;
   margin-left: 0 !important;
 }
-/* SOLO schermata dato === 10 */
+
 .container-sfondo.step10-mobile-fix
 .step10-buttons .kid.we {
   position: relative !important;
   transform: translateX(55px) !important;
 }
-/* SOLO FREELANCE - DATO 10 */
+
 .container-sfondo.step10-mobile-fix
 .step10-buttons button.light.kid.we {
   position: relative !important;
@@ -14067,42 +14068,42 @@ button:nth-child(2) {
   transform: translateX(-250px) !important;
   left: 0 !important;
 }
-/* SOLO la scritta Monte orario - schermata 16 */
+
 .container-sfondo:has(.llj.fg) .llj.fg > h1 {
   position: relative !important;
   top: 40px !important;
 }
-/* Rimuove il blocco del taglio e sposta i pulsanti all'interno della schermata 12 */
+
 .container-sfondo.schermata-12 .step12-box {
-  overflow: visible !important; /* Evita che vengano tagliati */
+  overflow: visible !important; 
 }
 
 .container-sfondo.schermata-12 .step10-buttons {
   position: relative !important;
-  left: -135px !important; /* Sposta i bottoni a destra in modo sicuro */
+  left: -135px !important; 
   margin-top: -140px !important;
 }
-/* Sposta verso sinistra il box dell'orario nella schermata 30 */
+
 .container-sfondo.step15-container.step29-height .info-orario-box {
   left: 50% !important;
-  transform: translateX(-4px) !important; /* Aumenta o diminuisci questo valore percentuale per spostarlo a piacimento */
+  transform: translateX(-4px) !important; 
 }
-/* Sposta i giorni della settimana verso sinistra nella schermata 30 */
+
 .container-sfondo.step15-container.step29-height .aqua {
   position: relative !important;
-  left: 12px !important; /* Riduci o aumenta questo valore in pixel (es. -20px, -60px) per regolarne lo spostamento */
+  left: 12px !important; 
 }
-/* Spostamento forzato a sinistra per il pulsante Procedi nella schermata 30 */
+
 .container-sfondo.step15-container.step29-height .butt {
   margin-left: -50px !important;
   transform: translateX(67px) !important;
 }
-/* Spostamento forzato verso destra per il pulsante nella schermata 39 */
+
 .container-sfondo.schermata-39 .butt.step39-butt {
   margin-left: 50px !important;
   transform: translateX(105px) !important;
 }
-/* Contenitore specifico per le impostazioni nello step 18 */
+
 .container-sfondo:has(.step-centrato2) {
   position: relative !important;
 }
@@ -14138,34 +14139,34 @@ button:nth-child(2) {
 .step10-organizzazione .orso {
   display: flex !important;
   flex-direction: column !important;
-  gap: 30px !important; /* Aumenta o diminuisci questo valore per regolare lo spazio esatto tra gli input */
+  gap: 30px !important; 
 }
 .step10-organizzazione .orso .ioyes {
-  margin-bottom: 2px !important; /* Riduci o regola questo valore negativo per avvicinare la label al proprio input */
+  margin-bottom: 2px !important; 
   margin-top: 8px !important;
 }
-/* Rimuoviamo eventuali margini errati precedenti sul contenitore */
+
 .step10-organizzazione .orso {
   display: flex !important;
   flex-direction: column !important;
   gap: 2px !important;
 }
 
-/* 1. Label "Intranet" */
+
 .step10-organizzazione .orso .ioyes:nth-of-type(1) {
   margin-top: 0px !important;
   margin-bottom: 1px !important;
 }
 
-/* 2. Label "Email" */
+
 .step10-organizzazione .orso .ioyes:nth-of-type(2) {
-  margin-top: 25px !important; /* Regola questo valore per alzarla o abbassarla */
+  margin-top: 25px !important; 
   margin-bottom: 4px !important;
 }
 
-/* 3. Label "Whatsapp" (attualmente finita sotto i bottoni) */
+
 .step10-organizzazione .orso .ioyes:nth-of-type(3) {
-  margin-top: 40px !important; /* Regola questo valore per posizionarla sopra il suo input */
+  margin-top: 40px !important; 
   margin-bottom: 4px !important;
 }
 
@@ -14188,26 +14189,26 @@ button:nth-child(2) {
   margin-top: 0px !important;
   margin-bottom: 2px !important;
 }
-/* Abbassa i bottoni Procedi e Salta */
+
 .step10-organizzazione .step10-right {
   display: flex !important;
   flex-direction: column !important;
-  justify-content: flex-end !important; /* Sposta i bottoni verso il basso */
+  justify-content: flex-end !important; 
   padding-bottom: 20px !important;
 }
 
 
 .step10-organizzazione .marta {
-  width: 90px !important;  /* Regola la larghezza desiderata */
-  height: 90px !important; /* Imposta un'altezza uguale o proporzionata per evitare lo schiacciamento */
+  width: 90px !important;  
+  height: 90px !important; 
   object-fit: cover !important;
-  border-radius: 50% !important; /* Se deve essere tonda, o rimuovilo se è quadrata */
+  border-radius: 50% !important; 
 }
-/* Sposta verso destra il titolo e il sottotitolo "Come puoi essere contattata?" e abbassali */
+
 .step10-organizzazione .chies {
-  transform: translateX(50px) translateY(35px) !important; /* Regola i pixel in base a quanto vuoi spostare a destra e in basso */
+  transform: translateX(50px) translateY(35px) !important; 
 }
-/* Abbassa ulteriormente i bottoni "Procedi" e "Salta" */
+
 .step10-organizzazione .step10-right {
   display: flex !important;
   flex-direction: column !important;
@@ -14219,36 +14220,36 @@ button:nth-child(2) {
 .step10-organizzazione .step10-right .buio, 
 .step10-organizzazione .step10-right .Casa {
   position: relative !important;
-  top: 35px !important; /* Aumenta questo valore per abbassarli ancora di più */
+  top: 35px !important; 
 
 }
-/* Sposta i bottoni "Procedi" e "Salta" verso sinistra */
+
 .step10-organizzazione .step10-right .buio, 
 .step10-organizzazione .step10-right .Casa {
   position: relative !important;
-  left: -60px !important; /* Aumenta o diminuisci i pixel in negativo per spostarli più a sinistra */
+  left: -60px !important; 
 }
-/* Avvicina verticalmente i campi di input tra di loro */
+
 .step10-organizzazione .orso {
-  gap: -60px !important; /* Riduci o aumenta questo valore negativo per avvicinarli ulteriormente */
+  gap: -60px !important; 
 }
 
 .step10-organizzazione .orso input.jgsd {
   margin-bottom: -20px !important;
 }
-/* Avvicina specificamente il campo WhatsApp (e la sua label) all'elemento precedente (Email) */
+
 .step10-organizzazione .orso .ioyes:nth-of-type(3),
 .step10-organizzazione .orso input.jgsd:nth-of-type(3) {
-  margin-top: 15px !important; /* Modifica questo valore in negativo per avvicinarlo ulteriormente */
+  margin-top: 15px !important; 
 }
-/* Abbassa solo ed esclusivamente la label di Whatsapp senza toccare l'input */
+
 .step10-organizzazione .orso .ioyes:nth-of-type(3) {
   position: relative !important;
-  top: 15px !important; /* Aumenta o diminuisci questi pixel per regolarne l'altezza */
+  top: 15px !important; 
 }
-/* Alza il titolo e il sottotitolo "Come puoi essere contattata?" */
+
 .step10-organizzazione .chies {
-  transform: translateX(50px) translateY(15px) !important; /* Riduci o rendi più negativo il valore translateY per alzarli */
+  transform: translateX(50px) translateY(15px) !important; 
 }
 .hiro img.foto-marta {
   width: 60px !important;
@@ -14298,24 +14299,24 @@ button:nth-child(2) {
 
 .step29-height .foto-marta,
 .step29-height .foto-wrapper.step29-foto {
-  transform: translateY(15px); /* Modifica questo valore per abbassare la foto */
+  transform: translateY(15px); 
 }
 .step29-height .er.step29-titolo {
-  transform: translateX(40px); /* Modifica questo valore per spostare il titolo verso destra */
+  transform: translateX(40px); 
 }
 .step29-height .step29-foto,
 .step29-height .step29-titolo {
-  transform: translateY(190px); /* Modifica i pixel per spostarli esattamente di quanto desideri */
+  transform: translateY(190px); 
 }
 .step29-height .er.step29-titolo {
-  transform: translate(35px, 150px); /* Il primo valore sposta a destra, il secondo valore (20px) lo abbassa */
+  transform: translate(35px, 150px); 
 }
 .step10-organizzazione .marta {
-  transform: translateY(-20px); /* Modifica questo valore in pixel per decidere quanto alzare la foto */
+  transform: translateY(-20px); 
 }
 .step10-organizzazione h1,
 .step10-organizzazione .adsn3 {
-  transform: translateY(-10px); /* Modifica questo valore per alzare sia il titolo che il sottotitolo */
+  transform: translateY(-10px); 
 }
 .container-sfondo.sfondo-scuro:has(.step27-mobile-fix) {
   display: flex;
@@ -14344,7 +14345,7 @@ button:nth-child(2) {
 }
 .w-full.aspect-square {
   aspect-ratio: auto !important;
-  height: 290px !important; /* Modifica questo valore per regolare l'altezza a piacimento */
+  height: 290px !important; 
   margin-top: 7px !important;
 
    
@@ -14358,7 +14359,7 @@ button:nth-child(2) {
 
 .testo-interno {
   position: relative !important;
-  left: -310px !important; /* Sposta solo la scritta dentro il riquadro */
+  left: -310px !important; 
 }
 .schermata-39 .er.step39-titolo .flex-beetween {
   margin-top: -10px !important;
@@ -14458,10 +14459,100 @@ button:nth-child(2) {
   transform: translateX(25px) !important;
 }
 .subtitle {
-  /* Altre proprietà esistenti del tuo sottotitolo... */
-  padding-left: 2px; /* Regola i pixel a seconda di quanto vuoi spostarlo verso destra */
+  
+  padding-left: 2px; 
 }
 .step29-titolo .flex-beetween span {
   display: inline-block;
-  margin-left: 2px !important; /* Regola i pixel se 20px sono troppi o pochi */
+  margin-left: 2px !important;  
+}
+
+
+
+.foto-wrapper.step29-foto {
+  margin-left: -128px !important;
+}
+
+
+.cifra.step39-permessi .riga-permesso {
+  display: flex !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  margin-left: -250px !important;
+  margin-top: -140px !important;
+}
+
+
+.step39-permessi,
+.info-orario-box {
+  max-width: 420px !important;
+  margin-top: 100px !important;
+}
+
+.aqua.step39-giorni {
+  margin-top: -45px !important; 
+  margin-left: 285px !important;
+}
+
+.info-orario-box {
+  margin-top:  160px !important; 
+}
+
+.info-orario-box {
+  transform: translateX(50px) !important; 
+}
+
+.cifra.step39-permessi .riga-permesso {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.cifra.step39-permessi .tutto strong {
+  display: inline-block !important;
+  margin-top: 3px !important; 
+}
+
+.step39-permessi .guf {
+  align-self: flex-start; 
+  margin-top: 3px !important;       
+}
+.step39-permessi .tutto p {
+  transform: translateX(-38px); 
+}
+.foto-wrapper.step29-foto {
+  transform: translateY(110px) !important; 
+}
+.dio {
+  margin-top: 60px !important;
+}
+.renna {
+  margin-left: 220px!important;
+}
+.monte{
+  margin-top: 60px !important;
+}
+.step29-foto {
+  position: relative;
+  top: 130px !important; 
+}
+.step29-titolo {
+  position: relative;
+  top: -30px !important;
+}
+.step29-titolo span {
+  position: relative;
+  top: -20px;
+}
+.step29-modelli {
+  transform: translateY(-158px);
+}
+.step29-bv2 {
+  position: relative;
+  top: 0px;
+}
+.stelle{
+  margin-left: 220px !important;
+}
+.stelle {
+  transform: translateY(40px) !important;
 }

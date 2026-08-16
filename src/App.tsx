@@ -949,7 +949,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
       {/* Titolo e Sottotitolo */}
       <div className="er">
         <h1>Qual'è il modello <br /> lavorativo adottato <br /> dalla tua azienda?</h1>
-        <div className="flex-beetween">
+        <div className="flex-beetween dio">
           <span>Iniziamo insieme, potrai modificare <br /> queste scelte in ogni momento.</span>
         </div>
       </div>
@@ -2607,12 +2607,12 @@ C
         <img
           src={group}
           alt="Marta"
-          className="foto-marta"
+          className="foto-marta renna"
         />
       </div>
 
       {/* Titolo */}
-      <div className=" er step29-titolo">
+      <div className=" er step29-titolo monte">
         <h1>
           Impostiamo
           <br />
@@ -2715,7 +2715,7 @@ C
       <img
         src={group}
         alt="Marta"
-        className="foto-marta"
+        className="foto-marta stelle"
       />
     </div>
 
@@ -3085,6 +3085,7 @@ C
   In attesa
 </h3>
 
+                   
   <h3
     style={{
       fontSize: "12px",
@@ -3113,18 +3114,22 @@ C
                           <span style={{ fontSize: "9px", color: "#666" }}>Project Manager</span>
                         </div>
                       </div>
+
                       <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "#666" }}>
                         <span style={{ cursor: "pointer", fontSize: "11px" }}>✏️</span>
                         <span style={{ cursor: "pointer", fontSize: "11px" }}>✕</span>
                       </div>
                     </div>
+
                   ))}
                 </div>
               ))}
             </div>
           </div>
         </div>
-          <button className = "lp" onClick = {() => setDato(34)}>Vai</button>
+         <button className = "isl" onClick = {() => setDato(34)}>
+                      Vai
+                    </button>
       </div>
     </div>
   </div>
@@ -3691,167 +3696,154 @@ C
 
   </div>
 )}
+
 {dato === 39 && (
-  <div className="container-sfondo step15-container step29-height step39-container schermata-39">
-    <div className="Step step-centrato">
+        <div className="container-sfondo step10-mobile-fix">
+          <img src={barra} className="siro" alt="Barra" />
 
-      {/* Header */}
-      <div className="top-navigation">
-        <div className="nav-left">
-          <div className="arrows-container">
-            <IoIosArrowDown className="top-icon" />
-            <IoIosArrowUp className="top-icon" />
-          </div>
+          <div className="Step wide-mode">
+            {/* Header identico alla schermata 26 */}
+            <div className="top-navigation">
+              <div className="nav-left">
+                <div className="arrows-container">
+                  <IoIosArrowDown className="top-icon" />
+                  <IoIosArrowUp className="top-icon" />
+                </div>
 
-          <div className="profilo-lavoro-container">
-            <span>Company srl / Permessi</span>
-          </div>
-        </div>
+                <div className="profilo-lavoro-container">
+                  <span>Company srl / Permessi</span>
+                </div>
+              </div>
 
-        <div className="nav-center">
-          <img src={logoImage} alt="Logo" />
-        </div>
+              <div className="nav-center">
+                <img src={logoImage} alt="Logo" style={{ height: "20px", width: "auto" }} />
+              </div>
 
-        <div className="right-icons">
-          <BsGrid3X3Gap className="top-icon" />
-          <HiOutlineUserCircle className="top-icon" />
-        </div>
-      </div>
+              <div className="right-icons">
+                <BsGrid3X3Gap className="top-icon" />
+                <HiOutlineUserCircle className="top-icon" />
+              </div>
+            </div>
 
-      {/* Foto Marta */}
-      <div className="foto-wrapper step29-foto">
-        <img
-          src={group}
-          alt="Marta"
-          className="foto-marta"
-        />
-      </div>
+            {/* Contenitore principale allineato al layout corretto */}
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%", maxWidth: "600px", margin: "0 auto", padding: "40px 20px", boxSizing: "border-box" }}>
+              
+              {/* Sezione Sinistra/Superiore: Foto, Titolo e Sottotitolo */}
+              <div style={{ width: "100%", maxWidth: "500px", marginBottom: "24px", display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                
+                {/* Foto Marta */}
+                <div className="foto-wrapper step29-foto" style={{ marginBottom: "16px" }}>
+                  <img
+                    src={group}
+                    alt="Marta"
+                    className="foto-marta"
+                    style={{ width: "48px", height: "48px", borderRadius: "50%", objectFit: "cover" }}
+                  />
+                </div>
 
-      {/* Titolo */}
-      <div className="er step39-titolo">
-        <h1>
-  <span style={{ display: "inline-block", transform: "translateX(-3px)" }}>Questi sono</span>
-  <br />
-  i tuoi orari
-</h1>
+                {/* Titolo e Sottotitolo */}
+                <div className="er step39-titolo" style={{ textAlign: "left", width: "100%" }}>
+                  <h1 style={{ fontSize: "28px", fontWeight: "700", color: "#111", margin: "0 0 10px 0", lineHeight: "1.2" }}>
+                    Questi sono<br />
+                    i tuoi orari
+                  </h1>
 
-        <div className="flex-beetween">
-          <span>
-            Sono impostati dal tuo referente
-            <br />
-            Contattalo se non ti torna qualcosa
-          </span>
-        </div>
-      </div>
+                  <span style={{ fontSize: "13px", color: "#666", lineHeight: "1.4", display: "block" }}>
+                    Sono impostati dal tuo referente.<br />
+                    Contattalo se non ti torna qualcosa.
+                  </span>
+                </div>
 
-      {/* Box Info Orario */}
-      <div className="info-orario-box">
-        <div className="info-orario-icon">
-          <div className="company-logo-placeholder">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14"
-                stroke="#0052FF"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <path
-                d="M14 4H18V8"
-                stroke="#0052FF"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M10 14L18 6"
-                stroke="#0052FF"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-        </div>
+              </div>
 
-        <div className="info-orario-content">
-          <strong>
-            Il tuo orario è gestito secondo quello di Company Srl.
-          </strong>
+              {/* Box Info Orario */}
+              <div className="info-orario-box" style={{ width: "100%", maxWidth: "500px", marginBottom: "20px" }}>
+                <div className="info-orario-icon">
+                  <div className="company-logo-placeholder">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14"
+                        stroke="#0052FF"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M14 4H18V8"
+                        stroke="#0052FF"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M10 14L18 6"
+                        stroke="#0052FF"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
 
-          <p>
-            Lun-Ven, modello flessibile, minimo 6h.
-          </p>
+                <div className="info-orario-content">
+                  <strong>
+                    Il tuo orario è gestito secondo quello di Company Srl.
+                  </strong>
+                  <p>Lun-Ven, modello flessibile, minimo 6h.</p>
+                  <p>Fascia oraria 07:00-21:00.</p>
+                </div>
+              </div>
 
-          <p>
-            Fascia oraria 07:00-21:00.
-          </p>
-        </div>
-      </div>
+              {/* Lista Permessi con interruttore sicuro e visibile */}
+              <div className="cifra step39-permessi" style={{ width: "100%", maxWidth: "500px", marginBottom: "20px" }}>
+                <div className="riga-permesso" style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+                  <label className="guf" style={{ position: "relative", display: "inline-block", width: "44px", height: "24px", minWidth: "44px", cursor: "pointer", flexShrink: 0, margin: 0 }}>
+                    <input type="checkbox" style={{ opacity: 0, width: 0, height: 0, position: "absolute" }} />
+                    <span className="loui" style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: "#cbd5e1", borderRadius: "24px", transition: "0.3s", display: "block" }}>
+                      <span style={{ position: "absolute", height: "18px", width: "18px", left: "3px", bottom: "3px", backgroundColor: "white", borderRadius: "50%", transition: "0.3s", display: "block" }} />
+                    </span>
+                  </label>
 
-      {/* Lista Permessi */}
-      <div className="cifra step39-permessi">
-        {[
-          {
-            T: "Gestione autonoma parziale dell'orario",
-            D: "Permetti a Marta di gestire l' orario in autonomia"
-          },
-        ].map((item, index) => (
-          <div key={index} className="riga-permesso">
+                  <div className="tutto">
+                    <strong style={{ fontSize: "14px", color: "#111", display: "block" }}>Gestione autonoma parziale dell'orario</strong>
+                    <p style={{ fontSize: "12px", color: "#666", margin: "2px 0 0 0" }}>Permetti a Marta di gestire l'orario in autonomia</p>
+                  </div>
+                </div>
+              </div>
 
-            <label className="guf">
-              <input type="checkbox" />
-              <span className="loui" />
-            </label>
+              {/* Bottoni giorni della settimana */}
+              <div className="aqua step39-giorni" style={{ display: "flex", gap: "8px", marginBottom: "30px", width: "100%", maxWidth: "500px", justifyContent: "flex-start" }}>
+                {["L", "M", "M", "G", "V", "S", "D"].map((j, k) => (
+                  <button key={k} className="ryy">
+                    {j}
+                  </button>
+                ))}
+              </div>
 
-            <div className="tutto">
-              <strong>{item.T}</strong>
+              {/* Bottone Procedi */}
+              <button
+                className="butt step39-butt"
+                onClick={() => setDato(40)}
+                style={{ background: "#111", color: "#fff", border: "none", height: "46px", width: "100%", maxWidth: "500px", borderRadius: "24px", fontSize: "14px", fontWeight: "600", cursor: "pointer" }}
+              >
+                Ok entra in flowlee!
+              </button>
 
-              {item.D && (
-                <p>{item.D}</p>
-              )}
             </div>
 
           </div>
-        ))}
-      </div>
-
-      {/* Bottoni giorni della settimana */}
-      <div className="aqua step39-giorni">
-        {["L", "M", "M", "G", "V", "S", "D"].map((j, k) => (
-          <button
-            key={k}
-            className="ryy"
-          >
-            {j}
-          </button>
-        ))}
-      </div>
-
-      {/* Bottone Procedi */}
-      <button
-        className="butt step39-butt"
-        onClick={() => setDato(40)}
-      >
-        Ok entra in flowlee!
-      </button>
-
-    </div>
-
-    {/* Barra */}
-    <img
-      src={barra}
-      className="siro"
-      alt="Barra"
-    />
-  </div>
-)}
-
+        </div>
+      )}
+    
+  
+    
+  
 
     
 
