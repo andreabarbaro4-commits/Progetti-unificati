@@ -711,7 +711,7 @@ h1 {
   position: relative;
   flex-direction: column;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
   background-color: transparent;
 }
 
@@ -897,7 +897,7 @@ h1 {
 .giorni-wrapper {
   display: flex;
   gap: 10px;
-  margin-left: 406px;
+  margin-left: 419px;
 }
 
 .giorno-btn {
@@ -2945,7 +2945,7 @@ input:checked+.slider6:before {
   color: black;
   margin-left: 70px !important;
   
-  margin-top: -110px !important;
+  margin-top: -60px !important;
   color: black !important;
   display: inline-block !important;
 }
@@ -2955,7 +2955,7 @@ input:checked+.slider6:before {
   width: 20px !important;
   display: inline-block !important;
   position: relative !important;
-  margin-left: -12px !important;
+  margin-left: -30px !important;
   
   margin-right: 4px !important;
   vertical-align: middle !important;
@@ -10989,6 +10989,7 @@ input:checked+.loui:before {
 
 .cifra>div {
   display: flex;
+  margin-top: -14px;
 }
 
 .cifra {
@@ -12860,34 +12861,35 @@ input:checked + .jiu:before{transform: translateX(24px);}
 }
 .step10-buttons {
   position: relative;
-  top: -40px; /* Modifica questo valore per alzarli o abbassarli quanto desideri */
+  top: -40px; 
 }
 .step10-buttons button.dark {
-  width: auto; /* o una larghezza fissa inferiore, es. 120px */
+  width: auto; 
   padding: 10px 20px;
 }
 
 .step10-buttons button.stop {
   background-color: #ffffff;
-  color: #000000; /* Assicura che il testo sia leggibile sul bianco */
-  border: 1px solid #ccc; /* Opzionale: aggiunge un bordo per distinguerlo se lo sfondo è chiaro */
-  margin-left: -70px !important;
+  color: #000000; 
+  border: 1px solid #ccc; 
+  margin-left: -125px !important;
+  margin-top: -70px;
 }
 .step10-mobile-fix:has(.invita-section) .trio {
-  margin-top: 10px; /* Modifica questo valore per abbassarli quanto desideri */
+  margin-top: 10px; 
 }
 .step10-mobile-fix:has(.invita-section) .step10-content {
-  padding-top: 50px; /* Modifica questo valore per abbassare tutti i contenuti insieme quanto desideri */
+  padding-top: 50px; 
 }
 .siro {
   display: block;
-  transform: translateY(50px); /* Modifica questo valore a piacimento (es. 40px) */
+  transform: translateY(50px); 
 }
 .info-orario-box {
-  margin-top: -15px; /* Modifica questo valore per alzarlo ulteriormente o abbassarlo */
-  /* In alternativa puoi usare: transform: translateY(-15px); */
+  margin-top: -15px; 
+  
 }
-/* Layout a due colonne centrato SOLO per la schermata 31 */
+
 .schermata-31 {
   display: flex !important;
   align-items: center !important;
@@ -12944,7 +12946,7 @@ input:checked + .jiu:before{transform: translateX(24px);}
   gap: 10px !important;
 }
 
-/* Posizionamento icone: Matita a sinistra e Spunta a destra */
+
 .schermata-31 .detail-actions .edit-icon {
   order: 1 !important;
 }
@@ -12962,15 +12964,15 @@ input:checked + .jiu:before{transform: translateX(24px);}
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
 }
 .container-sfondo {
-  position: relative; /* Necessario per ancorare la barra in basso */
+  position: relative; 
 }
 
 .siro {
   position: absolute;
-  bottom: 100px; /* Regola questo valore per sollevarla o abbassarla a piacimento */
+  bottom: 100px; 
   left: 10%;
   transform: translateX(-50%);
-  /* Aggiungi eventuali width/height se necessari */
+  
 }
 .container-sfondo.step29-height {
   position: relative;
@@ -13095,7 +13097,8 @@ input:checked + .jiu:before{transform: translateX(24px);}
   margin-left: 80px !important;
 }
 .step10-buttons button.dark.molo{
-  margin-left: 35px !important;
+  margin-left: 85px !important;
+  margin-top: -70px;
 }
 .lp{
   font-size: 8px;
@@ -13941,7 +13944,7 @@ input[type="checkbox"]:checked + .fjh {
   margin-left: -234px !important;
 }
 .adsn3{
-  margin-top: 1px !important;
+  margin-top: -30px !important;
   color:black;
 }
 .container-sfondo:has(.info-orario-box) .cifra {
@@ -14107,8 +14110,8 @@ button:nth-child(2) {
 .container-sfondo:has(.step-centrato2) .impostazioni {
   position: absolute !important;
   bottom: 30px !important;
-  left: 40px !important;
-  top: auto !important;
+  left: 70px !important;
+  top: 410px !important;
   margin: 0 !important;
 }
 
@@ -14193,7 +14196,7 @@ button:nth-child(2) {
   padding-bottom: 20px !important;
 }
 
-/* Allarga e ripristina le proporzioni della foto di Marta schiacciata */
+
 .step10-organizzazione .marta {
   width: 90px !important;  /* Regola la larghezza desiderata */
   height: 90px !important; /* Imposta un'altezza uguale o proporzionata per evitare lo schiacciamento */
@@ -14253,4 +14256,212 @@ button:nth-child(2) {
   object-fit: cover !important;
   border-radius: 50% !important;
   margin-left: 20px !important;
+}
+.Scrittore{
+  margin-top: 35px !important;
+  margin-left: 130px !important;
+  color:black !important;
+}
+.trio {
+  margin-top: -24px !important;
+}
+.container-sfondo .Step > .de {
+  position: relative;
+  top: -45px;
+}
+.Step.step-2-lungo {
+  min-height: 320px !important;
+  padding: 40px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+}
+
+.Step.step-2-lungo .de {
+  margin-top: auto !important;
+}
+
+.Step:has(input[type='password']) {
+  height: 650px !important;
+  min-height: 600px !important;
+}
+
+.Step:has(input[type='password']) .de {
+  margin-top: 200px !important;
+  margin-bottom: 0px !important;
+}
+.container-sfondo:has(input[type="date"]) .Step {
+  max-height: 95vh;
+  padding: 25px;
+}
+
+.step29-height .foto-marta,
+.step29-height .foto-wrapper.step29-foto {
+  transform: translateY(15px); /* Modifica questo valore per abbassare la foto */
+}
+.step29-height .er.step29-titolo {
+  transform: translateX(40px); /* Modifica questo valore per spostare il titolo verso destra */
+}
+.step29-height .step29-foto,
+.step29-height .step29-titolo {
+  transform: translateY(190px); /* Modifica i pixel per spostarli esattamente di quanto desideri */
+}
+.step29-height .er.step29-titolo {
+  transform: translate(35px, 150px); /* Il primo valore sposta a destra, il secondo valore (20px) lo abbassa */
+}
+.step10-organizzazione .marta {
+  transform: translateY(-20px); /* Modifica questo valore in pixel per decidere quanto alzare la foto */
+}
+.step10-organizzazione h1,
+.step10-organizzazione .adsn3 {
+  transform: translateY(-10px); /* Modifica questo valore per alzare sia il titolo che il sottotitolo */
+}
+.container-sfondo.sfondo-scuro:has(.step27-mobile-fix) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.step27-mobile-fix ~ .siro {
+  margin-right: 20px;
+}
+.container-sfondo.sfondo-scuro:has(.step27-mobile-fix) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+}
+
+.step27-mobile-fix {
+  width: auto !important;
+  margin-left: auto !important;
+  margin-right: 60px !important;
+}
+.top-navigation div:last-child {
+  border-bottom-left-radius: 98px;
+  border-bottom-right-radius: 98px;
+  
+}
+.w-full.aspect-square {
+  aspect-ratio: auto !important;
+  height: 290px !important; /* Modifica questo valore per regolare l'altezza a piacimento */
+  margin-top: 7px !important;
+
+   
+}
+
+.w-full.aspect-square img.step27-photo {
+  max-height: 100% !important;
+  object-fit: contain !important;
+  
+}
+
+.testo-interno {
+  position: relative !important;
+  left: -310px !important; /* Sposta solo la scritta dentro il riquadro */
+}
+.schermata-39 .er.step39-titolo .flex-beetween {
+  margin-top: -10px !important;
+}
+.step27-mobile-fix .hiro {
+  display: flex;
+  flex-direction: column;
+}
+
+.step27-mobile-fix .foto-e-dati-container {
+  order: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transform: translate(0px, 0px);
+  margin-bottom: 20px;
+}
+
+.step27-mobile-fix .testata-container {
+  order: 2;
+  transform: translateY(0px);
+}
+
+.step27-mobile-fix .dati-lato-foto {
+  display: flex;
+  flex-direction: column;
+}
+
+.step27-mobile-fix .nome-marta {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.step27-mobile-fix .ruolo-marta {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.step29-height .step29-titolo .flex-beetween {
+  margin-top: 29px !important;
+}
+.step29-height .info-orario-box {
+  margin-top: 35px !important;
+}
+.step29-height .cifra .riga-permesso:first-child,
+.step29-height .aqua {
+  transform: translateY(-30px) !important;
+}
+.step29-height .aqua {
+  transform: translateY(-200px) !important;
+}
+.step29-height .aqua {
+  transform: translate(205px, -200px) !important;
+}
+.schermata-39 .step39-titolo {
+  transform: translateX(20px);
+}
+
+.schermata-39 .info-orario-box {
+  transform: translateY(20px);
+}
+.schermata-39 .info-orario-box {
+  position: relative !important;
+  top: -160px !important;
+  margin-left: 5px !important;
+}
+.schermata-39 .step29-foto {
+  transform: translateY(90px) !important;
+}
+.schermata-39 .step39-titolo .flex-beetween {
+  transform: translateY(15px) translateX(-5px) !important;
+}
+.schermata-39 .Step.step-centrato {
+  display: flex;
+  flex-direction: column;
+}
+
+.schermata-39 .step39-butt {
+  margin-top: -130px !important;
+  position: relative !important;
+  top: auto !important;
+}
+.schermata-12 .dark {
+  transform: translateX(-20px) !important;
+}
+.schermata-12 .light {
+  transform: translateX( -100px) !important;
+}
+.step-centrato2 .btn-invita {
+  transform: translateY(-90px) translateX(7px) !important;
+}
+
+.step27-mobile-fix .top-navigation,
+.step27-mobile-fix .testo-modifica {
+  transform: translateX(0px) !important;
+}
+.step27-mobile-fix .top-navigation {
+  transform: translateX(25px) !important;
+}
+.subtitle {
+  /* Altre proprietà esistenti del tuo sottotitolo... */
+  padding-left: 2px; /* Regola i pixel a seconda di quanto vuoi spostarlo verso destra */
+}
+.step29-titolo .flex-beetween span {
+  display: inline-block;
+  margin-left: 2px !important; /* Regola i pixel se 20px sono troppi o pochi */
 }

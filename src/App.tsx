@@ -17,6 +17,7 @@ import logo from "./assets/Logo.png"
 import ellissi from "./assets/ellissi.png"
 import barra from "./assets/barra.png"
 import group from "./assets/group.png"
+import icona from "./assets/Icon.png"
 
 const ruoli = [
   "Project Manager",
@@ -96,45 +97,48 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
       </div>
 
       <div className="logo">
-  <img 
-    src={logoImage} 
-    alt="Flowlee" 
-    style={{ 
-      width: 'auto',      // Mantiene le proporzioni
-      height: '20px',     // Fissa l'altezza (o usa max-height per sicurezza)
-      display: 'block',
-      margin: '0 auto'    // Centra il logo
-    }} 
-  />
-</div>
+        <img 
+          src={logoImage} 
+          alt="Flowlee" 
+          style={{ 
+            width: 'auto',      // Mantiene le proporzioni
+            height: '20px',     // Fissa l'altezza (o usa max-height per sicurezza)
+            display: 'block',
+            margin: '0 auto'    // Centra il logo
+          }} 
+        />
+      </div>
       <h1>{t('welcome')}<br />{t('tell_us_who_you_are')}</h1>
       
-      {/* Contenitore form con spazio fisso */}
+      {/* Contenitore form con spazio ravvicinato */}
       <div className="form-content">
-        <div className="input-group">
+        <div className="input-group" style={{ marginBottom: '10px' }}>
           <label>{t('name')}</label>
           <input type="text" placeholder={t('name')} />
         </div>
         
-        <div className="input-group">
+        <div className="input-group" style={{ marginBottom: '10px' }}>
           <label>{t('surname')}</label>
           <input type="text" placeholder={t('surname')} />
         </div>
         
-        <div className="input-group">
+        <div className="input-group" style={{ marginBottom: '10px' }}>
           <label>{t('gender')}</label>
           <select>
             <option>{t('male')}</option>
             <option>{t('female')}</option>
           </select>
         </div>
+
+        {/* Nuovo campo: Data di Nascita */}
+        <div className="input-group" style={{ marginBottom: '10px' }}>
+          <label>{t('birth_date')}</label>
+          <input type="date" />
+        </div>
       </div>
 
       {/* Il bottone resta in fondo */}
-      
-      <button className="de" onClick={() => setDato(2)}
-
-        >
+      <button className="de" onClick={() => setDato(2)}>
         {t('next')}
       </button>
       
@@ -143,48 +147,58 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 )}
 
       {/* Step 2 */}
-      {dato === 2 && (
-        <div className = "container-sfondo">
-        <div className="Step">
-          <div className="language-container" style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
-        <button onClick={() => i18n.changeLanguage('it')}>IT</button>
-        <button onClick={() => i18n.changeLanguage('en')} style={{ marginLeft: '5px' }}>EN</button>
-      </div>
-              <div className="logo">
-  <img 
-    src={logoImage} 
-    alt="Flowlee" 
-    style={{ 
-      width: 'auto',      // Mantiene le proporzioni
-      height: '20px',     // Fissa l'altezza (o usa max-height per sicurezza)
-      display: 'block',
-      margin: '0 auto'    // Centra il logo
-    }} 
-  />
-</div>
-          <h1>{t('hello_marco')}<br />{t('create_account')}</h1>
-       
-          <div className="input-group">
+{/* Step 2 */}
+{dato === 2 && (
+  <div className="container-sfondo">
+    <div className="Step" style={{ minHeight: '650px', padding: '40px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+      
+      <div>
+        <div className="language-container" style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
+          <button onClick={() => i18n.changeLanguage('it')}>IT</button>
+          <button onClick={() => i18n.changeLanguage('en')} style={{ marginLeft: '5px' }}>EN</button>
+        </div>
+        
+        <div className="logo">
+          <img 
+            src={logoImage} 
+            alt="Flowlee" 
+            style={{ 
+              width: 'auto',      
+              height: '20px',     
+              display: 'block',
+              margin: '0 auto'    
+            }} 
+          />
+        </div>
+        
+        <h1 style={{ marginTop: '20px', marginBottom: '25px' }}>{t('hello_marco')}<br />{t('create_account')}</h1>
+     
+        {/* Contenitore form con campi ravvicinati */}
+        <div className="form-content">
+          <div className="input-group" style={{ marginBottom: '10px' }}>
             <label>Email</label>
             <input type="email" placeholder="Email" />
           </div>
-          <div className="input-group">
-            <label>Password</label>
-            <input type="password" placeholder="Password" />
+          
+          <div className="input-group" style={{ marginBottom: '10px' }}>
+            <label>{t('password')}</label>
+            <input type="password" placeholder={t('password')} />
           </div>
-          <div className="input-group">
-            <label>Conferma password</label>
-            <input type="password" placeholder="Conferma password" />
+          
+          <div className="input-group" style={{ marginBottom: '10px' }}>
+            <label>{t('confirm_password')}</label>
+            <input type="password" placeholder={t('confirm_password')} />
           </div>
-          <button className="de" onClick={() => setDato(3)}>
-            Successivo
-            </button>
-
-            
         </div>
-        </div>
-      )}
+      </div>
 
+      <button className="de" onClick={() => setDato(3)} style={{ marginTop: '20px' }}>
+        {t('next')}
+      </button>
+        
+    </div>
+  </div>
+)}
       {/* Step 3 */}
       {dato === 3 && (
         <div className = "container-sfondo">
@@ -208,34 +222,41 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
         </div>
       )}
 
-      {/* Step 4 */} 
-      {dato === 4 && (
-        <div className = "container-sfondo">
-        <div className="Step">
-             <div className="logo">
-  <img 
-    src={logoImage} 
-    alt="Flowlee" 
-    style={{ 
-      width: 'auto',      // Mantiene le proporzioni
-      height: '20px',     // Fissa l'altezza (o usa max-height per sicurezza)
-      display: 'block',
-      margin: '0 auto'    // Centra il logo
-    }} 
-  />
-</div>
-          <h1>Inserisci il codice<br />che trovi sulla mail!</h1>
-          <p style={{marginBottom: '20px', color: '#666', fontSize: '14px'}}>mariorossi@gmail.com</p>
-          <div className="input-group">
-            <label>Codice</label>
-            <input type="text" placeholder="Inserisci codice"/>
-          </div>
-          <button className="WE">Invia di nuovo</button>
-          <button className="de" onClick={() => setDato(5)}>Conferma</button>
+  {dato === 4 && (
+  <div className="container-sfondo">
+    <div className="Step" style={{ minHeight: '650px', padding: '40px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+      
+      <div>
+        <div className="logo">
+          <img 
+            src={logoImage} 
+            alt="Flowlee" 
+            style={{ 
+              width: 'auto',      
+              height: '20px',     
+              display: 'block',
+              margin: '0 auto'    
+            }} 
+          />
         </div>
+        
+        <h1>Inserisci il codice<br />che trovi sulla mail!</h1>
+        <p style={{marginBottom: '15px', color: '#666', fontSize: '14px'}}>mariorossi@gmail.com</p>
+        
+        <div className="input-group">
+          <label>Codice</label>
+          <input type="text" placeholder="Inserisci codice"/>
         </div>
-      )}
+      </div>
 
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: 'auto' }}>
+        <button className="WE">Invia di nuovo</button>
+        <button className="de" onClick={() => setDato(5)}>Conferma</button>
+      </div>
+      
+    </div>
+  </div>
+)}
       {/* Step 5 */}
       {dato === 5 && (
         <div className="Step">
@@ -758,7 +779,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
   `,
   // 3. Aumenta il blur per "ammorbidire" la luce
   filter: 'blur(120px)',
-  // 4. Fondamentale: usa 'screen' per sovrapporre il colore come luce
+  // 4. Fondamentale: usa 'screen' per sovrapporre il colore come luselee
   mixBlendMode: 'screen',
   opacity: 1,
   pointerEvents: 'none',
@@ -1204,7 +1225,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 
         <img src = {Settings} className = "impostazioni"/>
 
-        <div className = "Scritta2">
+        <div className = "Scrittore">
         <p> Impostazioni</p>
         </div>
         </div>
@@ -2373,25 +2394,33 @@ C
             <div className="hiro">
 
 
-              <img
-                src={group}
-                alt="Marta"
-                className="foto-marta"
-              />
+              <div className="testata-container">
+                <h1>
+                  <span>Come</span>
+                  <span className="second-line">
+                    contatto Marta?
+                  </span>
+                </h1>
 
 
-              <h1>
-                <span>Come</span>
-                <span className="second-line">
-                  contatto Marta?
-                </span>
-              </h1>
+                <p className="subtitle">
+                  <span>Selezionerai la visibilità <br />
+                  <span>dei dati di contatto più avanti</span></span>
+                </p>
+              </div>
 
 
-              <p className="subtitle">
-                <span>Selezionerai la visibilità</span>
-                <span>dei dati di contatto più avanti.</span>
-              </p>
+              <div className="foto-e-dati-container">
+                <img
+                  src={group}
+                  alt="Marta"
+                  className="foto-marta"
+                />
+                <div className="dati-lato-foto">
+                  <span className="nome-marta">Marta Frittura</span>
+                  <span className="ruolo-marta"> Project Manager</span>
+                </div>
+              </div>
 
 
             </div>
@@ -2543,6 +2572,8 @@ C
 
   </div>
 )}
+
+
 {dato === 29 &&(
 
   <div className="container-sfondo step15-container step29-height">
@@ -3269,161 +3300,168 @@ C
   </div>
 )}
 
-{dato == 36 &&(
-<div className="container-sfondo sfondo-scuro">
-
-  <div className="Step wide-mode step27-mobile-fix">
-
-```
-<div className="top-navigation">
-
-  <div className="nav-left">
-    <div
-      className="arrows-container"
-      onClick={onBack}
-      style={{ cursor: "pointer" }}
-    >
-      <IoIosArrowDown className="top-icon" />
-      <IoIosArrowUp className="top-icon" />
-    </div>
-
-    <div className="profilo-lavoro-container">
-      <span>Company srl / Persona</span>
-    </div>
-  </div>
-
-  <div className="nav-center">
-    <img
-      src={logoImage}
-      alt="Flowlee"
-      style={{ height: "20px", width: "auto" }}
-    />
-  </div>
-
-  <div className="right-icons">
-    <BsGrid3X3Gap className="top-icon" />
-    <HiOutlineUserCircle className="top-icon" />
-  </div>
-
-</div>
-
-<div
-  className="step10-content"
-  style={{
-    display: "flex",
-    gap: "40px",
-    alignItems: "center",
-    justifyContent: "center",
-  }}
->
-
-  {/* COLONNA SINISTRA */}
-  <div
-    className="step10-right step27-photo-container"
-    style={{ flex: "1", maxWidth: "300px" }}
-  >
-    <div className="w-full aspect-square flex flex-col items-center justify-center bg-white shadow-sm">
-
-      <img
-        src={rettangolo}
-        className="img-box step27-photo"
-        alt="Profilo"
-      />
-
-    </div>
-  </div>
-
-  {/* COLONNA DESTRA */}
-  <div
-    className="step10-left"
-    style={{ flex: "1", maxWidth: "400px" }}
-  >
-
-    <div className="space-y-4">
-
-      <div>
-        <label className="rv">Nome</label>
-        <br />
-
-        <input
-          type="text"
-          className="li"
-          placeholder="Inserisci nome"
-        />
-      </div>
-
-      <div
-        style={{
-          color: "black",
-          transform: "translateY(-13px)",
-        }}
-      >
-        <label className="gv">Cognome</label>
-        <br />
-
-        <input
-          className="nnnn"
-          placeholder="Frittura"
-          style={{ color: "black" }}
-        />
-
-        <div className="justify-center">
-          <div className="noi">
-
-            <label className="jes">
-              Ruoli
-            </label>
-
-            <div className="klo">
-              <select>
-                <option>Project Manager</option>
-                <option>Sviluppatore</option>
-              </select>
+{dato == 36 && (
+  <div className="container-sfondo sfondo-scuro">
+    <div className="Step wide-mode step27-mobile-fix">
+      
+      {/* Top Navigation MODIFICATA: Contiene ora anche il testo */}
+      <div className="top-navigation" style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+        
+        {/* Riga superiore: Elementi originali della nav */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+          <div className="nav-left">
+            <div
+              className="arrows-container"
+              onClick={onBack}
+              style={{ cursor: "pointer" }}
+            >
+              <IoIosArrowDown className="top-icon" />
+              <IoIosArrowUp className="top-icon" />
             </div>
 
+            <div className="profilo-lavoro-container">
+              <span>Company srl / Persona</span>
+            </div>
+          </div>
+
+          <div className="nav-center"></div>
+
+          <div className="right-icons">
+            <BsGrid3X3Gap className="top-icon" />
+            <HiOutlineUserCircle className="top-icon" />
+          </div>
+        </div>
+
+        
+        <div
+        className = "testo-modifica"
+          style={{
+            backgroundColor: "#1e1e1e",
+            color: "#ffffff",
+            padding: "8px 24px",
+            fontSize: "13px",
+            fontWeight: "500",
+            width: "900px",
+            boxSizing: 'border-box',
+          }}
+        >
+          <span className="testo-interno">Stai modificando il profilo di Ilaria Frittura/</span>
+        </div>
+
+      </div>
+
+     
+      <div
+        className="step10-content"
+        style={{
+          display: "flex",
+          gap: "40px",
+          alignItems: "center",
+          justifyContent: "center",
+          paddingTop: "40px",
+          paddingBottom: "40px",
+          marginLeft: "50px",
+        }}
+      >
+        {/* COLONNA SINISTRA */}
+        <div
+          className="step10-right step27-photo-container"
+          style={{ flex: "1", maxWidth: "300px" }}
+        >
+          <div style={{ marginTop: "-14px", fontWeight: "600", fontSize: "14px", color: "black" }}>
+            Foto
+          </div>
+          <div 
+            className="w-full flex flex-col items-center justify-center shadow-sm relative"
+            style={{ 
+              height: "290px", 
+              backgroundColor: "#F1F1F9" ,
+              marginTop: "2px"
+            }}
+          >
+            <img
+              src={rettangolo}
+              className="img-box step27-photo"
+              alt="Profilo"
+              style={{ display: "none" }}
+            />
+            <img src={icona} className="mimi" alt="Icona" />
+          </div>
+        </div>
+
+        {/* COLONNA DESTRA */}
+        <div
+          className="step10-left"
+          style={{ flex: "1", maxWidth: "400px" }}
+        >
+          <div className="space-y-4">
+            <div>
+              <label className="rv">Nome</label>
+              <br />
+              <input
+                type="text"
+                className="li"
+                placeholder="Inserisci nome"
+              />
+            </div>
+
+            <div
+              style={{
+                color: "black",
+                transform: "translateY(-13px)",
+              }}
+            >
+              <label className="gv">Cognome</label>
+              <br />
+              <input
+                className="nnnn"
+                placeholder="Frittura"
+                style={{ color: "black" }}
+              />
+
+              <div className="justify-center">
+                <div className="noi">
+                  <label className="jes">Ruoli</label>
+                  <div className="klo">
+                    <select>
+                      <option>Project Manager</option>
+                      <option>Sviluppatore</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ color: "black" }}>
+              <label className="batma">Overview</label>
+              <br />
+              <textarea
+                className="luc"
+                placeholder="Descrizione"
+              />
+              
+            
+              <button
+                className="jj"
+                onClick={() => setDato(37)}
+              >
+                Procedi
+              </button>
+            </div>
           </div>
         </div>
       </div>
-
-      <div style={{ color: "black" }}>
-
-        <label className="batma">
-          Overview
-        </label>
-
-        <br />
-
-        <textarea
-          className="luc"
-          placeholder="Descrizione"
-        />
-
-        <button
-          className="jj"
-          onClick={() => setDato(37)}
-        >
-          Procedi
-        </button>
-
-      </div>
-
     </div>
 
+    <img
+      src={barra}
+      className="siro"
+      alt="Barra"
+    />
   </div>
-
-</div>
-```
-
-  </div>
-
-<img
- src={barra}
- className="siro"
- alt="Barra"
-/>
-
-</div>
 )}
+
+
 {dato == 37&&(
 
 
@@ -3692,10 +3730,10 @@ C
       {/* Titolo */}
       <div className="er step39-titolo">
         <h1>
-          Questi sono
-          <br />
-          i tuoi orari
-        </h1>
+  <span style={{ display: "inline-block", transform: "translateX(-3px)" }}>Questi sono</span>
+  <br />
+  i tuoi orari
+</h1>
 
         <div className="flex-beetween">
           <span>
@@ -3800,7 +3838,7 @@ C
         className="butt step39-butt"
         onClick={() => setDato(40)}
       >
-        Ok entra in flowlee
+        Ok entra in flowlee!
       </button>
 
     </div>
