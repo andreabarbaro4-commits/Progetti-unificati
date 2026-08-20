@@ -217,7 +217,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 </div>
           <img src={avatar} alt="avatar" className="avatar" />
           <h1>Sto inviando<br />il codice di verifica.</h1>
-          <button className="de" onClick={() => setDato(4)}>Successivo</button>
+          <button className="de punti" onClick={() => setDato(4)}>Successivo</button>
         </div>
         </div>
       )}
@@ -967,7 +967,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
       {/* Modelli di Lavoro (Toggle) */}
       <div className="modelli-wrapper">
         {[
-          { t: "Autonomo", d: "Orario gestito liberamente dal dipendente nel rispetto di obiettivi, attività e disponibilità concordate." },
+          { t: "Autonomo", d: "Orario gestito dal dipendente nel rispetto di obiettivi, attività e disponibilità concordate." },
           { t: "Flessibile"},
           {t: "Fisso"}
           
@@ -1100,11 +1100,11 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
           },
           { 
             t: "Flessibile", 
-            d: "Ciascun dipendente può prendere 1h di pausa pranzo quando preferisce, all'interno di un determinato range orario." 
+            d: "Ogni dipendente può avere 1h di pausa pranzo,in un determinato orario." 
           },
           { 
             t: "Fissa", 
-            d: "Tutti i dipendenti hanno la pausa pranzo nello stesso orario." 
+            d: "I dipendenti hanno la pausa nello stesso orario." 
           }
         ].map((item, index) => {
           const isChecked = selezionati[index] || false;
@@ -1126,47 +1126,45 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
               </label>
               <div className="toggle-text">
                 <strong>{item.t}</strong>
-                {isChecked && (
-                  <div className="details-container">
-                    <p>{item.d}</p>
-                    
-                    {/* Selettore orario per Flessibile */}
-                    {item.t === "Flessibile" && (
-                      <div className="orari-selettori" style={{ marginTop: '10px', display: 'flex', gap: '15px', alignItems: 'center', fontSize: '14px' }}>
-                        <div>
-                          <span>Dalle </span>
-                          <button onClick={() => modificaOrario('flessibileDalle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
-                          <span>{String(orari.flessibileDalle).padStart(2, '0')}:00</span>
-                          <button onClick={() => modificaOrario('flessibileDalle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
-                        </div>
-                        <div>
-                          <span>Alle </span>
-                          <button onClick={() => modificaOrario('flessibileAlle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
-                          <span>{String(orari.flessibileAlle).padStart(2, '0')}:00</span>
-                          <button onClick={() => modificaOrario('flessibileAlle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
-                        </div>
+                <div className="details-container">
+                  <p>{item.d}</p>
+                  
+                  {/* Selettore orario per Flessibile */}
+                  {item.t === "Flessibile" && (
+                    <div className="orari-selettori" style={{ marginTop: '10px', display: 'flex', gap: '15px', alignItems: 'center', fontSize: '14px' }}>
+                      <div>
+                        <span>Dalle </span>
+                        <button onClick={() => modificaOrario('flessibileDalle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
+                        <span>{String(orari.flessibileDalle).padStart(2, '0')}:00</span>
+                        <button onClick={() => modificaOrario('flessibileDalle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
                       </div>
-                    )}
+                      <div>
+                        <span>Alle </span>
+                        <button onClick={() => modificaOrario('flessibileAlle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
+                        <span>{String(orari.flessibileAlle).padStart(2, '0')}:00</span>
+                        <button onClick={() => modificaOrario('flessibileAlle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
+                      </div>
+                    </div>
+                  )}
 
-                    {/* Selettore orario per Fissa (come da design Figma) */}
-                    {item.t === "Fissa" && (
-                      <div className="orari-selettori" style={{ marginTop: '10px', display: 'flex', gap: '15px', alignItems: 'center', fontSize: '14px' }}>
-                        <div>
-                          <span>Dalle </span>
-                          <button onClick={() => modificaOrario('fissaDalle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
-                          <span>{String(orari.fissaDalle).padStart(2, '0')}:00</span>
-                          <button onClick={() => modificaOrario('fissaDalle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
-                        </div>
-                        <div>
-                          <span>Alle </span>
-                          <button onClick={() => modificaOrario('fissaAlle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
-                          <span>{String(orari.fissaAlle).padStart(2, '0')}:00</span>
-                          <button onClick={() => modificaOrario('fissaAlle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
-                        </div>
+                  {/* Selettore orario per Fissa (come da design Figma) */}
+                  {item.t === "Fissa" && (
+                    <div className="orari-selettori" style={{ marginTop: '10px', display: 'flex', gap: '15px', alignItems: 'center', fontSize: '14px' }}>
+                      <div>
+                        <span>Dalle </span>
+                        <button onClick={() => modificaOrario('fissaDalle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
+                        <span>{String(orari.fissaDalle).padStart(2, '0')}:00</span>
+                        <button onClick={() => modificaOrario('fissaDalle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
                       </div>
-                    )}
-                  </div>
-                )}
+                      <div>
+                        <span>Alle </span>
+                        <button onClick={() => modificaOrario('fissaAlle', '-')} style={{ cursor: 'pointer', margin: '0 4px' }}>-</button>
+                        <span>{String(orari.fissaAlle).padStart(2, '0')}:00</span>
+                        <button onClick={() => modificaOrario('fissaAlle', '+')} style={{ cursor: 'pointer', margin: '0 4px' }}>+</button>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           );
@@ -1177,10 +1175,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
       <button className="bv24" onClick={() => setDato(18)}>Procedi</button>
     </div>
   </div>
-
-
 )}
-
 {dato === 18 &&(
    <div className="container-sfondo">
     <div className="Step step-centrato2">
@@ -1263,7 +1258,7 @@ const giorni = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
 
      <div className = "avviso2">
       <span><span className="cerchio-rosso"></span>Prova Flowlee con 3 progetti e un totale di 5 persone. <br /> </span>
-      <span>Dopodichè, ti suggeriremo l'iscrizione al piano Premium.</span>
+      <span>Dopodichè, puoi isciverti al Premium.</span>
       </div>
 
       <button className = "Bottone1" onClick = {() => setDato(20)}>
